@@ -74,6 +74,8 @@ state changes are outside scope.
 | Plans 12–19 | `task_1c6582ccdeae` / `ctx_795fced595ef` | `codex-audit-rendering-12-19` | diagnosing | current issue/source/PR audit and renderer overlap map |
 | Plans 20–34 | `task_47ed7eb02d48` / `ctx_50d8257459ab` | `codex-audit-builder-20-34` | diagnosing | current issue/source/PR audit and schema/template overlap map |
 | Plan 07 implementation | `task_aee702e37eae` / not dispatched | planned `codex/issue-2722-postgres-docs` | waits on plans 07–11 audit | two-file docs change, verification, commit, independent review |
+| Plan 09 implementation | `task_e450ea143bfa` / not dispatched | planned `codex/issue-2705-git-backup-docs` | waits on plans 07–11 audit | two-file docs change, synthetic local-Git validation, commit, independent review |
+| Plan 11 implementation | `task_58d76423d364` / not dispatched | planned `codex/issue-3010-jsearch-docs` | waits on plans 07–11 audit | three-file docs change, source/test validation, commit, independent review |
 
 ## Existing PR and residual accounting
 
