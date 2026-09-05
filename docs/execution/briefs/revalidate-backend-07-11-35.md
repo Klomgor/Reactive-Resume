@@ -11,6 +11,9 @@ Before reading local planning files, require its `git rev-parse HEAD` to equal
 `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`. If absent or different, fetch PR #3455 and use
 `git show a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d:plans/<file>` for every required file. Never read planning files from
 stale checkout or current `main`. Fetch `origin/main`, resolve one exact implementation-source SHA, and record it.
+Resolve exact plan filenames first with
+`git ls-tree -r --name-only a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d plans/`; read ORCHESTRATOR, DECISIONS, and
+the listed files whose prefixes are `07-` through `11-` plus `35-`.
 
 Audit only. Do not edit source, commit, push, create PRs, mutate GitHub issues, or touch coordinator ledger. Do not spawn
 subagents. Use CodeGraph before grep/read when `.codegraph/` exists. Fetch every assigned issue body/comments and inspect
