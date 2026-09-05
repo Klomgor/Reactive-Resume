@@ -17,10 +17,11 @@ state changes are outside scope.
 
 - Every implementation unit starts from refreshed `origin/main` unless this ledger names a true stacked dependency.
 - One active owner per overlapping source file. Rich-text ownership coordinates units 16/19; renderer ownership coordinates
-  13/14/17/18; section/schema/layout ownership coordinates 20–24/32; image ownership coordinates 15/25; template
-  ownership coordinates 26/28/29/34.
-- Units 30/31 wait for relevant renderer baselines. Unit 33 stops after reference research and concrete visual proposal until
-  explicit visual approval.
+  12/13/14/17/18/27/30/31; section/schema/layout ownership coordinates 20–24/31/32; image ownership coordinates 06/15/25;
+  template ownership coordinates 26/28/29/34.
+- Units 24 and 32 have shared-file exclusion, not a preset stacked dependency; stack only if current implementation proves
+  unit 32 needs schema or interfaces introduced by unit 24. Units 30/31 wait for relevant renderer baselines. Unit 33 stops
+  after reference research and concrete visual proposal until explicit visual approval.
 - Worker reports separate verified facts from uncertainty and include reproduction, first failing boundary, exact commit,
   tests run, skipped gates, risks, issue coverage, and PR state.
 
@@ -34,7 +35,7 @@ state changes are outside scope.
 | 04 AI provider compatibility | #2732, #2766, #2723, #2708 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | isolate connect, enablement, and import causes | provider credentials/fixtures may gate cases |
 | 05 AI provider migrations | #3152 | pending | unassigned | — | `7a98f6662` → — | coordinate with 04 | live revalidation pending | — | — | inspect deployment migration path and current schema | self-hosted deployment evidence may gate historical claim |
 | 06 image storage delivery | #2684, #2778 | pending | unassigned | — | `7a98f6662` → — | coordinate with 15/25 | live revalidation pending | — | — | verify local/S3 upload and PDF delivery boundaries | backend fixtures/infrastructure |
-| 07 AIO deployment | #2722 | declined direction; docs work pending | unassigned | — | `7a98f6662` → — | none | Q12: PostgreSQL remains separate | — | — | inspect Compose/Unraid docs; improve only proven gaps | no AIO implementation permitted |
+| 07 AIO deployment | #2722 | pending | unassigned | — | `7a98f6662` → — | none | Q12: PostgreSQL remains separate | — | — | record declined AIO direction; inspect Compose/Unraid docs; improve only proven gaps | no AIO implementation permitted |
 | 08 root public resume | #2669 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | verify self-hosted root routing proposal against current routes | — |
 | 09 external version backup | #2705 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | document explicit JSON backup in user-controlled Git | no automatic sync scope |
 | 10 legacy link routing | #2836 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | validate owner-only notice/public 404 scope | prospective behavior only where historical data absent |
@@ -60,7 +61,7 @@ state changes are outside scope.
 | 30 ATS export evaluation | #2845 | pending | unassigned | — | `7a98f6662` → — | after renderer baselines | live revalidation pending | — | — | evaluate current PDF/DOCX before ATS preset decision | tooling/criteria may limit claims |
 | 31 document accessibility | #2844 | pending | unassigned | — | `7a98f6662` → — | after renderer baselines; coordinates 21 | Q3 retains accessible section labels when visible heading hidden | — | — | verify current PDF/DOCX/HTML gaps only | tagged-PDF feasibility not assumed |
 | 32 section date sorting | #2725 | pending | unassigned | — | `7a98f6662` → — | section/schema owner; coordinate 24 | approved one-time stable sort, not autosort | — | — | implement stable unknown-date behavior per full plan | — |
-| 33 Europass template | #2689 | blocked after proposal gate | unassigned | — | `7a98f6662` → — | renderer/template baselines | approved research and concrete visual proposal only | — | — | research official reference and publish reviewable visual artifact | future concrete visual approval required before template code |
+| 33 Europass template | #2689 | pending | unassigned | — | `7a98f6662` → — | renderer/template baselines | approved research and concrete visual proposal only | — | — | research official reference and publish reviewable visual artifact, then mark blocked at gate | future concrete visual approval required before template code |
 | 34 Gengar skill layout | #2611 | pending | unassigned | — | `7a98f6662` → — | template owner coordinates 26/28/29 | live revalidation pending | — | — | restore Gengar-only rating placement | visual render review |
 | 35 resume import errors | #2768 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | reproduce before changing parser/dialog lifecycle | source fixture may be missing |
 
