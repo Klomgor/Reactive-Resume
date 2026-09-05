@@ -1,7 +1,7 @@
 # Implement plan 09: user-controlled Git backup documentation
 
-Read entire approved plan first:
-`/Users/amruth/orca/workspaces/reactive-resume/planning-pr-3455/plans/09-external-version-backup.md`. Also read current
+Read entire approved plan first from local planning checkout only when its HEAD equals
+`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; otherwise use pinned `git show` fallback below. Then read current
 worktree `AGENTS.md`, referenced domain/issue instructions, relevant ADRs, `/Users/amruth/.codex/RTK.md`, and
 `/Users/amruth/.agents/skills/documentation-writer/SKILL.md`. Plan supplies document type, audience, goal, scope, and approved
 structure; do not pause for routine outline approval. Portable fallback: fetch PR #3455 and use

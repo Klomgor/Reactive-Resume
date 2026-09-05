@@ -1,13 +1,13 @@
 # Implement plan 16: editable imported rich-text tables
 
-Read entire approved plan first from
-`/Users/amruth/orca/workspaces/reactive-resume/planning-pr-3455/plans/16-imported-table-borders.md`; portable fallback:
+Read entire approved plan from local planning checkout only when its HEAD equals
+`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; otherwise use pinned portable fallback:
 `git show a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d:plans/16-imported-table-borders.md`. Read current `AGENTS.md`, RTK,
 issue/domain instructions, ADRs, and applicable skills, including test-driven-development. Run root Intent inventory and load
 matching local skill before source edits. Do not spawn subagents. Do not touch ledger, mutate issues, merge, push, or open PR.
 
 Start from refreshed `origin/main`, require clean worktree, rename branch `codex/issue-3196-editable-tables`, revalidate live
-# 3196 and open PRs, and run exact drift check. Preserve merged #3438. Historical screenshot equivalence remains unverified
+issue 3196 and open PRs, and run exact drift check. Preserve merged #3438. Historical screenshot equivalence remains unverified
 without source, but Q11 independently approves supported table editing.
 
 Implement one atomic TDD unit across editor/HTML/PDF:

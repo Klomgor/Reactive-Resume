@@ -2,8 +2,8 @@
 
 Read first:
 
-1. Entire approved plan:
-   `/Users/amruth/orca/workspaces/reactive-resume/planning-pr-3455/plans/02-hosted-v4-account-recovery.md`.
+1. Entire approved plan from local planning checkout only when its HEAD equals
+   `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; otherwise use pinned `git show` fallback below.
 2. Audit evidence: `/Users/amruth/orca/workspaces/reactive-resume/codex-audit-backend-01-06/.orchestration/revalidate-backend-01-06.md`, plan 02 section.
 3. Current worktree `AGENTS.md`, referenced issue/domain instructions, relevant ADRs, `/Users/amruth/.codex/RTK.md`.
 4. `/Users/amruth/.agents/skills/test-driven-development/SKILL.md`, its `writing-good-tests.md` reference,

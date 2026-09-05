@@ -7,12 +7,14 @@ Read first:
 - Entire plan files 12 through 19 in that checkout
 - Current worktree `AGENTS.md`, referenced domain instructions, context/ADRs, and package scripts
 
-Portable fallback: if that checkout path is absent, fetch PR #3455 and read exact planning head
-`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d` with `git show <head>:plans/<file>` for every required file. Do not read
-planning files from current `main` while PR #3455 remains unmerged.
+Before reading local planning files, require its `git rev-parse HEAD` to equal
+`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`. If absent or different, fetch PR #3455 and use
+`git show a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d:plans/<file>` for every required file. Never read planning files from
+stale checkout or current `main`.
 
 Audit only. Do not edit source, commit, push, create PRs, mutate GitHub issues, or touch coordinator ledger. Do not spawn
-subagents. Use CodeGraph before grep/read. Fetch every assigned issue body/comments and inspect live PRs/current `origin/main`.
+subagents. Use CodeGraph first only when `.codegraph/` exists. Otherwise inspect pinned exact-head source with `git show`,
+`rg`, and direct reads; record CodeGraph unavailability and limitation. Fetch every issue body/comments and live PRs/main.
 
 For each plan and issue, report live state/PRs, source validity/drift, exact first-boundary reproduction, available/missing
 fixtures, coherent cause-based unit split, owned files/interfaces, overlap map across 12–19 and units 27/30/31, exact visual

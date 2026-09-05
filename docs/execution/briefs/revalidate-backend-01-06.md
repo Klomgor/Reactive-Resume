@@ -7,9 +7,10 @@ Read first:
 - Entire plan files 01 through 06 in that checkout
 - Current worktree `AGENTS.md`, referenced issue/domain instructions, relevant context/ADRs, and package scripts
 
-Portable fallback: if that checkout path is absent, fetch PR #3455 and read exact planning head
-`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d` with `git show <head>:plans/<file>` for every required file. Do not read
-planning files from current `main` while PR #3455 remains unmerged.
+Before reading local planning files, require its `git rev-parse HEAD` to equal
+`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`. If absent or different, fetch PR #3455 and use
+`git show a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d:plans/<file>` for every required file. Never read planning files from
+stale checkout or current `main`. Fetch `origin/main`, resolve one exact implementation-source SHA, and record it.
 
 Audit only. Do not edit source, commit, push, create PRs, mutate GitHub issues, or touch coordinator ledger. Do not spawn subagents.
 Use CodeGraph before grep/read when `.codegraph/` exists. Fetch every assigned issue body and comments with `gh`; inspect live
@@ -23,6 +24,9 @@ For each plan and each issue, report:
 4. Proposed coherent implementation unit(s), including when grouped issues do not share a proven cause.
 5. Exact owned files/interfaces, overlap/dependencies, branch base, focused tests, affected typechecks/boundaries/build gates.
 6. Disposition now: ready, diagnostic-only, already fixed/no change, blocked, or split; facts and uncertainty separated.
+7. Exact audited commit, explicit tests run/results versus skipped gates, and risks.
+
+Use ledger's shared audit-disposition mapping; do not invent status values.
 
 Write full report to `.orchestration/revalidate-backend-01-06.md` in your worktree. Final response: report path, concise
 unit-ready summary, blockers, and no more than ten lines.

@@ -2,12 +2,13 @@
 
 Read first, in order:
 
-1. `/Users/amruth/orca/workspaces/reactive-resume/planning-pr-3455/plans/07-aio-deployment.md` — entire file; exact requirements.
+1. Entire plan 07 from local planning checkout only when its HEAD equals
+   `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; otherwise use pinned `git show` fallback below.
 2. Current worktree `AGENTS.md`, `/Users/amruth/.codex/RTK.md`, issue/domain instructions, and relevant ADRs.
 3. `/Users/amruth/.agents/skills/documentation-writer/SKILL.md`. Plan already supplies document type, novice/homelab
    audience, goal, scope, and approved structure; do not pause for routine outline approval.
 
-Portable fallback: if planning checkout path is absent, fetch PR #3455 and read plan 07 from exact planning head
+Portable fallback: if planning checkout is absent or has another HEAD, fetch PR #3455 and read plan 07 from exact head
 `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d` with `git show <head>:plans/07-aio-deployment.md`. Do not read it from
 current `main` while PR #3455 remains unmerged.
 

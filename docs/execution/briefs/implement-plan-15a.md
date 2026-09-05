@@ -1,13 +1,13 @@
 # Implement plan 15A: opt-in picture cover/contain
 
-Read entire approved plan first from
-`/Users/amruth/orca/workspaces/reactive-resume/planning-pr-3455/plans/15-picture-fitting-and-style.md`; portable fallback:
+Read entire approved plan from local planning checkout only when its HEAD equals
+`a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; otherwise use pinned portable fallback:
 `git show a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d:plans/15-picture-fitting-and-style.md`. Read current `AGENTS.md`,
 RTK, issue/domain instructions, ADRs, and applicable skills. Run root Intent inventory and load matching local skill before
 source edits. Do not spawn subagents. Do not touch ledger, mutate issues, merge, push, or create PR.
 
 Start from refreshed `origin/main`, require clean worktree, rename branch `codex/issue-2782-picture-fit`, revalidate live
-# 2782 and all open implementation PRs, and run plan drift check. Stop on overlapping implementation or contradicted picture
+issue 2782 and all open implementation PRs, and run plan drift check. Stop on overlapping implementation or contradicted picture
 contract. Historical #3168/#3088/#2794 causes remain outside this implementation and must not be claimed fixed.
 
 Strict TDD and bounded scope:
