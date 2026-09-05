@@ -1,3 +1,5 @@
+> Historical audit checkpoint. For the subsequently approved 63-issue execution scope and decisions, use [the plans index](../../../plans/README.md) and [decision log](../../../plans/DECISIONS.md). Earlier pending choices below are superseded there.
+
 # Open issue audit and action plan — 2026-09-05
 
 <!-- markdownlint-disable MD026 -->
@@ -15,12 +17,12 @@ Issues fixed only in unmerged PRs remain open. Already-fixed issues close only w
 
 ## Progress
 
-**Status snapshot:** 2026-09-05 18:59 UTC. Linked PRs carry subsequent issue updates.
+**Status snapshot:** 2026-09-05 19:01 UTC. Linked PRs carry subsequent issue updates.
 
 - 115 issues triaged: the initial 114 plus new report #3433. Verification continues for reports needing exact fixtures or deployment reproduction.
 - 44 implementation PRs created by this audit: 42 earlier PRs are merged; navigation fix #3453 and thumbnail fix #3454 are open. Audit-only documentation PRs #3418, #3440, #3444 and #3452 are excluded and are all merged. The final #3452 ledger and its merged #3450/#3451 verification updates are preserved.
 - 50 audited issues closed: 49 evidence-backed or reporter-confirmed closures plus one product-decision closure (#3272). Complete closure set: [#2650](https://github.com/amruthpillai/reactive-resume/issues/2650), [#2735](https://github.com/amruthpillai/reactive-resume/issues/2735), [#2739](https://github.com/amruthpillai/reactive-resume/issues/2739), [#2745](https://github.com/amruthpillai/reactive-resume/issues/2745), [#2804](https://github.com/amruthpillai/reactive-resume/issues/2804), [#2805](https://github.com/amruthpillai/reactive-resume/issues/2805), [#2878](https://github.com/amruthpillai/reactive-resume/issues/2878), [#3008](https://github.com/amruthpillai/reactive-resume/issues/3008), [#3017](https://github.com/amruthpillai/reactive-resume/issues/3017), [#3051](https://github.com/amruthpillai/reactive-resume/issues/3051), [#3068](https://github.com/amruthpillai/reactive-resume/issues/3068), [#3146](https://github.com/amruthpillai/reactive-resume/issues/3146), [#3174](https://github.com/amruthpillai/reactive-resume/issues/3174), [#3175](https://github.com/amruthpillai/reactive-resume/issues/3175), [#3180](https://github.com/amruthpillai/reactive-resume/issues/3180), [#3200](https://github.com/amruthpillai/reactive-resume/issues/3200), [#3247](https://github.com/amruthpillai/reactive-resume/issues/3247), [#3251](https://github.com/amruthpillai/reactive-resume/issues/3251), [#3255](https://github.com/amruthpillai/reactive-resume/issues/3255), [#3272](https://github.com/amruthpillai/reactive-resume/issues/3272), [#3285](https://github.com/amruthpillai/reactive-resume/issues/3285), [#3291](https://github.com/amruthpillai/reactive-resume/issues/3291), [#3305](https://github.com/amruthpillai/reactive-resume/issues/3305), [#3311](https://github.com/amruthpillai/reactive-resume/issues/3311), [#3312](https://github.com/amruthpillai/reactive-resume/issues/3312), [#3334](https://github.com/amruthpillai/reactive-resume/issues/3334), [#3337](https://github.com/amruthpillai/reactive-resume/issues/3337), [#3338](https://github.com/amruthpillai/reactive-resume/issues/3338), [#3339](https://github.com/amruthpillai/reactive-resume/issues/3339), [#3340](https://github.com/amruthpillai/reactive-resume/issues/3340), [#3341](https://github.com/amruthpillai/reactive-resume/issues/3341), [#3343](https://github.com/amruthpillai/reactive-resume/issues/3343), [#3344](https://github.com/amruthpillai/reactive-resume/issues/3344), [#3347](https://github.com/amruthpillai/reactive-resume/issues/3347), [#3348](https://github.com/amruthpillai/reactive-resume/issues/3348), [#3352](https://github.com/amruthpillai/reactive-resume/issues/3352), [#3359](https://github.com/amruthpillai/reactive-resume/issues/3359), [#3360](https://github.com/amruthpillai/reactive-resume/issues/3360), [#3361](https://github.com/amruthpillai/reactive-resume/issues/3361), [#3366](https://github.com/amruthpillai/reactive-resume/issues/3366), [#3368](https://github.com/amruthpillai/reactive-resume/issues/3368), [#3369](https://github.com/amruthpillai/reactive-resume/issues/3369), [#3370](https://github.com/amruthpillai/reactive-resume/issues/3370), [#3374](https://github.com/amruthpillai/reactive-resume/issues/3374), [#3380](https://github.com/amruthpillai/reactive-resume/issues/3380), [#3391](https://github.com/amruthpillai/reactive-resume/issues/3391), [#3392](https://github.com/amruthpillai/reactive-resume/issues/3392), [#3393](https://github.com/amruthpillai/reactive-resume/issues/3393), [#3401](https://github.com/amruthpillai/reactive-resume/issues/3401), [#3433](https://github.com/amruthpillai/reactive-resume/issues/3433).
-- In progress: independently reviewed navigation-save fix #3453 has all hosted checks green and awaits owner review; measured thumbnail-resolution fix #3454 awaits its remaining hosted checks and owner review. Concurrent multi-tab overwrite under #2828 is also reproduced; conflict recovery awaits a product decision. Controlled square-picture (#2794) and Times-Roman (#3089) probes pass, with exact reporter fixtures requested in posted comments. Exact original reproduction remains needed for #3093 after the separately reproduced glyph-cache correction #3450 and Unicode-space preservation #3451 merged, plus remaining issue reproductions. Merged paragraph-indentation PR #3448 addresses the approved whole-paragraph alternative, while #3397 remains open for literal leading spaces and tabs. Merged ordered-list-marker PR #3449 fixes the reproduced overlap, while #2751 remains open because the original missing-digit report is unproven. RTL canvas PR #3447 is owner-merged; broader exported-PDF scope keeps #3275 open. Bullet pagination (#3344), Ditgar alignment (#3068), and Arabic preview centering (#2745) are owner-merged. Reporter confirmed #3433 no longer reproduces after restarting their setup; issue closed without an attributed code fix. #3196 remains open because merged #3438 addressed a separate content-loss regression, not missing table borders. GitHub state refreshed against the current open-issue and PR inventories.
+- In progress: navigation-save PR #3453 has green checks on its published head, but a valid unbounded-wait review finding now requires a follow-up and fresh verification; measured thumbnail-resolution fix #3454 awaits its remaining hosted checks and owner review. Concurrent multi-tab overwrite under #2828 is also reproduced; conflict recovery awaits a product decision. Controlled square-picture (#2794) and Times-Roman (#3089) probes pass, with exact reporter fixtures requested in posted comments. Exact original reproduction remains needed for #3093 after the separately reproduced glyph-cache correction #3450 and Unicode-space preservation #3451 merged, plus remaining issue reproductions. Merged paragraph-indentation PR #3448 addresses the approved whole-paragraph alternative, while #3397 remains open for literal leading spaces and tabs. Merged ordered-list-marker PR #3449 fixes the reproduced overlap, while #2751 remains open because the original missing-digit report is unproven. RTL canvas PR #3447 is owner-merged; broader exported-PDF scope keeps #3275 open. Bullet pagination (#3344), Ditgar alignment (#3068), and Arabic preview centering (#2745) are owner-merged. Reporter confirmed #3433 no longer reproduces after restarting their setup; issue closed without an attributed code fix. #3196 remains open because merged #3438 addressed a separate content-loss regression, not missing table borders. GitHub state refreshed against the current open-issue and PR inventories.
 - Baseline server/API typecheck errors in `packages/email/src/transport.ts` are fixed separately by [#3416](https://github.com/amruthpillai/reactive-resume/pull/3416). All three affected package typechecks and existing email tests pass there.
 
 | Issue | Fix PR | Result |
@@ -66,8 +68,8 @@ Issues fixed only in unmerged PRs remain open. Already-fixed issues close only w
 | [#2751](https://github.com/amruthpillai/reactive-resume/issues/2751) | [#3449](https://github.com/amruthpillai/reactive-resume/pull/3449) | Merged head `7ac7fd31b`: prevents ordered-list markers from overlapping body text, with a common gutter based on digit count, resolved font size and letter spacing. All 975 PDF tests, including marker and pagination regressions, typecheck, boundaries and repository checks pass; all hosted checks are green, including 34 browser scenarios. Independent reviews produced and verified custom-letter-spacing and linear-time list-length corrections. Direct/inherited styles, fonts, digit transitions, RTL, columns and page breaks are covered. Original missing leading digit is unproven; nested RTL list flattening matches unchanged baseline and remains separate, so the issue remains open. |
 | [#3093](https://github.com/amruthpillai/reactive-resume/issues/3093) | [#3450](https://github.com/amruthpillai/reactive-resume/pull/3450) | Merged head `fa14e4bc6`: isolates character metadata when different Unicode sequences share one cached font glyph. Full 981-test PDF suite passes; all six glyph-cache regressions cover bounded cache size and distinct alias identity. Typecheck, boundaries, frozen install and repository checks pass. Independent four-runtime checks preserve geometry and bounded cache size. Production browser/server sequential exports retain exact ordinary-space text and 35.12pt width. All hosted checks and reviews pass; original screenshot equivalence remains unproven. |
 | [#3093](https://github.com/amruthpillai/reactive-resume/issues/3093) | [#3451](https://github.com/amruthpillai/reactive-resume/pull/3451) | Merged head `1dbc75b26`: preserves literal ideographic and nonbreaking spaces through HTML collapse and app normalization while retaining ordinary ASCII collapse. Full 1,000-test PDF suite passes, along with typecheck, boundaries, repository checks and frozen install. Independent sequence/edge/NBSP review clean. Production browser/server exports agree at 50pt, 60pt after authoring a leading ideographic space, and 35.12pt for the ASCII control. Rebased onto merged #3450; all hosted checks and reviews pass. Named/numeric entity decoding remains unchanged. |
-| [#2828](https://github.com/amruthpillai/reactive-resume/issues/2828) | [#3453](https://github.com/amruthpillai/reactive-resume/pull/3453) | Open head `7fe189f5f`: flushes queued edits and retries the latest draft before leaving the builder; failed saves retain the draft and block SPA navigation. Two real Chromium/PostgreSQL scenarios and 804 web tests pass; independent review clean. At the snapshot, E2E, autofix, Codacy, Greptile and CodeRabbit all pass. Original historical loss and simultaneous-tab conflict recovery remain separate open scope. |
-| [#3246](https://github.com/amruthpillai/reactive-resume/issues/3246) | [#3454](https://github.com/amruthpillai/reactive-resume/pull/3454) | Open head `c2db4ec8d`: rasterizes the measured contain-fit size at device pixel density, retaining the previous thumbnail during upgrades. All 22 production measurements cover at least 100.18% of displayed pixels; 804 web tests and independent lifecycle review pass. At the snapshot, autofix and Codacy pass; E2E, Greptile and CodeRabbit are pending. Exact original self-hosted screenshot equivalence remains unproven. |
+| [#2828](https://github.com/amruthpillai/reactive-resume/issues/2828) | [#3453](https://github.com/amruthpillai/reactive-resume/pull/3453) | Open head `7fe189f5f`: flushes queued edits and retries the latest draft before leaving the builder; failed saves retain the draft and block SPA navigation. Two real Chromium/PostgreSQL scenarios and 804 web tests pass; independent review clean. Published-head checks all pass, but a valid navigation-wait review finding requires a follow-up; those checks are not final verification of the correction. Original historical loss and simultaneous-tab conflict recovery remain separate open scope. |
+| [#3246](https://github.com/amruthpillai/reactive-resume/issues/3246) | [#3454](https://github.com/amruthpillai/reactive-resume/pull/3454) | Open head `c2db4ec8d`: rasterizes the measured contain-fit size at device pixel density, retaining the previous thumbnail during upgrades. All 22 production measurements cover at least 100.18% of displayed pixels; 804 web tests and independent lifecycle review pass. At the snapshot, autofix, Codacy and Greptile pass; E2E and CodeRabbit are pending. Exact original self-hosted screenshot equivalence remains unproven. |
 
 ## Product decisions
 
@@ -79,16 +81,17 @@ Issues fixed only in unmerged PRs remain open. Already-fixed issues close only w
 - #3343: approved — align skill-rating bars at the bottom of each grid row by default; implemented in #3437.
 - #3272: approved — keep cover-letter headings omitted; explained and closed as not planned.
 - #3397: approved — indent the whole paragraph through the existing controls; implemented and merged in #3448. Literal leading spaces and tabs remain open scope.
+- #2785: pending — keyword display as per-section Inline/Bulleted list, per-item presentation, or deferred implementation. Preserve current inline default until scope is chosen.
 - #2828: pending — combine non-overlapping concurrent edits and request choices only for conflicting values, or stop on any concurrent edit and compare drafts. Navigation-save protection in #3453 is independently implementable; multi-tab recovery UI remains unimplemented while this decision is pending.
 - Other architecture and visual feature choices remain listed under individual issues.
 
 ## Priority order
 
-1. Follow hosted checks and owner review for independently verified navigation-save PR #3453 and thumbnail-resolution PR #3454; address actionable failures without merging either PR.
+1. Complete the bounded-navigation-wait follow-up and fresh verification for #3453, then follow its checks and thumbnail-resolution PR #3454 checks through owner review. Do not merge either PR.
 2. Resolve the #2828 multi-tab recovery choice before implementing dependent UX. Preserve editable local drafts, pair accepted data with its revision, and verify a reliable revision invariant under the existing row lock before adding concurrency protection.
 3. Obtain exact fixtures for #2794, #3089 and #3093. Controlled picture/font probes pass and the two Unicode fixes are merged, but the original screenshots remain unproven. Continue remaining font, layout and pagination reproductions without attributing them to unrelated fixes.
 4. Re-test deployed OAuth registration and S3 failures with current builds and original logs, separating fixed local causes from unverified deployment reports.
-5. Resolve pending product choices for JSearch restoration (#3010), local fonts (#3377) and item pagination controls (#3350), then implement accepted scopes in separate PRs with focused verification.
+5. Resolve pending product choices for JSearch restoration (#3010), local fonts (#3377) item pagination controls (#3350), and keyword-list scope (#2785), then implement accepted scopes in separate PRs with focused verification.
 6. Close remaining reports only after matching reproduction evidence, reporter confirmation, a retained canonical duplicate, or an explicit product decision.
 
 ## Current audit classifications
@@ -105,7 +108,7 @@ Issues fixed only in unmerged PRs remain open. Already-fixed issues close only w
 
 Classification records audit findings, including independently reproduced current paths; implementation and closure state are tracked separately. A confirmed current defect does not establish the cause of an original historical incident.
 
-Remaining-work readiness differs from classification: 2 open issues have newly verified fixes in #3453/#3454; 8 are feature candidates needing scope checks; 16 await product decisions; 39 need reproduction, deployment evidence or confirmation. The last group includes 37 `needs_reproduction` entries plus #3398 and #3249, whose related fixes are merged but residual scope remains unproven. Concurrent overwrite is an additional confirmed path within #2828 that still requires the recovery-policy decision.
+Remaining-work readiness differs from classification: 2 open issues have fixes under review in #3453/#3454, including the navigation-wait follow-up; 8 are feature candidates needing scope checks; 16 await product decisions; 39 need reproduction, deployment evidence or confirmation. The last group includes 37 `needs_reproduction` entries plus #3398 and #3249, whose related fixes are merged but residual scope remains unproven. Concurrent overwrite is an additional confirmed path within #2828 that still requires the recovery-policy decision.
 
 ## Issue evidence and next actions
 
@@ -1533,23 +1536,24 @@ Remaining-work readiness differs from classification: 2 open issues have newly v
 
 ### [#2828](https://github.com/amruthpillai/reactive-resume/issues/2828) — [Bug] Two files reverted to an older version and recent changes were lost
 
-**Assessment:** `confirmed_bug`. **Confidence:** high for the reproduced current paths. **State:** Open; navigation fix #3453 has green hosted checks and awaits owner review, multi-tab recovery awaits a product decision, and historical incident equivalence remains unproven.
+**Assessment:** `confirmed_bug`. **Confidence:** high for the reproduced current paths. **State:** Open; navigation fix #3453 needs a bounded-wait follow-up and fresh verification, multi-tab recovery awaits a product decision, and historical incident equivalence remains unproven.
 
 **Evidence:**
 
 - Original report describes two resumes reverting without timestamps, actions or version evidence; no reproduction identifies the cause of that historical incident.
 - Real Chromium/PostgreSQL reproduction confirms pending edits can be lost on navigation. PR #3453 flushes queued drafts, retries the latest pending edit and awaits persistence before SPA navigation. Save failure keeps the builder and draft; native `beforeunload` warns while unsaved. Same-resume navigation bypasses the flush.
 - The retry regression fails against unchanged production. Two production browser scenarios, all 804 web tests, typecheck, build, boundaries and repository checks pass on `7fe189f5f`; independent review found no actionable findings.
+- Subsequent Codacy review identified an unbounded navigation wait. A 10-second bounded wait that retains the in-flight draft and navigation action, plus a held-request regression, is being prepared. Published-head green checks do not verify this new correction; follow-up review and tests remain pending.
 - Separate two-browser request barriers reproduce concurrent overwrite: A saves a Name edit, then stale B saves a different Headline and loses A's Name. Sequential streamed-update control preserves both. Evidence: `/tmp/issue-2828-evidence.json`.
 - An experimental expected-revision guard under the existing row lock passes 69 API tests and typecheck, but is uncommitted and lacks client recovery. It is not a completed fix. Millisecond `updated_at` precision needs a monotonic revision check before relying on it for concurrency protection.
 
 **Action plan:**
 
-- Follow #3453 hosted checks and owner review without closing the broader issue. Obtain affected version history/timestamps before attributing the original rollback.
+- Complete and independently verify the bounded-wait correction, then follow fresh #3453 hosted checks and owner review without closing the broader issue. Obtain affected version history/timestamps before attributing the original rollback.
 - Await the user's choice between merging non-overlapping edits with explicit conflicting-value choices, or stopping on every concurrent edit to compare drafts. Then implement paired accepted baseline data/revision, conflict-time latest-data retrieval and rebasing that retains edits made during the request. Keep conflict drafts editable while autosave pauses; never resolve by discarding or reloading the draft.
 - Cover stable-ID item fields/additions/removals, one-sided and competing reorders, and atomic positional arrays in the chosen recovery design. The guard alone does not protect the full builder workflow.
 
-**Implementation:** [PR #3453](https://github.com/amruthpillai/reactive-resume/pull/3453), open head `7fe189f5fecca95a40e135186553af976150547e`. Navigation-save protection is independently verified; simultaneous overwrite and exact historical cause remain outside this PR.
+**Implementation:** [PR #3453](https://github.com/amruthpillai/reactive-resume/pull/3453), open head `7fe189f5fecca95a40e135186553af976150547e`. The published navigation-save path was independently verified; the subsequent bounded-wait correction still requires verification. Simultaneous overwrite and exact historical cause remain outside this PR.
 
 **Related PRs:** [#3453](https://github.com/amruthpillai/reactive-resume/pull/3453)
 
@@ -1618,7 +1622,7 @@ Remaining-work readiness differs from classification: 2 open issues have newly v
 
 ### [#2785](https://github.com/amruthpillai/reactive-resume/issues/2785) — [Feature] <title> allow line breaks in skills keywords
 
-**Assessment:** `feature`. **Confidence:** high. **State:** Open pending resolution/merge.
+**Assessment:** `feature`. **Confidence:** high. **State:** Open awaiting keyword-presentation scope decision.
 
 **Evidence:**
 
@@ -1627,7 +1631,7 @@ Remaining-work readiness differs from classification: 2 open issues have newly v
 
 **Action plan:**
 
-- Add independent keyword presentation setting (inline/list) to skills schema and UI; render bullet/list with columns and long wrapping tests across templates; preserve default.
+- Await the pending choice between per-section Inline/Bulleted list, per-item presentation, or deferral. Once scope is chosen, add the corresponding schema/UI setting and PDF/DOCX rendering with columns, long-keyword wrapping and template tests; preserve the inline default. Do not assume the unanswered scope choice.
 
 **Related PRs:** [#3358](https://github.com/amruthpillai/reactive-resume/pull/3358)
 
@@ -1673,12 +1677,15 @@ Remaining-work readiness differs from classification: 2 open issues have newly v
 
 ### [#2766](https://github.com/amruthpillai/reactive-resume/issues/2766) — [Bug?] ERROR [oRPC]: Error: No object generated: response did not match schema.
 
-**Assessment:** `needs_reproduction`. **Confidence:** medium. **State:** Open pending resolution/merge.
+**Assessment:** `needs_reproduction`. **Confidence:** medium. **State:** Open awaiting exact current Lemonade/provider/model confirmation.
 
 **Evidence:**
 
 - Current ai/service.ts:248-283 connection test uses plain generateText and exact "1", not structured object generation; original reported No object generated test mechanism changed.
 - Imports still parse and validate generated resume JSON (service.ts:327-340); model returning HTTP 200 does not prove schema-valid response.
+
+- Eighteen current AI service tests pass on `05e48a7`, including an actual SDK-to-stub-HTTP contract showing a plain chat request for `1` with no `response_format`. This establishes the current connection-test contract, not exact Lemonade/model compatibility.
+- Posted [current requirements and a scoped reproduction request](https://github.com/amruthpillai/reactive-resume/issues/2766#issuecomment-5554087250), distinguishing connection testing from schema-valid resume generation and PDF-attachment import. No additional source change or closure was made.
 
 **Action plan:**
 
