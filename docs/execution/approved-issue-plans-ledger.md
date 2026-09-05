@@ -64,6 +64,16 @@ state changes are outside scope.
 | 34 Gengar skill layout | #2611 | pending | unassigned | — | `7a98f6662` → — | template owner coordinates 26/28/29 | live revalidation pending | — | — | restore Gengar-only rating placement | visual render review |
 | 35 resume import errors | #2768 | pending | unassigned | — | `7a98f6662` → — | none | live revalidation pending | — | — | reproduce before changing parser/dialog lifecycle | source fixture may be missing |
 
+## Active orchestration
+
+| Scope | Task / dispatch | Owner worktree | State | Deliverable |
+| --- | --- | --- | --- | --- |
+| Plans 01–06 | `task_855fbee0a803` / `ctx_949458744061` | `codex-audit-backend-01-06` | diagnosing | current issue/source/PR audit and executable unit split |
+| Plans 07–11, 35 | `task_9f27829ca50f` / `ctx_11f7d7cf6d17` | `codex-audit-backend-07-11-35` | diagnosing | current issue/source/PR audit and executable unit split |
+| Plans 12–19 | `task_1c6582ccdeae` / `ctx_795fced595ef` | `codex-audit-rendering-12-19` | diagnosing | current issue/source/PR audit and renderer overlap map |
+| Plans 20–34 | `task_47ed7eb02d48` / `ctx_50d8257459ab` | `codex-audit-builder-20-34` | diagnosing | current issue/source/PR audit and schema/template overlap map |
+| Plan 07 implementation | `task_aee702e37eae` / not dispatched | planned `codex/issue-2722-postgres-docs` | waits on plans 07–11 audit | two-file docs change, verification, commit, independent review |
+
 ## Existing PR and residual accounting
 
 | Item | Live state | Exact head | Evidence / checks | Next action |
