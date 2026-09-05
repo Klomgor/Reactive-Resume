@@ -78,4 +78,5 @@ state changes are outside scope.
 
 ## Publication log
 
+- Coordinator ledger: PR #3456 (`codex/issue-execution-ledger` → `main`), open and intentionally unmerged.
 - No implementation PRs published by this run yet.
