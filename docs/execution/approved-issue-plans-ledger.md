@@ -68,8 +68,8 @@ state changes are outside scope.
 
 | Item | Live state | Exact head | Evidence / checks | Next action |
 | --- | --- | --- | --- | --- |
-| PR #3453 | bootstrap revalidation pending | recorded `ccd111da894cf7d44cc3dee06c937f70d91fef24` | planning package says open, reviewed, hosted checks passed | fetch live head/check/review state; keep unmerged |
-| PR #3454 | bootstrap revalidation pending | recorded `80b0d3ab02cc4292f8a4514db8c2516adc1f9dc3` | planning package says open, reviewed, hosted checks passed | fetch live head/check/review state; keep unmerged |
+| PR #3453 | open, non-draft, mergeable, approved | `ccd111da894cf7d44cc3dee06c937f70d91fef24` | live 2026-09-05: E2E/autofix/Codacy/CodeRabbit/Greptile successful on exact head | monitor only; keep unmerged |
+| PR #3454 | open, non-draft, mergeable, approved | `80b0d3ab02cc4292f8a4514db8c2516adc1f9dc3` | live 2026-09-05: E2E/autofix/Codacy/CodeRabbit/Greptile successful on exact head | monitor only; keep unmerged |
 | Residual #2828 | pending product direction | — | stale whole-document concurrent-tab overwrite reproduced in Chromium/PostgreSQL; excluded from 63 | account for separately; do not implement conflict UI until product policy selected |
 
 ## Rulings and blockers log
