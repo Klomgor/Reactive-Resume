@@ -12,10 +12,9 @@ Fix every review finding with TDD while preserving existing supported-table beha
    `section` with `aria-label`, multiple `tbody` groups, malformed/repaired table markup, and other representative
    unrepresented descendants. Ordinary edits, prop updates, lock/keyboard paths, and cancel must preserve exact original
    HTML bytes for these cases. Do not widen unsafe HTML support.
-2. Define successful conversion as explicit plain text, not normalized table HTML. Use boolean confirmation UI matching
-   action; remove ignored text-prompt value. Test confirmed output exactly, cancellation, reopening/editability after
-   conversion, and semantics for cells, rows, paragraphs, inline marks, captions, spans, and empty cells according to
-   approved Plan 16 direction. Keep the operation explicit and irreversible only after confirmation.
+2. Follow pinned Plan 16: destructive conversion UX is outside this repair. Remove the `Convert to editable text` action
+   and `usePrompt` path entirely rather than inventing raw-text or normalized-HTML semantics. Test that unsupported content
+   exposes only an accessible read-only notice and no conversion affordance or ordinary interaction can overwrite it.
 3. Strengthen authenticated E2E so an unrelated Basics-name edit proves a real save transition and survives reload before
    table assertions. Avoid accepting a stale pre-existing Saved status.
 
