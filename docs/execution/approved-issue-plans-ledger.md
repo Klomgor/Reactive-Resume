@@ -73,8 +73,8 @@ state changes are outside scope.
 | Plans 07–11, 35 | `task_9f27829ca50f` / `ctx_11f7d7cf6d17` | `codex-audit-backend-07-11-35` | complete; worker release pending | 07/09/10/11 ready after named brief corrections; 08 needs engineering scope amendment; 35 diagnostic-only |
 | Plans 12–19 | `task_1c6582ccdeae` / `ctx_795fced595ef` | `codex-audit-rendering-12-19` | complete; worker release pending | 15A/16/19 implementation-ready; remaining causes split into diagnostics with named evidence gates |
 | Plans 20–34 | `task_47ed7eb02d48` / `ctx_50d8257459ab` | `codex-audit-builder-20-34` | complete; worker release pending | ready: 20A, 21, 22, 23A, 28 diagnostics, 32, 34; remaining plans split at evidence/design gates |
-| Plan 07 implementation | `task_aee702e37eae` / not dispatched | planned `codex/issue-2722-postgres-docs` | waits on plans 07–11 audit | two-file docs change, verification, commit, independent review |
-| Plan 09 implementation | `task_e450ea143bfa` / not dispatched | planned `codex/issue-2705-git-backup-docs` | waits on plans 07–11 audit | two-file docs change, synthetic local-Git validation, commit, independent review |
+| Plan 07 implementation | `task_aee702e37eae` / `ctx_ed134b1d79ce` | `issue-2722-postgres-docs`; target `codex/issue-2722-postgres-docs` | starting | two-file docs change, verification, commit, independent review |
+| Plan 09 implementation | `task_e450ea143bfa` / `ctx_3b575cf1d5c7` | `issue-2705-git-backup-docs`; target `codex/issue-2705-git-backup-docs` | starting | two-file docs change, synthetic local-Git validation, commit, independent review |
 | Plan 11 implementation | `task_58d76423d364` / not dispatched | planned `codex/issue-3010-jsearch-docs` | waits on plans 07–11 audit | three-file docs change, source/test validation, commit, independent review |
 | Plan 02 synthetic recovery | `task_bae016c4d1f2` / `ctx_303f5d1f1031` | `issue-3181-recovery-procedure`; target `codex/issue-3181-recovery-procedure` | implementing | pure deterministic compare tool, safeguards docs, TDD evidence, commit, independent review |
 
