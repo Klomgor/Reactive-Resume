@@ -7,7 +7,7 @@ RTK, issue/domain instructions, ADRs, and applicable skills. Run root Intent inv
 source edits. Do not spawn subagents. Do not touch ledger, mutate issues, merge, push, or create PR.
 
 Start from refreshed `origin/main`, require clean worktree, rename branch `codex/issue-2782-picture-fit`, revalidate live
-#2782 and all open implementation PRs, and run plan drift check. Stop on overlapping implementation or contradicted picture
+# 2782 and all open implementation PRs, and run plan drift check. Stop on overlapping implementation or contradicted picture
 contract. Historical #3168/#3088/#2794 causes remain outside this implementation and must not be claimed fixed.
 
 Strict TDD and bounded scope:

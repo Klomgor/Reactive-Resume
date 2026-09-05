@@ -7,7 +7,7 @@ issue/domain instructions, ADRs, and applicable skills, including test-driven-de
 matching local skill before source edits. Do not spawn subagents. Do not touch ledger, mutate issues, merge, push, or open PR.
 
 Start from refreshed `origin/main`, require clean worktree, rename branch `codex/issue-3196-editable-tables`, revalidate live
-#3196 and open PRs, and run exact drift check. Preserve merged #3438. Historical screenshot equivalence remains unverified
+# 3196 and open PRs, and run exact drift check. Preserve merged #3438. Historical screenshot equivalence remains unverified
 without source, but Q11 independently approves supported table editing.
 
 Implement one atomic TDD unit across editor/HTML/PDF:
