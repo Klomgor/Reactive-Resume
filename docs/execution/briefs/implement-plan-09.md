@@ -19,12 +19,15 @@ Required execution:
   `docs/guides/undoing-changes-and-version-history.mdx`.
 - Document single-resume JSON, independent cover-letter JSON, and account archive differences; stable filenames; image URL
   availability; private-data/repository-visibility warning; local-only Git workflow; non-destructive import-as-new recovery;
-  rolling in-app versions versus owner-managed Git. Include plan's exact local-only command sequence. No automatic sync,
-  credentials, remote URL, `git push`, whole-account restore promise, or new product UI.
+  rolling in-app versions versus owner-managed Git. Correct planning prose before publication: every user-facing code block
+  must use ordinary `git init`, `git add -- ...`, `git diff`, `git commit`, and `git show`. Never publish agent-only
+  `rtk proxy git` commands. No automatic sync, credentials, remote URL, `git push`, whole-account restore promise, or new
+  product UI.
 - Use only synthetic data. Run API export/version tests specified by plan. Validate single-resume import round-trip using
   existing synthetic fixtures/tests or a bounded disposable test; never use private data.
 - Execute command sequence in `mktemp -d`, staging only `resume.json` and `cover-letter.json`; show changed visible field in
-  `git diff`. Do not modify global Git config if identity missing; record limitation.
+  `git diff`. Executor shell may wrap validation with `rtk proxy`, but copied documentation commands must remain plain Git.
+  Do not modify global Git config if identity missing; record limitation.
 - Run plan's focused `rg`, markdown lint, `git diff --check`, and two-file name-only gate. Self-review every acceptance item.
 - Commit with normal message. Leave branch local for independent review.
 
