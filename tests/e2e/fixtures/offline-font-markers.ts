@@ -11,7 +11,7 @@ export type PdfMarker = {
 	marker: string;
 };
 
-export type PdfMarkerBox = {
+type PdfMarkerBox = {
 	x: number;
 	y: number;
 	width: number;
