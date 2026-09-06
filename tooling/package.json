@@ -18,9 +18,13 @@
 	"devDependencies": {
 		"@lingui/format-po": "^6.6.0",
 		"@reactive-resume/config": "workspace:*",
+		"@reactive-resume/docx": "workspace:*",
 		"@reactive-resume/env": "workspace:*",
+		"@reactive-resume/pdf": "workspace:*",
 		"@reactive-resume/resume": "workspace:*",
 		"@types/pg": "^8.23.1",
+		"pdfjs-dist": "6.3.289",
+		"jszip": "3.10.1",
 		"@typescript/native-preview": "7.0.0-dev.20260707.2",
 		"drizzle-orm": "1.0.0-rc.4",
 		"pg": "^8.23.0",
