@@ -17,7 +17,7 @@ used to start implementation.
 
 ## Historical execution contract (non-executable)
 
-This document records a planning-only audit. A future operator request to execute this plan authorizes ordinary repository implementation, verification, commits and PR work within its approved scope; do not ask again for those routine actions. Explicit product decisions and private/production data access remain gates only where named below. Never merge. Use a fresh `codex/` worktree from current `origin/main`, read actual `AGENTS.md`, check `rtk proxy git status --short`, and run intent skill discovery before edits. Use CodeGraph first only when that worktree has `.codegraph/`. Do not reset or overwrite another worker's files. The coordinator owns the plan index; report status rather than editing another worker's index.
+This archived document grants no implementation authorization. Do not run its commands, create its schema, or reopen its branch. Work may resume only after a new explicit maintainer decision reverses the 2026-09-06 `not_planned` disposition; ordinary execution requests for this package do not override that decision.
 
 Run this exact drift command first:
 

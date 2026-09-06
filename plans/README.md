@@ -1,22 +1,22 @@
-# Approved issue execution plans
+# Issue execution plans and dispositions
 
-This package contains **35 approved plans covering 63 unique audited issues**, verified against `inventory.json`. Shared grouping does not establish a shared root cause. Each issue retains its own evidence and closure criteria. Historical reproduction limits are explicit in the individual plans.
+This package contains **35 plan records covering 63 unique audited issues**, verified against `inventory.json`: 34 approved plans and one later-declined Plan 10 record retained for audit history. Shared grouping does not establish a shared root cause. Each issue retains its own evidence and closure criteria. Historical reproduction limits are explicit in the individual plans.
 
-Start with [ORCHESTRATOR.md](ORCHESTRATOR.md), [DECISIONS.md](DECISIONS.md), and [PR-HANDOFF.md](PR-HANDOFF.md). The maintainer approved all selected plan directions on 2026-09-05. Earlier “agent judgment” labels record provenance; they are approved for future execution. This documentation PR implements no product changes.
+Start with [ORCHESTRATOR.md](ORCHESTRATOR.md), [DECISIONS.md](DECISIONS.md), and [PR-HANDOFF.md](PR-HANDOFF.md). The maintainer approved all selected plan directions on 2026-09-05, then superseded Plan 10 on 2026-09-06 as not planned. Earlier “agent judgment” labels record provenance; they remain approved for future execution except where a later disposition explicitly says otherwise. This documentation PR implements no product changes.
 
 ## Execution order and coordination
 
 1. Revalidate current issue/PR state and source drift. Skip work already resolved; retain evidence in the execution ledger.
-2. Start independent diagnostic and documentation work: 01–14 and 35, subject to each plan's access/reproduction gates. Plan 07 declines AIO; it is not an AIO implementation.
+2. Start independent diagnostic and documentation work: 01–09, 11–14 and 35, subject to each plan's access/reproduction gates. Plan 07 declines AIO; it is not an AIO implementation. Plan 10 is not planned and must not be executed.
 3. Coordinate shared rich-text ownership for 16 and 19; land neither over an unreviewed competing edit. Coordinate 13/14/17/18 rendering changes through one owner per overlapping file.
 4. Coordinate section/schema/rendering work: 20–24 and 32 share layout, menus, or date behavior. Q1–Q10 in DECISIONS.md are authoritative. Plan 21 and 31 must preserve accessible section labels.
 5. Schedule 15 and 25 together for image-storage compatibility, 27 with font diagnostics in 13/14, and 26/28/29/34 around shared template ownership. Run 30/31 after relevant rendering baselines are stable. Plan 33 begins with reference research and a reviewable visual proposal.
 
-These are coordination constraints, not mandatory sequential batches. Build the actual dependency graph from current files and approved scopes. Use stacked PRs only for true dependencies and disclose base branches. Independent fixes start from current main. One coherent fix may address several issues; a plan may require separate PRs when causes differ.
+These are coordination constraints, not mandatory sequential batches. Build the actual dependency graph from current files and current dispositions/scopes. Use stacked PRs only for true dependencies and disclose base branches. Independent fixes start from current main. One coherent fix may address several issues; a plan may require separate PRs when causes differ.
 
 ## Readiness and limits
 
-“Approved plan” means product direction is approved, not that every historical report was reproduced. Diagnostic plans begin with their evidence gates and implement only proven residuals. Private recovery work needs legitimate access and backups. Europass needs approval of concrete visual artifacts before template implementation. Technical feasibility failures retain the original content and become documented blockers.
+For active entries, “approved plan” means product direction is approved, not that every historical report was reproduced. A `not_planned` disposition is final unless the maintainer explicitly reverses it. Diagnostic plans begin with their evidence gates and implement only proven residuals. Private recovery work needs legitimate access and backups. Europass needs approval of concrete visual artifacts before template implementation. Technical feasibility failures retain the original content and become documented blockers.
 
 PRs #3453 and #3454 are already raised and unmerged at the recorded checkpoint; inspect their live state before touching them. Issue #2828 has a concurrent-edit residual documented outside the 63-issue inventory. Neither opening a PR nor passing a broad suite proves an issue resolved. Keep PRs unmerged; do not post issue comments or close issues during the execution run unless separately instructed.
 
