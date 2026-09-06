@@ -25,14 +25,14 @@ export function getVisibleLeftSidebarSections(data: ResumeData): LeftSidebarSect
 	);
 }
 
-export function focusLeftSidebarSection(section: LeftSidebarSection): void {
-	const editorTarget = document.getElementById(`sidebar-${section}`);
+function focusSidebarSection(sectionId: string): void {
+	const editorTarget = document.getElementById(`sidebar-${sectionId}`);
 	if (editorTarget) {
 		editorTarget.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
 		return;
 	}
 
-	const recoveryTargetId = `sidebar-hidden-${section}`;
+	const recoveryTargetId = `sidebar-hidden-${sectionId}`;
 	const focusRecoveryTarget = () => {
 		const recoveryTarget = document.getElementById(recoveryTargetId);
 		if (!recoveryTarget) return;
@@ -49,6 +49,14 @@ export function focusLeftSidebarSection(section: LeftSidebarSection): void {
 	}
 
 	focusRecoveryTarget();
+}
+
+export function focusLeftSidebarSection(section: LeftSidebarSection): void {
+	focusSidebarSection(section);
+}
+
+export function focusCustomSidebarSection(sectionId: string): void {
+	focusSidebarSection(sectionId);
 }
 
 type SectionEditorListProps = {

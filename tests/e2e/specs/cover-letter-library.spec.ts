@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { Pool } from "pg";
-import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
+import { createSampleResumeFromDashboard } from "../fixtures/resume";
 import { expect, test } from "../fixtures/test";
 
 test("imports a library letter into the builder as an independent copy", async ({ authPage: page }, testInfo) => {
@@ -45,7 +45,7 @@ test("imports a library letter into the builder as an independent copy", async (
 	await editor.getByRole("button", { name: "Close", exact: true }).click();
 
 	await page.goto(builderUrl);
-	await openSidebarSection(page, "Custom Sections");
+	await page.getByRole("button", { name: "Cover Letter", exact: true }).click();
 	await page.getByRole("button", { name: "Add a new item", exact: true }).last().click();
 	const createItem = page.getByRole("dialog", { name: "Create a new cover letter", exact: true });
 	await createItem.getByLabel("Import from library", { exact: true }).click();

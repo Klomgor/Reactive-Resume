@@ -164,7 +164,7 @@ function CustomSectionContainer({ section }: CustomSectionContainerProps) {
 	};
 
 	return (
-		<div className="rounded-md border">
+		<div id={`sidebar-${section.id}`} className="rounded-md border">
 			{/* Section Header */}
 			<div className="group flex select-none">
 				<button
