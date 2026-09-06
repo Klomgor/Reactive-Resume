@@ -10,8 +10,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - Coordinator branch: `codex/issue-execution-ledger`
 - Started: 2026-09-05, Europe/Berlin
 - Merge policy changed: 2026-09-06; maintainer authorized immediate merge of complete, mergeable PRs
-- Current integrated main evidence: `578cb496aa326751dd2ab1bea53db868daa35908` after twenty approved merges,
-  including Plan 34 PR #3473, static-analysis follow-up PR #3474, and Plan 33A research PR #3475
+- Current integrated main evidence: `66c25efe18775f91640e66d1b2c6868bc70f0b55` after twenty-one approved merges,
+  including Plan 33A research PR #3475 and imported-table E2E repair PR #3476
 - Status values: `pending`, `diagnosing`, `implementing`, `reviewing`, `published`, `merged`, `no-change`, `blocked`,
   `declined`, `skipped`
 - Evidence rule: each terminal disposition needs current source/GitHub proof, focused tests or reproduction evidence, and
@@ -167,7 +167,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | Plan 21 implementation | `task_b7cc0bb3ec69` / `ctx_23c399d315ec` | `issue-3060-section-heading-visibility` | complete; worker released | commit `eeb9e09c4`; full suite, affected typechecks, boundaries, Biome, diff, and pre-commit gates green |
 | Plan 21 independent review | `task_c115a5436782` / `ctx_681b494ae3ed` | same Plan 21 worktree | reviewing | exact 25-file feature diff plus latest-main overlap under review |
 | Plan 27A font diagnostic | `task_1635d6e2b93c` / `ctx_0f872f054c32` | `issue-3377-offline-font-diagnostic` | remediating review findings | add raster glyph evidence, narrow server egress to concrete external blocker, refresh boundaries result, correct size arithmetic |
-| Imported-table E2E baseline repair | `task_c5a99a1210d5` / `ctx_4a7956dbe266` | `imported-table-raster-ci-fix` | reviewing | commit `6f274496d`; hosted false positive traced to unrelated endPath with stale stroke state; exact 17/12 topology retained; focused independent review active |
+| Imported-table E2E baseline repair | `task_c5a99a1210d5` / `ctx_4a7956dbe266` | `codex/fix-imported-table-raster-ci` | complete; worker released; PR #3476 merged | commit `6f274496d`; independent review clean; exact 17/12 table topology retained while unrelated stale-stroke endPath is excluded; merge `66c25efe1` |
 
 ## Existing PR and residual accounting
 
@@ -190,6 +190,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | PR #3473 | merged 2026-09-06 | `f2186d4f7495804670c6973b9454578280e461a7` → merge `2a4a1583b` | current main integrated; independent review clean; 51 focused PDF tests, PDF typecheck, Biome, boundaries, and diff green; normal merge | complete; #2611 closed |
 | PR #3474 | merged 2026-09-06 | `ec0a18fd8b5cd0b9b1cc7ee31a12d2d783eb4ffd` → merge `97f34b7cc` | Codacy findings from #3472 removed: clipboard HTML now parsed with DOMParser and new LRM/RLM literals use escapes; 102 web + 44 PDF tests, two typechecks, Biome, diff green | static-analysis follow-up complete |
 | PR #3475 | merged 2026-09-06 | `57f2c30` → merge `578cb496a` | independent full-resolution visual rereview passed after collision and clipping remediation; research/XML/bounds/source-mapping gates clean | research complete; issue #2689 remains open pending explicit visual/product approval before renderer implementation |
+| PR #3476 | merged 2026-09-06 | `6f274496d` → merge `66c25efe1` | repeated hosted false positive reproduced from artifact; two consecutive dedicated E2E runs, focused/full gates, and independent review clean | imported-table CI baseline repaired; no production behavior change |
 | Residual #2828 | pending product direction | — | stale whole-document concurrent-tab overwrite reproduced in Chromium/PostgreSQL; excluded from 63 | account for separately; do not implement conflict UI until product policy selected |
 
 ## Rulings and blockers log
@@ -201,7 +202,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - 2026-09-06 — Publication throughput policy: require one independent pre-publication review, run focused risk-based gates,
   then push and open PR immediately. Hosted CI runs concurrently under coordinator monitoring. Repeat review only for a
   concrete finding and limit it to the changed seam; workers do not poll hosted state or repeat unchanged full suites.
-- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Twenty approved PRs were
+- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Twenty-one approved PRs were
   squash-merged without admin bypass. Plan 10 retired-link work was explicitly rejected as disproportionate redirect and
   error-handling overhead; PR #3463 closed unmerged and rationale recorded on issue #2836.
 - 2026-09-06 — Plan 22 orchestration metadata initially named issue #3060. Live issue revalidation corrected ownership to
@@ -221,7 +222,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   #3462 (`5850230f8`), #3461 (`ab67831e4`), #3464 (`999cd618c`), #3466 (`695cdb851`), and
   #3465 (`b85d285b6`), #3467 (`0fbeeeb4c`), #3468 (`38832014b`), #3469 (`870388192`), and
   #3470 (`744eaa902`), #3471 (`a6057abd7`), #3472 (`ea97de5ec`), #3473 (`2a4a1583b`), and
-  #3474 (`97f34b7cc`), #3475 (`578cb496a`).
+  #3474 (`97f34b7cc`), #3475 (`578cb496a`), #3476 (`66c25efe1`).
 - Plan 10: PR [#3463](https://github.com/amruthpillai/reactive-resume/pull/3463), closed unmerged by maintainer direction;
   issue [#2836 comment](https://github.com/amruthpillai/reactive-resume/issues/2836#issuecomment-5556080394) records not-planned rationale.
 - Plan 16: PR [#3464](https://github.com/amruthpillai/reactive-resume/pull/3464), merged as
@@ -248,3 +249,5 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   `97f34b7ccda73eb8d767205741d68465cbc1c0c1`.
 - Plan 33A: PR [#3475](https://github.com/amruthpillai/reactive-resume/pull/3475), merged as
   `578cb496aa326751dd2ab1bea53db868daa35908`; issue #2689 remains open at its explicit visual/product gate.
+- Imported-table E2E repair: PR [#3476](https://github.com/amruthpillai/reactive-resume/pull/3476), merged as
+  `66c25efe18775f91640e66d1b2c6868bc70f0b55`; exact Plan 16 table topology remains enforced.
