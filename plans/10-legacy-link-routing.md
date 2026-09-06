@@ -1,11 +1,21 @@
-# 10 — Decide retired-link routing and owner notifications
+# 10 — Retired-link routing and owner notifications (not planned)
 
 **Planned at:** `7a98f6662ffc6fd5a1a7281c30ab3829fe3722ec` (2026-09-05).  
-**Status:** agent-selected prospective in-app notice; ready for future implementation. **Category:** feature.  
+**Status:** superseded by maintainer decision on 2026-09-06; do not implement. **Category:** declined feature.
 **Priority:** P2. **Effort:** 2–4 days for prospective notices and transaction tests. **Risk:** High: attribution, privacy and failed-request counting.  
 **Issue:** [#2836](https://github.com/amruthpillai/reactive-resume/issues/2836).
 
-## Execution contract
+## Final disposition
+
+Maintainer declined this feature after planning. Retired-link support is not planned because redirect lifecycle,
+retention, slug reuse, ownership, privacy-safe tracking, and invalid-link error handling create disproportionate
+ongoing overhead. PR #3463 was closed unmerged, and the decision is recorded in
+[issue #2836](https://github.com/amruthpillai/reactive-resume/issues/2836#issuecomment-5556080394).
+
+Remaining content below is retained as historical planning evidence only. It is non-executable and must not be
+used to start implementation.
+
+## Historical execution contract (non-executable)
 
 This document records a planning-only audit. A future operator request to execute this plan authorizes ordinary repository implementation, verification, commits and PR work within its approved scope; do not ask again for those routine actions. Explicit product decisions and private/production data access remain gates only where named below. Never merge. Use a fresh `codex/` worktree from current `origin/main`, read actual `AGENTS.md`, check `rtk proxy git status --short`, and run intent skill discovery before edits. Use CodeGraph first only when that worktree has `.codegraph/`. Do not reset or overwrite another worker's files. The coordinator owns the plan index; report status rather than editing another worker's index.
 

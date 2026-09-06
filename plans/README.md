@@ -33,7 +33,7 @@ PRs #3453 and #3454 are already raised and unmerged at the recorded checkpoint; 
 | [07 — Record declined AIO packaging and improve separate-PostgreSQL setup docs](07-aio-deployment.md) | #2722 |
 | [08 — Decide root-domain public resume routing](08-root-public-resume.md) | #2669 |
 | [09 — Document explicit JSON backup in a user-controlled Git repository](09-external-version-backup.md) | #2705 |
-| [10 — Decide retired-link routing and owner notifications](10-legacy-link-routing.md) | #2836 |
+| [10 — Retired-link routing and owner notifications (not planned)](10-legacy-link-routing.md) | #2836 |
 | [11 — Document JSearch removal and the current tailoring workflow](11-job-search-policy.md) | #3010 |
 | [Plan 12: Diagnose blank, black, and incomplete resume output at the first failing boundary](12-preview-and-export-failures.md) | #3323, #3290, #3033, #3007, #2609 |
 | [Plan 13: Reproduce remaining font, glyph, and spacing reports without undoing verified fixes](13-font-glyph-and-spacing.md) | #3249, #3159, #3147, #3093, #3089, #2988 |

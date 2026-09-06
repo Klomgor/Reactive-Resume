@@ -62,7 +62,7 @@
 			"file": "10-legacy-link-routing.md",
 			"issues": [2836],
 			"area": "backend",
-			"status": "approved_plan"
+			"status": "not_planned"
 		},
 		{
 			"file": "11-job-search-policy.md",
