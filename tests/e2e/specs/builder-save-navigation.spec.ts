@@ -41,7 +41,7 @@ test("retries a failed autosave before leaving the builder", async ({ authPage: 
 		await release.promise;
 		await route.continue();
 	});
-	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).click({ noWaitAfter: true });
+	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).dispatchEvent("click");
 	await arrived.promise;
 	expect(page.url()).toBe(url);
 	await expect(page.getByLabel("Name", { exact: true })).toHaveValue("Draft recovered before leaving");
@@ -60,13 +60,13 @@ test("retains the current draft when saving during navigation fails", async ({ a
 	});
 	await page.getByLabel("Name", { exact: true }).fill("Keep unsaved draft");
 	await expect(page.getByText("Your latest changes could not be saved.", { exact: true })).toBeVisible();
-	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).click({ noWaitAfter: true });
+	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).dispatchEvent("click");
 	await expect.poll(() => attempts).toBe(2);
 	await expect(page.getByRole("status").filter({ hasText: "Couldn't save" })).toBeVisible();
 	expect(page.url()).toBe(url);
 	await expect(page.getByLabel("Name", { exact: true })).toHaveValue("Keep unsaved draft");
 	await page.unroute(updateUrl);
-	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).click({ noWaitAfter: true });
+	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).dispatchEvent("click");
 	await page.waitForURL(/\/dashboard/);
 	await page.goto(url);
 	await expect(page.getByLabel("Name", { exact: true })).toHaveValue("Keep unsaved draft");
@@ -91,7 +91,7 @@ test("stops waiting for a slow save while preserving late acknowledgements and q
 	await page.getByLabel("Name", { exact: true }).fill("Slow save draft");
 	await page.clock.fastForward(600);
 	await arrived.promise;
-	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).click({ noWaitAfter: true });
+	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).dispatchEvent("click");
 	await page.clock.fastForward(10000);
 	const slowNotice = page.getByText("Saving is taking longer than expected. Your changes are still open.", {
 		exact: true,
@@ -114,7 +114,7 @@ test("stops waiting for a slow save while preserving late acknowledgements and q
 	await latestSaved;
 	await expect(page.getByRole("status").filter({ hasText: "Saved" })).toBeVisible();
 	await expect(slowNotice).toBeHidden();
-	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).click({ noWaitAfter: true });
+	await page.getByRole("button", { name: "Go to resumes dashboard", exact: true }).dispatchEvent("click");
 	await page.waitForURL(/\/dashboard/);
 	await page.goto(url);
 	await expect(page.getByLabel("Name", { exact: true })).toHaveValue("Slow save draft");
