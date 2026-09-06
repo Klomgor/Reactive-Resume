@@ -59,8 +59,13 @@ const makeFixture = (items: ResumeData["sections"]["experience"]["items"]): Resu
 	return data;
 };
 
+const numberedTokens = (prefix: string, count: number) =>
+	Array.from({ length: count }, (_value, index) => `${prefix}_${String(index + 1).padStart(3, "0")}`);
+
 const numberedParagraphs = (prefix: string, count: number) =>
-	Array.from({ length: count }, (_value, index) => `<p>${prefix}_${String(index + 1).padStart(3, "0")}</p>`).join("");
+	numberedTokens(prefix, count)
+		.map((token) => `<p>${token}</p>`)
+		.join("");
 
 const expectTokensExactlyOnce = (pages: string[], tokens: string[]) => {
 	const renderedText = pages.join(" ");
@@ -75,9 +80,11 @@ describe("item pagination token matrix", () => {
 				makeItem("boundary", numberedParagraphs("BOUNDARY", 26)),
 				makeItem("fit", numberedParagraphs("FIT", 4)),
 			]),
-			tokens: ["FIT_001", "FIT_002", "FIT_003", "FIT_004"],
+			allTokens: [...numberedTokens("BOUNDARY", 26), ...numberedTokens("FIT", 4)],
+			sampledTokens: ["FIT_001", "FIT_002", "FIT_003", "FIT_004"],
 			expectedPages: 1,
 			expectedTokenPages: [0, 0, 0, 0],
+			expectsPhysicalOverflow: false,
 		},
 		{
 			name: "item fits a full page but not remaining space",
@@ -85,16 +92,20 @@ describe("item pagination token matrix", () => {
 				makeItem("boundary", numberedParagraphs("BOUNDARY", 48)),
 				makeItem("full-page", numberedParagraphs("FULL_PAGE", 42)),
 			]),
-			tokens: ["FULL_PAGE_001", "FULL_PAGE_021", "FULL_PAGE_042"],
+			allTokens: [...numberedTokens("BOUNDARY", 48), ...numberedTokens("FULL_PAGE", 42)],
+			sampledTokens: ["FULL_PAGE_001", "FULL_PAGE_021", "FULL_PAGE_042"],
 			expectedPages: 3,
 			expectedTokenPages: [1, 1, 2],
+			expectsPhysicalOverflow: true,
 		},
 		{
 			name: "item taller than a page",
 			data: makeFixture([makeItem("oversized", numberedParagraphs("OVERSIZED", 180))]),
-			tokens: ["OVERSIZED_001", "OVERSIZED_090", "OVERSIZED_180"],
+			allTokens: numberedTokens("OVERSIZED", 180),
+			sampledTokens: ["OVERSIZED_001", "OVERSIZED_090", "OVERSIZED_180"],
 			expectedPages: 5,
 			expectedTokenPages: [0, 2, 4],
+			expectsPhysicalOverflow: true,
 		},
 		{
 			name: "two-line paragraph near boundary",
@@ -102,9 +113,11 @@ describe("item pagination token matrix", () => {
 				makeItem("boundary", numberedParagraphs("BOUNDARY", 52)),
 				makeItem("paragraph", "<p>PARAGRAPH_001 first line<br />PARAGRAPH_002 second line</p>"),
 			]),
-			tokens: ["PARAGRAPH_001", "PARAGRAPH_002"],
+			allTokens: [...numberedTokens("BOUNDARY", 52), "PARAGRAPH_001", "PARAGRAPH_002"],
+			sampledTokens: ["PARAGRAPH_001", "PARAGRAPH_002"],
 			expectedPages: 2,
 			expectedTokenPages: [1, 1],
+			expectsPhysicalOverflow: true,
 		},
 		{
 			name: "nested bullets",
@@ -114,16 +127,24 @@ describe("item pagination token matrix", () => {
 					"<ul><li><p>NESTED_001</p><ul><li><p>NESTED_002</p></li><li><p>NESTED_003</p></li></ul></li></ul>",
 				),
 			]),
-			tokens: ["NESTED_001", "NESTED_002", "NESTED_003"],
+			allTokens: ["NESTED_001", "NESTED_002", "NESTED_003"],
+			sampledTokens: ["NESTED_001", "NESTED_002", "NESTED_003"],
 			expectedPages: 1,
 			expectedTokenPages: [0, 0, 0],
+			expectsPhysicalOverflow: false,
 		},
-	])("preserves every token exactly once: $name", async ({ data, tokens, expectedPages, expectedTokenPages }) => {
-		const pages = await readPhysicalPages(await parsePdf(await renderPdf(data)));
-		expect(pages).toHaveLength(expectedPages);
-		expect(tokens.map((token) => pages.findIndex((page) => page.includes(token)))).toEqual(expectedTokenPages);
-		expectTokensExactlyOnce(pages, tokens);
-	});
+	])(
+		"preserves every token exactly once: $name",
+		async ({ data, allTokens, sampledTokens, expectedPages, expectedTokenPages, expectsPhysicalOverflow }) => {
+			const authoredPagesBeforeRender = structuredClone(data.metadata.layout.pages);
+			const pages = await readPhysicalPages(await parsePdf(await renderPdf(data)));
+			expect(pages).toHaveLength(expectedPages);
+			expect(sampledTokens.map((token) => pages.findIndex((page) => page.includes(token)))).toEqual(expectedTokenPages);
+			expectTokensExactlyOnce(pages, allTokens);
+			expect(data.metadata.layout.pages).toEqual(authoredPagesBeforeRender);
+			if (expectsPhysicalOverflow) expect(pages.length).toBeGreaterThan(authoredPagesBeforeRender.length);
+		},
+	);
 
 	it("preserves built-in and custom items across an Azurill sidebar and main-column overflow", async () => {
 		const data = makeFixture([makeItem("builtin", numberedParagraphs("BUILTIN", 150))]);
@@ -156,6 +177,7 @@ describe("item pagination token matrix", () => {
 		];
 		data.metadata.layout.pages[0]?.main.push("custom-experience");
 
+		const authoredPagesBeforeRender = structuredClone(data.metadata.layout.pages);
 		const pages = await readPhysicalPages(await parsePdf(await renderPdf(data, "azurill")));
 		expect(pages).toHaveLength(5);
 		expect(
@@ -163,7 +185,9 @@ describe("item pagination token matrix", () => {
 				pages.findIndex((page) => page.includes(token)),
 			),
 		).toEqual([0, 3, 4, 4, 0]);
-		expectTokensExactlyOnce(pages, ["BUILTIN_001", "BUILTIN_150", "CUSTOM_001", "CUSTOM_030", "SIDEBAR_001"]);
+		expectTokensExactlyOnce(pages, [...numberedTokens("BUILTIN", 150), ...numberedTokens("CUSTOM", 30), "SIDEBAR_001"]);
+		expect(data.metadata.layout.pages).toEqual(authoredPagesBeforeRender);
+		expect(pages.length).toBeGreaterThan(authoredPagesBeforeRender.length);
 	});
 
 	it("records unsafe renderer fallback for an oversized non-wrapping item", async () => {
