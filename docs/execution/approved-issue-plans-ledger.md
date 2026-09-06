@@ -10,8 +10,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - Coordinator branch: `codex/issue-execution-ledger`
 - Started: 2026-09-05, Europe/Berlin
 - Merge policy changed: 2026-09-06; maintainer authorized immediate merge of complete, mergeable PRs
-- Current integrated main evidence: `2a4a1583be097290906a1252045c57e73b78b1a9` after eighteen approved merges,
-  including Plan 19 PR #3472 and Plan 34 PR #3473
+- Current integrated main evidence: `97f34b7ccda73eb8d767205741d68465cbc1c0c1` after nineteen approved merges,
+  including Plan 34 PR #3473 and static-analysis follow-up PR #3474
 - Status values: `pending`, `diagnosing`, `implementing`, `reviewing`, `published`, `merged`, `no-change`, `blocked`,
   `declined`, `skipped`
 - Evidence rule: each terminal disposition needs current source/GitHub proof, focused tests or reproduction evidence, and
@@ -186,6 +186,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | PR #3471 | merged 2026-09-06 | `ae219f3d911a259d0a7a4ce26505060d4956232e` → merge `a6057abd7` | current main integrated; independent review found no product blocker; post-main 158 focused tests, web typecheck, Biome, and diff green; normal merge | adjacent fixes complete; keep #2768 open |
 | PR #3472 | merged 2026-09-06 | `2f6942fb7299770a231c863b6b3a4e99c4538fad` → merge `ea97de5ec` | current main integrated twice; final 102 web tests, web typecheck, Biome, and diff green after independent-review remediation; normal merge | complete; #3397 closed |
 | PR #3473 | merged 2026-09-06 | `f2186d4f7495804670c6973b9454578280e461a7` → merge `2a4a1583b` | current main integrated; independent review clean; 51 focused PDF tests, PDF typecheck, Biome, boundaries, and diff green; normal merge | complete; #2611 closed |
+| PR #3474 | merged 2026-09-06 | `ec0a18fd8b5cd0b9b1cc7ee31a12d2d783eb4ffd` → merge `97f34b7cc` | Codacy findings from #3472 removed: clipboard HTML now parsed with DOMParser and new LRM/RLM literals use escapes; 102 web + 44 PDF tests, two typechecks, Biome, diff green | static-analysis follow-up complete |
 | Residual #2828 | pending product direction | — | stale whole-document concurrent-tab overwrite reproduced in Chromium/PostgreSQL; excluded from 63 | account for separately; do not implement conflict UI until product policy selected |
 
 ## Rulings and blockers log
@@ -197,13 +198,15 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - 2026-09-06 — Publication throughput policy: require one independent pre-publication review, run focused risk-based gates,
   then push and open PR immediately. Hosted CI runs concurrently under coordinator monitoring. Repeat review only for a
   concrete finding and limit it to the changed seam; workers do not poll hosted state or repeat unchanged full suites.
-- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Eighteen approved PRs were
+- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Nineteen approved PRs were
   squash-merged without admin bypass. Plan 10 retired-link work was explicitly rejected as disproportionate redirect and
   error-handling overhead; PR #3463 closed unmerged and rationale recorded on issue #2836.
 - 2026-09-06 — Plan 22 orchestration metadata initially named issue #3060. Live issue revalidation corrected ownership to
   #2785 and branch `codex/issue-2785-skill-keyword-layout` before publication; #3060 remains reserved for Plan 21.
 - 2026-09-06 — Plan 35 publishes three deterministic adjacent fixes without claiming the historical cloud failure fixed.
   Issue #2768 remains open/needs-info because reporter fixture, exact error, version, browser, and steps remain absent.
+- 2026-09-06 — Codacy security findings on Plan 19 were addressed in an immediate follow-up rather than accepted as
+  detached-parser false positives: DOMParser removes the flagged assignment and Unicode escapes remove new invisible controls.
 
 ## Publication log
 
@@ -212,7 +215,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   #3457 (`ee52636c1`), #3458 (`772bf1452`), #3459 (`8c5804ed0`), #3460 (`549135bb3`),
   #3462 (`5850230f8`), #3461 (`ab67831e4`), #3464 (`999cd618c`), #3466 (`695cdb851`), and
   #3465 (`b85d285b6`), #3467 (`0fbeeeb4c`), #3468 (`38832014b`), #3469 (`870388192`), and
-  #3470 (`744eaa902`), #3471 (`a6057abd7`), #3472 (`ea97de5ec`), and #3473 (`2a4a1583b`).
+  #3470 (`744eaa902`), #3471 (`a6057abd7`), #3472 (`ea97de5ec`), #3473 (`2a4a1583b`), and
+  #3474 (`97f34b7cc`).
 - Plan 10: PR [#3463](https://github.com/amruthpillai/reactive-resume/pull/3463), closed unmerged by maintainer direction;
   issue [#2836 comment](https://github.com/amruthpillai/reactive-resume/issues/2836#issuecomment-5556080394) records not-planned rationale.
 - Plan 16: PR [#3464](https://github.com/amruthpillai/reactive-resume/pull/3464), merged as
@@ -235,3 +239,5 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   `ea97de5ec4e9adced7e83d6ff02e208727961887`; issue #3397 closed.
 - Plan 34: PR [#3473](https://github.com/amruthpillai/reactive-resume/pull/3473), merged as
   `2a4a1583be097290906a1252045c57e73b78b1a9`; issue #2611 closed.
+- Plan 19 static-analysis follow-up: PR [#3474](https://github.com/amruthpillai/reactive-resume/pull/3474), merged as
+  `97f34b7ccda73eb8d767205741d68465cbc1c0c1`.
