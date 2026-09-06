@@ -32,6 +32,7 @@ export const createResumeSocialMeta = ({ canonicalUrl, title, description, image
 	{ property: "og:image", content: imageUrl },
 	// X only reads these as `name`, not `property`
 	{ name: "twitter:card", content: "summary_large_image" },
+	{ name: "twitter:url", content: canonicalUrl },
 	{ name: "twitter:title", content: title },
 	{ name: "twitter:description", content: description },
 	{ name: "twitter:image", content: imageUrl },

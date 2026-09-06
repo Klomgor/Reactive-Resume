@@ -77,6 +77,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 				// Twitter Tags — X only reads these as `name`, not `property`
 				{ name: "twitter:image", content: `${appUrl}/opengraph/banner.jpg` },
 				{ name: "twitter:card", content: "summary_large_image" },
+				{ name: "twitter:url", content: appUrl },
 				{ name: "twitter:title", content: title },
 				{ name: "twitter:description", content: description },
 				// OpenGraph Tags
