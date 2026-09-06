@@ -1,13 +1,7 @@
 import type { ExtractedDocument, PdfDocumentLike, RawExtraction } from "@reactive-resume/resume/ats-pdf";
-import { execFile } from "node:child_process";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { promisify } from "node:util";
+import JSZip from "jszip";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { buildExtractedDocument, harvestPdfDocument } from "@reactive-resume/resume/ats-pdf";
-
-const execFileAsync = promisify(execFile);
 
 export type PdfExtraction = {
 	raw: RawExtraction;
@@ -41,9 +35,9 @@ const attribute = (attributes: string, name: string): string | null => {
 	return match ? unescapeXml(match[1] ?? "") : null;
 };
 
-const zipEntry = async (archivePath: string, entry: string): Promise<string> => {
-	const { stdout } = await execFileAsync("unzip", ["-p", archivePath, entry]);
-	return stdout;
+const zipEntry = (archive: JSZip, entry: string): Promise<string | null> => {
+	const file = archive.file(entry);
+	return Promise.resolve(file ? file.async("string") : null);
 };
 
 export async function extractPdf(bytes: Uint8Array): Promise<PdfExtraction> {
@@ -131,24 +125,19 @@ function parseDocxLinks(documentXml: string, relationshipsXml: string): string[]
 }
 
 export async function extractDocx(bytes: Uint8Array): Promise<DocxExtraction> {
-	const tempDirectory = await mkdtemp(join(tmpdir(), "reactive-resume-ats-"));
-	const archivePath = join(tempDirectory, "resume.docx");
-	try {
-		await writeFile(archivePath, bytes);
-		const [documentXml, numberingXml, relationshipsXml] = await Promise.all([
-			zipEntry(archivePath, "word/document.xml"),
-			zipEntry(archivePath, "word/numbering.xml"),
-			zipEntry(archivePath, "word/_rels/document.xml.rels"),
-		]);
-		const numbering = parseNumbering(numberingXml);
-		const paragraphs = parseDocxParagraphs(documentXml, numbering);
-		return {
-			paragraphs,
-			links: parseDocxLinks(documentXml, relationshipsXml),
-			numberingDefinitions: numbering.size,
-			numberedParagraphs: paragraphs.filter((paragraph) => paragraph.numbering !== null).length,
-		};
-	} finally {
-		await rm(tempDirectory, { recursive: true, force: true });
-	}
+	const archive = await JSZip.loadAsync(bytes);
+	const [documentXml, numberingXml, relationshipsXml] = await Promise.all([
+		zipEntry(archive, "word/document.xml"),
+		zipEntry(archive, "word/numbering.xml"),
+		zipEntry(archive, "word/_rels/document.xml.rels"),
+	]);
+	if (!documentXml) throw new Error("DOCX archive is missing word/document.xml");
+	const numbering = parseNumbering(numberingXml ?? "");
+	const paragraphs = parseDocxParagraphs(documentXml, numbering);
+	return {
+		paragraphs,
+		links: parseDocxLinks(documentXml, relationshipsXml ?? ""),
+		numberingDefinitions: numbering.size,
+		numberedParagraphs: paragraphs.filter((paragraph) => paragraph.numbering !== null).length,
+	};
 }

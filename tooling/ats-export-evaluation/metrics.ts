@@ -6,6 +6,7 @@ export type ExpectedToken = {
 export type EvaluationCorpus = {
 	name: string;
 	tokens: readonly ExpectedToken[];
+	links?: readonly string[];
 };
 
 export type ExtractedExport = {
@@ -19,6 +20,12 @@ export type ExportMetrics = {
 	order: { numerator: number; denominator: number; value: number };
 	duplicates: { expected: number; observed: number; extra: number };
 	grouping: { numerator: number; denominator: number; value: number };
+	links: {
+		expected: readonly string[];
+		observed: readonly string[];
+		missing: readonly string[];
+		unexpected: readonly string[];
+	};
 	missingTokens: readonly string[];
 	outOfOrderPairs: readonly (readonly [string, string])[];
 	observedTokens: number;
@@ -44,29 +51,59 @@ const metric = (numerator: number, denominator: number) => ({
 	value: denominator === 0 ? 1 : numerator / denominator,
 });
 
+function normalizeLinkTarget(target: string): string {
+	const trimmed = target.trim();
+	try {
+		const url = new URL(trimmed);
+		url.protocol = url.protocol.toLowerCase();
+		url.hostname = url.hostname.toLowerCase();
+		if (url.pathname.length > 1) url.pathname = url.pathname.replace(/\/+$/, "");
+		return url.toString();
+	} catch {
+		return trimmed;
+	}
+}
+
+function normalizeLinks(links: readonly string[]): string[] {
+	return [...new Set(links.map(normalizeLinkTarget))];
+}
+
 /**
  * Computes raw extraction measurements from corpus tokens and extractor paragraphs.
  *
  * Recall uses distinct expected tokens. Duplicate accounting separately reports all matching
  * occurrences, so dropping a token cannot be hidden by duplicate output. Order and grouping use
- * the first occurrence of each distinct expected token, keeping those measures interpretable when
- * an export repeats a heading or bullet.
+ * the first occurrence of each distinct expected token, keeping recall/order measures interpretable
+ * when an export repeats a heading or bullet. Grouping retains every expected token occurrence so
+ * repeated values keep their authored field group and occurrence identity.
  */
 export function evaluateExport(corpus: EvaluationCorpus, extracted: ExtractedExport): ExportMetrics {
 	const expected = corpus.tokens.flatMap((entry) =>
 		tokenize(entry.value).map((value) => ({ value, group: entry.group })),
 	);
-	const expectedByValue = new Map<string, { group: string; index: number }>();
-	for (const [index, token] of expected.entries()) {
-		if (!expectedByValue.has(token.value)) expectedByValue.set(token.value, { group: token.group, index });
+	const expectedOccurrenceOrdinals: number[] = [];
+	const expectedValues: string[] = [];
+	const expectedValuesSet = new Set<string>();
+	const expectedCounts = new Map<string, number>();
+	for (const token of expected) {
+		const ordinal = expectedCounts.get(token.value) ?? 0;
+		expectedOccurrenceOrdinals.push(ordinal);
+		expectedCounts.set(token.value, ordinal + 1);
+		if (!expectedValuesSet.has(token.value)) {
+			expectedValuesSet.add(token.value);
+			expectedValues.push(token.value);
+		}
 	}
 
 	const observedByParagraph = extracted.paragraphs.map(tokenize);
 	const observed = observedByParagraph.flat();
-	const expectedValues = [...expectedByValue.keys()];
 	const observedPositions = new Map<string, number>();
+	const observedPositionsByValue = new Map<string, number[]>();
 	for (const [index, token] of observed.entries()) {
 		if (!observedPositions.has(token)) observedPositions.set(token, index);
+		const positions = observedPositionsByValue.get(token) ?? [];
+		positions.push(index);
+		observedPositionsByValue.set(token, positions);
 	}
 
 	const recoveredDistinct = expectedValues.filter((value) => observedPositions.has(value)).length;
@@ -80,27 +117,39 @@ export function evaluateExport(corpus: EvaluationCorpus, extracted: ExtractedExp
 		return leftPosition === undefined || rightPosition === undefined || leftPosition >= rightPosition;
 	});
 
-	const observedParagraphPositions = new Map<string, number>();
+	const observedParagraphPositionsByValue = new Map<string, number[]>();
 	for (const [paragraphIndex, paragraphTokens] of observedByParagraph.entries()) {
 		for (const token of paragraphTokens) {
-			if (!observedParagraphPositions.has(token)) observedParagraphPositions.set(token, paragraphIndex);
+			const positions = observedParagraphPositionsByValue.get(token) ?? [];
+			positions.push(paragraphIndex);
+			observedParagraphPositionsByValue.set(token, positions);
 		}
 	}
-	const groupedPairs = expectedTokenPairs.filter(([left, right]) => {
-		const leftEntry = expectedByValue.get(left);
-		const rightEntry = expectedByValue.get(right);
-		const leftParagraph = observedParagraphPositions.get(left);
-		const rightParagraph = observedParagraphPositions.get(right);
-		return (
-			leftEntry?.group === rightEntry?.group &&
-			leftParagraph !== undefined &&
-			rightParagraph !== undefined &&
-			leftParagraph === rightParagraph
-		);
+	const eligibleExpectedPairs = expected.flatMap((token, index) => {
+		const next = expected[index + 1];
+		return next && token.group === next.group ? [[index, index + 1] as const] : [];
+	});
+	const groupedPairs = eligibleExpectedPairs.filter(([leftIndex, rightIndex]) => {
+		const left = expected[leftIndex];
+		const right = expected[rightIndex];
+		if (!left || !right) return false;
+		const leftPosition = observedPositionsByValue.get(left.value)?.[expectedOccurrenceOrdinals[leftIndex] ?? 0];
+		const rightPosition = observedPositionsByValue.get(right.value)?.[expectedOccurrenceOrdinals[rightIndex] ?? 0];
+		const leftParagraph = observedParagraphPositionsByValue.get(left.value)?.[
+			expectedOccurrenceOrdinals[leftIndex] ?? 0
+		];
+		const rightParagraph = observedParagraphPositionsByValue.get(right.value)?.[
+			expectedOccurrenceOrdinals[rightIndex] ?? 0
+		];
+		if (leftPosition === undefined || rightPosition === undefined) return false;
+		return leftParagraph !== undefined && rightParagraph !== undefined && leftParagraph === rightParagraph;
 	}).length;
 
-	const expectedValuesSet = new Set(expectedValues);
 	const observedExpectedOccurrences = observed.filter((token) => expectedValuesSet.has(token)).length;
+	const expectedLinks = normalizeLinks(corpus.links ?? []);
+	const observedLinks = normalizeLinks(extracted.links);
+	const observedLinksSet = new Set(observedLinks);
+	const expectedLinksSet = new Set(expectedLinks);
 
 	return {
 		recall: metric(recoveredDistinct, expectedValues.length),
@@ -110,7 +159,13 @@ export function evaluateExport(corpus: EvaluationCorpus, extracted: ExtractedExp
 			observed: observedExpectedOccurrences,
 			extra: Math.max(0, observedExpectedOccurrences - expected.length),
 		},
-		grouping: metric(groupedPairs, expectedTokenPairs.length),
+		grouping: metric(groupedPairs, eligibleExpectedPairs.length),
+		links: {
+			expected: expectedLinks,
+			observed: observedLinks,
+			missing: expectedLinks.filter((link) => !observedLinksSet.has(link)),
+			unexpected: observedLinks.filter((link) => !expectedLinksSet.has(link)),
+		},
 		missingTokens: expectedValues.filter((value) => !observedPositions.has(value)),
 		outOfOrderPairs,
 		observedTokens: observed.length,

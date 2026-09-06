@@ -22,7 +22,42 @@ describe("evaluateExport", () => {
 		expect(result.duplicates).toEqual({ expected: 3, observed: 4, extra: 1 });
 		expect(result.missingTokens).toEqual([]);
 		expect(result.outOfOrderPairs).toEqual([]);
-		expect(result.grouping).toEqual({ numerator: 1, denominator: 2, value: 0.5 });
+		expect(result.grouping).toEqual({ numerator: 1, denominator: 1, value: 1 });
+	});
+
+	it("keeps repeated expected values tied to their authored groups", () => {
+		const repeatedCorpus = {
+			name: "repeated",
+			tokens: [
+				{ value: "Alpha Bravo", group: "first" },
+				{ value: "Alpha Charlie", group: "second" },
+			],
+		} as const;
+
+		const result = evaluateExport(repeatedCorpus, {
+			paragraphs: ["Alpha Bravo", "Alpha Charlie"],
+			links: [],
+		});
+
+		expect(result.grouping).toEqual({ numerator: 2, denominator: 2, value: 1 });
+	});
+
+	it("reports dropped and changed link targets", () => {
+		const result = evaluateExport(
+			{
+				name: "links",
+				tokens: [],
+				links: ["HTTPS://Example.com/profile/", "https://example.com/jobs"],
+			},
+			{ paragraphs: [], links: ["https://example.com/profile", "https://changed.example/jobs"] },
+		);
+
+		expect(result.links).toEqual({
+			expected: ["https://example.com/profile", "https://example.com/jobs"],
+			observed: ["https://example.com/profile", "https://changed.example/jobs"],
+			missing: ["https://example.com/jobs"],
+			unexpected: ["https://changed.example/jobs"],
+		});
 	});
 
 	it("detects a dropped token and an inverted pair", () => {

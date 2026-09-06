@@ -1370,6 +1370,9 @@ importers:
       drizzle-orm:
         specifier: 1.0.0-rc.4
         version: 1.0.0-rc.4(@types/pg@8.23.1)(pg@8.23.0)(zod@4.5.4)
+      jszip:
+        specifier: 3.10.1
+        version: 3.10.1
       pdfjs-dist:
         specifier: 6.3.289
         version: 6.3.289

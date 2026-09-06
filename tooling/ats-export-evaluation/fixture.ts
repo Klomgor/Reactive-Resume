@@ -34,7 +34,10 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"mirakova.dev",
 		"orbit-field-omega",
 	].map((value) => token(value, "header")),
+	...["Profiles", "OrbitNet", "orbit-profile-omega"].map((value) => token(value, "profiles")),
+	...["Summary"].map((value) => token(value, "summary")),
 	...[text(SUMMARY_HTML)].map((value) => token(value, "summary")),
+	...["Experience"].map((value) => token(value, "experience")),
 	...[
 		"Northstar Robotics",
 		"2018-02 — Present",
@@ -46,6 +49,7 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"2021 / Present",
 		text(EXPERIENCE_ROLE_TWO_HTML),
 	].map((value) => token(value, "experience")),
+	...["Education"].map((value) => token(value, "education")),
 	...[
 		"東京大学",
 		"Master of Computer Science",
@@ -55,14 +59,16 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"東京",
 		text(EDUCATION_HTML),
 	].map((value) => token(value, "education")),
-	...["TypeScript", "skill-keyword-alpha", "Kubernetes", "skill-keyword-beta"].map((value) => token(value, "skills")),
+	...["Skills", "TypeScript", "Advanced", "skill-keyword-alpha", "Kubernetes", "Expert", "skill-keyword-beta"].map(
+		(value) => token(value, "skills"),
+	),
 	...["Export Observatory", "2022 to Winter 2024", text(PROJECT_HTML), "project.example/observatory"].map((value) =>
 		token(value, "projects"),
 	),
 	...["Custom Evidence", text(CUSTOM_HTML)].map((value) => token(value, "custom")),
 ];
 
-export const HIDDEN_TOKENS = ["Hidden Confidential", "hidden-signal-theta"] as const;
+export const HIDDEN_TOKENS = ["Hidden Confidential", "hidden-signal-theta", "https://hidden.example"] as const;
 
 const resolveWebsite = (url: string, label: string) => ({ url, label, inlineLink: false });
 
@@ -240,6 +246,8 @@ export function createSyntheticCorpus(variant: ExportVariant): SyntheticCorpus {
 		hiddenTokens: HIDDEN_TOKENS,
 		links: [
 			"https://mirakova.dev",
+			"mailto:mira.kova@example.com",
+			"tel:+49 30 555 0142",
 			"https://orbit.example/omega",
 			"https://orbit.example/profile",
 			"https://northstar.example/jobs",

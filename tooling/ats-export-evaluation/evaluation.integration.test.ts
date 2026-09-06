@@ -34,8 +34,12 @@ type VariantResult = {
 	formats: FormatResult[];
 };
 
-function hiddenLeaks(paragraphs: readonly string[], hiddenTokens: readonly string[]): string[] {
-	const observed = paragraphs.flatMap(tokenize);
+function hiddenLeaks(
+	paragraphs: readonly string[],
+	hiddenTokens: readonly string[],
+	links: readonly string[] = [],
+): string[] {
+	const observed = [...paragraphs, ...links].flatMap(tokenize);
 	return hiddenTokens.filter((value) => {
 		const expected = tokenize(value);
 		return observed.some((_, index) => expected.every((token, offset) => observed[index + offset] === token));
@@ -72,7 +76,7 @@ async function measureVariant(variant: ExportVariant): Promise<VariantResult> {
 				paragraphs: pdf.paragraphs.length,
 				pageCount: pdf.raw.pageCount,
 				fontCount: pdf.raw.fonts.length,
-				hiddenLeaks: hiddenLeaks(pdf.paragraphs, corpus.hiddenTokens),
+				hiddenLeaks: hiddenLeaks(pdf.paragraphs, corpus.hiddenTokens, pdf.links),
 			},
 			{
 				format: "docx",
@@ -87,6 +91,7 @@ async function measureVariant(variant: ExportVariant): Promise<VariantResult> {
 				hiddenLeaks: hiddenLeaks(
 					docx.paragraphs.map((paragraph) => paragraph.text),
 					corpus.hiddenTokens,
+					docx.links,
 				),
 			},
 		],
@@ -103,7 +108,7 @@ function reportMarkdown(results: readonly VariantResult[]): string {
 		"",
 		"Synthetic extraction measurements only. These are not vendor parsing accuracy claims.",
 		"",
-		"Token rules: NFC normalization, case-folding with `en-US`, and Unicode letter/number runs; punctuation separates tokens. Recall numerator is distinct expected tokens recovered; duplicate counts report matching occurrences separately. Order uses adjacent distinct expected-token pairs; grouping uses pairs expected in the same authored field group and recovered in the same extracted paragraph/line.",
+		"Token rules: NFC normalization, case-folding with `en-US`, and Unicode letter/number runs; punctuation separates tokens. Recall numerator is distinct expected tokens recovered; duplicate counts report matching occurrences separately. Order uses adjacent distinct expected-token pairs; grouping uses same-group expected occurrence pairs and recovered in the same extracted paragraph/line. Link targets are normalized before expected/observed set comparison.",
 		"",
 		"Corpus: one deterministic resume fixture per layout variant, covering header/contact, two roles, free-text dates, education, skills, project, custom section, long lines, links, hidden item, and CJK text. Hidden item tokens are intentionally excluded from expected recall and checked for leakage.",
 		"",
@@ -114,7 +119,7 @@ function reportMarkdown(results: readonly VariantResult[]): string {
 		for (const format of result.formats) {
 			const m = format.metrics;
 			lines.push(
-				`| ${result.variant} | ${format.format} | ${m.recall.numerator}/${m.recall.denominator} (${percentage(m.recall.value)}) | ${m.order.numerator}/${m.order.denominator} (${percentage(m.order.value)}) | expected ${m.duplicates.expected}, observed ${m.duplicates.observed}, extra ${m.duplicates.extra} | ${m.grouping.numerator}/${m.grouping.denominator} (${percentage(m.grouping.value)}) | ${format.pageCount ?? "—"}/${format.paragraphs} | ${format.links.length} | ${format.numberingDefinitions ?? "—"}/${format.numberedParagraphs ?? "—"} | ${format.hiddenLeaks.length === 0 ? "none" : format.hiddenLeaks.join(", ")} |`,
+				`| ${result.variant} | ${format.format} | ${m.recall.numerator}/${m.recall.denominator} (${percentage(m.recall.value)}) | ${m.order.numerator}/${m.order.denominator} (${percentage(m.order.value)}) | expected ${m.duplicates.expected}, observed ${m.duplicates.observed}, extra ${m.duplicates.extra} | ${m.grouping.numerator}/${m.grouping.denominator} (${percentage(m.grouping.value)}) | ${format.pageCount ?? "—"}/${format.paragraphs} | expected ${m.links.expected.length}, observed ${m.links.observed.length}, dropped ${m.links.missing.length}, changed/extra ${m.links.unexpected.length} | ${format.numberingDefinitions ?? "—"}/${format.numberedParagraphs ?? "—"} | ${format.hiddenLeaks.length === 0 ? "none" : format.hiddenLeaks.join(", ")} |`,
 			);
 		}
 	}
@@ -129,7 +134,7 @@ function reportMarkdown(results: readonly VariantResult[]): string {
 		for (const format of result.formats) {
 			const m = format.metrics;
 			lines.push(
-				`- ${result.variant} ${format.format}: missing tokens = ${m.missingTokens.length === 0 ? "none" : m.missingTokens.join(", ")}; out-of-order adjacent pairs = ${m.outOfOrderPairs.length === 0 ? "none" : m.outOfOrderPairs.map(([left, right]) => `${left} → ${right}`).join(", ")}.`,
+				`- ${result.variant} ${format.format}: missing tokens = ${m.missingTokens.length === 0 ? "none" : m.missingTokens.join(", ")}; out-of-order adjacent pairs = ${m.outOfOrderPairs.length === 0 ? "none" : m.outOfOrderPairs.map(([left, right]) => `${left} → ${right}`).join(", ")}; dropped links = ${m.links.missing.length === 0 ? "none" : m.links.missing.join(", ")}; changed/extra links = ${m.links.unexpected.length === 0 ? "none" : m.links.unexpected.join(", ")}.`,
 			);
 		}
 	}
@@ -138,6 +143,12 @@ function reportMarkdown(results: readonly VariantResult[]): string {
 }
 
 describe("current unchanged PDF and DOCX exports", () => {
+	it("detects hidden content emitted through link targets", () => {
+		expect(hiddenLeaks(["Visible"], ["https://hidden.example"], ["https://hidden.example"])).toEqual([
+			"https://hidden.example",
+		]);
+	});
+
 	it("measures two-column and full-width synthetic corpus without mutating input", { timeout: 120_000 }, async () => {
 		await mkdir(outputDirectory, { recursive: true });
 		const results = [await measureVariant("two-column"), await measureVariant("full-width")];
@@ -161,6 +172,11 @@ describe("current unchanged PDF and DOCX exports", () => {
 			if (!pdf || !docx) throw new Error(`Missing measured format for ${result.variant}`);
 			expect(pdf.metrics.recall.denominator).toBeGreaterThan(20);
 			expect(docx.metrics.recall.denominator).toBe(pdf.metrics.recall.denominator);
+			expect(pdf.metrics.links.missing).toEqual([]);
+			expect(pdf.metrics.links.unexpected).toEqual([]);
+			// DOCX currently emits email but not telephone hyperlinks; retain this known loss in the measurement.
+			expect(docx.metrics.links.missing).toEqual(["tel:+49 30 555 0142"]);
+			expect(docx.metrics.links.unexpected).toEqual([]);
 			expect(pdf.hiddenLeaks).toEqual([]);
 			expect(docx.hiddenLeaks).toEqual([]);
 			expect(pdf.fontCount).toBeGreaterThan(0);
