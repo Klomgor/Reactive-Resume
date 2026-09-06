@@ -157,7 +157,7 @@ function RouteComponent() {
 				)}
 
 				<Tabs className="w-full sm:w-auto ltr:sm:ms-auto rtl:sm:me-auto" value={view}>
-					<TabsList className="grid w-full grid-cols-3 sm:inline-flex sm:w-fit">
+					<TabsList className="w-full max-w-full overflow-x-auto sm:w-fit">
 						<TabsTrigger
 							value="grid"
 							nativeButton={false}

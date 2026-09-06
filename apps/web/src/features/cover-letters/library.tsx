@@ -3,19 +3,14 @@ import { Trans } from "@lingui/react/macro";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useId, useRef, useState } from "react";
 import { coverLetterDocumentSchema } from "@reactive-resume/schema/cover-letter/data";
+import { templateSchema } from "@reactive-resume/schema/templates";
 import { Button } from "@reactive-resume/ui/components/button";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-} from "@reactive-resume/ui/components/dialog";
 import { Input } from "@reactive-resume/ui/components/input";
 import { Label } from "@reactive-resume/ui/components/label";
 import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { Combobox } from "@/components/ui/combobox";
+import { templates } from "@/dialogs/resume/template/data";
 import { getReadableErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
 import { CoverLetterEditorDialog } from "./editor-dialog";
@@ -30,6 +25,7 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 	const queryClient = useQueryClient();
 	const nameId = useId();
 	const resumeInputId = useId();
+	const templateInputId = useId();
 	const embeddedId = useId();
 	const importInput = useRef<HTMLInputElement>(null);
 	const running = useRef(false);
@@ -40,6 +36,7 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 	const [creating, setCreating] = useState(false);
 	const [name, setName] = useState("");
 	const [resumeId, setResumeId] = useState<string | null>(initialResumeId ?? null);
+	const [template, setTemplate] = useState<string | null>(null);
 	const [embeddedKey, setEmbeddedKey] = useState<string | null>(null);
 	const [selectedId, setSelectedId] = useState<string | null>(null);
 	useEffect(() => {
@@ -65,6 +62,7 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 			: [],
 	);
 	const selectedEmbedded = embedded.find((item) => item.value === embeddedKey);
+	const templateOptions = templateSchema.options.map((value) => ({ value, label: templates[value].name }));
 	const sourceReady = resumeId !== initialResumeId || resumeReady;
 	const run = async (action: () => Promise<void>) => {
 		if (running.current) return;
@@ -136,7 +134,7 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 							void run(async () => {
 								const letter = await orpc.coverLetters.create.call({
 									name: name.trim(),
-									...(resumeId ? { resumeId } : {}),
+									...(templateSchema.safeParse(template).success ? { template: templateSchema.parse(template) } : {}),
 								});
 								await created(letter.id);
 							});
@@ -156,21 +154,18 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 								/>
 							</div>
 							<div className="space-y-2">
-								<Label htmlFor={resumeInputId}>
-									<Trans>Resume styling</Trans>
+								<Label htmlFor={templateInputId}>
+									<Trans>Template</Trans>
 								</Label>
 								<Combobox
-									id={resumeInputId}
+									id={templateInputId}
 									disabled={busy}
 									className="w-full"
-									options={(resumes.data ?? []).map((resume) => ({ value: resume.id, label: resume.name }))}
-									value={resumeId}
-									onValueChange={(id) => {
-										setResumeId(id);
-										setEmbeddedKey(null);
-									}}
+									options={templateOptions}
+									value={template}
+									onValueChange={setTemplate}
 									showClear
-									placeholder={t`Default styling`}
+									placeholder={t`Default template`}
 								/>
 							</div>
 							<Button type="submit" disabled={busy || !name.trim() || !sourceReady}>
@@ -178,16 +173,29 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 							</Button>
 						</fieldset>
 					</form>
-					{resumeId && (
+					<div className="space-y-2">
+						<Label htmlFor={resumeInputId}>
+							<Trans>Copy an existing letter from a resume</Trans>
+						</Label>
 						<div className="space-y-2">
-							<Label htmlFor={embeddedId}>
-								<Trans>Copy an existing letter from this resume</Trans>
-							</Label>
+							<Combobox
+								id={resumeInputId}
+								className="w-full"
+								disabled={busy}
+								options={(resumes.data ?? []).map((resume) => ({ value: resume.id, label: resume.name }))}
+								value={resumeId}
+								onValueChange={(id) => {
+									setResumeId(id);
+									setEmbeddedKey(null);
+								}}
+								showClear
+								placeholder={t`Choose a resume`}
+							/>
 							<div className="flex flex-wrap gap-2">
 								<Combobox
 									id={embeddedId}
 									className="min-w-48 flex-1"
-									disabled={busy || !sourceReady}
+									disabled={busy || !sourceReady || !resumeId}
 									options={embedded}
 									value={embeddedKey}
 									onValueChange={setEmbeddedKey}
@@ -196,10 +204,10 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 								/>
 								<Button
 									variant="outline"
-									disabled={busy || !sourceReady || !selectedEmbedded}
+									disabled={busy || !sourceReady || !selectedEmbedded || !resumeId}
 									onClick={() =>
 										void run(async () => {
-											if (!selectedEmbedded) return;
+											if (!selectedEmbedded || !resumeId) return;
 											const letter = await orpc.coverLetters.copyEmbedded.call({
 												resumeId,
 												sectionId: selectedEmbedded.sectionId,
@@ -225,7 +233,7 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 								<p role="alert">{getReadableErrorMessage(source.error, t`Could not load the selected resume.`)}</p>
 							)}
 						</div>
-					)}
+					</div>
 				</div>
 			)}
 			{query.isPending ? (
@@ -291,37 +299,5 @@ export function CoverLetterLibrary({ initialResumeId, resumeReady = true, onEdit
 				/>
 			)}
 		</div>
-	);
-}
-
-type CoverLetterLibraryDialogProps = Pick<CoverLetterLibraryProps, "initialResumeId" | "resumeReady">;
-
-export function CoverLetterLibraryDialog(props: CoverLetterLibraryDialogProps) {
-	const [open, setOpen] = useState(false);
-	const [editing, setEditing] = useState(false);
-	return (
-		<>
-			<Button variant="outline" className="w-full" onClick={() => setOpen(true)}>
-				<Trans>Cover-letter library</Trans>
-			</Button>
-			<Dialog
-				open={open}
-				onOpenChange={(next) => {
-					if (!editing) setOpen(next);
-				}}
-			>
-				<DialogContent className="lg:max-w-3xl xl:max-w-4xl">
-					<DialogHeader>
-						<DialogTitle>
-							<Trans>Cover Letters</Trans>
-						</DialogTitle>
-						<DialogDescription>
-							<Trans>Create and edit letters using your resume’s styling.</Trans>
-						</DialogDescription>
-					</DialogHeader>
-					{open && <CoverLetterLibrary {...props} onEditingChange={setEditing} />}
-				</DialogContent>
-			</Dialog>
-		</>
 	);
 }

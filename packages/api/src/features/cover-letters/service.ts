@@ -1,4 +1,5 @@
 import type { CoverLetter, CoverLetterDocument, CoverLetterStyle } from "@reactive-resume/schema/cover-letter/data";
+import type { Template } from "@reactive-resume/schema/templates";
 import type { CoverLetterListInput, CoverLetterUpdateInput } from "../../dto/cover-letter";
 import { ORPCError } from "@orpc/client";
 import { and, count, desc, eq, ilike, sql } from "drizzle-orm";
@@ -24,6 +25,7 @@ type CreateInput = {
 	content?: string | undefined;
 	resumeId?: string | undefined;
 	applicationId?: string | undefined;
+	template?: Template | undefined;
 };
 
 async function getById(input: OwnedId): Promise<CoverLetter> {
@@ -119,6 +121,7 @@ export const coverLetterService = {
 	create: async (input: CreateInput) => {
 		await assertOwnedApplication(input.userId, input.applicationId);
 		const style = await getResumeStyle(input.userId, input.resumeId);
+		if (input.template) style.metadata.template = input.template;
 		return insert({
 			userId: input.userId,
 			name: input.name,
@@ -129,8 +132,12 @@ export const coverLetterService = {
 			sourceApplicationId: input.applicationId ?? null,
 		});
 	},
-	update: (input: CoverLetterUpdateInput & { userId: string }) => {
+	update: async (input: CoverLetterUpdateInput & { userId: string }) => {
 		const changes: Partial<typeof schema.coverLetter.$inferInsert> = {};
+		if (input.template) {
+			const letter = await getById(input);
+			changes.style = { ...letter.style, metadata: { ...letter.style.metadata, template: input.template } };
+		}
 		if (input.name !== undefined) changes.name = coverLetterContentSchema.shape.name.parse(input.name);
 		if (input.recipient !== undefined)
 			changes.recipient = sanitizeCoverLetterHtml(coverLetterContentSchema.shape.recipient.parse(input.recipient));
@@ -141,6 +148,7 @@ export const coverLetterService = {
 	refreshStyle: async (input: RevisionInput & { resumeId: string }) => {
 		const letter = await getById(input);
 		const style = await getResumeStyle(input.userId, input.resumeId, letter.style.sectionId, letter.style.itemId);
+		style.metadata.template = letter.style.metadata.template;
 		return updateRevision(input, { style, sourceResumeId: input.resumeId });
 	},
 	duplicate: async (input: OwnedId & { name?: string | undefined }) => {

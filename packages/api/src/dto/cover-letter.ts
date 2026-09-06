@@ -4,6 +4,7 @@ import {
 	coverLetterDocumentSchema,
 	coverLetterSchema,
 } from "@reactive-resume/schema/cover-letter/data";
+import { templateSchema } from "@reactive-resume/schema/templates";
 
 const idSchema = z.object({ id: z.string().min(1) });
 const revisionSchema = idSchema.extend({ expectedRevision: z.number().int().min(1) });
@@ -29,10 +30,14 @@ export const coverLetterDto = {
 			content: editableSchema.shape.content.default(""),
 			resumeId: z.string().min(1).optional(),
 			applicationId: z.string().min(1).optional(),
+			template: templateSchema.optional(),
 		}),
 		output: coverLetterSchema,
 	},
-	update: { input: revisionSchema.extend(editableSchema.partial().shape), output: coverLetterSchema },
+	update: {
+		input: revisionSchema.extend(editableSchema.partial().shape).extend({ template: templateSchema.optional() }),
+		output: coverLetterSchema,
+	},
 	refreshStyle: { input: revisionSchema.extend({ resumeId: z.string().min(1) }), output: coverLetterSchema },
 	duplicate: { input: idSchema.extend({ name: editableSchema.shape.name.optional() }), output: coverLetterSchema },
 	delete: { input: revisionSchema, output: z.void() },

@@ -5,6 +5,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { ClientOnly, useBlocker } from "@tanstack/react-router";
 import { lazy, Suspense, useCallback, useId, useMemo, useRef, useState } from "react";
 import { createCoverLetterResumeData } from "@reactive-resume/resume/cover-letter";
+import { templateSchema } from "@reactive-resume/schema/templates";
 import { Button } from "@reactive-resume/ui/components/button";
 import {
 	Dialog,
@@ -19,6 +20,7 @@ import { Spinner } from "@reactive-resume/ui/components/spinner";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { downloadWithAnchor, generateFilename } from "@reactive-resume/utils/file";
 import { Combobox } from "@/components/ui/combobox";
+import { templates } from "@/dialogs/resume/template/data";
 import { useConfirm } from "@/hooks/use-confirm";
 import { getReadableErrorMessage } from "@/libs/error-message";
 import { orpc } from "@/libs/orpc/client";
@@ -180,6 +182,7 @@ function CoverLetterActions({
 	const queryClient = useQueryClient();
 	const confirm = useConfirm();
 	const styleId = useId();
+	const templateId = useId();
 	const applicationId = useId();
 	const [resumeId, setResumeId] = useState<string | null>(letter.sourceResumeId);
 	const [selectedApplicationId, setSelectedApplicationId] = useState<string | null>(letter.sourceApplicationId);
@@ -188,6 +191,7 @@ function CoverLetterActions({
 	const resumes = useQuery(orpc.resume.list.queryOptions({ input: {} }));
 	const applications = useQuery(orpc.applications.list.queryOptions({ input: { includeArchived: false } }));
 	const data = useMemo(() => createCoverLetterResumeData(letter), [letter]);
+	const templateOptions = templateSchema.options.map((value) => ({ value, label: templates[value].name }));
 	const createPdf = async () => {
 		const { createResumePdfBlob } = await import("@/features/resume/export/pdf-document");
 		return createResumePdfBlob(data, undefined, { includeCoverLetterHeader: true });
@@ -260,8 +264,33 @@ function CoverLetterActions({
 					</Button>
 				</div>
 				<div className="space-y-2">
+					<Label htmlFor={templateId}>
+						<Trans>Template</Trans>
+					</Label>
+					<Combobox
+						id={templateId}
+						className="w-full"
+						disabled={disabled}
+						options={templateOptions}
+						value={letter.style.metadata.template}
+						onValueChange={(value) => {
+							const template = templateSchema.safeParse(value);
+							if (!template.success) return;
+							void run(async () => {
+								onUpdated(
+									await orpc.coverLetters.update.call({
+										id: letter.id,
+										expectedRevision: letter.revision,
+										template: template.data,
+									}),
+								);
+							});
+						}}
+					/>
+				</div>
+				<div className="space-y-2">
 					<Label htmlFor={styleId}>
-						<Trans>Resume styling</Trans>
+						<Trans>Sender details</Trans>
 					</Label>
 					<div className="flex flex-wrap gap-2">
 						<Combobox
@@ -294,7 +323,7 @@ function CoverLetterActions({
 								})
 							}
 						>
-							<Trans>Refresh from resume</Trans>
+							<Trans>Copy from resume</Trans>
 						</Button>
 					</div>
 					<p className="text-muted-foreground text-xs">
