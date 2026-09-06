@@ -60,7 +60,7 @@ const appSidebarItems = [
 	},
 	{
 		icon: <EnvelopeSimpleIcon />,
-		label: msg`Cover letters`,
+		label: msg`Cover Letters`,
 		href: "/dashboard/cover-letters",
 	},
 	{

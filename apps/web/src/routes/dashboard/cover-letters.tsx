@@ -10,7 +10,7 @@ export const Route = createFileRoute("/dashboard/cover-letters")({ component: Ro
 function RouteComponent() {
 	return (
 		<div className="space-y-4">
-			<DashboardHeader icon={EnvelopeSimpleIcon} title={t`Cover letters`} />
+			<DashboardHeader icon={EnvelopeSimpleIcon} title={t`Cover Letters`} />
 			<Separator />
 			<CoverLetterLibrary />
 		</div>

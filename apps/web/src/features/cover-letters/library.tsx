@@ -313,7 +313,7 @@ export function CoverLetterLibraryDialog(props: CoverLetterLibraryDialogProps) {
 				<DialogContent className="lg:max-w-3xl xl:max-w-4xl">
 					<DialogHeader>
 						<DialogTitle>
-							<Trans>Cover letters</Trans>
+							<Trans>Cover Letters</Trans>
 						</DialogTitle>
 						<DialogDescription>
 							<Trans>Create and edit letters using your resume’s styling.</Trans>

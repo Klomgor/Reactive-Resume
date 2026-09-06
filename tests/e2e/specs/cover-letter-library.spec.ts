@@ -55,7 +55,7 @@ test("edits the same library letter from the dashboard and builder, with indepen
 	await expect(editor.getByRole("button", { name: "Save Changes", exact: true })).toBeDisabled();
 	await editor.getByRole("button", { name: "Close", exact: true }).click();
 	await page
-		.getByRole("dialog", { name: "Cover letters", exact: true })
+		.getByRole("dialog", { name: "Cover Letters", exact: true })
 		.getByRole("button", { name: "Close", exact: true })
 		.click();
 
@@ -127,7 +127,7 @@ test("blocks styling refresh when the current builder resume could not be saved"
 }, testInfo) => {
 	await createSampleResumeFromDashboard(page, testInfo);
 	await page.getByRole("button", { name: "Cover-letter library", exact: true }).click();
-	const library = page.getByRole("dialog", { name: "Cover letters", exact: true });
+	const library = page.getByRole("dialog", { name: "Cover Letters", exact: true });
 	await library.getByRole("button", { name: "Create", exact: true }).click();
 	await library.getByLabel("Name", { exact: true }).fill("Styling guard letter");
 	await library.getByRole("button", { name: "Create cover letter", exact: true }).click();
