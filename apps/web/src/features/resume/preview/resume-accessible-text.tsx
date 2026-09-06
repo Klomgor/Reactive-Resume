@@ -128,6 +128,23 @@ function RichText({ html }: { html: string }) {
 	return Array.from(body.childNodes).map((node, index) => renderRichTextNode(node, `rich-text-${index}`));
 }
 
+function hasRenderableRichText(html: string): boolean {
+	if (!html.trim()) return false;
+	if (typeof DOMParser === "undefined") return stripHtml(html).trim().length > 0;
+
+	const body = new DOMParser().parseFromString(html, "text/html").body;
+	const getText = (node: ChildNode): string => {
+		if (node.nodeType === 3) return node.textContent ?? "";
+		if (node.nodeType !== 1) return "";
+
+		const element = node as Element;
+		if (RICH_TEXT_OMIT_TAGS.has(element.tagName.toLowerCase())) return "";
+		return Array.from(element.childNodes).map(getText).join("");
+	};
+
+	return Array.from(body.childNodes).some((node) => getText(node).trim().length > 0);
+}
+
 type ItemWebsite = { url?: string; label?: string };
 
 type ItemBodyProps = {
@@ -174,7 +191,7 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 								<li key={role.id}>
 									<ItemBody
 										heading={role.position}
-										headingLevel={4}
+										headingLevel={it.company.trim() ? 4 : 3}
 										details={role.period}
 										description={role.description}
 									/>
@@ -384,7 +401,7 @@ export function ResumeAccessibleText({ data }: ResumeAccessibleTextProps) {
 				) : null}
 			</header>
 
-			{summaryText ? (
+			{hasRenderableRichText(summaryText) ? (
 				<section>
 					<h2>{summary.title?.trim() || getSectionTitle("summary")}</h2>
 					<RichText html={summaryText} />

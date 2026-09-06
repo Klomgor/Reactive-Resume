@@ -180,3 +180,41 @@ it("exposes entry and subordinate-role headings with safe nested rich-text lists
 	expect(screen.queryByText("alert(1)")).not.toBeInTheDocument();
 	expect(screen.getByText("Acme Company")).toHaveTextContent("Acme Company");
 });
+
+it.each(["   ", "<script>alert(1)</script>", "<style>.hidden { display: none; }</style>", "<iframe>ignored</iframe>"])(
+	"omits summary section when content has no renderable text: %s",
+	(content) => {
+		const data = structuredClone(sampleResumeData);
+		data.summary.content = content;
+
+		renderAccessibleText(data);
+
+		const summaryTitle = data.summary.title?.trim() || "Summary";
+		expect(screen.queryByRole("heading", { level: 2, name: summaryTitle })).not.toBeInTheDocument();
+	},
+);
+
+it("promotes role heading to H3 when experience company is blank", () => {
+	const data = structuredClone(sampleResumeData);
+	data.sections.experience.items = [
+		{
+			...data.sections.experience.items[0],
+			id: "blank-company-item",
+			company: "",
+			position: "",
+			roles: [
+				{
+					id: "blank-company-role",
+					position: "Role Without Company",
+					period: "2020 - 2022",
+					description: "<p>Role detail.</p>",
+				},
+			],
+		},
+	];
+
+	renderAccessibleText(data);
+
+	expect(screen.getByRole("heading", { level: 3, name: "Role Without Company" })).toBeInTheDocument();
+	expect(screen.queryByRole("heading", { level: 4, name: "Role Without Company" })).not.toBeInTheDocument();
+});
