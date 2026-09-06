@@ -23,14 +23,6 @@ msgstr ""
 #. placeholder {1}: application.company
 #. placeholder {1}: current.company
 #: src/features/applications/components/application-actions-menu.tsx
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
-msgstr ""
-
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "\"{0} · {1}\" and its full timeline will be permanently deleted. This can't be undone."
 msgstr "\"{0} · {1}\" എന്നതും അതിന്റെ പൂർണ്ണ ടൈംലൈനും ശാശ്വതമായി ഇല്ലാതാക്കും. ഇത് പഴയപടിയാക്കാൻ കഴിയില്ല."
@@ -43,7 +35,7 @@ msgstr "(പുതിയ ടാബിൽ തുറക്കും)"
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
-msgstr ""
+msgstr "{0, plural, one {കയറ്റുമതി ചെയ്യാനുള്ള # ആപ്ലിക്കേഷൻ} other {കയറ്റുമതി ചെയ്യാനുള്ള # ആപ്ലിക്കേഷനുകൾ}}"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -65,6 +57,11 @@ msgstr "{0} അപേക്ഷകൾ ട്രാക്ക് ചെയ്തു
 #: src/components/input/rich-input.tsx
 msgid "{0} characters"
 msgstr "{0} പ്രതീകങ്ങൾ"
+
+#. placeholder {0}: parsed.contactsSkipped
+#: src/features/applications/components/import-applications-sheet.tsx
+msgid "{0} contact(s) skipped (invalid email or missing Contact Name). Those applications still import."
+msgstr "{0} കോൺടാക്‌റ്റ്(കൾ) ഒഴിവാക്കി (അസാധുവായ ഇമെയിൽ അല്ലെങ്കിൽ കോൺടാക്‌റ്റ് പേര് നഷ്‌ടപ്പെട്ടു). ആ ആപ്ലിക്കേഷനുകൾ ഇപ്പോഴും ഇറക്കുമതി ചെയ്യുന്നു."
 
 #. placeholder {0}: report.passedChecks
 #. placeholder {1}: report.applicableChecks
@@ -101,8 +98,8 @@ msgstr "{0} ഒഴിവാക്കി"
 
 #. placeholder {0}: parsed.skipped
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "{0} skipped (missing company/role)"
-msgstr "{0} ഒഴിവാക്കി (കമ്പനി/റോൾ നഷ്‌ടമായി)"
+msgid "{0} skipped (invalid or missing data)"
+msgstr "{0} ഒഴിവാക്കി (അസാധുവായ അല്ലെങ്കിൽ നഷ്‌ടമായ ഡാറ്റ)"
 
 #. placeholder {0}: findings.length
 #: src/features/ats-checker/report/report-view.tsx
@@ -132,7 +129,7 @@ msgstr "കഴിഞ്ഞ 30 ദിവസങ്ങളിലായി {label}"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{passedRules} of {totalRules} checks passed"
-msgstr "{totalRules} ചെക്കുകളിൽ {passedRules} പാസായി"
+msgstr "{passedRules} ചെക്കുകളിൽ {totalRules} പാസായി"
 
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
@@ -150,6 +147,10 @@ msgstr "<0>പതിവായി</0><1>ചോദിക്കപ്പെടു�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
 msgstr "<0>Reactive Resume ഉപയോഗിച്ചതിന് നന്ദി. ലോകമെമ്പാടുമുള്ള ഓപ്പൺ സോഴ്‌സ് സംഭാവകരുടെ സഹായത്തോടെ, കൂടുതലും എന്റെ ഒഴിവുസമയത്താണ് ഞാൻ ഈ ആപ്പ് ഉണ്ടാക്കുന്നത്.</0><1>ഇത് നിങ്ങൾക്ക് ഉപകാരപ്പെട്ടിട്ടുണ്ടെങ്കിൽ, എല്ലാവർക്കും സൗജന്യമായും തുറന്നതായും ഇത് തുടരണമെന്ന് ആഗ്രഹിക്കുന്നുവെങ്കിൽ, ദയവായി ഒരു സംഭാവന നൽകുന്നത് പരിഗണിക്കുക. എത്ര ചെറിയ തുകയും സഹായകമാണ്.</1>"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "1 Column / Inline"
+msgstr "1 നിര / ഇൻലൈൻ"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -246,6 +247,10 @@ msgstr "ഒരു വെബ് വിലാസം https:// ഇല്ലാതെ
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Access your account through the API, including reading and changing your resumes and job applications."
+msgstr "നിങ്ങളുടെ റെസ്യൂമെകളും ജോലി അപേക്ഷകളും വായിക്കുന്നതും മാറ്റുന്നതും ഉൾപ്പെടെ, API വഴി നിങ്ങളുടെ അക്കൗണ്ട് ആക്‌സസ് ചെയ്യുക."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -534,7 +539,11 @@ msgstr "അൽബേനിയൻ"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "All applications (including archived)"
-msgstr ""
+msgstr "എല്ലാ ആപ്ലിക്കേഷനുകളും (ആർക്കൈവ് ചെയ്തവ ഉൾപ്പെടെ)"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Allow access"
+msgstr "പ്രവേശനം അനുവദിക്കുക"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -590,12 +599,12 @@ msgid "Anyone who opens the public URL will need this password."
 msgstr "പൊതു URL തുറക്കുന്ന ആർക്കും ഈ പാസ്‌വേഡ് വേണ്ടിവരും."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the link can view and download the resume."
-msgstr "ലിങ്ക് ഉള്ള ആരും റിസ്യൂം കാണുകയും ഡൗൺലോഡ് ചെയ്യുകയും ചെയ്യാം."
+msgid "Anyone with the link can view the resume."
+msgstr "ലിങ്കുള്ള ആർക്കും റെസ്യൂമെ കാണാനാകും."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the public URL will be able to view and download your resume without a password."
-msgstr "പൊതു URL ഉള്ള ആർക്കും പാസ്‌വേഡില്ലാതെ തന്നെ നിങ്ങളുടെ റിസ്യൂം കാണാനും ഡൗൺലോഡ് ചെയ്യാനും കഴിയും."
+msgid "Anyone with the public URL will be able to view your resume without a password."
+msgstr "പൊതു URL ഉള്ള ആർക്കും പാസ്‌വേഡ് ഇല്ലാതെ തന്നെ നിങ്ങളുടെ റെസ്യൂമെ കാണാനാകും."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "API Access"
@@ -623,6 +632,10 @@ msgstr "API റഫറൻസ്"
 msgid "App"
 msgstr "ആപ്പ്"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Application"
+msgstr "അപേക്ഷ"
+
 #: src/features/applications/components/application-actions-menu.tsx
 msgid "Application actions"
 msgstr "ആപ്ലിക്കേഷൻ പ്രവർത്തനങ്ങൾ"
@@ -637,11 +650,11 @@ msgstr "അപേക്ഷ കോപൈലറ്റ്"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr ""
+msgstr "അപേക്ഷാ തീയതി മുതൽ"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr ""
+msgstr "അപേക്ഷ തീയതി വരെ"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -673,7 +686,7 @@ msgstr "ആഴ്ചയിൽ അയച്ച അപേക്ഷകൾ (കഴ�
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Applications to export"
-msgstr ""
+msgstr "കയറ്റുമതി ചെയ്യാനുള്ള അപേക്ഷകൾ"
 
 #: src/features/applications/components/table-view.tsx
 msgid "Applied"
@@ -788,6 +801,10 @@ msgstr "ഒരു റെസ്യൂമേ ഫയൽ അറ്റാച്ച്
 msgid "Attach files"
 msgstr "ഫയലുകൾ അറ്റാച്ചുചെയ്യുക"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Attach PDF"
+msgstr "PDF അറ്റാച്ചുചെയ്യുക"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
 msgstr "അറ്റാച്ച്മെന്റ്"
@@ -801,10 +818,6 @@ msgstr "അറ്റാച്ചുമെന്റ് അപ്‌ലോഡ് �
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
 msgstr "ഓത്‌ന്റിക്കേഷൻ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Authored pages and PDF overflow"
-msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Auto-fill failed."
@@ -931,6 +944,10 @@ msgstr "ബൾക്ക് അപ്ഡേറ്റ് failed. ദയവായ�
 msgid "Bullet List"
 msgstr "ബുള്ളറ്റ് ലിസ്റ്റ്"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Bulleted list"
+msgstr "ബുള്ളറ്റ് ലിസ്റ്റ്"
+
 #. Tagline shown in app footer/about area
 #: src/components/ui/copyright.tsx
 #: src/routes/_home/-sections/features.tsx
@@ -1016,6 +1033,10 @@ msgstr "കരുതൽ മാറിയോ? നിങ്ങളുടെ റി�
 msgid "Changelog"
 msgstr "മാറ്റങ്ങൾ രേഖപ്പെടുത്തിയ ലോഗ്‌ (Changelog)"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Changes are shared between your library and the resume builder."
+msgstr "മാറ്റങ്ങൾ നിങ്ങളുടെ ലൈബ്രറിയും റെസ്യൂം ബിൽഡറും തമ്മിൽ പങ്കിടുന്നു."
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1065,6 +1086,10 @@ msgstr "ചൈനീസ് (സിംപ്ലിഫൈഡ്)"
 msgid "Chinese (Traditional)"
 msgstr "ചൈനീസ് (ട്രഡീഷണൽ)"
 
+#: src/features/cover-letters/library.tsx
+msgid "Choose a cover letter"
+msgstr "ഒരു കവർ ലെറ്റർ തിരഞ്ഞെടുക്കുക"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
 msgstr "ഒരു മോഡൽ തിരഞ്ഞെടുത്ത് ഡ്രാഫ്റ്റ് റെസ്യൂമെ ചെയ്യുക."
@@ -1079,9 +1104,19 @@ msgstr "ഒരു PDF തിരഞ്ഞെടുക്കുക"
 msgid "Choose a preset or custom shade."
 msgstr "ഒരു പ്രീസെറ്റ് അല്ലെങ്കിൽ കസ്റ്റം ഷേഡ് തിരഞ്ഞെടുക്കുക."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "ഒരു റെസ്യൂമെ തിരഞ്ഞെടുക്കുക"
+
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Choose a saved cover letter"
+msgstr "സംരക്ഷിച്ച ഒരു കവർ ലെറ്റർ തിരഞ്ഞെടുക്കുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Choose an application"
+msgstr "ഒരു ആപ്ലിക്കേഷൻ തിരഞ്ഞെടുക്കുക"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1109,6 +1144,15 @@ msgstr "തിരഞ്ഞെടുപ്പ് മായ്ക്കുക"
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
 msgstr "ഇംപോർട്ട് ചെയ്യാൻ ഒരു ഫയൽ തിരഞ്ഞെടുക്കാൻ ഇവിടെ ക്ലിക്ക് ചെയ്യുക"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Client ID"
+msgstr "ക്ലയൻ്റ് ഐഡി"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/editor.tsx
+msgid "Close"
+msgstr "അടയ്ക്കുക"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Close AI assistant"
@@ -1189,6 +1233,10 @@ msgstr "പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
 msgid "Connect"
 msgstr "കണക്റ്റ് ചെയ്യുക"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Connect an application"
+msgstr "ഒരു ആപ്ലിക്കേഷൻ ബന്ധിപ്പിക്കുക"
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
 msgstr "എഴുത്തിന്റെ അവലോകനം ലഭിക്കാൻ നിങ്ങളുടെ സ്വന്തം AI ദാതാവിനെ ബന്ധിപ്പിക്കുക. മുകളിലുള്ള പരിശോധനകൾക്ക് ദാതാവോ അക്കൗണ്ടോ ആവശ്യമില്ല."
@@ -1217,18 +1265,19 @@ msgstr "ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾ"
 msgid "Contacts"
 msgstr "ബന്ധങ്ങൾ"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Contain"
+msgstr "അടങ്ങിയിരിക്കുന്നു"
+
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "ഉള്ളടക്കം"
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
 msgstr "ഉള്ളടക്കം ഒരു ഗ്രിഡിലായി ക്രമീകരിച്ചിരിക്കുന്നു."
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Contain"
-msgstr ""
 
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
@@ -1270,6 +1319,10 @@ msgstr "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത�
 msgid "Copy"
 msgstr "പകർത്തുക"
 
+#: src/features/cover-letters/library.tsx
+msgid "Copy an existing letter from a resume"
+msgstr "ഒരു റെസ്യൂമെയിൽ നിന്ന് നിലവിലുള്ള ഒരു കത്ത് പകർത്തുക"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
 msgstr "നിങ്ങളുടെ ഉപകരണം നഷ്ടപ്പെടുകയാണെങ്കിൽ ഉപയോഗിക്കാൻ, ഈ ബാക്കപ്പ് കോഡുകൾ പകർത്തി സൂക്ഷിക്കുക."
@@ -1278,9 +1331,17 @@ msgstr "നിങ്ങളുടെ ഉപകരണം നഷ്ടപ്പെ�
 msgid "Copy Backup Codes"
 msgstr "ബാക്കപ്പ് കോഡുകൾ പകർത്തുക"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy from resume"
+msgstr "റെസ്യൂമെയിൽ നിന്ന് പകർത്തുക"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSON പകർത്തുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy saved to your cover-letter library."
+msgstr "നിങ്ങളുടെ കവർ ലെറ്റർ ലൈബ്രറിയിലേക്ക് പകർത്തി സംരക്ഷിച്ചു."
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1316,6 +1377,19 @@ msgstr "വർഷം ശരിയാക്കുക, അല്ലെങ്കി
 msgid "Correct the year, or write \"Present\" for ongoing work."
 msgstr "വർഷം ശരിയാക്കുക, അല്ലെങ്കിൽ തുടരുന്ന ജോലിക്ക് \"Present\" എന്ന് എഴുതുക."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Could not complete this action. Please try again."
+msgstr "ഈ പ്രവർത്തനം പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Could not complete this connection. Restart the connection from your client and try again."
+msgstr "ഈ കണക്ഷൻ പൂർത്തിയാക്കാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ ക്ലയൻ്റിൽ നിന്ന് കണക്ഷൻ പുനരാരംഭിച്ച് വീണ്ടും ശ്രമിക്കുക."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Could not copy to clipboard. Please copy the text manually."
+msgstr "ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്താനായില്ല. വാചകം സ്വമേധയാ പകർത്തുക."
+
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not generate the DOCX. Please try again."
 msgstr "DOCX ഉണ്ടാക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക."
@@ -1324,6 +1398,18 @@ msgstr "DOCX ഉണ്ടാക്കാനായില്ല. ദയവായ�
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Could not generate the PDF. Please try again."
 msgstr "PDF ഉണ്ടാക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load cover letters."
+msgstr "കവർ ലെറ്ററുകൾ ലോഡ് ചെയ്യാനായില്ല."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load the selected resume."
+msgstr "തിരഞ്ഞെടുത്ത റെസ്യൂം ലോഡ് ചെയ്യാനായില്ല."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Could not load this cover letter."
+msgstr "ഈ കവർ ലെറ്റർ ലോഡ് ചെയ്യാനായില്ല."
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1338,6 +1424,10 @@ msgstr "എഐ ദാതാവിനെ ബന്ധപ്പെടാൻ കഴ
 msgid "Could not restore this patch."
 msgstr "ഈ പാച്ച് പുനഃസ്ഥാപിക്കാൻ കഴിഞ്ഞില്ല."
 
+#: src/features/cover-letters/editor.tsx
+msgid "Could not save the cover letter. Please try again."
+msgstr "കവർ ലെറ്റർ സംരക്ഷിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക."
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
 msgstr "ടു-ഫാക്ടർ ഓത്‌ന്റിക്കേഷൻ സജ്ജമാക്കാനായില്ല."
@@ -1345,7 +1435,7 @@ msgstr "ടു-ഫാക്ടർ ഓത്‌ന്റിക്കേഷൻ സ
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr ""
+msgstr "ഈ ഇനങ്ങൾ അടുക്കാൻ കഴിഞ്ഞില്ല; അവർ അവസാനം താമസിച്ചു: {0}."
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1400,8 +1490,17 @@ msgstr "ഉറവിടം അനുസരിച്ച് എണ്ണുക"
 msgid "Counted separately from the parse score. Coverage does not predict anything."
 msgstr "പാഴ്സ് സ്കോറിൽ നിന്ന് വേറിട്ടാണ് ഇത് കണക്കാക്കുന്നത്. കവറേജ് ഒന്നും മുൻകൂട്ടി പറയുന്നില്ല."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover"
+msgstr "മൂടുക"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
+msgstr "ഫ്രെയിം നിറയ്ക്കാൻ ചിത്രം കവർ ചെയ്യുക. മുഴുവൻ ചിത്രവും കാണിക്കുന്നു. മുമ്പത്തെ ക്രോപ്പ് നീക്കം ചെയ്ത അരികുകൾ പുനഃസ്ഥാപിക്കാൻ യഥാർത്ഥമായത് വീണ്ടും അപ്‌ലോഡ് ചെയ്യുക."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/resume/export/download-dialog.tsx
 msgid "Cover letter"
 msgstr "കവർ ലെറ്റർ"
@@ -1418,6 +1517,11 @@ msgstr "കവർ ലെറ്റർ"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "കവർ ലെറ്റർ ഡ്രാഫ്റ്റ്"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/cover-letters.tsx
+msgid "Cover Letters"
+msgstr "കവർ ലെറ്ററുകൾ"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1437,6 +1541,7 @@ msgstr "കവർ ലെറ്റർ ഡ്രാഫ്റ്റ്"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Create"
 msgstr "സൃഷ്‌ടിക്കുക"
@@ -1529,6 +1634,10 @@ msgstr "ഒരു സാമ്പിള്‍ റിസ്യൂം സൃഷ്
 msgid "Create as many resumes as you want."
 msgstr "നിങ്ങൾക്ക് വേണ്ടത്ര റിസ്യൂമുകൾ ഉണ്ടാക്കുക."
 
+#: src/features/cover-letters/library.tsx
+msgid "Create cover letter"
+msgstr "കവർ ലെറ്റർ സൃഷ്ടിക്കുക"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
 msgstr "ആദ്യം മുതൽ സൃഷ്ടിക്കുക"
@@ -1574,7 +1683,7 @@ msgstr "CSV ഡാറ്റ"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
-msgstr ""
+msgstr "നിലവിലെ ഫിൽട്ടറുകൾ"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
@@ -1662,6 +1771,10 @@ msgstr "വിശദ പരിശോധന"
 msgid "DeepSeek"
 msgstr "ഡീപ്‌സീക്ക്"
 
+#: src/features/cover-letters/library.tsx
+msgid "Default template"
+msgstr "സ്ഥിരസ്ഥിതി ടെംപ്ലേറ്റ്"
+
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
 msgstr "ഡിഗ്രി"
@@ -1675,6 +1788,7 @@ msgstr "ഡിഗ്രി"
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1718,6 +1832,10 @@ msgstr "ഈ ഏജന്റ് ത്രെഡ് ഇല്ലാതാക്ക
 msgid "Delete this application?"
 msgstr "ഈ അപേക്ഷ ഇല്ലാതാക്കണോ?"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Delete this cover letter?"
+msgstr "ഈ കവർ ലെറ്റർ ഇല്ലാതാക്കണോ?"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
 msgstr "ഈ ടൈംലൈൻ എൻട്രി ഇല്ലാതാക്കണോ?"
@@ -1748,6 +1866,7 @@ msgstr "നിങ്ങളുടെ റിസ്യൂം ഡിലീറ്റ�
 msgid "Denied, waiting for the agent…"
 msgstr "നിരസിച്ചു, ഏജന്റിനായി കാത്തിരിക്കുന്നു…"
 
+#: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "നിരസിക്കുക"
@@ -1798,6 +1917,14 @@ msgstr "ടു‑ഫാക്ടർ ഓത്‌ന്റിക്കേഷൻ �
 #: src/dialogs/auth/disable-two-factor.tsx
 msgid "Disabling two-factor authentication..."
 msgstr "ടു‑ഫാക്ടർ ഓത്‌ന്റിക്കേഷൻ അപ്രാപ്തമാക്കുന്നു..."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard"
+msgstr "നിരസിക്കുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard unsaved changes?"
+msgstr "സംരക്ഷിക്കാത്ത മാറ്റങ്ങൾ ഉപേക്ഷിക്കണോ?"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1856,17 +1983,18 @@ msgstr "നിങ്ങളുടെ പ്രൊഫൈലും എല്ലാ 
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download application details, contacts, notes, and timeline history as CSV."
-msgstr ""
+msgstr "ആപ്ലിക്കേഷൻ വിശദാംശങ്ങൾ, കോൺടാക്റ്റുകൾ, കുറിപ്പുകൾ, ടൈംലൈൻ ചരിത്രം എന്നിവ CSV ആയി ഡൗൺലോഡ് ചെയ്യുക."
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download CSV"
-msgstr ""
+msgstr "CSV ഡൗൺലോഡ് ചെയ്യുക"
 
 #. Primary action in the builder header to open resume download options
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Download options"
 msgstr "ഡൗൺലോഡ് ഓപ്ഷനുകൾ"
 
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Download PDF"
@@ -1903,6 +2031,7 @@ msgstr "സർവ്വനാമങ്ങൾ ഒഴിവാക്കി ക്�
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
 #: src/dialogs/resume/index.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -1942,6 +2071,11 @@ msgstr "മുൻ പതിപ്പുകൾ സൂക്ഷിക്കുന�
 msgid "Edit"
 msgstr "എഡിറ്റ് ചെയ്യുക"
 
+#. placeholder {0}: letter.name
+#: src/features/cover-letters/library.tsx
+msgid "Edit {0}"
+msgstr "എഡിറ്റ് {0}"
+
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
 msgid "Edit {chip}"
@@ -1960,6 +2094,10 @@ msgstr "നിറം എഡിറ്റ് ചെയ്യുക {0}"
 #: src/components/input/rich-input.tsx
 msgid "Edit content in fullscreen mode"
 msgstr "ഉള്ളടക്കം ഫുൾസ്ക്രീൻ മോഡിൽ എഡിറ്റ് ചെയ്യുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Edit cover letter"
+msgstr "കവർ ലെറ്റർ എഡിറ്റ് ചെയ്യുക"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit date"
@@ -2011,6 +2149,10 @@ msgstr "വിദ്യാഭ്യാസം"
 msgid "Email"
 msgstr "ഇമെയിൽ"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Email (optional)"
+msgstr "ഇമെയിൽ (ഓപ്ഷണൽ)"
+
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
@@ -2045,10 +2187,6 @@ msgstr "ടു‑ഫാക്ടർ ഓത്‌ന്റിക്കേഷൻ �
 msgid "Enabled"
 msgstr "പ്രാപ്തമാക്കിയിരിക്കുന്നു"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Enabling password protection..."
-#~ msgstr "Enabling password protection..."
-
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enabling two-factor authentication…"
 msgstr "ടു-ഫാക്ടർ പ്രാമാണീകരണം പ്രവർത്തനക്ഷമമാക്കുന്നു…"
@@ -2061,6 +2199,10 @@ msgstr "ഇംഗ്ലീഷ്"
 msgid "English (United Kingdom)"
 msgstr "ഇംഗ്ലീഷ് (യുണൈറ്റഡ് കിംഗ്ഡം)"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Enter a name for this cover letter."
+msgstr "ഈ കവർ ലെറ്ററിന് ഒരു പേര് നൽകുക."
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "നിങ്ങളുടെ പാസ്‌കീയ്ക്ക് ഒരു പേര് നൽകുക."
@@ -2068,6 +2210,10 @@ msgstr "നിങ്ങളുടെ പാസ്‌കീയ്ക്ക് ഒ�
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account"
 msgstr "നിങ്ങളുടെ അക്കൗണ്ടിന് പുതിയ പാസ്‌വേഡ് നൽകുക"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Enter a valid email address."
+msgstr "സാധുവായ ഒരു ഇമെയിൽ വിലാസം നൽകുക."
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -2146,11 +2292,11 @@ msgstr "എക്സ്പോർട്ട്"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Export applications"
-msgstr ""
+msgstr "ആപ്ലിക്കേഷനുകൾ കയറ്റുമതി ചെയ്യുക"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Export CSV"
-msgstr ""
+msgstr "CSV കയറ്റുമതി ചെയ്യുക"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Export Data"
@@ -2159,6 +2305,10 @@ msgstr "ഡാറ്റ എക്സ്പോർട്ട് ചെയ്യു�
 #: src/features/ats-checker/messages.ts
 msgid "Export from the original document instead of scanning or screenshotting it."
 msgstr "സ്കാൻ ചെയ്യുകയോ സ്ക്രീൻഷോട്ട് എടുക്കുകയോ ചെയ്യുന്നതിന് പകരം യഥാർത്ഥ രേഖയിൽ നിന്ന് എക്സ്പോർട്ട് ചെയ്യുക."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Export JSON"
+msgstr "JSON കയറ്റുമതി ചെയ്യുക"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2392,7 +2542,7 @@ msgstr "വെടിക്കെട്ട്"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr ""
+msgstr "അനുയോജ്യം"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -2441,10 +2591,6 @@ msgstr "ഫോണ്ട് വെയ്റ്റ്"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Weights"
 msgstr "ഫോണ്ട് വെയ്റ്റുകൾ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "For a controlled continuation, open a section's menu and choose Move to → New Page, then turn on Full Width for that authored page."
-msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
 msgid "For example, note which companies you sent this resume to, or links to the job descriptions."
@@ -2574,10 +2720,6 @@ msgstr "ഗൂഗിൾ"
 msgid "Google Gemini"
 msgstr "ഗൂഗിൾ ജെമിനി"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "gpt-4.1"
-msgstr "ജിപിടി-4.1"
-
 #: src/dialogs/resume/sections/education.tsx
 msgid "Grade"
 msgstr "ഗ്രേഡ്"
@@ -2654,11 +2796,20 @@ msgstr "ഇതാണ് നിങ്ങളുടെ പുതിയ API കീ"
 msgid "Hidden"
 msgstr "മറഞ്ഞത്"
 
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Hidden sections"
+msgstr "മറഞ്ഞിരിക്കുന്ന വിഭാഗങ്ങൾ"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Hide"
 msgstr "മറയ്ക്കുക"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Hide heading"
+msgstr "തലക്കെട്ട് മറയ്ക്കുക"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Icons"
@@ -2689,6 +2840,10 @@ msgstr "പാസ്‌വേഡ് മറയ്ക്കുക"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Hide picture"
 msgstr "ചിത്രം മറയ്ക്കുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Hide preview"
+msgstr "പ്രിവ്യൂ മറയ്ക്കുക"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2725,10 +2880,6 @@ msgstr "API എങ്ങനെ ഉപയോഗിക്കാം?"
 #: src/routes/_home/-sections/faq.tsx
 msgid "How is my data protected?"
 msgstr "എന്റെ ഡാറ്റ എങ്ങനെ സംരക്ഷിക്കപ്പെടുന്നു?"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "https://gateway.example.com/v1"
-msgstr "https://gateway.example.com/v1"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -2767,6 +2918,10 @@ msgstr "{0} ഇറക്കുമതി ചെയ്യുക"
 msgid "Import an existing resume"
 msgstr "നിലവിലുള്ള ഒരു റിസ്യൂം ഇംപോർട്ട് ചെയ്യുക"
 
+#: src/features/cover-letters/library.tsx
+msgid "Import cover letter JSON"
+msgstr "JSON കവർ ലെറ്റർ ഇറക്കുമതി ചെയ്യുക"
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
 msgstr "CSV ഇറക്കുമതി ചെയ്യുക"
@@ -2780,14 +2935,22 @@ msgstr "ഇറക്കുമതി failed. CSV പരിശോധിച്ച�
 msgid "Import from CSV"
 msgstr "CSV-ൽ നിന്ന് ഇറക്കുമതി ചെയ്യുക"
 
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Import from library"
+msgstr "ലൈബ്രറിയിൽ നിന്ന് ഇറക്കുമതി ചെയ്യുക"
+
+#: src/features/cover-letters/library.tsx
+msgid "Import JSON"
+msgstr "JSON ഇറക്കുമതി ചെയ്യുക"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "ഇറക്കുമതി ചെയ്ത {0} ആപ്ലിക്കേഷൻ(കൾ)."
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing from PDF or Word requires a connected AI provider."
-msgstr "PDF-ൽ നിന്നോ Word-ൽ നിന്നോ ഇറക്കുമതി ചെയ്യുന്നതിന് കണക്റ്റുചെയ്‌ത ഒരു AI ദാതാവ് ആവശ്യമാണ്."
+msgid "Importing from Word requires a connected AI provider."
+msgstr "Word-ൽ നിന്ന് ഇറക്കുമതി ചെയ്യുന്നതിന് കണക്റ്റുചെയ്‌ത AI ദാതാവ് ആവശ്യമാണ്."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2830,6 +2993,10 @@ msgstr "ഇന്തോനേഷ്യൻ"
 msgid "Information"
 msgstr "വിവരങ്ങൾ"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Inline"
+msgstr "ഇൻലൈൻ"
+
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
 msgstr "ഇൻലൈൻ കോഡ്"
@@ -2842,7 +3009,7 @@ msgstr "ഉൾക്കാഴ്ചകൾ"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
-msgstr "{1}-ൽ {0} പേജ് പരിശോധിക്കുന്നു…"
+msgstr "{0}-ൽ {1} പേജ് പരിശോധിക്കുന്നു…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Instant Generation"
@@ -2931,17 +3098,6 @@ msgstr "ജോൺ ഡോ"
 msgid "john.doe"
 msgstr "ജോൺ ഡോ"
 
-#. Example email placeholder for login identifier field
-#. Example email placeholder on forgot-password form
-#. Example email placeholder on profile settings form
-#. Example email placeholder on registration form
-#: src/features/auth/pages/forgot-password.tsx
-#: src/features/auth/pages/login.tsx
-#: src/features/auth/pages/register.tsx
-#: src/features/settings/pages/profile.tsx
-msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
-
 #. Import source option for standard JSON Resume format
 #: src/dialogs/resume/import.tsx
 msgid "JSON Resume"
@@ -2958,6 +3114,14 @@ msgstr "കനനഡ"
 #: src/features/ats-checker/messages.ts
 msgid "Keep a single address, so software does not have to guess which one to use."
 msgstr "ഒരൊറ്റ വിലാസം മാത്രം വയ്ക്കുക; അപ്പോൾ ഏതാണ് ഉപയോഗിക്കേണ്ടതെന്ന് സോഫ്റ്റ്‌വെയറിന് ഊഹിക്കേണ്ടിവരില്ല."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Keep access when you are not using the application."
+msgstr "നിങ്ങൾ ആപ്ലിക്കേഷൻ ഉപയോഗിക്കാത്തപ്പോൾ ആക്സസ് നിലനിർത്തുക."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Keep editing"
+msgstr "എഡിറ്റിംഗ് തുടരുക"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -2991,6 +3155,10 @@ msgstr "ഒരുമിച്ച് നിലനിർത്തുക"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "കീ"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Keyword layout"
+msgstr "കീവേഡ് ലേഔട്ട്"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3192,6 +3360,10 @@ msgstr "AI ദാതാക്കളെ ലോഡ് ചെയ്യുന്ന�
 msgid "Loading applications…"
 msgstr "ആപ്ലിക്കേഷനുകൾ ലോഡ് ചെയ്യുന്നു…"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Loading connection request..."
+msgstr "കണക്ഷൻ അഭ്യർത്ഥന ലോഡ് ചെയ്യുന്നു..."
+
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Loading providers…"
@@ -3391,6 +3563,8 @@ msgstr "https:// എന്നതിൽ തുടങ്ങണം"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/ats-checker/parse-preview.tsx
 #: src/features/auth/pages/register.tsx
+#: src/features/cover-letters/editor.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -3467,6 +3641,10 @@ msgstr "പുതിയ ത്രെഡ്"
 msgid "New Thread"
 msgstr "പുതിയ ത്രെഡ്"
 
+#: src/features/cover-letters/library.tsx
+msgid "Next"
+msgstr "അടുത്തത്"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "No ads and no trackers, so nothing gets in your way."
 msgstr "പരസ്യങ്ങളില്ല, ട്രാക്കറുകളില്ല; നിങ്ങളുടെ വഴിയിൽ ഒന്നും തടസ്സമാകില്ല."
@@ -3478,6 +3656,10 @@ msgstr "പരസ്യങ്ങളില്ല, ട്രാക്കിംഗ�
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "No AI provider connected"
 msgstr "AI ദാതാവ് ബന്ധിപ്പിച്ചിട്ടില്ല"
+
+#: src/dialogs/resume/import.tsx
+msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
+msgstr "AI ദാതാവ് കണക്റ്റുചെയ്‌തിട്ടില്ല, അതിനാൽ ഞങ്ങൾ നിങ്ങളുടെ ബ്രൗസറിൽ PDF-ൽ നിന്നുള്ള വാചകം വായിക്കുകയും ഞങ്ങൾക്ക് തിരിച്ചറിയാൻ കഴിയുന്നവ പൂരിപ്പിക്കുകയും ചെയ്യും. ഫലം ക്രമപ്പെടുത്തുമെന്ന് പ്രതീക്ഷിക്കുക."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3499,6 +3681,10 @@ msgstr "ആ തിരയലിന് ചേരുന്ന കമാൻഡുക
 #: src/features/ats-checker/messages.ts
 msgid "No conventional section headings were found."
 msgstr "പതിവ് വിഭാഗ തലക്കെട്ടുകളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: src/features/cover-letters/library.tsx
+msgid "No cover letters found. Create one or import an existing letter."
+msgstr "കവർ ലെറ്ററുകളൊന്നും കണ്ടെത്തിയില്ല. ഒരെണ്ണം സൃഷ്‌ടിക്കുക അല്ലെങ്കിൽ നിലവിലുള്ള ഒരു കത്ത് ഇറക്കുമതി ചെയ്യുക."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3664,6 +3850,10 @@ msgstr "ഒരു ക്ലിക്കിൽ സൈൻ‑ഇൻ"
 msgid "Ongoing Maintenance"
 msgstr "തുടർച്ചയായ മെയിൻറനൻസ്"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Only allow applications you trust. This application will be able to:"
+msgstr "നിങ്ങൾ വിശ്വസിക്കുന്ന ആപ്ലിക്കേഷനുകൾ മാത്രം അനുവദിക്കുക. ഈ അപ്ലിക്കേഷന് ഇനിപ്പറയുന്നവ ചെയ്യാൻ കഴിയും:"
+
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
@@ -3727,10 +3917,6 @@ msgid "Open the exported file and confirm you can select and copy every part of 
 msgstr "എക്സ്പോർട്ട് ചെയ്ത ഫയൽ തുറന്ന് അതിന്റെ എല്ലാ ഭാഗവും തിരഞ്ഞെടുക്കാനും പകർത്താനും കഴിയുമെന്ന് ഉറപ്പാക്കുക."
 
 #: src/features/settings/integrations/components/ai-section.tsx
-msgid "OpenAI"
-msgstr "ഓപ്പൺഎഐ"
-
-#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "OpenAI-ക്ക് അനുയോജ്യം"
 
@@ -3781,6 +3967,10 @@ msgstr "ഓർഡേർഡ് ലിസ്റ്റ്"
 msgid "Organization"
 msgstr "സ്ഥാപനം"
 
+#: src/components/input/rich-input.tsx
+msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
+msgstr "യഥാർത്ഥ പട്ടിക ഫോർമാറ്റിംഗ് സംരക്ഷിച്ചിരിക്കുന്നു. ഈ ഉള്ളടക്കം സുരക്ഷിതമായി എഡിറ്റ് ചെയ്യാൻ കഴിയാത്തതിനാൽ വായിക്കാൻ മാത്രമുള്ളതാണ്."
+
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "100-ൽ"
@@ -3790,16 +3980,14 @@ msgid "Page"
 msgstr "പേജ്"
 
 #. Layout editor page label with 1-based page number
+#. placeholder {0}: Math.floor(offset / 20) + 1
 #. placeholder {0}: pageIndex + 1
 #. placeholder {0}: targetPageIndex + 1
+#: src/features/cover-letters/library.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Page {0}"
 msgstr "പേജ് {0}"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Pages listed here are authored pages saved with your resume. A long authored page may continue onto extra PDF pages automatically; those overflow pages are not saved or editable separately."
-msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Paragraph"
@@ -3847,10 +4035,6 @@ msgstr "പാസ്‌കികളും 2FAയും"
 msgid "Password"
 msgstr "പാസ്‌വേഡ്"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Password cannot be empty."
-#~ msgstr "Password cannot be empty."
-
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Password must be between 6 and 64 characters."
 msgstr "പാസ്‌വേഡ് 6-നും 64-നും ഇടയിൽ അക്ഷരങ്ങളുള്ളതായിരിക്കണം."
@@ -3876,8 +4060,8 @@ msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "നിങ്ങളുടെ റിസ്യൂമിൽ ഇതിനകം ഏതെല്ലാം പദങ്ങൾ കാണുന്നുവെന്ന് കാണാൻ ഒരു പോസ്റ്റിംഗ് പേസ്റ്റ് ചെയ്യുക."
 
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source and Tags."
-msgstr "വരികൾ ഒട്ടിക്കുക അല്ലെങ്കിൽ .csv അപ്‌ലോഡ് ചെയ്യുക. കമ്പനി, റോൾ, സ്റ്റേജ്, സ്റ്റേജ് തീയതി, ശമ്പളം, ഉറവിടം, ടാഗുകൾ എന്നിവ പോലുള്ള നിരകൾ ഞങ്ങൾ മാപ്പ് ചെയ്യുന്നു."
+msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
+msgstr "വരികൾ ഒട്ടിക്കുക അല്ലെങ്കിൽ ഒരു .csv അപ്‌ലോഡ് ചെയ്യുക. കമ്പനി, റോൾ, സ്റ്റേജ്, സ്റ്റേജ് തീയതി, ശമ്പളം, ഉറവിടം, ടാഗുകൾ, കോൺടാക്റ്റ് പേര്, കോൺടാക്റ്റ് ഇമെയിൽ, കോൺടാക്റ്റ് ഫോൺ തുടങ്ങിയ കോളങ്ങൾ ഞങ്ങൾ മാപ്പ് ചെയ്യുന്നു."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -3915,11 +4099,13 @@ msgstr "പാച്ച് തിരികെ റോൾ ചെയ്തു"
 msgid "Patch rolled back."
 msgstr "പാച്ച് തിരികെ ചുരുട്ടി."
 
-#. File format label in import source selector
-#. File format label in import source selector
-#: src/dialogs/resume/import.tsx
-msgid "PDF"
-msgstr "പിഡിഎഫ്"
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDF snapshot attached to the application."
+msgstr "PDF സ്‌നാപ്പ്‌ഷോട്ട് അപ്ലിക്കേഷനിൽ ഘടിപ്പിച്ചിരിക്കുന്നു."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDFs already attached to applications will remain available."
+msgstr "ആപ്ലിക്കേഷനുകളിൽ ഇതിനകം അറ്റാച്ച് ചെയ്തിട്ടുള്ള PDF-കൾ തുടർന്നും ലഭ്യമാകും."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -3941,6 +4127,10 @@ msgstr "പേഴ്‌സിയൻ"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Phone"
 msgstr "ഫോൺ"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Phone (optional)"
+msgstr "ഫോൺ (ഓപ്ഷണൽ)"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4055,6 +4245,14 @@ msgstr "പ്രിവ്യൂവും എക്സ്പോർട്ടു�
 #: src/features/resume/stylesheet/status.tsx
 msgid "Preview and export keep valid styles and ignore invalid styles."
 msgstr "പ്രിവ്യൂവും എക്സ്പോർട്ടും സാധുവായ ശൈലികൾ നിലനിർത്തി അസാധുവായ ശൈലികൾ അവഗണിക്കും."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Preview PDF"
+msgstr "PDF പ്രിവ്യൂ ചെയ്യുക"
+
+#: src/features/cover-letters/library.tsx
+msgid "Previous"
+msgstr "മുമ്പത്തെ"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4211,6 +4409,14 @@ msgstr "ഇഷ്ടാനുസൃത ശൈലികൾ പ്രയോഗി�
 msgid "Read the resume"
 msgstr "റിസ്യൂം വായിച്ചു"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Read your email address."
+msgstr "നിങ്ങളുടെ ഇമെയിൽ വിലാസം വായിക്കുക."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Read your profile information."
+msgstr "നിങ്ങളുടെ പ്രൊഫൈൽ വിവരങ്ങൾ വായിക്കുക."
+
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
 msgstr "വായനാക്ഷമത"
@@ -4219,7 +4425,7 @@ msgstr "വായനാക്ഷമത"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Reading page {0} of {1}…"
-msgstr "{1}-ൽ {0} പേജ് വായിക്കുന്നു…"
+msgstr "{0}-ൽ {1} പേജ് വായിക്കുന്നു…"
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Reading the posting…"
@@ -4238,6 +4444,7 @@ msgid "Ready to activate with warnings"
 msgstr "മുന്നറിയിപ്പുകൾ നൽകി സജീവമാക്കാൻ തയ്യാറാണ്"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Recipient"
 msgstr "സ്വീകർത്താവ്"
 
@@ -4270,6 +4477,10 @@ msgstr "പരാമർശിക്കുന്നത്..., ഊന്നിപ�
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "പുതിയ ഉപകരണം രജിസ്റ്റർ ചെയ്യുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Reload latest version"
+msgstr "ഏറ്റവും പുതിയ പതിപ്പ് വീണ്ടും ലോഡുചെയ്യുക"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4337,6 +4548,10 @@ msgstr "ഇഷ്ടാനുസൃത ഫീൽഡ് പുനഃക്രമ�
 msgid "Repeated far more often than the posting itself uses them: {0}. Recruiters notice."
 msgstr "പോസ്റ്റിംഗ് തന്നെ ഉപയോഗിക്കുന്നതിനെക്കാൾ വളരെ കൂടുതൽ തവണ ആവർത്തിച്ചിരിക്കുന്നു: {0}. റിക്രൂട്ടർമാർ ഇത് ശ്രദ്ധിക്കും."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace"
+msgstr "മാറ്റിസ്ഥാപിക്കുക"
+
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
 msgstr "ഐക്കൺ ഫോണ്ടുകൾക്ക് പകരം സാധാരണ ടെക്സ്റ്റ് ഉപയോഗിച്ച് വീണ്ടും എക്സ്പോർട്ട് ചെയ്യുക."
@@ -4344,6 +4559,10 @@ msgstr "ഐക്കൺ ഫോണ്ടുകൾക്ക് പകരം സാ
 #: src/features/ats-checker/messages.ts
 msgid "Replace tables with plain paragraphs and lists. Cells extract in storage order, not reading order."
 msgstr "ടേബിളുകൾക്ക് പകരം സാധാരണ ഖണ്ഡികകളും ലിസ്റ്റുകളും ഉപയോഗിക്കുക. സെല്ലുകൾ വായനാ ക്രമത്തിലല്ല, സംഭരണ ക്രമത്തിലാണ് എക്‌സ്ട്രാക്റ്റ് ചെയ്യുന്നത്."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace the attached cover letter?"
+msgstr "അറ്റാച്ച് ചെയ്ത കവർ ലെറ്റർ മാറ്റിസ്ഥാപിക്കണോ?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4447,6 +4666,8 @@ msgstr "വിവിധ തൊഴിലുകൾക്കും അഭിരു�
 msgid "Resumes"
 msgstr "റെസ്യൂമെകൾ"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "വീണ്ടും ശ്രമിക്കുക"
@@ -4574,13 +4795,27 @@ msgstr "മാറ്റങ്ങൾ സംരക്ഷിക്കുക"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/editor.tsx
 #: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "മാറ്റങ്ങൾ സേവ് ചെയ്യുക"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Save changes before previewing, exporting, or changing styling."
+msgstr "പ്രിവ്യൂ ചെയ്യുന്നതിനോ എക്‌സ്‌പോർട്ടുചെയ്യുന്നതിനോ സ്റ്റൈലിംഗ് മാറ്റുന്നതിനോ മുമ്പ് മാറ്റങ്ങൾ സംരക്ഷിക്കുക."
+
+#: src/features/cover-letters/library.tsx
+msgid "Save copy to library"
+msgstr "പകർപ്പ് ലൈബ്രറിയിലേക്ക് സംരക്ഷിക്കുക"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
 msgstr "മോഡൽ സംരക്ഷിക്കുക"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Save resume changes before copying its content or styling."
+msgstr "അതിൻ്റെ ഉള്ളടക്കമോ സ്റ്റൈലിംഗോ പകർത്തുന്നതിന് മുമ്പ് റെസ്യൂമെ മാറ്റങ്ങൾ സംരക്ഷിക്കുക."
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4589,6 +4824,10 @@ msgstr "എല്ലാ പേജും നിവർന്ന നിലയിൽ
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "സംരക്ഷിച്ചു"
+
+#: src/features/resume/builder/draft.ts
+msgid "Saving is taking longer than expected. Your changes are still open."
+msgstr "ലാഭിക്കാൻ പ്രതീക്ഷിച്ചതിലും കൂടുതൽ സമയമെടുക്കുന്നു. നിങ്ങളുടെ മാറ്റങ്ങൾ ഇപ്പോഴും തുറന്നിരിക്കുന്നു."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4622,6 +4861,14 @@ msgstr "ആപ്ലിക്കേഷനുകൾ തിരയുക..."
 #: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "തിരയൽ നിർദ്ദേശങ്ങൾ"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters"
+msgstr "കവർ ലെറ്ററുകൾ തിരയുക"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters..."
+msgstr "കവർ ലെറ്ററുകൾ തിരയുക..."
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -4730,6 +4977,10 @@ msgstr "പാസ്‌വേഡ് റീസെറ്റ് ഇമെയിൽ 
 msgid "Send the resume itself rather than a portfolio wrapper."
 msgstr "ഒരു പോർട്ട്‌ഫോളിയോ റാപ്പറിന് പകരം റിസ്യൂം തന്നെ അയക്കുക."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Sender details"
+msgstr "അയച്ചയാളുടെ വിശദാംശങ്ങൾ"
+
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "പാസ്‌വേഡ് റീസെറ്റ് ഇമെയിൽ അയക്കുന്നു..."
@@ -4814,6 +5065,7 @@ msgstr "ഷെയർ ചെയ്യാവുന്ന ലിങ്കുകൾ"
 msgid "Sharing"
 msgstr "ഷെയറിംഗ്"
 
+#: src/features/resume/builder/section-recovery.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -4824,6 +5076,19 @@ msgstr "കാണിക്കുക"
 #: src/features/applications/components/board.tsx
 msgid "Show {0} more"
 msgstr "{0} കൂടുതൽ കാണിക്കുക"
+
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Show {title} section"
+msgstr "{title} വിഭാഗം കാണിക്കുക"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
+msgid "Show Download Buttons"
+msgstr "ഡൗൺലോഡ് ബട്ടണുകൾ കാണിക്കുക"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Show heading"
+msgstr "തലക്കെട്ട് കാണിക്കുക"
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -4867,7 +5132,7 @@ msgstr "കവർ ലെറ്ററിലും അതേ ആദ്യ പേ�
 #. placeholder {1}: applications.length
 #: src/features/applications/components/table-view.tsx
 msgid "Showing {0} of {1}"
-msgstr "{1}-ൻ്റെ {0} കാണിക്കുന്നു"
+msgstr "{0}-ൻ്റെ {1} കാണിക്കുന്നു"
 
 #. Layout editor column label for the secondary sidebar area
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -4918,6 +5183,10 @@ msgstr "സൈൻ അപ്"
 #: src/features/auth/pages/error.tsx
 msgid "Sign-in didn't complete"
 msgstr "സൈൻ ഇൻ പൂർത്തിയായില്ല"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Signed in as {email}"
+msgstr "{email} ആയി സൈൻ ഇൻ ചെയ്‌തു"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5048,14 +5317,14 @@ msgstr "നിങ്ങളെ സൈൻ ഇൻ ചെയ്യുമ്പോൾ
 msgid "Something went wrong. Please try again."
 msgstr "എന്തോ പിശക് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക."
 
-#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
-msgid "Sort by date"
-msgstr ""
-
 #: src/routes/dashboard/applications/index.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Sort by"
 msgstr "സോർട്ട് ചെയ്യുക"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Sort by date"
+msgstr "തീയതി പ്രകാരം അടുക്കുക"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5148,7 +5417,7 @@ msgstr "നിറുത്തിടുന്നിടത്ത് നിന്�
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Start date must be on or before end date."
-msgstr ""
+msgstr "ആരംഭ തീയതി അവസാന തീയതിയിലോ അതിന് മുമ്പോ ആയിരിക്കണം."
 
 #: src/features/ats-checker/messages.ts
 msgid "Start each one with a concrete verb: built, led, reduced, migrated."
@@ -5207,6 +5476,14 @@ msgstr "സ്റ്റൈൽഷീറ്റ് എഡിറ്റർ"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Stylesheet has fatal errors"
 msgstr "സ്റ്റൈൽഷീറ്റിൽ ഗുരുതരമായ പിശകുകൾ ഉണ്ട്"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
+msgstr "സ്റ്റൈലിംഗും അയച്ചയാളുടെ വിശദാംശങ്ങളും പകർത്തി. നിങ്ങൾ പുതുക്കുമ്പോൾ മാത്രമേ ഭാവിയിലെ റെസ്യൂമെ എഡിറ്റുകൾ ബാധകമാകൂ."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details refreshed from the selected resume."
+msgstr "തിരഞ്ഞെടുത്ത റെസ്യൂമിൽ നിന്ന് സ്റ്റൈലിംഗും അയച്ചയാളുടെ വിശദാംശങ്ങളും പുതുക്കി."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5297,6 +5574,8 @@ msgstr "തമിഴ്"
 msgid "Telugu"
 msgstr "തെലുങ്ക്"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/libs/resume/section.tsx
 msgid "Template"
 msgstr "ടെംപ്ലേറ്റ്"
@@ -5407,6 +5686,10 @@ msgstr "ഇറക്കുമതി ചെയ്ത ഫയൽ ഒരു സാ�
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "ടെക്സ്റ്റ് സംഭരിച്ചിരിക്കുന്ന ക്രമം അത് വായിക്കുന്ന ക്രമവുമായി വളരെയധികം വ്യത്യാസപ്പെട്ടിരിക്കുന്നു."
+
+#: src/features/cover-letters/library.tsx
+msgid "The original letter stays in your resume. Each copy can be edited independently."
+msgstr "യഥാർത്ഥ കത്ത് നിങ്ങളുടെ ബയോഡാറ്റയിൽ നിലനിൽക്കും. ഓരോ കോപ്പിയും സ്വതന്ത്രമായി എഡിറ്റ് ചെയ്യാവുന്നതാണ്."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5537,6 +5820,14 @@ msgstr "ഈ പരിശോധന ഈ ഫയലിന് ബാധകമല്�
 msgid "This check only runs on resumes written in English."
 msgstr "ഇംഗ്ലീഷിൽ എഴുതിയ റിസ്യൂമുകളിൽ മാത്രമേ ഈ പരിശോധന പ്രവർത്തിക്കൂ."
 
+#: src/features/auth/pages/consent.tsx
+msgid "This connection request is invalid or has expired."
+msgstr "ഈ കണക്ഷൻ അഭ്യർത്ഥന അസാധുവാണ് അല്ലെങ്കിൽ കാലഹരണപ്പെട്ടു."
+
+#: src/features/cover-letters/editor.tsx
+msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
+msgstr "ഈ കവർ ലെറ്റർ മറ്റെവിടെയോ മാറ്റി. നിങ്ങളുടെ എഡിറ്റുകൾ ഇപ്പോഴും ഇവിടെയുണ്ട്. വീണ്ടും സംരക്ഷിക്കുന്നതിന് മുമ്പ് ഏറ്റവും പുതിയ പതിപ്പ് വീണ്ടും ലോഡുചെയ്യുക."
+
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
 msgstr "ഇത് ഒരു പുതിയ API കീ ഉണ്ടാക്കുന്നു; Reactive Resume API വഴി നിങ്ങളുടെ റിസ്യൂം ഡാറ്റ വായിക്കാനും മാറ്റാനും ഇത് മറ്റു പ്രോഗ്രാമുകളെ അനുവദിക്കുന്നു."
@@ -5645,6 +5936,10 @@ msgstr "ഈ ലിങ്കിന് അതിൻ്റെ പ്രോട്ട
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "AI പ്രൊവൈഡർ പ്രതികരിക്കുന്ന സമയത്തെ ആശ്രയിച്ച് ഇതിന് കുറച്ച് മിനിറ്റുകൾ എടുക്കാം. ദയവായി വിൻഡോ അടയ്ക്കുകയോ പേജ് റിഫ്രെഷ് ചെയ്യുകയോ ചെയ്യരുത്."
 
+#: src/dialogs/resume/import.tsx
+msgid "This may take a moment. Please do not close the window or refresh the page."
+msgstr "ഇതിന് ഒരു നിമിഷം എടുത്തേക്കാം. ദയവായി വിൻഡോ അടയ്ക്കുകയോ പേജ് പുതുക്കുകയോ ചെയ്യരുത്."
+
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
 msgstr "ഈ ഫയലിലെ വാചകം സോഫ്റ്റ്‌വെയറിന് എത്ര കൃത്യമായി എടുക്കാനാകും എന്നാണ് ഇത് അളക്കുന്നത്. ഒരു അപേക്ഷ നിരസിക്കപ്പെടുമോ എന്ന് ഇത് പ്രവചിക്കുന്നില്ല, ഒരു ഉപകരണത്തിനും അത് സാധ്യമല്ല. നിങ്ങളുടെ ഫയൽ ഈ ബ്രൗസറിൽ തന്നെയാണ് വായിച്ചത്, ഒരിക്കലും അപ്‌ലോഡ് ചെയ്തിട്ടില്ല."
@@ -5657,6 +5952,11 @@ msgstr "ഈ പേജ് കോളങ്ങളിലാണ്, ടെക്സ�
 msgid "This page is very densely packed."
 msgstr "ഈ പേജ് വളരെ സാന്ദ്രമായി നിറഞ്ഞിരിക്കുന്നു."
 
+#. Error shown when a PDF has no extractable text layer during import
+#: src/dialogs/resume/import.tsx
+msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
+msgstr "ഈ PDF-ന് വായിക്കാനാകുന്ന വാചകമില്ല. ഇത് ഒരു സ്കാൻ ആണ്, അതിനാൽ ഇറക്കുമതി ചെയ്യാൻ ഒന്നുമില്ല."
+
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
 msgstr "ഈ PDF പാസ്‌വേഡ് സംരക്ഷിതമാണ്. സംരക്ഷിക്കപ്പെടാത്ത ഒരു പകർപ്പ് സേവ് ചെയ്ത് വീണ്ടും ശ്രമിക്കുക."
@@ -5668,6 +5968,10 @@ msgstr "ഈ കാലയളവ് ആരംഭിക്കുന്നതിന�
 #: src/libs/resume/ats.ts
 msgid "This period starts in the future."
 msgstr "ഈ കാലയളവ് ഭാവിയിൽ ആരംഭിക്കുന്നു."
+
+#: src/features/cover-letters/library.tsx
+msgid "This resume has no embedded cover letters."
+msgstr "ഈ റെസ്യൂമിൽ ഉൾച്ചേർത്ത കവർ ലെറ്ററുകളൊന്നുമില്ല."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -5787,10 +6091,6 @@ msgstr "ടൈറ്റിൽ"
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "നിങ്ങളുടെ അക്കൗണ്ട് ഡിലീറ്റ് ചെയ്യാൻ, താഴെയുള്ള സ്ഥിരീകരണ വാചകം ടൈപ്പ് ചെയ്ത ശേഷം ബട്ടൺ ക്ലിക്ക് ചെയ്യുക."
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "Together.ai"
-msgstr "ടുഗെദർ.ഐ"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-base.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/shared/section-base.tsx
@@ -6469,10 +6769,6 @@ msgstr "എഴുത്ത്"
 msgid "X (Twitter)"
 msgstr "എക്സ് (ട്വിറ്റർ)"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "xAI Grok"
-msgstr "xAI ഗ്രോക്ക്"
-
 #: src/routes/_home/-sections/faq.tsx
 msgid "Yes. One click exports your resume to PDF, with your formatting and styling intact."
 msgstr "അതെ. ഒറ്റ ക്ലിക്കിൽ നിങ്ങളുടെ റിസ്യൂം PDF ആയി എക്സ്പോർട്ട് ആകും, ഫോർമാറ്റിംഗും സ്റ്റൈലിംഗും അതേപടി നിലനിൽക്കും."
@@ -6661,6 +6957,10 @@ msgstr "നിങ്ങളുടെ റിസ്യൂം \"I\", \"my\" എന�
 msgid "Your resume's public URL is protected by a password. Share the password only with people you trust."
 msgstr "നിങ്ങളുടെ റിസ്യൂമിന്റെ പൊതു URL ഒരു പാസ്‌വേഡ് കൊണ്ട് സംരക്ഷിച്ചിരിക്കുന്നു. നിങ്ങൾ വിശ്വസിക്കുന്നവരുമായി മാത്രം പാസ്‌വേഡ് പങ്കിടുക."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Your saved cover letter will remain unchanged."
+msgstr "നിങ്ങളുടെ സംരക്ഷിച്ച കവർ ലെറ്റർ മാറ്റമില്ലാതെ തുടരും."
+
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
 msgstr "നിങ്ങളുടെ പിന്തുണയാണ് ഈ പ്രോജക്ട് ഇപ്പോഴും ഇനിയും എല്ലാവർക്കും സൗജന്യവും തുറന്നതുമായി നിലനിർത്തുന്നത്."
@@ -6685,15 +6985,3 @@ msgstr "സൂം ഔട്ട് ചെയ്യുക"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "സൂളു"
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Keyword layout"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Bulleted list"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Inline"
-msgstr ""

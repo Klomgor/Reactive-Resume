@@ -397,8 +397,8 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 												},
 												{
 													value: "pdf",
-													textValue: t({ comment: "File format label in import source selector", message: "PDF" }),
-													label: t({ comment: "File format label in import source selector", message: "PDF" }),
+													textValue: "PDF",
+													label: "PDF",
 												},
 												{
 													value: "docx",

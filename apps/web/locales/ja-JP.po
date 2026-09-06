@@ -23,14 +23,6 @@ msgstr ""
 #. placeholder {1}: application.company
 #. placeholder {1}: current.company
 #: src/features/applications/components/application-actions-menu.tsx
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
-msgstr ""
-
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "\"{0} · {1}\" and its full timeline will be permanently deleted. This can't be undone."
 msgstr "\"{0} · {1}\" とその全タイムラインは完全に削除されます。この操作は元に戻せません。"
@@ -43,17 +35,17 @@ msgstr "（新しいタブで開きます）"
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
-msgstr ""
+msgstr "{0, plural, one {エクスポートする#アプリケーション} other {エクスポートする#アプリケーション}}"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
-msgstr "{0, plural, other {# 件のアイテム}}"
+msgstr "{0, plural, one {# アイテム} other {# アイテム}}"
 
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
-msgstr "{0, plural, other {# 個の役職}}"
+msgstr "{0, plural, one {# 役割} other {# の役割}}"
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -66,23 +58,28 @@ msgstr "{0} 件の応募を追跡中"
 msgid "{0} characters"
 msgstr "{0} 文字"
 
+#. placeholder {0}: parsed.contactsSkipped
+#: src/features/applications/components/import-applications-sheet.tsx
+msgid "{0} contact(s) skipped (invalid email or missing Contact Name). Those applications still import."
+msgstr "連絡先 {0} 件をスキップしました（メールアドレスが無効、または連絡先名がありません）。該当する応募自体はインポートされます。"
+
 #. placeholder {0}: report.passedChecks
 #. placeholder {1}: report.applicableChecks
 #: src/features/ats-checker/report/score-header.tsx
 msgid "{0} of {1} applicable checks passed"
-msgstr "{1} 件中 {0} 件の該当するチェックに合格しました"
+msgstr "{0} 件中 {1} 件の該当するチェックに合格しました"
 
 #. placeholder {0}: category.passedChecks
 #. placeholder {1}: category.applicableChecks
 #: src/features/ats-checker/report/report-view.tsx
 msgid "{0} of {1} applicable checks passed."
-msgstr "{1} 件中 {0} 件の該当するチェックに合格しました。"
+msgstr "{0} 件中 {1} 件の該当するチェックに合格しました。"
 
 #. placeholder {0}: jd.matchedCount
 #. placeholder {1}: jd.totalTerms
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "{0} of {1} terms found"
-msgstr "{1} 件中 {0} 件の用語が見つかりました"
+msgstr "{0} 件中 {1} 件の用語が見つかりました"
 
 #. placeholder {0}: importable.length
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -101,8 +98,8 @@ msgstr "{0} 件スキップ"
 
 #. placeholder {0}: parsed.skipped
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "{0} skipped (missing company/role)"
-msgstr "{0} 件をスキップしました（会社/職種がありません）"
+msgid "{0} skipped (invalid or missing data)"
+msgstr "{0} 件をスキップしました（データが無効または不足）"
 
 #. placeholder {0}: findings.length
 #: src/features/ats-checker/report/report-view.tsx
@@ -132,7 +129,7 @@ msgstr "{label} 過去30日間"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{passedRules} of {totalRules} checks passed"
-msgstr "{totalRules} 件中 {passedRules} 件のチェックに合格しました"
+msgstr "{passedRules} 件中 {totalRules} 件のチェックに合格しました"
 
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
@@ -150,6 +147,10 @@ msgstr "<0>よくある</0><1>ご質問</1><2></2>"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
 msgstr "<0>Reactive Resume をご利用いただきありがとうございます。このアプリは、世界中のオープンソースコントリビューターの協力を得ながら、主に私の空き時間で開発しています。</0><1>お役に立ち、これからも誰もが無料でオープンに使えるようにしたいと思っていただけたなら、ぜひ寄付をご検討ください。金額の大小は問いません。</1>"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "1 Column / Inline"
+msgstr "1列 / インライン"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -246,6 +247,10 @@ msgstr "ウェブアドレスに https:// が付いていません。"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Access your account through the API, including reading and changing your resumes and job applications."
+msgstr "API 経由でアカウントにアクセスし、履歴書や求人への応募の閲覧・変更を行います。"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -534,7 +539,11 @@ msgstr "アルバニア語"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "All applications (including archived)"
-msgstr ""
+msgstr "すべての応募（アーカイブ済みを含む）"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Allow access"
+msgstr "アクセスを許可"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -590,12 +599,12 @@ msgid "Anyone who opens the public URL will need this password."
 msgstr "公開 URL を開く人には、このパスワードが必要になります。"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the link can view and download the resume."
-msgstr "リンクを知っている人は誰でもレジュメを表示してダウンロードできます。"
+msgid "Anyone with the link can view the resume."
+msgstr "リンクを知っている人は誰でもこの履歴書を閲覧できます。"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the public URL will be able to view and download your resume without a password."
-msgstr "公開 URL を知っている人は誰でも、パスワードなしで履歴書を閲覧・ダウンロードできます。"
+msgid "Anyone with the public URL will be able to view your resume without a password."
+msgstr "公開 URL を知っている人は、パスワードなしであなたの履歴書を閲覧できます。"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "API Access"
@@ -623,6 +632,10 @@ msgstr "API リファレンス"
 msgid "App"
 msgstr "アプリ"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Application"
+msgstr "応募"
+
 #: src/features/applications/components/application-actions-menu.tsx
 msgid "Application actions"
 msgstr "応募アクション"
@@ -637,11 +650,11 @@ msgstr "応募 Copilot"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr ""
+msgstr "応募日（開始）"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr ""
+msgstr "応募日（終了）"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -673,7 +686,7 @@ msgstr "週ごとの応募送信数（直近8週間）"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Applications to export"
-msgstr ""
+msgstr "エクスポートする応募"
 
 #: src/features/applications/components/table-view.tsx
 msgid "Applied"
@@ -788,6 +801,10 @@ msgstr "履歴書ファイルを添付（PDF）"
 msgid "Attach files"
 msgstr "ファイルを添付する"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Attach PDF"
+msgstr "PDF を添付"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
 msgstr "添付ファイル"
@@ -801,10 +818,6 @@ msgstr "添付ファイルをアップロードしました。"
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
 msgstr "認証"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Authored pages and PDF overflow"
-msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Auto-fill failed."
@@ -931,6 +944,10 @@ msgstr "一括更新に失敗しました。もう一度お試しください。
 msgid "Bullet List"
 msgstr "箇条書きリスト"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Bulleted list"
+msgstr "箇条書きリスト"
+
 #. Tagline shown in app footer/about area
 #: src/components/ui/copyright.tsx
 #: src/routes/_home/-sections/features.tsx
@@ -1016,6 +1033,10 @@ msgstr "やっぱり変更しますか？レジュメに、よりわかりやす
 msgid "Changelog"
 msgstr "更新履歴"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Changes are shared between your library and the resume builder."
+msgstr "変更はライブラリと履歴書ビルダーの間で共有されます。"
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1065,6 +1086,10 @@ msgstr "中国語（簡体字）"
 msgid "Chinese (Traditional)"
 msgstr "中国語（繁体字）"
 
+#: src/features/cover-letters/library.tsx
+msgid "Choose a cover letter"
+msgstr "カバーレターを選択"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
 msgstr "モデルを選び、レジュメの下書きを作成してください。"
@@ -1079,9 +1104,19 @@ msgstr "PDFを選択"
 msgid "Choose a preset or custom shade."
 msgstr "プリセットまたはカスタムシェードを選択します。"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "レジュメを選択してください"
+
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Choose a saved cover letter"
+msgstr "保存済みのカバーレターを選択"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Choose an application"
+msgstr "応募を選択"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1109,6 +1144,15 @@ msgstr "選択をクリア"
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
 msgstr "ここをクリックしてインポートするファイルを選択"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Client ID"
+msgstr "クライアント ID"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/editor.tsx
+msgid "Close"
+msgstr "閉じる"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Close AI assistant"
@@ -1189,6 +1233,10 @@ msgstr "パスワードの確認"
 msgid "Connect"
 msgstr "接続"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Connect an application"
+msgstr "アプリケーションを接続"
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
 msgstr "自分のAIプロバイダーを接続すると、文章のレビューを受けられます。上記のチェックにはプロバイダーもアカウントも不要です。"
@@ -1217,18 +1265,19 @@ msgstr "連絡先情報"
 msgid "Contacts"
 msgstr "連絡先"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Contain"
+msgstr "全体表示"
+
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "コンテンツ"
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
 msgstr "コンテンツがグリッドレイアウトになっています。"
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Contain"
-msgstr ""
 
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
@@ -1270,6 +1319,10 @@ msgstr "クリップボードにコピーしました。"
 msgid "Copy"
 msgstr "コピー"
 
+#: src/features/cover-letters/library.tsx
+msgid "Copy an existing letter from a resume"
+msgstr "履歴書から既存のカバーレターをコピー"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
 msgstr "デバイスを紛失した場合に備えて、これらのバックアップコードをコピーして保管してください。"
@@ -1278,9 +1331,17 @@ msgstr "デバイスを紛失した場合に備えて、これらのバックア
 msgid "Copy Backup Codes"
 msgstr "バックアップコードをコピー"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy from resume"
+msgstr "履歴書からコピー"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSONをコピー"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy saved to your cover-letter library."
+msgstr "コピーをカバーレターライブラリに保存しました。"
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1316,6 +1377,19 @@ msgstr "年を修正するか、進行中の作業には「現在」を使用し
 msgid "Correct the year, or write \"Present\" for ongoing work."
 msgstr "年を修正するか、現在も継続中であれば「Present」と記載してください。"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Could not complete this action. Please try again."
+msgstr "この操作を完了できませんでした。もう一度お試しください。"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Could not complete this connection. Restart the connection from your client and try again."
+msgstr "この接続を完了できませんでした。クライアントから接続をやり直してください。"
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Could not copy to clipboard. Please copy the text manually."
+msgstr "クリップボードにコピーできませんでした。テキストを手動でコピーしてください。"
+
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not generate the DOCX. Please try again."
 msgstr "DOCX を生成できませんでした。もう一度お試しください。"
@@ -1324,6 +1398,18 @@ msgstr "DOCX を生成できませんでした。もう一度お試しくださ�
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Could not generate the PDF. Please try again."
 msgstr "PDF を生成できませんでした。もう一度お試しください。"
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load cover letters."
+msgstr "カバーレターを読み込めませんでした。"
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load the selected resume."
+msgstr "選択した履歴書を読み込めませんでした。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Could not load this cover letter."
+msgstr "このカバーレターを読み込めませんでした。"
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1338,6 +1424,10 @@ msgstr "AIプロバイダーに接続できませんでした。もう一度お�
 msgid "Could not restore this patch."
 msgstr "このパッチを復元できませんでした。"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Could not save the cover letter. Please try again."
+msgstr "カバーレターを保存できませんでした。もう一度お試しください。"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
 msgstr "二要素認証を設定できませんでした。"
@@ -1345,7 +1435,7 @@ msgstr "二要素認証を設定できませんでした。"
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr ""
+msgstr "これらの項目を並べ替えられなかったため、末尾のままになっています: {0}。"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1400,8 +1490,17 @@ msgstr "ソース別件数"
 msgid "Counted separately from the parse score. Coverage does not predict anything."
 msgstr "解析スコアとは別に集計されます。カバレッジは何かを予測するものではありません。"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover"
+msgstr "切り抜き"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
+msgstr "「切り抜き」は画像を切り抜いて枠いっぱいに表示します。「全体表示」は画像全体を表示します。以前の切り抜きで削られた部分を戻すには、元の画像を再アップロードしてください。"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/resume/export/download-dialog.tsx
 msgid "Cover letter"
 msgstr "カバーレター"
@@ -1418,6 +1517,11 @@ msgstr "カバーレター"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "カバーレターの下書き"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/cover-letters.tsx
+msgid "Cover Letters"
+msgstr "カバーレター"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1437,6 +1541,7 @@ msgstr "カバーレターの下書き"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Create"
 msgstr "作成"
@@ -1529,6 +1634,10 @@ msgstr "サンプルから作成"
 msgid "Create as many resumes as you want."
 msgstr "履歴書はいくつでも作成できます。"
 
+#: src/features/cover-letters/library.tsx
+msgid "Create cover letter"
+msgstr "カバーレターを作成"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
 msgstr "ゼロから作成する"
@@ -1574,7 +1683,7 @@ msgstr "CSV データ"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
-msgstr ""
+msgstr "現在のフィルター"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
@@ -1662,6 +1771,10 @@ msgstr "詳細チェック"
 msgid "DeepSeek"
 msgstr "ディープシーク"
 
+#: src/features/cover-letters/library.tsx
+msgid "Default template"
+msgstr "デフォルトのテンプレート"
+
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
 msgstr "学位"
@@ -1675,6 +1788,7 @@ msgstr "学位"
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1718,6 +1832,10 @@ msgstr "このエージェントスレッドを削除しますか？"
 msgid "Delete this application?"
 msgstr "この応募を削除しますか？"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Delete this cover letter?"
+msgstr "このカバーレターを削除しますか？"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
 msgstr "このタイムライン項目を削除しますか？"
@@ -1748,6 +1866,7 @@ msgstr "履歴書を削除しています…"
 msgid "Denied, waiting for the agent…"
 msgstr "拒否しました。エージェントの応答を待っています…"
 
+#: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "拒否"
@@ -1798,6 +1917,14 @@ msgstr "二要素認証を無効化"
 #: src/dialogs/auth/disable-two-factor.tsx
 msgid "Disabling two-factor authentication..."
 msgstr "二要素認証を無効にしています..."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard"
+msgstr "破棄"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard unsaved changes?"
+msgstr "保存していない変更を破棄しますか？"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1856,17 +1983,18 @@ msgstr "プロフィールや履歴書など、すべてのデータをJSONフ�
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download application details, contacts, notes, and timeline history as CSV."
-msgstr ""
+msgstr "応募の詳細、連絡先、メモ、タイムライン履歴を CSV でダウンロードします。"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download CSV"
-msgstr ""
+msgstr "CSV をダウンロード"
 
 #. Primary action in the builder header to open resume download options
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Download options"
 msgstr "ダウンロードオプション"
 
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Download PDF"
@@ -1903,6 +2031,7 @@ msgstr "代名詞を省き、動詞から書き始めてください。それが
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
 #: src/dialogs/resume/index.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -1942,6 +2071,11 @@ msgstr "以前のバージョンは保持されますが、ビルダーの元に
 msgid "Edit"
 msgstr "編集"
 
+#. placeholder {0}: letter.name
+#: src/features/cover-letters/library.tsx
+msgid "Edit {0}"
+msgstr "{0}を編集"
+
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
 msgid "Edit {chip}"
@@ -1960,6 +2094,10 @@ msgstr "色を編集 {0}"
 #: src/components/input/rich-input.tsx
 msgid "Edit content in fullscreen mode"
 msgstr "フルスクリーンモードでのコンテンツ編集"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Edit cover letter"
+msgstr "カバーレターを編集"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit date"
@@ -2011,6 +2149,10 @@ msgstr "学歴"
 msgid "Email"
 msgstr "メール"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Email (optional)"
+msgstr "メールアドレス（任意）"
+
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
@@ -2045,10 +2187,6 @@ msgstr "二要素認証を有効化"
 msgid "Enabled"
 msgstr "有効"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Enabling password protection..."
-#~ msgstr "Enabling password protection..."
-
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enabling two-factor authentication…"
 msgstr "二段階認証を有効にする…"
@@ -2061,6 +2199,10 @@ msgstr "英語"
 msgid "English (United Kingdom)"
 msgstr "英語（イギリス）"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Enter a name for this cover letter."
+msgstr "このカバーレターの名前を入力してください。"
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "パスキーの名前を入力します。"
@@ -2068,6 +2210,10 @@ msgstr "パスキーの名前を入力します。"
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account"
 msgstr "アカウントの新しいパスワードを入力してください"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Enter a valid email address."
+msgstr "有効なメールアドレスを入力してください。"
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -2146,11 +2292,11 @@ msgstr "エクスポート"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Export applications"
-msgstr ""
+msgstr "応募をエクスポート"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Export CSV"
-msgstr ""
+msgstr "CSV をエクスポート"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Export Data"
@@ -2159,6 +2305,10 @@ msgstr "データをエクスポート"
 #: src/features/ats-checker/messages.ts
 msgid "Export from the original document instead of scanning or screenshotting it."
 msgstr "スキャンやスクリーンショットではなく、元の文書からエクスポートしてください。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Export JSON"
+msgstr "JSON をエクスポート"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2392,7 +2542,7 @@ msgstr "花火"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr ""
+msgstr "表示方法"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -2441,10 +2591,6 @@ msgstr "フォントの太さ"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Weights"
 msgstr "フォントの太さのプリセット"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "For a controlled continuation, open a section's menu and choose Move to → New Page, then turn on Full Width for that authored page."
-msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
 msgid "For example, note which companies you sent this resume to, or links to the job descriptions."
@@ -2574,10 +2720,6 @@ msgstr "Google"
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "gpt-4.1"
-msgstr "gpt-4.1"
-
 #: src/dialogs/resume/sections/education.tsx
 msgid "Grade"
 msgstr "成績"
@@ -2654,11 +2796,20 @@ msgstr "新しい API キーはこちらです"
 msgid "Hidden"
 msgstr "非表示"
 
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Hidden sections"
+msgstr "非表示のセクション"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Hide"
 msgstr "非表示にする"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Hide heading"
+msgstr "見出しを非表示"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Icons"
@@ -2689,6 +2840,10 @@ msgstr "パスワードを隠す"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Hide picture"
 msgstr "画像を非表示にする"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Hide preview"
+msgstr "プレビューを非表示"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2725,10 +2880,6 @@ msgstr "API はどのように使えばよいですか？"
 #: src/routes/_home/-sections/faq.tsx
 msgid "How is my data protected?"
 msgstr "自分のデータはどのように保護されていますか？"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "https://gateway.example.com/v1"
-msgstr "https://gateway.example.com/v1"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -2767,6 +2918,10 @@ msgstr "{0} をインポート"
 msgid "Import an existing resume"
 msgstr "既存のレジュメをインポート"
 
+#: src/features/cover-letters/library.tsx
+msgid "Import cover letter JSON"
+msgstr "カバーレターの JSON をインポート"
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
 msgstr "CSV をインポート"
@@ -2780,14 +2935,22 @@ msgstr "インポートに失敗しました。CSV を確認してもう一度�
 msgid "Import from CSV"
 msgstr "CSV からインポート"
 
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Import from library"
+msgstr "ライブラリからインポート"
+
+#: src/features/cover-letters/library.tsx
+msgid "Import JSON"
+msgstr "JSON をインポート"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "{0} 件の応募をインポートしました。"
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing from PDF or Word requires a connected AI provider."
-msgstr "PDFまたはWordからのインポートには、接続されたAIプロバイダーが必要です。"
+msgid "Importing from Word requires a connected AI provider."
+msgstr "Word からのインポートには、接続済みの AI プロバイダーが必要です。"
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2830,6 +2993,10 @@ msgstr "インドネシア語"
 msgid "Information"
 msgstr "情報"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Inline"
+msgstr "インライン"
+
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
 msgstr "インラインコード"
@@ -2842,7 +3009,7 @@ msgstr "インサイト"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
-msgstr "{1} ページ中 {0} ページ目を検査中…"
+msgstr "{0} ページ中 {1} ページ目を検査中…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Instant Generation"
@@ -2931,17 +3098,6 @@ msgstr "山田 太郎"
 msgid "john.doe"
 msgstr "taro.yamada"
 
-#. Example email placeholder for login identifier field
-#. Example email placeholder on forgot-password form
-#. Example email placeholder on profile settings form
-#. Example email placeholder on registration form
-#: src/features/auth/pages/forgot-password.tsx
-#: src/features/auth/pages/login.tsx
-#: src/features/auth/pages/register.tsx
-#: src/features/settings/pages/profile.tsx
-msgid "john.doe@example.com"
-msgstr "taro.yamada@example.com"
-
 #. Import source option for standard JSON Resume format
 #: src/dialogs/resume/import.tsx
 msgid "JSON Resume"
@@ -2958,6 +3114,14 @@ msgstr "カンナダ語"
 #: src/features/ats-checker/messages.ts
 msgid "Keep a single address, so software does not have to guess which one to use."
 msgstr "アドレスは 1 つだけにして、ソフトウェアがどれを使うべきか迷わないようにしましょう。"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Keep access when you are not using the application."
+msgstr "アプリケーションを使用していないときもアクセスを維持する。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Keep editing"
+msgstr "編集を続ける"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -2991,6 +3155,10 @@ msgstr "一緒に"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "キー"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Keyword layout"
+msgstr "キーワードのレイアウト"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3192,6 +3360,10 @@ msgstr "AIプロバイダーを読み込んでいます。しばらくしてか�
 msgid "Loading applications…"
 msgstr "アプリケーションを読み込んでいます…"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Loading connection request..."
+msgstr "接続リクエストを読み込んでいます…"
+
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Loading providers…"
@@ -3391,6 +3563,8 @@ msgstr "先頭を https:// にしてください"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/ats-checker/parse-preview.tsx
 #: src/features/auth/pages/register.tsx
+#: src/features/cover-letters/editor.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -3467,6 +3641,10 @@ msgstr "新しいスレッド"
 msgid "New Thread"
 msgstr "新しいスレッド"
 
+#: src/features/cover-letters/library.tsx
+msgid "Next"
+msgstr "次へ"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "No ads and no trackers, so nothing gets in your way."
 msgstr "広告もトラッカーもないので、作業の邪魔になるものはありません。"
@@ -3478,6 +3656,10 @@ msgstr "広告なし・トラッキングなし"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "No AI provider connected"
 msgstr "AIプロバイダーが接続されていません"
+
+#: src/dialogs/resume/import.tsx
+msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
+msgstr "AI プロバイダーが接続されていないため、ブラウザー上で PDF からテキストを読み取り、認識できた内容を入力します。結果は手直しが必要になる場合があります。"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3499,6 +3681,10 @@ msgstr "検索に一致するコマンドはありません。"
 #: src/features/ats-checker/messages.ts
 msgid "No conventional section headings were found."
 msgstr "一般的なセクション見出しが見つかりませんでした。"
+
+#: src/features/cover-letters/library.tsx
+msgid "No cover letters found. Create one or import an existing letter."
+msgstr "カバーレターが見つかりません。新しく作成するか、既存のものをインポートしてください。"
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3664,6 +3850,10 @@ msgstr "ワンクリックサインイン"
 msgid "Ongoing Maintenance"
 msgstr "継続的な保守"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Only allow applications you trust. This application will be able to:"
+msgstr "信頼できるアプリケーションにのみ許可してください。このアプリケーションは次のことができます:"
+
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
@@ -3727,10 +3917,6 @@ msgid "Open the exported file and confirm you can select and copy every part of 
 msgstr "エクスポートしたファイルを開き、すべての部分を選択・コピーできることを確認してください。"
 
 #: src/features/settings/integrations/components/ai-section.tsx
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "OpenAI互換"
 
@@ -3781,6 +3967,10 @@ msgstr "番号付きリスト"
 msgid "Organization"
 msgstr "組織名"
 
+#: src/components/input/rich-input.tsx
+msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
+msgstr "元の表の書式は保持されています。安全に編集できないため、この内容は読み取り専用です。"
+
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "100点満点中"
@@ -3790,16 +3980,14 @@ msgid "Page"
 msgstr "ページ"
 
 #. Layout editor page label with 1-based page number
+#. placeholder {0}: Math.floor(offset / 20) + 1
 #. placeholder {0}: pageIndex + 1
 #. placeholder {0}: targetPageIndex + 1
+#: src/features/cover-letters/library.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Page {0}"
 msgstr "ページ {0}"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Pages listed here are authored pages saved with your resume. A long authored page may continue onto extra PDF pages automatically; those overflow pages are not saved or editable separately."
-msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Paragraph"
@@ -3847,10 +4035,6 @@ msgstr "パスキーと2段階認証"
 msgid "Password"
 msgstr "パスワード"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Password cannot be empty."
-#~ msgstr "Password cannot be empty."
-
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Password must be between 6 and 64 characters."
 msgstr "パスワードは6文字以上64文字以下でなければなりません。"
@@ -3876,8 +4060,8 @@ msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "求人情報を貼り付けると、その用語が履歴書にすでに含まれているかを確認できます。"
 
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source and Tags."
-msgstr "行を貼り付けるか .csv をアップロードしてください。会社、職種、ステージ、ステージ日付、給与、ソース、タグなどの列を対応付けます。"
+msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
+msgstr "行を貼り付けるか、.csv をアップロードしてください。会社、職種、ステージ、ステージ日、給与、ソース、タグ、連絡先名、連絡先メール、連絡先電話などの列を対応付けます。"
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -3915,11 +4099,13 @@ msgstr "パッチがロールバックされました"
 msgid "Patch rolled back."
 msgstr "パッチがロールバックされました。"
 
-#. File format label in import source selector
-#. File format label in import source selector
-#: src/dialogs/resume/import.tsx
-msgid "PDF"
-msgstr "PDF"
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDF snapshot attached to the application."
+msgstr "PDF のスナップショットを応募に添付しました。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDFs already attached to applications will remain available."
+msgstr "すでに応募に添付されている PDF は引き続き利用できます。"
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -3941,6 +4127,10 @@ msgstr "ペルシア語"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Phone"
 msgstr "電話番号"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Phone (optional)"
+msgstr "電話番号（任意）"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4055,6 +4245,14 @@ msgstr "プレビューとエクスポートはベーススタイルに戻りま
 #: src/features/resume/stylesheet/status.tsx
 msgid "Preview and export keep valid styles and ignore invalid styles."
 msgstr "プレビューとエクスポートは有効なスタイルを保持し、無効なスタイルを無視します。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Preview PDF"
+msgstr "PDF をプレビュー"
+
+#: src/features/cover-letters/library.tsx
+msgid "Previous"
+msgstr "前へ"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4211,6 +4409,14 @@ msgstr "カスタムスタイルの適用ガイドをお読みください。"
 msgid "Read the resume"
 msgstr "履歴書を読み取りました"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Read your email address."
+msgstr "メールアドレスを読み取ります。"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Read your profile information."
+msgstr "プロフィール情報を読み取ります。"
+
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
 msgstr "読みやすさ"
@@ -4219,7 +4425,7 @@ msgstr "読みやすさ"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Reading page {0} of {1}…"
-msgstr "{1} ページ中 {0} ページ目を読み取り中…"
+msgstr "{0} ページ中 {1} ページ目を読み取り中…"
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Reading the posting…"
@@ -4238,6 +4444,7 @@ msgid "Ready to activate with warnings"
 msgstr "警告付きで有効化準備完了"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Recipient"
 msgstr "宛先"
 
@@ -4270,6 +4477,10 @@ msgstr "紹介者…、強調したい点など。"
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "新しいデバイスを登録する"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Reload latest version"
+msgstr "最新バージョンを再読み込み"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4337,6 +4548,10 @@ msgstr "カスタムフィールドの並べ替え"
 msgid "Repeated far more often than the posting itself uses them: {0}. Recruiters notice."
 msgstr "求人情報自体よりもはるかに頻繁に繰り返されています: {0}。採用担当者は気づきます。"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace"
+msgstr "置き換える"
+
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
 msgstr "アイコンフォントをプレーンテキストに置き換えてから、再エクスポートしてください。"
@@ -4344,6 +4559,10 @@ msgstr "アイコンフォントをプレーンテキストに置き換えてか
 #: src/features/ats-checker/messages.ts
 msgid "Replace tables with plain paragraphs and lists. Cells extract in storage order, not reading order."
 msgstr "表をプレーンな段落やリストに置き換えてください。セルは読み取り順ではなく保存順で抽出されます。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace the attached cover letter?"
+msgstr "添付されているカバーレターを置き換えますか？"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4447,6 +4666,8 @@ msgstr "さまざまな職種や好みに合わせた履歴書テンプレート
 msgid "Resumes"
 msgstr "レジュメ"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "リトライ"
@@ -4574,13 +4795,27 @@ msgstr "変更を保存"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/editor.tsx
 #: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "変更を保存"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Save changes before previewing, exporting, or changing styling."
+msgstr "プレビュー、エクスポート、スタイルの変更を行う前に変更を保存してください。"
+
+#: src/features/cover-letters/library.tsx
+msgid "Save copy to library"
+msgstr "コピーをライブラリに保存"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
 msgstr "モデルを保存"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Save resume changes before copying its content or styling."
+msgstr "内容やスタイルをコピーする前に、履歴書の変更を保存してください。"
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4589,6 +4824,10 @@ msgstr "すべてのページが正しい向きになった状態でファイル
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "保存済み"
+
+#: src/features/resume/builder/draft.ts
+msgid "Saving is taking longer than expected. Your changes are still open."
+msgstr "保存に予想以上に時間がかかっています。変更は保持されています。"
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4622,6 +4861,14 @@ msgstr "応募を検索…"
 #: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "検索コマンド"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters"
+msgstr "カバーレターを検索"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters..."
+msgstr "カバーレターを検索…"
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -4730,6 +4977,10 @@ msgstr "パスワードリセットメールを送信"
 msgid "Send the resume itself rather than a portfolio wrapper."
 msgstr "ポートフォリオの表紙ではなく、履歴書そのものを送付してください。"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Sender details"
+msgstr "差出人情報"
+
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "パスワードリセットメールを送信しています..."
@@ -4814,6 +5065,7 @@ msgstr "共有可能なリンク"
 msgid "Sharing"
 msgstr "共有"
 
+#: src/features/resume/builder/section-recovery.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -4824,6 +5076,19 @@ msgstr "表示する"
 #: src/features/applications/components/board.tsx
 msgid "Show {0} more"
 msgstr "さらに {0} 件を表示"
+
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Show {title} section"
+msgstr "「{title}」セクションを表示"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
+msgid "Show Download Buttons"
+msgstr "ダウンロードボタンを表示"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Show heading"
+msgstr "見出しを表示"
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -4867,7 +5132,7 @@ msgstr "カバーレターにも1ページ目と同じヘッダーを表示し�
 #. placeholder {1}: applications.length
 #: src/features/applications/components/table-view.tsx
 msgid "Showing {0} of {1}"
-msgstr "{1} 件中 {0} 件を表示"
+msgstr "{0} 件中 {1} 件を表示"
 
 #. Layout editor column label for the secondary sidebar area
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -4918,6 +5183,10 @@ msgstr "新規登録"
 #: src/features/auth/pages/error.tsx
 msgid "Sign-in didn't complete"
 msgstr "サインインが完了しませんでした"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Signed in as {email}"
+msgstr "{email} でサインイン中"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5048,14 +5317,14 @@ msgstr "サインイン中に問題が発生しました。もう一度お試し
 msgid "Something went wrong. Please try again."
 msgstr "問題が発生しました。もう一度お試しください。"
 
-#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
-msgid "Sort by date"
-msgstr ""
-
 #: src/routes/dashboard/applications/index.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Sort by"
 msgstr "並べ替え条件"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Sort by date"
+msgstr "日付で並べ替え"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5148,7 +5417,7 @@ msgstr "ゼロからレジュメの作成を始める"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Start date must be on or before end date."
-msgstr ""
+msgstr "開始日は終了日と同じか、それ以前にしてください。"
 
 #: src/features/ats-checker/messages.ts
 msgid "Start each one with a concrete verb: built, led, reduced, migrated."
@@ -5207,6 +5476,14 @@ msgstr "スタイルシートエディタ"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Stylesheet has fatal errors"
 msgstr "スタイルシートに致命的なエラーがあります"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
+msgstr "スタイルと差出人情報がコピーされます。以降の履歴書の変更は、更新したときにのみ反映されます。"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details refreshed from the selected resume."
+msgstr "選択した履歴書からスタイルと差出人情報を更新しました。"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5297,6 +5574,8 @@ msgstr "タミル語"
 msgid "Telugu"
 msgstr "テルグ語"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/libs/resume/section.tsx
 msgid "Template"
 msgstr "テンプレート"
@@ -5407,6 +5686,10 @@ msgstr "インポートされたファイルが有効な履歴書に解析でき
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "テキストが保存されている順序が、実際に読む順序と大きく異なっています。"
+
+#: src/features/cover-letters/library.tsx
+msgid "The original letter stays in your resume. Each copy can be edited independently."
+msgstr "元のカバーレターは履歴書に残ります。コピーはそれぞれ個別に編集できます。"
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5537,6 +5820,14 @@ msgstr "このチェックはこのファイルには適用されません。"
 msgid "This check only runs on resumes written in English."
 msgstr "このチェックは英語で書かれた履歴書にのみ実行されます。"
 
+#: src/features/auth/pages/consent.tsx
+msgid "This connection request is invalid or has expired."
+msgstr "この接続リクエストは無効か、有効期限が切れています。"
+
+#: src/features/cover-letters/editor.tsx
+msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
+msgstr "このカバーレターは別の場所で変更されました。あなたの編集は保持されています。もう一度保存する前に、最新バージョンを再読み込みしてください。"
+
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
 msgstr "新しい API キーを作成します。このキーを使うと、他のプログラムが Reactive Resume API を通じて履歴書のデータを読み書きできるようになります。"
@@ -5645,6 +5936,10 @@ msgstr "このリンクにはプロトコルがありません。"
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "AI プロバイダーからの応答によっては、数分かかる場合があります。ウィンドウを閉じたりページを再読み込みしたりしないでください。"
 
+#: src/dialogs/resume/import.tsx
+msgid "This may take a moment. Please do not close the window or refresh the page."
+msgstr "少し時間がかかります。ウィンドウを閉じたり、ページを更新したりしないでください。"
+
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
 msgstr "これは、ソフトウェアがこのファイルのテキストをどれだけ忠実に抽出できるかを測るものです。応募が不採用になるかどうかを予測するものではありませんし、それができるツールもありません。ファイルはこのブラウザ内で読み込まれ、アップロードされていません。"
@@ -5657,6 +5952,11 @@ msgstr "このページは段組みになっており、テキストが順序通
 msgid "This page is very densely packed."
 msgstr "このページは非常に情報が密集しています。"
 
+#. Error shown when a PDF has no extractable text layer during import
+#: src/dialogs/resume/import.tsx
+msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
+msgstr "この PDF には読み取れるテキストがありません。スキャンの可能性が高く、インポートできる内容はありません。"
+
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
 msgstr "このPDFはパスワードで保護されています。保護されていないコピーを保存してから、もう一度お試しください。"
@@ -5668,6 +5968,10 @@ msgstr "この期間は開始する前に終了します。"
 #: src/libs/resume/ats.ts
 msgid "This period starts in the future."
 msgstr "この期間は将来から始まります。"
+
+#: src/features/cover-letters/library.tsx
+msgid "This resume has no embedded cover letters."
+msgstr "この履歴書には埋め込まれたカバーレターがありません。"
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -5787,10 +6091,6 @@ msgstr "タイトル"
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "アカウントを削除するには、下の確認テキストを入力してからボタンをクリックしてください。"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "Together.ai"
-msgstr "一緒に。"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-base.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/shared/section-base.tsx
@@ -6469,10 +6769,6 @@ msgstr "文章"
 msgid "X (Twitter)"
 msgstr "X（ツイッター）"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "xAI Grok"
-msgstr "xAI Grok"
-
 #: src/routes/_home/-sections/faq.tsx
 msgid "Yes. One click exports your resume to PDF, with your formatting and styling intact."
 msgstr "はい。ワンクリックで履歴書を PDF にエクスポートでき、書式やスタイルもそのまま保たれます。"
@@ -6661,6 +6957,10 @@ msgstr "履歴書内に「I」や「my」が使われています。"
 msgid "Your resume's public URL is protected by a password. Share the password only with people you trust."
 msgstr "履歴書の公開 URL はパスワードで保護されています。パスワードは信頼できる相手にだけ共有してください。"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Your saved cover letter will remain unchanged."
+msgstr "保存済みのカバーレターは変更されません。"
+
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
 msgstr "皆さまのご支援が、このプロジェクトをこれからも誰もが無料で使えるオープンなものに保ちます。"
@@ -6685,15 +6985,3 @@ msgstr "ズームアウト"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "ズールー語"
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Keyword layout"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Bulleted list"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Inline"
-msgstr ""

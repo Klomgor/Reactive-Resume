@@ -23,14 +23,6 @@ msgstr ""
 #. placeholder {1}: application.company
 #. placeholder {1}: current.company
 #: src/features/applications/components/application-actions-menu.tsx
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
-msgstr ""
-
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "\"{0} · {1}\" and its full timeline will be permanently deleted. This can't be undone."
 msgstr "\"{0} · {1}\" 및 전체 타임라인이 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
@@ -43,17 +35,17 @@ msgstr "(새 탭에서 열림)"
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
-msgstr ""
+msgstr "{0, plural, one {# 수출 신청} other {# 내보낼 애플리케이션}}"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
-msgstr "{0, plural, other {#개 항목}}"
+msgstr "{0, plural, one {# 아이템} other {# 아이템}}"
 
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
 msgid "{0, plural, one {# role} other {# roles}}"
-msgstr "{0, plural, other {# 개 역할}}"
+msgstr "{0, plural, one {# 역할} other {# 역할}}"
 
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
@@ -66,23 +58,28 @@ msgstr "{0}개 지원 추적 중"
 msgid "{0} characters"
 msgstr "{0} 문자"
 
+#. placeholder {0}: parsed.contactsSkipped
+#: src/features/applications/components/import-applications-sheet.tsx
+msgid "{0} contact(s) skipped (invalid email or missing Contact Name). Those applications still import."
+msgstr "연락처 {0}건을 건너뛰었습니다(이메일이 유효하지 않거나 연락처 이름이 없음). 해당 지원 내역은 그대로 가져옵니다."
+
 #. placeholder {0}: report.passedChecks
 #. placeholder {1}: report.applicableChecks
 #: src/features/ats-checker/report/score-header.tsx
 msgid "{0} of {1} applicable checks passed"
-msgstr "적용 가능한 점검 {1}개 중 {0}개 통과"
+msgstr "적용 가능한 점검 {0}개 중 {1}개 통과"
 
 #. placeholder {0}: category.passedChecks
 #. placeholder {1}: category.applicableChecks
 #: src/features/ats-checker/report/report-view.tsx
 msgid "{0} of {1} applicable checks passed."
-msgstr "적용 가능한 점검 {1}개 중 {0}개 통과."
+msgstr "적용 가능한 점검 {0}개 중 {1}개 통과."
 
 #. placeholder {0}: jd.matchedCount
 #. placeholder {1}: jd.totalTerms
 #: src/features/ats-checker/report/jd-coverage.tsx
 msgid "{0} of {1} terms found"
-msgstr "검색어 {1}개 중 {0}개 발견"
+msgstr "검색어 {0}개 중 {1}개 발견"
 
 #. placeholder {0}: importable.length
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -101,8 +98,8 @@ msgstr "{0}개 건너뜀"
 
 #. placeholder {0}: parsed.skipped
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "{0} skipped (missing company/role)"
-msgstr "{0}개 건너뜀(회사/직무 누락)"
+msgid "{0} skipped (invalid or missing data)"
+msgstr "{0}건 건너뜀(데이터가 유효하지 않거나 없음)"
 
 #. placeholder {0}: findings.length
 #: src/features/ats-checker/report/report-view.tsx
@@ -132,7 +129,7 @@ msgstr "{label} 지난 30일 동안"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/ats-check.tsx
 msgid "{passedRules} of {totalRules} checks passed"
-msgstr "{totalRules} 검사 중 {passedRules} 검사 통과"
+msgstr "{passedRules} 검사 중 {totalRules} 검사 통과"
 
 #: src/libs/resume/ats.ts
 msgid "{sectionTitle} · Item {itemNumber}"
@@ -150,6 +147,10 @@ msgstr "<0>자주</0><1>묻는</1><2>질문</2>"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
 msgstr "<0>Reactive Resume을 사용해 주셔서 감사합니다. 이 앱은 전 세계 오픈 소스 기여자들의 도움을 받아 대부분 제 여유 시간에 만들고 있습니다.</0><1>도움이 되셨고 앞으로도 모두에게 무료로 열려 있기를 바라신다면, 기부를 고려해 주세요. 금액은 상관없습니다.</1>"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "1 Column / Inline"
+msgstr "1열 / 인라인"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -246,6 +247,10 @@ msgstr "웹 주소가 https:// 없이 작성되어 있습니다."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Access your account through the API, including reading and changing your resumes and job applications."
+msgstr "API를 통해 계정에 액세스하여 이력서와 입사 지원 내역을 읽고 변경합니다."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -534,7 +539,11 @@ msgstr "알바니아어"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "All applications (including archived)"
-msgstr ""
+msgstr "모든 지원 내역(보관된 항목 포함)"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Allow access"
+msgstr "액세스 허용"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -590,12 +599,12 @@ msgid "Anyone who opens the public URL will need this password."
 msgstr "공개 URL을 여는 사람은 이 비밀번호가 필요합니다."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the link can view and download the resume."
-msgstr "링크가 있는 사람은 누구나 이력서를 보고 다운로드할 수 있습니다."
+msgid "Anyone with the link can view the resume."
+msgstr "링크가 있는 사람은 누구나 이 이력서를 볼 수 있습니다."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the public URL will be able to view and download your resume without a password."
-msgstr "공개 URL을 아는 사람은 누구나 비밀번호 없이 이력서를 보고 내려받을 수 있습니다."
+msgid "Anyone with the public URL will be able to view your resume without a password."
+msgstr "공개 URL이 있는 사람은 비밀번호 없이 이력서를 볼 수 있습니다."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "API Access"
@@ -623,6 +632,10 @@ msgstr "API 레퍼런스"
 msgid "App"
 msgstr "앱"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Application"
+msgstr "지원 내역"
+
 #: src/features/applications/components/application-actions-menu.tsx
 msgid "Application actions"
 msgstr "지원 작업"
@@ -637,11 +650,11 @@ msgstr "지원 Copilot"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr ""
+msgstr "지원일 시작"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr ""
+msgstr "지원일 종료"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -673,7 +686,7 @@ msgstr "주당 보낸 지원서 (최근 8주)"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Applications to export"
-msgstr ""
+msgstr "내보낼 지원 내역"
 
 #: src/features/applications/components/table-view.tsx
 msgid "Applied"
@@ -788,6 +801,10 @@ msgstr "이력서 파일 첨부 (PDF)"
 msgid "Attach files"
 msgstr "파일 첨부"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Attach PDF"
+msgstr "PDF 첨부"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
 msgstr "부착"
@@ -801,10 +818,6 @@ msgstr "첨부파일이 업로드되었습니다."
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
 msgstr "인증"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Authored pages and PDF overflow"
-msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Auto-fill failed."
@@ -931,6 +944,10 @@ msgstr "일괄 업데이트에 실패했습니다. 다시 시도하세요."
 msgid "Bullet List"
 msgstr "글머리 기호 목록"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Bulleted list"
+msgstr "글머리 기호 목록"
+
 #. Tagline shown in app footer/about area
 #: src/components/ui/copyright.tsx
 #: src/routes/_home/-sections/features.tsx
@@ -1016,6 +1033,10 @@ msgstr "생각이 바뀌셨나요? 이력서 이름을 더 잘 설명하는 이�
 msgid "Changelog"
 msgstr "변경 로그"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Changes are shared between your library and the resume builder."
+msgstr "변경 사항은 라이브러리와 이력서 빌더 간에 공유됩니다."
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1065,6 +1086,10 @@ msgstr "중국어(간체)"
 msgid "Chinese (Traditional)"
 msgstr "중국어(번체)"
 
+#: src/features/cover-letters/library.tsx
+msgid "Choose a cover letter"
+msgstr "커버레터 선택"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
 msgstr "모델을 선택하고 이력서 초안을 작성하세요."
@@ -1079,9 +1104,19 @@ msgstr "PDF 선택"
 msgid "Choose a preset or custom shade."
 msgstr "사전 설정 또는 사용자 지정 색조를 선택합니다."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "이력서를 선택하세요"
+
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Choose a saved cover letter"
+msgstr "저장된 커버레터 선택"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Choose an application"
+msgstr "지원 내역 선택"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1109,6 +1144,15 @@ msgstr "선택 해제"
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
 msgstr "가져올 파일을 선택하려면 여기를 클릭하세요"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Client ID"
+msgstr "클라이언트 ID"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/editor.tsx
+msgid "Close"
+msgstr "닫기"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Close AI assistant"
@@ -1189,6 +1233,10 @@ msgstr "비밀번호 확인"
 msgid "Connect"
 msgstr "연결"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Connect an application"
+msgstr "애플리케이션 연결"
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
 msgstr "직접 AI 제공업체를 연결하면 글쓰기에 대한 검토를 받을 수 있습니다. 위의 점검 항목은 제공업체나 계정이 필요 없습니다."
@@ -1217,18 +1265,19 @@ msgstr "연락처 정보"
 msgid "Contacts"
 msgstr "연락처"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Contain"
+msgstr "전체 표시"
+
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "내용"
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
 msgstr "내용이 격자 형태로 배치되어 있습니다."
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Contain"
-msgstr ""
 
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
@@ -1270,6 +1319,10 @@ msgstr "클립보드에 복사되었습니다."
 msgid "Copy"
 msgstr "복사"
 
+#: src/features/cover-letters/library.tsx
+msgid "Copy an existing letter from a resume"
+msgstr "이력서에서 기존 커버레터 복사"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
 msgstr "기기를 분실했을 때를 대비해 이 백업 코드를 복사해 안전한 곳에 보관하세요."
@@ -1278,9 +1331,17 @@ msgstr "기기를 분실했을 때를 대비해 이 백업 코드를 복사해 �
 msgid "Copy Backup Codes"
 msgstr "백업 코드 복사"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy from resume"
+msgstr "이력서에서 복사"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "JSON 복사"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy saved to your cover-letter library."
+msgstr "커버레터 라이브러리에 사본을 저장했습니다."
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1316,6 +1377,19 @@ msgstr "연도를 수정하거나 진행 중인 작업에 \"현재\"를 사용�
 msgid "Correct the year, or write \"Present\" for ongoing work."
 msgstr "연도를 수정하거나, 진행 중인 업무라면 \"현재\"라고 작성하세요."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Could not complete this action. Please try again."
+msgstr "이 작업을 완료하지 못했습니다. 다시 시도해 주세요."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Could not complete this connection. Restart the connection from your client and try again."
+msgstr "이 연결을 완료하지 못했습니다. 클라이언트에서 연결을 다시 시작한 후 시도해 주세요."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Could not copy to clipboard. Please copy the text manually."
+msgstr "클립보드에 복사하지 못했습니다. 텍스트를 직접 복사해 주세요."
+
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not generate the DOCX. Please try again."
 msgstr "DOCX를 생성하지 못했습니다. 다시 시도하세요."
@@ -1324,6 +1398,18 @@ msgstr "DOCX를 생성하지 못했습니다. 다시 시도하세요."
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Could not generate the PDF. Please try again."
 msgstr "PDF를 생성하지 못했습니다. 다시 시도하세요."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load cover letters."
+msgstr "커버레터를 불러오지 못했습니다."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load the selected resume."
+msgstr "선택한 이력서를 불러오지 못했습니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Could not load this cover letter."
+msgstr "이 커버레터를 불러오지 못했습니다."
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1338,6 +1424,10 @@ msgstr "AI 제공업체에 연결할 수 없습니다. 다시 시도하세요."
 msgid "Could not restore this patch."
 msgstr "이 패치를 복원할 수 없습니다."
 
+#: src/features/cover-letters/editor.tsx
+msgid "Could not save the cover letter. Please try again."
+msgstr "커버레터를 저장하지 못했습니다. 다시 시도해 주세요."
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
 msgstr "2단계 인증을 설정하지 못했습니다."
@@ -1345,7 +1435,7 @@ msgstr "2단계 인증을 설정하지 못했습니다."
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr ""
+msgstr "이 항목들을 정렬하지 못해 맨 뒤에 남겨 두었습니다: {0}."
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1400,8 +1490,17 @@ msgstr "출처별 개수"
 msgid "Counted separately from the parse score. Coverage does not predict anything."
 msgstr "파싱 점수와는 별도로 계산됩니다. 커버리지는 아무것도 예측하지 않습니다."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover"
+msgstr "채우기"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
+msgstr "채우기는 이미지를 잘라내 프레임을 가득 채웁니다. 전체 표시는 이미지 전체를 보여 줍니다. 이전 자르기로 잘려 나간 가장자리를 되살리려면 원본을 다시 업로드하세요."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/resume/export/download-dialog.tsx
 msgid "Cover letter"
 msgstr "커버레터"
@@ -1418,6 +1517,11 @@ msgstr "자기소개서"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "커버레터 초안"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/cover-letters.tsx
+msgid "Cover Letters"
+msgstr "커버레터"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1437,6 +1541,7 @@ msgstr "커버레터 초안"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Create"
 msgstr "생성"
@@ -1529,6 +1634,10 @@ msgstr "샘플 이력서 만들기"
 msgid "Create as many resumes as you want."
 msgstr "원하는 만큼 이력서를 만들 수 있습니다."
 
+#: src/features/cover-letters/library.tsx
+msgid "Create cover letter"
+msgstr "커버레터 만들기"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
 msgstr "처음부터 만들기"
@@ -1574,7 +1683,7 @@ msgstr "CSV 데이터"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
-msgstr ""
+msgstr "현재 필터"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
@@ -1662,6 +1771,10 @@ msgstr "심층 점검"
 msgid "DeepSeek"
 msgstr "딥시크"
 
+#: src/features/cover-letters/library.tsx
+msgid "Default template"
+msgstr "기본 템플릿"
+
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
 msgstr "학위"
@@ -1675,6 +1788,7 @@ msgstr "학위"
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1718,6 +1832,10 @@ msgstr "이 에이전트 스레드를 삭제하시겠습니까?"
 msgid "Delete this application?"
 msgstr "이 지원서를 삭제할까요?"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Delete this cover letter?"
+msgstr "이 커버레터를 삭제할까요?"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
 msgstr "이 타임라인 항목을 삭제할까요?"
@@ -1748,6 +1866,7 @@ msgstr "이력서를 삭제하는 중입니다..."
 msgid "Denied, waiting for the agent…"
 msgstr "거부되었습니다. 에이전트를 기다리는 중…"
 
+#: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "거부"
@@ -1798,6 +1917,14 @@ msgstr "2단계 인증 비활성화"
 #: src/dialogs/auth/disable-two-factor.tsx
 msgid "Disabling two-factor authentication..."
 msgstr "2단계 인증을 비활성화하는 중입니다..."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard"
+msgstr "버리기"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard unsaved changes?"
+msgstr "저장하지 않은 변경 사항을 버릴까요?"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1856,17 +1983,18 @@ msgstr "프로필과 모든 이력서를 포함한 모든 데이터를 JSON 파�
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download application details, contacts, notes, and timeline history as CSV."
-msgstr ""
+msgstr "지원 상세 정보, 연락처, 메모, 타임라인 기록을 CSV로 다운로드합니다."
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download CSV"
-msgstr ""
+msgstr "CSV 다운로드"
 
 #. Primary action in the builder header to open resume download options
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Download options"
 msgstr "다운로드 옵션"
 
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Download PDF"
@@ -1903,6 +2031,7 @@ msgstr "대명사를 빼고 동사로 시작하세요. 대부분의 시장에서
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
 #: src/dialogs/resume/index.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -1942,6 +2071,11 @@ msgstr "이전 버전은 유지되지만, 빌더의 실행 취소 기록은 초�
 msgid "Edit"
 msgstr "편집하다"
 
+#. placeholder {0}: letter.name
+#: src/features/cover-letters/library.tsx
+msgid "Edit {0}"
+msgstr "{0} 편집"
+
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
 msgid "Edit {chip}"
@@ -1960,6 +2094,10 @@ msgstr "색상 편집 {0}"
 #: src/components/input/rich-input.tsx
 msgid "Edit content in fullscreen mode"
 msgstr "전체 화면 모드에서 콘텐츠 편집"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Edit cover letter"
+msgstr "커버레터 편집"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit date"
@@ -2011,6 +2149,10 @@ msgstr "학력"
 msgid "Email"
 msgstr "이메일"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Email (optional)"
+msgstr "이메일(선택)"
+
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
@@ -2045,10 +2187,6 @@ msgstr "2단계 인증 활성화"
 msgid "Enabled"
 msgstr "활성화됨"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Enabling password protection..."
-#~ msgstr "Enabling password protection..."
-
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enabling two-factor authentication…"
 msgstr "2단계 인증 활성화…"
@@ -2061,6 +2199,10 @@ msgstr "영어"
 msgid "English (United Kingdom)"
 msgstr "영어 (영국)"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Enter a name for this cover letter."
+msgstr "이 커버레터의 이름을 입력하세요."
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "패스키의 이름을 입력하세요."
@@ -2068,6 +2210,10 @@ msgstr "패스키의 이름을 입력하세요."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account"
 msgstr "계정에 사용할 새 비밀번호를 입력하세요"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Enter a valid email address."
+msgstr "유효한 이메일 주소를 입력하세요."
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -2146,11 +2292,11 @@ msgstr "내보내기"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Export applications"
-msgstr ""
+msgstr "지원 내역 내보내기"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Export CSV"
-msgstr ""
+msgstr "CSV 내보내기"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Export Data"
@@ -2159,6 +2305,10 @@ msgstr "데이터 내보내기"
 #: src/features/ats-checker/messages.ts
 msgid "Export from the original document instead of scanning or screenshotting it."
 msgstr "스캔하거나 스크린샷을 찍는 대신 원본 문서에서 내보내세요."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Export JSON"
+msgstr "JSON 내보내기"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2392,7 +2542,7 @@ msgstr "불꽃"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr ""
+msgstr "표시 방식"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -2441,10 +2591,6 @@ msgstr "글꼴 두께"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Weights"
 msgstr "글꼴 두께"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "For a controlled continuation, open a section's menu and choose Move to → New Page, then turn on Full Width for that authored page."
-msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
 msgid "For example, note which companies you sent this resume to, or links to the job descriptions."
@@ -2574,10 +2720,6 @@ msgstr "Google"
 msgid "Google Gemini"
 msgstr "구글 제미니 자리"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "gpt-4.1"
-msgstr "gpt-4.1"
-
 #: src/dialogs/resume/sections/education.tsx
 msgid "Grade"
 msgstr "성적"
@@ -2654,11 +2796,20 @@ msgstr "새 API 키가 준비되었습니다"
 msgid "Hidden"
 msgstr "숨김"
 
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Hidden sections"
+msgstr "숨겨진 섹션"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Hide"
 msgstr "숨기기"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Hide heading"
+msgstr "제목 숨기기"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Icons"
@@ -2689,6 +2840,10 @@ msgstr "비밀번호 숨기기"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Hide picture"
 msgstr "사진 숨기기"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Hide preview"
+msgstr "미리보기 숨기기"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2725,10 +2880,6 @@ msgstr "API는 어떻게 사용하나요?"
 #: src/routes/_home/-sections/faq.tsx
 msgid "How is my data protected?"
 msgstr "내 데이터는 어떻게 보호되나요?"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "https://gateway.example.com/v1"
-msgstr "https://gateway.example.com/v1"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -2767,6 +2918,10 @@ msgstr "{0} 가져오기"
 msgid "Import an existing resume"
 msgstr "기존 이력서 가져오기"
 
+#: src/features/cover-letters/library.tsx
+msgid "Import cover letter JSON"
+msgstr "커버레터 JSON 가져오기"
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
 msgstr "CSV 가져오기"
@@ -2780,14 +2935,22 @@ msgstr "가져오기에 실패했습니다. CSV를 확인하고 다시 시도하
 msgid "Import from CSV"
 msgstr "CSV에서 가져오기"
 
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Import from library"
+msgstr "라이브러리에서 가져오기"
+
+#: src/features/cover-letters/library.tsx
+msgid "Import JSON"
+msgstr "JSON 가져오기"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "지원 {0}개를 가져왔습니다."
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing from PDF or Word requires a connected AI provider."
-msgstr "PDF 또는 Word 파일에서 가져오기를 하려면 연결된 AI 공급자가 필요합니다."
+msgid "Importing from Word requires a connected AI provider."
+msgstr "Word에서 가져오려면 연결된 AI 제공자가 필요합니다."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2830,6 +2993,10 @@ msgstr "인도네시아어"
 msgid "Information"
 msgstr "정보"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Inline"
+msgstr "인라인"
+
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
 msgstr "인라인 코드"
@@ -2842,7 +3009,7 @@ msgstr "인사이트"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Inspecting page {0} of {1}…"
-msgstr "{1}페이지 중 {0}페이지 검사 중…"
+msgstr "{0}페이지 중 {1}페이지 검사 중…"
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Instant Generation"
@@ -2931,17 +3098,6 @@ msgstr "신원 미상"
 msgid "john.doe"
 msgstr "john.doe"
 
-#. Example email placeholder for login identifier field
-#. Example email placeholder on forgot-password form
-#. Example email placeholder on profile settings form
-#. Example email placeholder on registration form
-#: src/features/auth/pages/forgot-password.tsx
-#: src/features/auth/pages/login.tsx
-#: src/features/auth/pages/register.tsx
-#: src/features/settings/pages/profile.tsx
-msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
-
 #. Import source option for standard JSON Resume format
 #: src/dialogs/resume/import.tsx
 msgid "JSON Resume"
@@ -2958,6 +3114,14 @@ msgstr "칸나다어"
 #: src/features/ats-checker/messages.ts
 msgid "Keep a single address, so software does not have to guess which one to use."
 msgstr "주소는 하나만 남겨서 소프트웨어가 어느 것을 써야 할지 헷갈리지 않게 하세요."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Keep access when you are not using the application."
+msgstr "애플리케이션을 사용하지 않을 때도 액세스를 유지합니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Keep editing"
+msgstr "계속 편집"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -2991,6 +3155,10 @@ msgstr "함께 하세요"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "키"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Keyword layout"
+msgstr "키워드 레이아웃"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3192,6 +3360,10 @@ msgstr "AI 제공업체를 불러오는 중입니다. 잠시 후 다시 시도�
 msgid "Loading applications…"
 msgstr "애플리케이션 로딩 중…"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Loading connection request..."
+msgstr "연결 요청을 불러오는 중…"
+
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Loading providers…"
@@ -3391,6 +3563,8 @@ msgstr "https:// 으로 시작해야 합니다."
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/ats-checker/parse-preview.tsx
 #: src/features/auth/pages/register.tsx
+#: src/features/cover-letters/editor.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -3467,6 +3641,10 @@ msgstr "새 스레드"
 msgid "New Thread"
 msgstr "새 스레드"
 
+#: src/features/cover-letters/library.tsx
+msgid "Next"
+msgstr "다음"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "No ads and no trackers, so nothing gets in your way."
 msgstr "광고도 추적기도 없어서 방해받을 일이 없습니다."
@@ -3478,6 +3656,10 @@ msgstr "광고 없음, 추적 없음"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "No AI provider connected"
 msgstr "연결된 AI 제공업체 없음"
+
+#: src/dialogs/resume/import.tsx
+msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
+msgstr "연결된 AI 제공자가 없어 브라우저에서 직접 PDF의 텍스트를 읽어 인식한 내용을 채웁니다. 결과는 다듬어야 할 수 있습니다."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3499,6 +3681,10 @@ msgstr "검색과 일치하는 명령이 없습니다."
 #: src/features/ats-checker/messages.ts
 msgid "No conventional section headings were found."
 msgstr "일반적인 섹션 제목을 찾을 수 없습니다."
+
+#: src/features/cover-letters/library.tsx
+msgid "No cover letters found. Create one or import an existing letter."
+msgstr "커버레터가 없습니다. 새로 만들거나 기존 편지를 가져오세요."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3664,6 +3850,10 @@ msgstr "원클릭 로그인"
 msgid "Ongoing Maintenance"
 msgstr "지속적인 유지 관리"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Only allow applications you trust. This application will be able to:"
+msgstr "신뢰할 수 있는 애플리케이션에만 허용하세요. 이 애플리케이션은 다음을 할 수 있습니다:"
+
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
@@ -3727,10 +3917,6 @@ msgid "Open the exported file and confirm you can select and copy every part of 
 msgstr "내보낸 파일을 열어 모든 부분을 선택하고 복사할 수 있는지 확인하세요."
 
 #: src/features/settings/integrations/components/ai-section.tsx
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "OpenAI 호환"
 
@@ -3781,6 +3967,10 @@ msgstr "번호 매기기 목록"
 msgid "Organization"
 msgstr "기관"
 
+#: src/components/input/rich-input.tsx
+msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
+msgstr "원본 표 서식이 유지됩니다. 안전하게 편집할 수 없어 이 콘텐츠는 읽기 전용입니다."
+
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "100점 만점"
@@ -3790,16 +3980,14 @@ msgid "Page"
 msgstr "페이지"
 
 #. Layout editor page label with 1-based page number
+#. placeholder {0}: Math.floor(offset / 20) + 1
 #. placeholder {0}: pageIndex + 1
 #. placeholder {0}: targetPageIndex + 1
+#: src/features/cover-letters/library.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Page {0}"
 msgstr "페이지 {0}"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Pages listed here are authored pages saved with your resume. A long authored page may continue onto extra PDF pages automatically; those overflow pages are not saved or editable separately."
-msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Paragraph"
@@ -3847,10 +4035,6 @@ msgstr "패스키 & 2단계 인증"
 msgid "Password"
 msgstr "비밀번호"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Password cannot be empty."
-#~ msgstr "Password cannot be empty."
-
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Password must be between 6 and 64 characters."
 msgstr "비밀번호는 6자에서 64자 사이여야 합니다."
@@ -3876,8 +4060,8 @@ msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "공고를 붙여넣으면 이력서에 이미 포함된 용어를 확인할 수 있습니다."
 
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source and Tags."
-msgstr "행을 붙여넣거나 .csv를 업로드하세요. 회사, 직무, 단계, 단계 날짜, 급여, 출처, 태그 같은 열을 매핑합니다."
+msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
+msgstr "행을 붙여넣거나 .csv 파일을 업로드하세요. 회사, 직무, 단계, 단계 날짜, 급여, 출처, 태그, 연락처 이름, 연락처 이메일, 연락처 전화 같은 열을 매핑합니다."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -3915,11 +4099,13 @@ msgstr "패치가 뒤로 말려 올라갔습니다."
 msgid "Patch rolled back."
 msgstr "패치가 되돌려졌습니다."
 
-#. File format label in import source selector
-#. File format label in import source selector
-#: src/dialogs/resume/import.tsx
-msgid "PDF"
-msgstr "PDF"
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDF snapshot attached to the application."
+msgstr "PDF 스냅샷을 지원 내역에 첨부했습니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDFs already attached to applications will remain available."
+msgstr "이미 지원 내역에 첨부된 PDF는 계속 사용할 수 있습니다."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -3941,6 +4127,10 @@ msgstr "페르시아어"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Phone"
 msgstr "전화"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Phone (optional)"
+msgstr "전화번호(선택)"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4055,6 +4245,14 @@ msgstr "미리 보기와 내보내기는 기본 스타일로 대체됩니다."
 #: src/features/resume/stylesheet/status.tsx
 msgid "Preview and export keep valid styles and ignore invalid styles."
 msgstr "미리 보기와 내보내기는 유효한 스타일만 적용하고 잘못된 스타일은 무시합니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Preview PDF"
+msgstr "PDF 미리보기"
+
+#: src/features/cover-letters/library.tsx
+msgid "Previous"
+msgstr "이전"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4211,6 +4409,14 @@ msgstr "사용자 지정 스타일 적용 가이드를 읽어보세요."
 msgid "Read the resume"
 msgstr "이력서를 읽음"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Read your email address."
+msgstr "이메일 주소를 읽습니다."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Read your profile information."
+msgstr "프로필 정보를 읽습니다."
+
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
 msgstr "가독성"
@@ -4219,7 +4425,7 @@ msgstr "가독성"
 #. placeholder {1}: progress.pageCount
 #: src/features/ats-checker/tool.tsx
 msgid "Reading page {0} of {1}…"
-msgstr "{1}페이지 중 {0}페이지 읽는 중…"
+msgstr "{0}페이지 중 {1}페이지 읽는 중…"
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Reading the posting…"
@@ -4238,6 +4444,7 @@ msgid "Ready to activate with warnings"
 msgstr "경고 메시지와 함께 활성화할 준비가 되었습니다."
 
 #: src/dialogs/resume/sections/cover-letter.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Recipient"
 msgstr "수신인"
 
@@ -4270,6 +4477,10 @@ msgstr "추천인…, 강조할 내용 등"
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "새 장치 등록"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Reload latest version"
+msgstr "최신 버전 다시 불러오기"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4337,6 +4548,10 @@ msgstr "사용자 정의 필드 순서 변경"
 msgid "Repeated far more often than the posting itself uses them: {0}. Recruiters notice."
 msgstr "공고 자체보다 훨씬 자주 반복됩니다: {0}. 채용 담당자가 이를 알아챕니다."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace"
+msgstr "바꾸기"
+
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
 msgstr "아이콘 폰트를 일반 텍스트로 바꾼 뒤 다시 내보내세요."
@@ -4344,6 +4559,10 @@ msgstr "아이콘 폰트를 일반 텍스트로 바꾼 뒤 다시 내보내세�
 #: src/features/ats-checker/messages.ts
 msgid "Replace tables with plain paragraphs and lists. Cells extract in storage order, not reading order."
 msgstr "표를 일반 문단과 목록으로 바꾸세요. 셀은 읽는 순서가 아닌 저장 순서로 추출됩니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace the attached cover letter?"
+msgstr "첨부된 커버레터를 바꿀까요?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4447,6 +4666,8 @@ msgstr "여러 직종과 취향에 맞춘 이력서 템플릿입니다. 마음�
 msgid "Resumes"
 msgstr "이력서"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "다시 해 보다"
@@ -4574,13 +4795,27 @@ msgstr "변경사항 저장"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/editor.tsx
 #: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Save changes before previewing, exporting, or changing styling."
+msgstr "미리보기, 내보내기, 스타일 변경 전에 변경 사항을 저장하세요."
+
+#: src/features/cover-letters/library.tsx
+msgid "Save copy to library"
+msgstr "라이브러리에 사본 저장"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
 msgstr "저장 모델"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Save resume changes before copying its content or styling."
+msgstr "내용이나 스타일을 복사하기 전에 이력서 변경 사항을 저장하세요."
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4589,6 +4824,10 @@ msgstr "모든 페이지가 똑바로 보이도록 파일을 저장하세요."
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "저장됨"
+
+#: src/features/resume/builder/draft.ts
+msgid "Saving is taking longer than expected. Your changes are still open."
+msgstr "저장이 예상보다 오래 걸리고 있습니다. 변경 사항은 그대로 남아 있습니다."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4622,6 +4861,14 @@ msgstr "지원 검색…"
 #: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "검색 명령"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters"
+msgstr "커버레터 검색"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters..."
+msgstr "커버레터 검색…"
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -4730,6 +4977,10 @@ msgstr "비밀번호 재설정 이메일 보내기"
 msgid "Send the resume itself rather than a portfolio wrapper."
 msgstr "포트폴리오 표지가 아닌 이력서 자체를 보내세요."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Sender details"
+msgstr "보내는 사람 정보"
+
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "비밀번호 재설정 이메일을 보내는 중입니다..."
@@ -4814,6 +5065,7 @@ msgstr "공유 가능한 링크"
 msgid "Sharing"
 msgstr "공유"
 
+#: src/features/resume/builder/section-recovery.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -4824,6 +5076,19 @@ msgstr "표시"
 #: src/features/applications/components/board.tsx
 msgid "Show {0} more"
 msgstr "{0}개 더 보기"
+
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Show {title} section"
+msgstr "{title} 섹션 표시"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
+msgid "Show Download Buttons"
+msgstr "다운로드 버튼 표시"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Show heading"
+msgstr "제목 표시"
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -4867,7 +5132,7 @@ msgstr "자기소개서에도 동일한 첫 페이지 헤더를 표시합니다.
 #. placeholder {1}: applications.length
 #: src/features/applications/components/table-view.tsx
 msgid "Showing {0} of {1}"
-msgstr "{1}개 중 {0}개 표시"
+msgstr "{0}개 중 {1}개 표시"
 
 #. Layout editor column label for the secondary sidebar area
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -4918,6 +5183,10 @@ msgstr "가입"
 #: src/features/auth/pages/error.tsx
 msgid "Sign-in didn't complete"
 msgstr "로그인이 완료되지 않았습니다"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Signed in as {email}"
+msgstr "{email}(으)로 로그인됨"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5048,14 +5317,14 @@ msgstr "로그인하는 중에 문제가 발생했습니다. 다시 시도해 �
 msgid "Something went wrong. Please try again."
 msgstr "문제가 발생했습니다. 다시 시도해 주세요."
 
-#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
-msgid "Sort by date"
-msgstr ""
-
 #: src/routes/dashboard/applications/index.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Sort by"
 msgstr "정렬 기준"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Sort by date"
+msgstr "날짜순 정렬"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5148,7 +5417,7 @@ msgstr "처음부터 이력서를 직접 작성하기"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Start date must be on or before end date."
-msgstr ""
+msgstr "시작일은 종료일과 같거나 그 이전이어야 합니다."
 
 #: src/features/ats-checker/messages.ts
 msgid "Start each one with a concrete verb: built, led, reduced, migrated."
@@ -5207,6 +5476,14 @@ msgstr "스타일시트 편집기"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Stylesheet has fatal errors"
 msgstr "스타일시트에 치명적 오류가 있습니다"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
+msgstr "스타일과 보내는 사람 정보가 복사됩니다. 이후 이력서 편집 내용은 새로 고쳐야 반영됩니다."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details refreshed from the selected resume."
+msgstr "선택한 이력서에서 스타일과 보내는 사람 정보를 새로 가져왔습니다."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5297,6 +5574,8 @@ msgstr "타밀어"
 msgid "Telugu"
 msgstr "텔루구어"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/libs/resume/section.tsx
 msgid "Template"
 msgstr "템플릿"
@@ -5407,6 +5686,10 @@ msgstr "가져온 파일을 유효한 이력서로 구문 분석할 수 없습�
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "텍스트가 저장된 순서가 실제로 읽히는 순서와 크게 다릅니다."
+
+#: src/features/cover-letters/library.tsx
+msgid "The original letter stays in your resume. Each copy can be edited independently."
+msgstr "원본 편지는 이력서에 그대로 남습니다. 각 사본은 따로 편집할 수 있습니다."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5537,6 +5820,14 @@ msgstr "이 점검은 이 파일에 해당하지 않습니다."
 msgid "This check only runs on resumes written in English."
 msgstr "이 점검은 영어로 작성된 이력서에서만 실행됩니다."
 
+#: src/features/auth/pages/consent.tsx
+msgid "This connection request is invalid or has expired."
+msgstr "이 연결 요청이 유효하지 않거나 만료되었습니다."
+
+#: src/features/cover-letters/editor.tsx
+msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
+msgstr "이 커버레터가 다른 곳에서 변경되었습니다. 편집한 내용은 그대로 있습니다. 다시 저장하기 전에 최신 버전을 불러오세요."
+
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
 msgstr "새 API 키를 만듭니다. 이 키가 있으면 다른 프로그램이 Reactive Resume API를 통해 이력서 데이터를 읽고 바꿀 수 있습니다."
@@ -5645,6 +5936,10 @@ msgstr "이 링크에는 프로토콜이 없습니다."
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "AI 제공자의 응답 속도에 따라 몇 분 정도 걸릴 수 있습니다. 창을 닫거나 페이지를 새로 고치지 마세요."
 
+#: src/dialogs/resume/import.tsx
+msgid "This may take a moment. Please do not close the window or refresh the page."
+msgstr "시간이 조금 걸릴 수 있습니다. 창을 닫거나 페이지를 새로 고치지 마세요."
+
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
 msgstr "이것은 소프트웨어가 이 파일의 텍스트를 얼마나 정확하게 추출할 수 있는지를 측정합니다. 지원서가 탈락할지 예측하지 않으며, 그렇게 할 수 있는 도구도 없습니다. 파일은 이 브라우저에서 읽혔을 뿐 업로드되지 않았습니다."
@@ -5657,6 +5952,11 @@ msgstr "이 페이지는 열로 구성되어 있어 텍스트가 순서에 맞�
 msgid "This page is very densely packed."
 msgstr "이 페이지는 내용이 매우 빽빽하게 채워져 있습니다."
 
+#. Error shown when a PDF has no extractable text layer during import
+#: src/dialogs/resume/import.tsx
+msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
+msgstr "이 PDF에는 읽을 수 있는 텍스트가 없습니다. 스캔본일 가능성이 높아 가져올 내용이 없습니다."
+
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
 msgstr "이 PDF는 비밀번호로 보호되어 있습니다. 보호되지 않은 사본을 저장한 뒤 다시 시도하세요."
@@ -5668,6 +5968,10 @@ msgstr "이 기간은 시작되기 전에 종료됩니다."
 #: src/libs/resume/ats.ts
 msgid "This period starts in the future."
 msgstr "이 기간은 미래에 시작됩니다."
+
+#: src/features/cover-letters/library.tsx
+msgid "This resume has no embedded cover letters."
+msgstr "이 이력서에는 포함된 커버레터가 없습니다."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -5787,10 +6091,6 @@ msgstr "제목"
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "계정을 삭제하려면 아래 확인 문구를 입력한 뒤 버튼을 누르세요."
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "Together.ai"
-msgstr "투게더.에이"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-base.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/shared/section-base.tsx
@@ -6469,10 +6769,6 @@ msgstr "글쓰기"
 msgid "X (Twitter)"
 msgstr "X (트위터)"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "xAI Grok"
-msgstr "xAI 그록"
-
 #: src/routes/_home/-sections/faq.tsx
 msgid "Yes. One click exports your resume to PDF, with your formatting and styling intact."
 msgstr "네. 클릭 한 번으로 서식과 스타일을 그대로 유지한 채 이력서를 PDF로 내보냅니다."
@@ -6661,6 +6957,10 @@ msgstr "이력서에서 \"I\"와 \"my\"를 사용하고 있습니다."
 msgid "Your resume's public URL is protected by a password. Share the password only with people you trust."
 msgstr "이력서의 공개 URL은 비밀번호로 보호되어 있습니다. 비밀번호는 믿을 수 있는 사람에게만 알려주세요."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Your saved cover letter will remain unchanged."
+msgstr "저장된 커버레터는 변경되지 않습니다."
+
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
 msgstr "여러분의 후원 덕분에 이 프로젝트가 지금도, 앞으로도 모두에게 무료로 열려 있습니다."
@@ -6685,15 +6985,3 @@ msgstr "축소"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "줄루어"
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Keyword layout"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Bulleted list"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Inline"
-msgstr ""

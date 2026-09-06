@@ -23,14 +23,6 @@ msgstr ""
 #. placeholder {1}: application.company
 #. placeholder {1}: current.company
 #: src/features/applications/components/application-actions-menu.tsx
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
-msgstr ""
-
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "\"{0} · {1}\" and its full timeline will be permanently deleted. This can't be undone."
 msgstr "\"{0} · {1}\" dhe e gjithë kronologjia e saj do të fshihen përgjithmonë. Kjo nuk mund të zhbëhet."
@@ -43,7 +35,7 @@ msgstr "(hapet në skedë të re)"
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
-msgstr ""
+msgstr "{0, plural, one {# aplikacion për eksport} other {# aplikacione për eksport}}"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -65,6 +57,11 @@ msgstr "{0} aplikime të ndjekura"
 #: src/components/input/rich-input.tsx
 msgid "{0} characters"
 msgstr "{0} karaktere"
+
+#. placeholder {0}: parsed.contactsSkipped
+#: src/features/applications/components/import-applications-sheet.tsx
+msgid "{0} contact(s) skipped (invalid email or missing Contact Name). Those applications still import."
+msgstr "Kontaktet {0} u anashkaluan (email i pavlefshëm ose mungon Emri i Kontaktit). Këto aplikacione ende importohen."
 
 #. placeholder {0}: report.passedChecks
 #. placeholder {1}: report.applicableChecks
@@ -101,8 +98,8 @@ msgstr "{0} u anashkaluan"
 
 #. placeholder {0}: parsed.skipped
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "{0} skipped (missing company/role)"
-msgstr "{0} u anashkalua (kompania/roli mungon)"
+msgid "{0} skipped (invalid or missing data)"
+msgstr "{0} u anashkalua (të dhëna të pavlefshme ose mungojnë)"
 
 #. placeholder {0}: findings.length
 #: src/features/ats-checker/report/report-view.tsx
@@ -150,6 +147,10 @@ msgstr "<0>Pyetje</0><1>të Bëra</1><2>Shpesh</2>"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
 msgstr "<0>Faleminderit që përdorni Reactive Resume. Këtë aplikacion e ndërtoj kryesisht në kohën time të lirë, me ndihmën e kontribuuesve me kod të hapur nga e gjithë bota.</0><1>Nëse ju ka qenë i dobishëm dhe dëshironi që të mbetet falas dhe i hapur për të gjithë, ju lutem merrni në konsideratë një dhurim. Çdo shumë ndihmon.</1>"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "1 Column / Inline"
+msgstr "1 Kolona / Inline"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -246,6 +247,10 @@ msgstr "Një adresë web është shkruar pa https://."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "A4"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Access your account through the API, including reading and changing your resumes and job applications."
+msgstr "Hyni në llogarinë tuaj përmes API-së, duke përfshirë leximin dhe ndryshimin e CV-ve tuaja dhe aplikacionet për punë."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -534,7 +539,11 @@ msgstr "Shqip"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "All applications (including archived)"
-msgstr ""
+msgstr "Të gjitha aplikacionet (përfshirë të arkivuar)"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Allow access"
+msgstr "Lejo qasjen"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -590,12 +599,12 @@ msgid "Anyone who opens the public URL will need this password."
 msgstr "Kushdo që hap URL-në publike do të ketë nevojë për këtë fjalëkalim."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the link can view and download the resume."
-msgstr "Çdokush që ka linkun mund të shikojë dhe shkarkojë CV-në."
+msgid "Anyone with the link can view the resume."
+msgstr "Kushdo që ka lidhjen mund ta shikojë CV-në."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the public URL will be able to view and download your resume without a password."
-msgstr "Kushdo që ka URL-në publike do të mund ta shohë dhe ta shkarkojë CV-në tuaj pa fjalëkalim."
+msgid "Anyone with the public URL will be able to view your resume without a password."
+msgstr "Çdokush me URL-në publike do të jetë në gjendje të shikojë CV-në tuaj pa një fjalëkalim."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "API Access"
@@ -623,6 +632,10 @@ msgstr "Referencë API"
 msgid "App"
 msgstr "Aplikacioni"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Application"
+msgstr "Aplikimi"
+
 #: src/features/applications/components/application-actions-menu.tsx
 msgid "Application actions"
 msgstr "Veprimet e aplikimit"
@@ -637,11 +650,11 @@ msgstr "Kopilot i aplikimeve"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr ""
+msgstr "Data e aplikimit nga"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr ""
+msgstr "Data e aplikimit për"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -673,7 +686,7 @@ msgstr "Aplikimet e dërguara për javë (8 javët e fundit)"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Applications to export"
-msgstr ""
+msgstr "Aplikimet për eksport"
 
 #: src/features/applications/components/table-view.tsx
 msgid "Applied"
@@ -788,6 +801,10 @@ msgstr "Bashkëngjit një skedar CV-je (PDF)"
 msgid "Attach files"
 msgstr "Bashkëngjit skedarë"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Attach PDF"
+msgstr "Bashkangjit PDF"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
 msgstr "Shtojcë"
@@ -801,10 +818,6 @@ msgstr "Shtojca u ngarkua."
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
 msgstr "Autentikimi"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Authored pages and PDF overflow"
-msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Auto-fill failed."
@@ -931,6 +944,10 @@ msgstr "Përditësimi në masë dështoi. Ju lutemi provoni përsëri."
 msgid "Bullet List"
 msgstr "Lista me pika"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Bulleted list"
+msgstr "Lista me pika"
+
 #. Tagline shown in app footer/about area
 #: src/components/ui/copyright.tsx
 #: src/routes/_home/-sections/features.tsx
@@ -1016,6 +1033,10 @@ msgstr "Ndërruat mendje? Riemërtoni CV-në tuaj me diçka më përshkruese."
 msgid "Changelog"
 msgstr "Ndryshimet"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Changes are shared between your library and the resume builder."
+msgstr "Ndryshimet ndahen midis bibliotekës suaj dhe krijuesit të rinisë."
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1065,6 +1086,10 @@ msgstr "Kinezçe (E thjeshtuar)"
 msgid "Chinese (Traditional)"
 msgstr "Kinezçe (Tradicionale)"
 
+#: src/features/cover-letters/library.tsx
+msgid "Choose a cover letter"
+msgstr "Zgjidhni një letër motivuese"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
 msgstr "Zgjidhni një model dhe rifilloni draftin."
@@ -1079,9 +1104,19 @@ msgstr "Zgjidhni një PDF"
 msgid "Choose a preset or custom shade."
 msgstr "Zgjidhni një paracaktim ose një hije të personalizuar."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "Zgjidhni një CV"
+
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Choose a saved cover letter"
+msgstr "Zgjidhni një letër motivuese të ruajtur"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Choose an application"
+msgstr "Zgjidhni një aplikacion"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1109,6 +1144,15 @@ msgstr "Fshij përzgjedhjen"
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
 msgstr "Klikoni këtu për të zgjedhur një skedar për importim"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Client ID"
+msgstr "ID-ja e klientit"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/editor.tsx
+msgid "Close"
+msgstr "Mbylle"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Close AI assistant"
@@ -1189,6 +1233,10 @@ msgstr "Konfirmo fjalëkalimin"
 msgid "Connect"
 msgstr "Lidhu"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Connect an application"
+msgstr "Lidhni një aplikacion"
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
 msgstr "Lidhni ofruesin tuaj AI për të marrë një vlerësim të shkrimit. Kontrollet më sipër nuk kërkojnë as ofrues, as llogari."
@@ -1217,18 +1265,19 @@ msgstr "Detajet e kontaktit"
 msgid "Contacts"
 msgstr "Kontaktet"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Contain"
+msgstr "Përmbajë"
+
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "Përmbajtja"
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
 msgstr "Përmbajtja është vendosur në një rrjetë."
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Contain"
-msgstr ""
 
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
@@ -1270,6 +1319,10 @@ msgstr "Kopjuar në kujtesën e fragmenteve."
 msgid "Copy"
 msgstr "Kopjo"
 
+#: src/features/cover-letters/library.tsx
+msgid "Copy an existing letter from a resume"
+msgstr "Kopjoni një letër ekzistuese nga një CV"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
 msgstr "Kopjoni dhe ruani këto kode rezervë në rast se humbni pajisjen tuaj."
@@ -1278,9 +1331,17 @@ msgstr "Kopjoni dhe ruani këto kode rezervë në rast se humbni pajisjen tuaj."
 msgid "Copy Backup Codes"
 msgstr "Kopjo kodet rezervë"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy from resume"
+msgstr "Kopjo nga rezymeja"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "Kopjo JSON"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy saved to your cover-letter library."
+msgstr "Kopjimi u ruajt në bibliotekën tuaj të letrës së motivimit."
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1316,6 +1377,19 @@ msgstr "Korrigjoni vitin ose përdorni \"Të pranishëm\" për punën e vazhdues
 msgid "Correct the year, or write \"Present\" for ongoing work."
 msgstr "Korrigjoni vitin, ose shkruani \"Present\" për punë në vazhdim."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Could not complete this action. Please try again."
+msgstr "Ky veprim nuk mund të përfundonte. Ju lutemi provoni përsëri."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Could not complete this connection. Restart the connection from your client and try again."
+msgstr "Kjo lidhje nuk mund të përfundonte. Rinisni lidhjen nga klienti juaj dhe provoni përsëri."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Could not copy to clipboard. Please copy the text manually."
+msgstr "Nuk mund të kopjohej në kujtesën e fragmenteve. Ju lutemi kopjoni tekstin me dorë."
+
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not generate the DOCX. Please try again."
 msgstr "DOCX-ja nuk u gjenerua dot. Ju lutemi provoni përsëri."
@@ -1324,6 +1398,18 @@ msgstr "DOCX-ja nuk u gjenerua dot. Ju lutemi provoni përsëri."
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Could not generate the PDF. Please try again."
 msgstr "PDF-ja nuk u gjenerua dot. Ju lutemi provoni përsëri."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load cover letters."
+msgstr "Letrat motivuese nuk mund të ngarkoheshin."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load the selected resume."
+msgstr "CV-ja e zgjedhur nuk mund të ngarkohej."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Could not load this cover letter."
+msgstr "Kjo letër motivuese nuk mund të ngarkohej."
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1338,6 +1424,10 @@ msgstr "Nuk mund të lidhemi me ofruesin e inteligjencës artificiale. Ju lutemi
 msgid "Could not restore this patch."
 msgstr "Nuk mundi ta rikthente këtë patch."
 
+#: src/features/cover-letters/editor.tsx
+msgid "Could not save the cover letter. Please try again."
+msgstr "Letra motivuese nuk mund të ruhej. Ju lutemi provoni përsëri."
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
 msgstr "Vërtetimi me dy faktorë nuk u konfigurua dot."
@@ -1345,7 +1435,7 @@ msgstr "Vërtetimi me dy faktorë nuk u konfigurua dot."
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr ""
+msgstr "Këto artikuj nuk mund të renditeshin; ata qëndruan në fund: {0}."
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1400,8 +1490,17 @@ msgstr "Numëroni sipas burimit"
 msgid "Counted separately from the parse score. Coverage does not predict anything."
 msgstr "Numërohet veçmas nga rezultati i analizimit. Mbulimi nuk parashikon asgjë."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover"
+msgstr "Mbulesë"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
+msgstr "Cover pret imazhin për të mbushur kornizën. Contain tregon të gjithë imazhin. Ringarkoni origjinalin për të rivendosur skajet e hequra nga një prerje e mëparshme."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/resume/export/download-dialog.tsx
 msgid "Cover letter"
 msgstr "Letër motivuese"
@@ -1418,6 +1517,11 @@ msgstr "Letër motivuese"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Drafti i letrës shoqëruese"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/cover-letters.tsx
+msgid "Cover Letters"
+msgstr "Letrat motivuese"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1437,6 +1541,7 @@ msgstr "Drafti i letrës shoqëruese"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Create"
 msgstr "Krijo"
@@ -1529,6 +1634,10 @@ msgstr "Krijo një CV nga shembujt"
 msgid "Create as many resumes as you want."
 msgstr "Krijoni sa CV të dëshironi."
 
+#: src/features/cover-letters/library.tsx
+msgid "Create cover letter"
+msgstr "Krijo letër motivuese"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
 msgstr "Krijo nga e para"
@@ -1574,7 +1683,7 @@ msgstr "Të dhënat CSV"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
-msgstr ""
+msgstr "Filtrat aktualë"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
@@ -1662,6 +1771,10 @@ msgstr "Kontroll i thelluar"
 msgid "DeepSeek"
 msgstr "Kërkim i thellë"
 
+#: src/features/cover-letters/library.tsx
+msgid "Default template"
+msgstr "Modeli i parazgjedhur"
+
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
 msgstr "Diploma"
@@ -1675,6 +1788,7 @@ msgstr "Diploma"
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1718,6 +1832,10 @@ msgstr "Të fshihet kjo temë diskutimi e agjentëve?"
 msgid "Delete this application?"
 msgstr "Të fshihet ky aplikim?"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Delete this cover letter?"
+msgstr "Të fshihet kjo letër motivuese?"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
 msgstr "Të fshihet kjo hyrje e afatit kohor?"
@@ -1748,6 +1866,7 @@ msgstr "Po fshihet CV-ja juaj..."
 msgid "Denied, waiting for the agent…"
 msgstr "Refuzuar, në pritje të agjentit…"
 
+#: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "Refuzo"
@@ -1798,6 +1917,14 @@ msgstr "Çaktivizo vërtetimin me dy faktorë"
 #: src/dialogs/auth/disable-two-factor.tsx
 msgid "Disabling two-factor authentication..."
 msgstr "Po çaktivizohet vërtetimi me dy faktorë..."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard"
+msgstr "Hidhni"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard unsaved changes?"
+msgstr "Të hiqen ndryshimet e paruajtura?"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1856,17 +1983,18 @@ msgstr "Shkarkoni një kopje të të gjitha të dhënave tuaja, duke përfshirë
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download application details, contacts, notes, and timeline history as CSV."
-msgstr ""
+msgstr "Shkarkoni detajet e aplikacionit, kontaktet, shënimet dhe historikun e kronologjisë si CSV."
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download CSV"
-msgstr ""
+msgstr "Shkarkoni CSV"
 
 #. Primary action in the builder header to open resume download options
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Download options"
 msgstr "Opsionet e shkarkimit"
 
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Download PDF"
@@ -1903,6 +2031,7 @@ msgstr "Hiqni përemrat dhe filloni me foljen. Kjo është konventa në shumicë
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
 #: src/dialogs/resume/index.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -1942,6 +2071,11 @@ msgstr "Versionet e mëparshme ruhen; historiku i anulimeve të redaktuesit rive
 msgid "Edit"
 msgstr "Modifiko"
 
+#. placeholder {0}: letter.name
+#: src/features/cover-letters/library.tsx
+msgid "Edit {0}"
+msgstr "Redakto {0}"
+
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
 msgid "Edit {chip}"
@@ -1960,6 +2094,10 @@ msgstr "Modifiko ngjyrën {0}"
 #: src/components/input/rich-input.tsx
 msgid "Edit content in fullscreen mode"
 msgstr "Redakto përmbajtjen në modalitetin me ekran të plotë"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Edit cover letter"
+msgstr "Redaktoni letrën e motivimit"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit date"
@@ -2011,6 +2149,10 @@ msgstr "Arsimimi"
 msgid "Email"
 msgstr "Email"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Email (optional)"
+msgstr "Email (opsionale)"
+
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
@@ -2045,10 +2187,6 @@ msgstr "Aktivizo vërtetimin me dy faktorë"
 msgid "Enabled"
 msgstr "I aktivizuar"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Enabling password protection..."
-#~ msgstr "Enabling password protection..."
-
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enabling two-factor authentication…"
 msgstr "Aktivizimi i vërtetimit me dy faktorë…"
@@ -2061,6 +2199,10 @@ msgstr "Anglisht"
 msgid "English (United Kingdom)"
 msgstr "Anglisht (Mbretëria e Bashkuar)"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Enter a name for this cover letter."
+msgstr "Futni një emër për këtë letër motivuese."
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "Futni një emër për çelësin tuaj të kalimit."
@@ -2068,6 +2210,10 @@ msgstr "Futni një emër për çelësin tuaj të kalimit."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account"
 msgstr "Vendosni një fjalëkalim të ri për llogarinë tuaj"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Enter a valid email address."
+msgstr "Fut një adresë të vlefshme emaili."
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -2146,11 +2292,11 @@ msgstr "Exporto"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Export applications"
-msgstr ""
+msgstr "Eksporto aplikacione"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Export CSV"
-msgstr ""
+msgstr "Eksporto CSV"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Export Data"
@@ -2159,6 +2305,10 @@ msgstr "Eksporto të dhënat"
 #: src/features/ats-checker/messages.ts
 msgid "Export from the original document instead of scanning or screenshotting it."
 msgstr "Eksportoni nga dokumenti origjinal në vend që ta skanoni ose ta fotografoni ekranin."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Export JSON"
+msgstr "Eksporto JSON"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2392,7 +2542,7 @@ msgstr "Fishekzjarre"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr ""
+msgstr "Përshtatet"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -2441,10 +2591,6 @@ msgstr "Trashësia e germave"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Weights"
 msgstr "Pesha e germave"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "For a controlled continuation, open a section's menu and choose Move to → New Page, then turn on Full Width for that authored page."
-msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
 msgid "For example, note which companies you sent this resume to, or links to the job descriptions."
@@ -2574,10 +2720,6 @@ msgstr "Google"
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "gpt-4.1"
-msgstr "gpt-4.1"
-
 #: src/dialogs/resume/sections/education.tsx
 msgid "Grade"
 msgstr "Nota / Vlerësimi"
@@ -2654,11 +2796,20 @@ msgstr "Këtu është API key-ja juaj e re"
 msgid "Hidden"
 msgstr "E fshehur"
 
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Hidden sections"
+msgstr "Seksione të fshehura"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Hide"
 msgstr "Fshih"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Hide heading"
+msgstr "Fshih titullin"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Icons"
@@ -2689,6 +2840,10 @@ msgstr "Fshi fjalëkalimin"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Hide picture"
 msgstr "Fshih foton"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Hide preview"
+msgstr "Fshih pamjen paraprake"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2725,10 +2880,6 @@ msgstr "Si ta përdor API-n?"
 #: src/routes/_home/-sections/faq.tsx
 msgid "How is my data protected?"
 msgstr "Si mbrohen të dhënat e mia?"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "https://gateway.example.com/v1"
-msgstr "https://gateway.example.com/v1"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -2767,6 +2918,10 @@ msgstr "Importo {0}"
 msgid "Import an existing resume"
 msgstr "Importoni një CV ekzistuese"
 
+#: src/features/cover-letters/library.tsx
+msgid "Import cover letter JSON"
+msgstr "Importoni letrën motivuese JSON"
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
 msgstr "Importo CSV"
@@ -2780,14 +2935,22 @@ msgstr "Importi dështoi. Kontrollo CSV-në dhe provo sërish."
 msgid "Import from CSV"
 msgstr "Importo nga CSV"
 
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Import from library"
+msgstr "Importi nga biblioteka"
+
+#: src/features/cover-letters/library.tsx
+msgid "Import JSON"
+msgstr "Importo JSON"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "U importuan {0} aplikime."
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing from PDF or Word requires a connected AI provider."
-msgstr "Importimi nga PDF ose Word kërkon një ofrues të lidhur të inteligjencës artificiale."
+msgid "Importing from Word requires a connected AI provider."
+msgstr "Importimi nga Word kërkon një ofrues të lidhur të AI."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2829,6 +2992,10 @@ msgstr "Indonezisht"
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Informacion"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Inline"
+msgstr "Inline"
 
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
@@ -2931,17 +3098,6 @@ msgstr "John Doe"
 msgid "john.doe"
 msgstr "john.doe"
 
-#. Example email placeholder for login identifier field
-#. Example email placeholder on forgot-password form
-#. Example email placeholder on profile settings form
-#. Example email placeholder on registration form
-#: src/features/auth/pages/forgot-password.tsx
-#: src/features/auth/pages/login.tsx
-#: src/features/auth/pages/register.tsx
-#: src/features/settings/pages/profile.tsx
-msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
-
 #. Import source option for standard JSON Resume format
 #: src/dialogs/resume/import.tsx
 msgid "JSON Resume"
@@ -2958,6 +3114,14 @@ msgstr "Kanadisht (Kannada)"
 #: src/features/ats-checker/messages.ts
 msgid "Keep a single address, so software does not have to guess which one to use."
 msgstr "Mbani një adresë të vetme, që programet të mos duhet të hamendësojnë cilën të përdorin."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Keep access when you are not using the application."
+msgstr "Mbani aksesin kur nuk jeni duke përdorur aplikacionin."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Keep editing"
+msgstr "Vazhdoni të redaktoni"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -2991,6 +3155,10 @@ msgstr "Mbajini së bashku"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "Çelësi"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Keyword layout"
+msgstr "Paraqitja e fjalëve kyçe"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3192,6 +3360,10 @@ msgstr "Duke ngarkuar ofruesit e inteligjencës artificiale. Ju lutemi provoni p
 msgid "Loading applications…"
 msgstr "Duke ngarkuar aplikimet…"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Loading connection request..."
+msgstr "Kërkesa për lidhje po ngarkohet..."
+
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Loading providers…"
@@ -3391,6 +3563,8 @@ msgstr "Duhet të fillojë me https://"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/ats-checker/parse-preview.tsx
 #: src/features/auth/pages/register.tsx
+#: src/features/cover-letters/editor.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -3467,6 +3641,10 @@ msgstr "Fije e re"
 msgid "New Thread"
 msgstr "Fije e re"
 
+#: src/features/cover-letters/library.tsx
+msgid "Next"
+msgstr "Tjetra"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "No ads and no trackers, so nothing gets in your way."
 msgstr "Pa reklama dhe pa gjurmues, që asgjë të mos ju dalë në rrugë."
@@ -3478,6 +3656,10 @@ msgstr "Pa reklama, pa gjurmim"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "No AI provider connected"
 msgstr "Asnjë ofrues i inteligjencës artificiale i lidhur"
+
+#: src/dialogs/resume/import.tsx
+msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
+msgstr "Asnjë ofrues i AI nuk është i lidhur, kështu që ne do të lexojmë tekstin nga PDF këtu në shfletuesin tuaj dhe do të plotësojmë atë që mund të njohim. Prisni të rregulloni rezultatin."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3499,6 +3681,10 @@ msgstr "Asnjë komandë nuk përputhet me këtë kërkim."
 #: src/features/ats-checker/messages.ts
 msgid "No conventional section headings were found."
 msgstr "Nuk u gjetën tituj seksionesh konvencionalë."
+
+#: src/features/cover-letters/library.tsx
+msgid "No cover letters found. Create one or import an existing letter."
+msgstr "Nuk u gjetën letra motivuese. Krijoni një ose importoni një letër ekzistuese."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3664,6 +3850,10 @@ msgstr "Hyrje me një klik"
 msgid "Ongoing Maintenance"
 msgstr "Mirëmbajtje e vazhdueshme"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Only allow applications you trust. This application will be able to:"
+msgstr "Lejo vetëm aplikacionet që i beson. Ky aplikacion do të jetë në gjendje të:"
+
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
@@ -3727,10 +3917,6 @@ msgid "Open the exported file and confirm you can select and copy every part of 
 msgstr "Hapni skedarin e eksportuar dhe konfirmoni që mund të zgjidhni dhe kopjoni çdo pjesë të tij."
 
 #: src/features/settings/integrations/components/ai-section.tsx
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "I pajtueshëm me OpenAI"
 
@@ -3781,6 +3967,10 @@ msgstr "Listë e renditur"
 msgid "Organization"
 msgstr "Organizata"
 
+#: src/components/input/rich-input.tsx
+msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
+msgstr "Formatimi origjinal i tabelës është ruajtur. Kjo përmbajtje është vetëm për lexim sepse nuk mund të modifikohet në mënyrë të sigurt."
+
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "nga 100"
@@ -3790,16 +3980,14 @@ msgid "Page"
 msgstr "Faqja"
 
 #. Layout editor page label with 1-based page number
+#. placeholder {0}: Math.floor(offset / 20) + 1
 #. placeholder {0}: pageIndex + 1
 #. placeholder {0}: targetPageIndex + 1
+#: src/features/cover-letters/library.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Page {0}"
 msgstr "Faqja {0}"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Pages listed here are authored pages saved with your resume. A long authored page may continue onto extra PDF pages automatically; those overflow pages are not saved or editable separately."
-msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Paragraph"
@@ -3847,10 +4035,6 @@ msgstr "Çelësat e kalimit & 2FA"
 msgid "Password"
 msgstr "Fjalëkalimi"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Password cannot be empty."
-#~ msgstr "Password cannot be empty."
-
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Password must be between 6 and 64 characters."
 msgstr "Fjala e fshehtë duhet të ketë midis 6 dhe 64 karaktere."
@@ -3876,8 +4060,8 @@ msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "Ngjitni një shpallje pune për të parë cilat nga termat e saj shfaqen tashmë në CV-në tuaj."
 
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source and Tags."
-msgstr "Ngjitni rreshtat ose ngarkoni një .csv. Ne hartojmë kolona si Kompania, Roli, Faza, Data e fazës, Paga, Burimi dhe Etiketat."
+msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
+msgstr "Ngjitni rreshtat ose ngarkoni një .csv. Ne hartojmë kolona si kompania, roli, faza, data e fazës, paga, burimi, etiketat, emri i kontaktit, emaili i kontaktit dhe telefoni i kontaktit."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -3915,11 +4099,13 @@ msgstr "Patch u hoq përsëri"
 msgid "Patch rolled back."
 msgstr "Patch u rikthye."
 
-#. File format label in import source selector
-#. File format label in import source selector
-#: src/dialogs/resume/import.tsx
-msgid "PDF"
-msgstr "PDF"
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDF snapshot attached to the application."
+msgstr "Foto PDF bashkangjitur aplikacionit."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDFs already attached to applications will remain available."
+msgstr "PDF-të e bashkangjitura tashmë në aplikacione do të mbeten të disponueshme."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -3941,6 +4127,10 @@ msgstr "Persisht"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Phone"
 msgstr "Telefoni"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Phone (optional)"
+msgstr "Telefoni (opsionale)"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4055,6 +4245,14 @@ msgstr "Pamja paraprake dhe eksporti kthehen te stilet bazë."
 #: src/features/resume/stylesheet/status.tsx
 msgid "Preview and export keep valid styles and ignore invalid styles."
 msgstr "Pamja paraprake dhe eksporti ruajnë stilet e vlefshme dhe injorojnë ato të pavlefshme."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Preview PDF"
+msgstr "Shikoni paraprakisht PDF"
+
+#: src/features/cover-letters/library.tsx
+msgid "Previous"
+msgstr "E mëparshme"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4211,6 +4409,14 @@ msgstr "Lexoni udhëzuesin Zbatimi i Stileve të Personalizuara."
 msgid "Read the resume"
 msgstr "Lexoi CV-në"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Read your email address."
+msgstr "Lexoni adresën tuaj të emailit."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Read your profile information."
+msgstr "Lexoni informacionin e profilit tuaj."
+
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
 msgstr "Lexueshmëria"
@@ -4238,6 +4444,7 @@ msgid "Ready to activate with warnings"
 msgstr "Gati për t'u aktivizuar me paralajmërime"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Recipient"
 msgstr "Marrësi"
 
@@ -4270,6 +4477,10 @@ msgstr "Referuar nga…, gjëra për të theksuar, etj."
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "Regjistro pajisjen e re"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Reload latest version"
+msgstr "Rifresko versionin më të fundit"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4337,6 +4548,10 @@ msgstr "Riorganizoni fushën e personalizuar"
 msgid "Repeated far more often than the posting itself uses them: {0}. Recruiters notice."
 msgstr "Përsëritur shumë më shpesh sesa vetë shpallja i përdor: {0}. Rekrutuesit e vënë re."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace"
+msgstr "Zëvendësoni"
+
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
 msgstr "Zëvendësoni fontet me ikona me tekst të thjeshtë, pastaj eksportoni përsëri."
@@ -4344,6 +4559,10 @@ msgstr "Zëvendësoni fontet me ikona me tekst të thjeshtë, pastaj eksportoni 
 #: src/features/ats-checker/messages.ts
 msgid "Replace tables with plain paragraphs and lists. Cells extract in storage order, not reading order."
 msgstr "Zëvendësoni tabelat me paragrafë dhe lista të thjeshta. Qelizat nxirren sipas renditjes së ruajtjes, jo asaj të leximit."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace the attached cover letter?"
+msgstr "Të zëvendësohet letra motivuese e bashkangjitur?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4447,6 +4666,8 @@ msgstr "Shabllone CV-je për profesione dhe shije të ndryshme. Zgjidhni atë q�
 msgid "Resumes"
 msgstr "CV-të"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Riprovo"
@@ -4574,13 +4795,27 @@ msgstr "Ruaj ndryshimet"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/editor.tsx
 #: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "Ruaj ndryshimet"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Save changes before previewing, exporting, or changing styling."
+msgstr "Ruani ndryshimet përpara se të shikoni paraprakisht, eksportoni ose ndryshoni stilin."
+
+#: src/features/cover-letters/library.tsx
+msgid "Save copy to library"
+msgstr "Ruaje kopjen në bibliotekë"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
 msgstr "Ruaj modelin"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Save resume changes before copying its content or styling."
+msgstr "Ruani ndryshimet e rinisë përpara se të kopjoni përmbajtjen ose stilin e saj."
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4589,6 +4824,10 @@ msgstr "Ruani skedarin me çdo faqe drejt."
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "Ruajtur"
+
+#: src/features/resume/builder/draft.ts
+msgid "Saving is taking longer than expected. Your changes are still open."
+msgstr "Ruajtja po zgjat më shumë se sa pritej. Ndryshimet tuaja janë ende të hapura."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4622,6 +4861,14 @@ msgstr "Kërko aplikime…"
 #: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "Komandat e kërkimit"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters"
+msgstr "Kërko letra motivuese"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters..."
+msgstr "Kërko letrat motivuese..."
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -4730,6 +4977,10 @@ msgstr "Dërgo emailin për rivendosjen e fjalëkalimit"
 msgid "Send the resume itself rather than a portfolio wrapper."
 msgstr "Dërgoni vetë CV-në, jo një mbështjellje portofoli."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Sender details"
+msgstr "Detajet e dërguesit"
+
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "Po dërgohet emaili për rivendosjen e fjalëkalimit..."
@@ -4814,6 +5065,7 @@ msgstr "Linke të shpërndashme"
 msgid "Sharing"
 msgstr "Shpërndarja"
 
+#: src/features/resume/builder/section-recovery.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -4824,6 +5076,19 @@ msgstr "Shfaq"
 #: src/features/applications/components/board.tsx
 msgid "Show {0} more"
 msgstr "Shfaq {0} më shumë"
+
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Show {title} section"
+msgstr "Shfaq seksionin {title}"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
+msgid "Show Download Buttons"
+msgstr "Shfaq butonat e shkarkimit"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Show heading"
+msgstr "Shfaq titullin"
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -4918,6 +5183,10 @@ msgstr "Regjistrohu"
 #: src/features/auth/pages/error.tsx
 msgid "Sign-in didn't complete"
 msgstr "Hyrja nuk u përfundua"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Signed in as {email}"
+msgstr "Identifikuar si {email}"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5048,14 +5317,14 @@ msgstr "Diçka shkoi keq gjatë hyrjes suaj. Ju lutemi provoni sërish."
 msgid "Something went wrong. Please try again."
 msgstr "Diçka shkoi keq. Ju lutemi provoni përsëri."
 
-#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
-msgid "Sort by date"
-msgstr ""
-
 #: src/routes/dashboard/applications/index.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Sort by"
 msgstr "Rendit sipas"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Sort by date"
+msgstr "Rendit sipas datës"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5148,7 +5417,7 @@ msgstr "Filloni të ndërtoni CV-në tuaj nga e para"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Start date must be on or before end date."
-msgstr ""
+msgstr "Data e fillimit duhet të jetë në ose para datës së përfundimit."
 
 #: src/features/ats-checker/messages.ts
 msgid "Start each one with a concrete verb: built, led, reduced, migrated."
@@ -5207,6 +5476,14 @@ msgstr "Redaktuesi i fletës së stilit"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Stylesheet has fatal errors"
 msgstr "Fleta e stilit ka gabime fatale"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
+msgstr "Stilimi dhe detajet e dërguesit kopjohen. Ndryshimet e ardhshme të rinisë zbatohen vetëm kur rifreskoni."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details refreshed from the selected resume."
+msgstr "Stilimi dhe detajet e dërguesit janë rifreskuar nga rezymeja e zgjedhur."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5297,6 +5574,8 @@ msgstr "Tamile"
 msgid "Telugu"
 msgstr "Telugu"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/libs/resume/section.tsx
 msgid "Template"
 msgstr "Shabllon"
@@ -5407,6 +5686,10 @@ msgstr "Skedari i importuar nuk mund të përpunohej në një rezume të vlefshm
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "Renditja në të cilën ruhet teksti bie ndesh keq me renditjen në të cilën lexohet."
+
+#: src/features/cover-letters/library.tsx
+msgid "The original letter stays in your resume. Each copy can be edited independently."
+msgstr "Letra origjinale qëndron në CV-në tuaj. Çdo kopje mund të modifikohet në mënyrë të pavarur."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5537,6 +5820,14 @@ msgstr "Ky kontroll nuk zbatohet për këtë skedar."
 msgid "This check only runs on resumes written in English."
 msgstr "Ky kontroll ekzekutohet vetëm në CV të shkruara në anglisht."
 
+#: src/features/auth/pages/consent.tsx
+msgid "This connection request is invalid or has expired."
+msgstr "Kjo kërkesë për lidhje është e pavlefshme ose ka skaduar."
+
+#: src/features/cover-letters/editor.tsx
+msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
+msgstr "Kjo letër motivuese ndryshoi diku tjetër. Ndryshimet tuaja janë ende këtu. Ringarko versionin më të fundit përpara se ta ruash sërish."
+
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
 msgstr "Kjo krijon një çelës të ri API, i cili u lejon programeve të tjera të lexojnë dhe të ndryshojnë të dhënat e CV-së suaj përmes API-së së Reactive Resume."
@@ -5645,6 +5936,10 @@ msgstr "Kësaj lidhjeje i mungon protokolli i saj."
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "Kjo mund të zgjasë disa minuta, në varësi të përgjigjes së ofruesit të AI. Ju lutemi mos e mbyllni dritaren dhe mos rifreskoni faqen."
 
+#: src/dialogs/resume/import.tsx
+msgid "This may take a moment. Please do not close the window or refresh the page."
+msgstr "Kjo mund të marrë një moment. Ju lutemi mos e mbyllni dritaren ose rifreskoni faqen."
+
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
 msgstr "Kjo mat sa besnikërisht mund të nxjerrin programet tekstin e këtij skedari. Nuk parashikon nëse një aplikim do të refuzohet, dhe asnjë mjet nuk mundet. Skedari juaj u lexua në këtë shfletues dhe nuk u ngarkua kurrë."
@@ -5657,6 +5952,11 @@ msgstr "Kjo faqe është në kolona, dhe teksti nxirret pa renditje."
 msgid "This page is very densely packed."
 msgstr "Kjo faqe është shumë e ngjeshur."
 
+#. Error shown when a PDF has no extractable text layer during import
+#: src/dialogs/resume/import.tsx
+msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
+msgstr "Ky PDF nuk ka tekst të lexueshëm. Ka të ngjarë të jetë një skanim, kështu që nuk ka asgjë për të importuar."
+
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
 msgstr "Ky PDF është i mbrojtur me fjalëkalim. Ruani një kopje të pambrojtur dhe provoni përsëri."
@@ -5668,6 +5968,10 @@ msgstr "Kjo periudhë përfundon para se të fillojë”."
 #: src/libs/resume/ats.ts
 msgid "This period starts in the future."
 msgstr "Kjo periudhë fillon në të ardhmen”."
+
+#: src/features/cover-letters/library.tsx
+msgid "This resume has no embedded cover letters."
+msgstr "Kjo CV nuk ka letra motivuese të ngulitura."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -5787,10 +6091,6 @@ msgstr "Titulli"
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "Për të fshirë llogarinë tuaj, shkruani tekstin e konfirmimit më poshtë, pastaj klikoni butonin."
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "Together.ai"
-msgstr "Së bashku.ai"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-base.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/shared/section-base.tsx
@@ -6469,10 +6769,6 @@ msgstr "Shkrimi"
 msgid "X (Twitter)"
 msgstr "X (Twitter)"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "xAI Grok"
-msgstr "xAI Grok"
-
 #: src/routes/_home/-sections/faq.tsx
 msgid "Yes. One click exports your resume to PDF, with your formatting and styling intact."
 msgstr "Po. Një klikim e eksporton CV-në tuaj në PDF, me formatimin dhe stilin tuaj të paprekur."
@@ -6661,6 +6957,10 @@ msgstr "CV-ja juaj përdor \"I\" dhe \"my\"."
 msgid "Your resume's public URL is protected by a password. Share the password only with people you trust."
 msgstr "URL-ja publike e CV-së suaj është e mbrojtur me fjalëkalim. Ndajeni fjalëkalimin vetëm me njerëz që i besoni."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Your saved cover letter will remain unchanged."
+msgstr "Letra juaj motivuese e ruajtur do të mbetet e pandryshuar."
+
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
 msgstr "Mbështetja juaj e mban projektin falas dhe të hapur për të gjithë, tani dhe më vonë."
@@ -6685,15 +6985,3 @@ msgstr "Zvogëlo"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Keyword layout"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Bulleted list"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Inline"
-msgstr ""

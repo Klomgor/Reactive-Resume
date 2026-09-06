@@ -164,10 +164,7 @@ export function LoginPage({ disableEmailAuth, disableSignups }: Props) {
 									render={
 										<Input
 											autoComplete="section-login username webauthn"
-											placeholder={t({
-												comment: "Example email placeholder for login identifier field",
-												message: "john.doe@example.com",
-											})}
+											placeholder="john.doe@example.com"
 											className="lowercase"
 											name={field.name}
 											value={field.state.value}

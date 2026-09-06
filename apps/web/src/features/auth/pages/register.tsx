@@ -189,10 +189,7 @@ export function RegisterPage({ disableEmailAuth }: Props) {
 										<Input
 											type="email"
 											autoComplete="section-register email"
-											placeholder={t({
-												comment: "Example email placeholder on registration form",
-												message: "john.doe@example.com",
-											})}
+											placeholder="john.doe@example.com"
 											className="lowercase"
 											name={field.name}
 											value={field.state.value}

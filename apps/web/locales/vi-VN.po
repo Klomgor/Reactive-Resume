@@ -23,14 +23,6 @@ msgstr ""
 #. placeholder {1}: application.company
 #. placeholder {1}: current.company
 #: src/features/applications/components/application-actions-menu.tsx
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
-msgstr ""
-
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "\"{0} · {1}\" and its full timeline will be permanently deleted. This can't be undone."
 msgstr "\"{0} · {1}\" và toàn bộ dòng thời gian sẽ bị xóa vĩnh viễn. Không thể hoàn tác."
@@ -43,12 +35,12 @@ msgstr "(mở ở tab mới)"
 #. placeholder {0}: selected.length
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "{0, plural, one {# application to export} other {# applications to export}}"
-msgstr ""
+msgstr "{0, plural, one {# đơn xin xuất khẩu} other {# ứng dụng để xuất}}"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
-msgstr "{0, plural, other {# mục}}"
+msgstr "{0, plural, one {Mục #} other {Các mặt hàng #}}"
 
 #. placeholder {0}: item.roles.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/experience.tsx
@@ -65,6 +57,11 @@ msgstr "Đang theo dõi {0} đơn ứng tuyển"
 #: src/components/input/rich-input.tsx
 msgid "{0} characters"
 msgstr "{0} ký tự"
+
+#. placeholder {0}: parsed.contactsSkipped
+#: src/features/applications/components/import-applications-sheet.tsx
+msgid "{0} contact(s) skipped (invalid email or missing Contact Name). Those applications still import."
+msgstr "{0} (các) liên hệ bị bỏ qua (email không hợp lệ hoặc thiếu Tên liên hệ). Những ứng dụng đó vẫn nhập."
 
 #. placeholder {0}: report.passedChecks
 #. placeholder {1}: report.applicableChecks
@@ -101,8 +98,8 @@ msgstr "{0} bị bỏ qua"
 
 #. placeholder {0}: parsed.skipped
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "{0} skipped (missing company/role)"
-msgstr "Đã bỏ qua {0} mục (thiếu công ty/vai trò)"
+msgid "{0} skipped (invalid or missing data)"
+msgstr "{0} bị bỏ qua (dữ liệu không hợp lệ hoặc bị thiếu)"
 
 #. placeholder {0}: findings.length
 #: src/features/ats-checker/report/report-view.tsx
@@ -150,6 +147,10 @@ msgstr "<0>Thường xuyên</0><1>Được hỏi</1><2>Câu hỏi</2>"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "<0>Thank you for using Reactive Resume. I build this app mostly in my spare time, with help from open-source contributors around the world.</0><1>If it has been useful to you and you'd like to keep it free and open for everyone, please consider donating. Any amount helps.</1>"
 msgstr "<0>Cảm ơn bạn đã sử dụng Reactive Resume. Tôi xây dựng ứng dụng này chủ yếu trong thời gian rảnh, với sự giúp đỡ của những người đóng góp mã nguồn mở trên khắp thế giới.</0><1>Nếu nó hữu ích với bạn và bạn muốn giữ cho nó miễn phí và mở với tất cả mọi người, xin hãy cân nhắc quyên góp. Mọi khoản đóng góp đều có ý nghĩa.</1>"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "1 Column / Inline"
+msgstr "1 cột / nội tuyến"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -246,6 +247,10 @@ msgstr "Một địa chỉ web được viết mà không có https://."
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "A4"
 msgstr "Khổ giấy A4"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Access your account through the API, including reading and changing your resumes and job applications."
+msgstr "Truy cập tài khoản của bạn thông qua API, bao gồm đọc và thay đổi sơ yếu lý lịch cũng như đơn xin việc của bạn."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -534,7 +539,11 @@ msgstr "Tiếng Albania"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "All applications (including archived)"
-msgstr ""
+msgstr "Tất cả các ứng dụng (bao gồm cả lưu trữ)"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Allow access"
+msgstr "Cho phép truy cập"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -590,12 +599,12 @@ msgid "Anyone who opens the public URL will need this password."
 msgstr "Bất kỳ ai mở URL công khai đều sẽ cần mật khẩu này."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the link can view and download the resume."
-msgstr "Bất kỳ ai có liên kết đều có thể xem và tải xuống sơ yếu lý lịch."
+msgid "Anyone with the link can view the resume."
+msgstr "Bất kỳ ai có liên kết đều có thể xem sơ yếu lý lịch."
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-msgid "Anyone with the public URL will be able to view and download your resume without a password."
-msgstr "Bất kỳ ai có URL công khai đều có thể xem và tải xuống sơ yếu lý lịch của bạn mà không cần mật khẩu."
+msgid "Anyone with the public URL will be able to view your resume without a password."
+msgstr "Bất kỳ ai có URL công khai đều có thể xem sơ yếu lý lịch của bạn mà không cần mật khẩu."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "API Access"
@@ -623,6 +632,10 @@ msgstr "Tham khảo API"
 msgid "App"
 msgstr "Ứng dụng"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Application"
+msgstr "ứng dụng"
+
 #: src/features/applications/components/application-actions-menu.tsx
 msgid "Application actions"
 msgstr "Thao tác với hồ sơ ứng tuyển"
@@ -637,11 +650,11 @@ msgstr "Copilot hồ sơ ứng tuyển"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr ""
+msgstr "Ngày nộp đơn từ"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr ""
+msgstr "Ngày nộp đơn đến"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -673,7 +686,7 @@ msgstr "Đơn ứng tuyển đã gửi mỗi tuần (8 tuần gần nhất)"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Applications to export"
-msgstr ""
+msgstr "Ứng dụng để xuất khẩu"
 
 #: src/features/applications/components/table-view.tsx
 msgid "Applied"
@@ -788,6 +801,10 @@ msgstr "Đính kèm tệp CV (PDF)"
 msgid "Attach files"
 msgstr "Đính kèm tệp"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Attach PDF"
+msgstr "Đính kèm PDF"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
 msgstr "Tệp đính kèm"
@@ -801,10 +818,6 @@ msgstr "Tệp đính kèm đã được tải lên."
 #: src/routes/dashboard/settings/authentication/index.tsx
 msgid "Authentication"
 msgstr "Xác thực"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Authored pages and PDF overflow"
-msgstr ""
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Auto-fill failed."
@@ -931,6 +944,10 @@ msgstr "Cập nhật hàng loạt thất bại. Vui lòng thử lại."
 msgid "Bullet List"
 msgstr "Danh sách chấm tròn"
 
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Bulleted list"
+msgstr "Danh sách có dấu đầu dòng"
+
 #. Tagline shown in app footer/about area
 #: src/components/ui/copyright.tsx
 #: src/routes/_home/-sections/features.tsx
@@ -1016,6 +1033,10 @@ msgstr "Bạn đã đổi ý? Đổi tên sơ yếu lý lịch của bạn thàn
 msgid "Changelog"
 msgstr "Nhật ký thay đổi"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Changes are shared between your library and the resume builder."
+msgstr "Các thay đổi được chia sẻ giữa thư viện của bạn và trình tạo sơ yếu lý lịch."
+
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
 msgid "Chat"
@@ -1065,6 +1086,10 @@ msgstr "Tiếng Trung (Giản thể)"
 msgid "Chinese (Traditional)"
 msgstr "Tiếng Trung (Phồn thể)"
 
+#: src/features/cover-letters/library.tsx
+msgid "Choose a cover letter"
+msgstr "Chọn một lá thư xin việc"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
 msgstr "Chọn một mô hình và bản nháp sơ yếu lý lịch."
@@ -1079,9 +1104,19 @@ msgstr "Chọn một tệp PDF"
 msgid "Choose a preset or custom shade."
 msgstr "Chọn một màu có sẵn hoặc màu tùy chỉnh."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a resume"
 msgstr "Chọn một bản sơ yếu lý lịch"
+
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Choose a saved cover letter"
+msgstr "Chọn thư xin việc đã lưu"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Choose an application"
+msgstr "Chọn một ứng dụng"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1109,6 +1144,15 @@ msgstr "Xóa lựa chọn"
 #: src/dialogs/resume/import.tsx
 msgid "Click here to select a file to import"
 msgstr "Nhấn vào đây để chọn file cần nhập khẩu"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Client ID"
+msgstr "ID khách hàng"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/editor.tsx
+msgid "Close"
+msgstr "Đóng"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Close AI assistant"
@@ -1189,6 +1233,10 @@ msgstr "Xác nhận mật khẩu"
 msgid "Connect"
 msgstr "Kết nối"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Connect an application"
+msgstr "Kết nối một ứng dụng"
+
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
 msgstr "Kết nối nhà cung cấp AI của riêng bạn để nhận đánh giá về nội dung viết. Các kiểm tra ở trên không cần nhà cung cấp hay tài khoản nào."
@@ -1217,18 +1265,19 @@ msgstr "Thông tin liên hệ"
 msgid "Contacts"
 msgstr "Liên hệ"
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Contain"
+msgstr "Chứa"
+
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Content"
 msgstr "Nội dung"
 
 #: src/features/ats-checker/messages.ts
 msgid "Content is laid out in a grid."
 msgstr "Nội dung được trình bày theo dạng lưới."
-
-#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
-msgid "Contain"
-msgstr ""
 
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
@@ -1270,6 +1319,10 @@ msgstr "Đã sao chép vào bảng nhớ tạm."
 msgid "Copy"
 msgstr "Sao chép"
 
+#: src/features/cover-letters/library.tsx
+msgid "Copy an existing letter from a resume"
+msgstr "Sao chép một bức thư hiện có từ sơ yếu lý lịch"
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
 msgstr "Sao chép và lưu các mã backup này phòng trường hợp bạn mất thiết bị."
@@ -1278,9 +1331,17 @@ msgstr "Sao chép và lưu các mã backup này phòng trường hợp bạn m�
 msgid "Copy Backup Codes"
 msgstr "Sao chép mã Backup"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy from resume"
+msgstr "Sao chép từ sơ yếu lý lịch"
+
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
 msgstr "Sao chép JSON"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Copy saved to your cover-letter library."
+msgstr "Bản sao được lưu vào thư viện thư xin việc của bạn."
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1316,6 +1377,19 @@ msgstr "Hãy sửa năm hoặc sử dụng \"Hiện tại\" cho công việc đa
 msgid "Correct the year, or write \"Present\" for ongoing work."
 msgstr "Sửa lại năm, hoặc ghi \"Hiện tại\" cho công việc đang diễn ra."
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Could not complete this action. Please try again."
+msgstr "Không thể hoàn tất hành động này. Vui lòng thử lại."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Could not complete this connection. Restart the connection from your client and try again."
+msgstr "Không thể hoàn thành kết nối này. Khởi động lại kết nối từ máy khách của bạn và thử lại."
+
+#: src/features/applications/components/application-ai-copilot.tsx
+msgid "Could not copy to clipboard. Please copy the text manually."
+msgstr "Không thể sao chép vào clipboard. Vui lòng sao chép văn bản theo cách thủ công."
+
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not generate the DOCX. Please try again."
 msgstr "Không thể tạo tệp DOCX. Vui lòng thử lại."
@@ -1324,6 +1398,18 @@ msgstr "Không thể tạo tệp DOCX. Vui lòng thử lại."
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Could not generate the PDF. Please try again."
 msgstr "Không thể tạo tệp PDF. Vui lòng thử lại."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load cover letters."
+msgstr "Không thể tải thư xin việc."
+
+#: src/features/cover-letters/library.tsx
+msgid "Could not load the selected resume."
+msgstr "Không thể tải sơ yếu lý lịch đã chọn."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Could not load this cover letter."
+msgstr "Không thể tải thư xin việc này."
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1338,6 +1424,10 @@ msgstr "Không thể kết nối với nhà cung cấp AI. Vui lòng thử lại
 msgid "Could not restore this patch."
 msgstr "Không thể khôi phục bản vá này."
 
+#: src/features/cover-letters/editor.tsx
+msgid "Could not save the cover letter. Please try again."
+msgstr "Không thể lưu thư xin việc. Vui lòng thử lại."
+
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
 msgstr "Không thể thiết lập xác thực hai yếu tố."
@@ -1345,7 +1435,7 @@ msgstr "Không thể thiết lập xác thực hai yếu tố."
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr ""
+msgstr "Không thể sắp xếp các mục này; cuối cùng họ vẫn ở lại: {0}."
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1400,8 +1490,17 @@ msgstr "Số lượng theo nguồn"
 msgid "Counted separately from the parse score. Coverage does not predict anything."
 msgstr "Được tính riêng với điểm phân tích. Độ bao phủ không dự đoán điều gì cả."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover"
+msgstr "Bìa"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Cover crops the image to fill the frame. Contain shows the whole image. Reupload the original to restore edges removed by an earlier crop."
+msgstr "Che cắt hình ảnh để lấp đầy khung. Chứa hiển thị toàn bộ hình ảnh. Tải lại bản gốc lên để khôi phục các cạnh bị xóa bởi lần cắt trước đó."
+
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/resume/export/download-dialog.tsx
 msgid "Cover letter"
 msgstr "Thư xin việc"
@@ -1418,6 +1517,11 @@ msgstr "Thư xin việc"
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Cover letter draft"
 msgstr "Bản nháp thư xin việc"
+
+#: src/routes/dashboard/-components/sidebar.tsx
+#: src/routes/dashboard/cover-letters.tsx
+msgid "Cover Letters"
+msgstr "Thư xin việc"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1437,6 +1541,7 @@ msgstr "Bản nháp thư xin việc"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Create"
 msgstr "Tạo"
@@ -1529,6 +1634,10 @@ msgstr "Tạo sơ yếu lý lịch mẫu"
 msgid "Create as many resumes as you want."
 msgstr "Tạo bao nhiêu sơ yếu lý lịch tùy bạn."
 
+#: src/features/cover-letters/library.tsx
+msgid "Create cover letter"
+msgstr "Tạo thư xin việc"
+
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
 msgstr "Tạo từ đầu"
@@ -1574,7 +1683,7 @@ msgstr "Dữ liệu CSV"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
-msgstr ""
+msgstr "Bộ lọc hiện tại"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
@@ -1662,6 +1771,10 @@ msgstr "Kiểm tra chuyên sâu"
 msgid "DeepSeek"
 msgstr "Tìm kiếm sâu"
 
+#: src/features/cover-letters/library.tsx
+msgid "Default template"
+msgstr "Mẫu mặc định"
+
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
 msgstr "Bằng cấp"
@@ -1675,6 +1788,7 @@ msgstr "Bằng cấp"
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/table-view.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/settings/authentication/components/passkeys.tsx
 #: src/features/settings/pages/api-keys.tsx
 #: src/routes/agent/-components/agent-chat.tsx
@@ -1718,6 +1832,10 @@ msgstr "Xóa chủ đề thảo luận về tác vụ này?"
 msgid "Delete this application?"
 msgstr "Xóa đơn ứng tuyển này?"
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Delete this cover letter?"
+msgstr "Xóa thư xin việc này?"
+
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
 msgstr "Xóa mục dòng thời gian này?"
@@ -1748,6 +1866,7 @@ msgstr "Đang xóa bản lý lịch của bạn..."
 msgid "Denied, waiting for the agent…"
 msgstr "Đã từ chối, đang chờ tác nhân…"
 
+#: src/features/auth/pages/consent.tsx
 #: src/routes/agent/-components/patch-approval-card.tsx
 msgid "Deny"
 msgstr "Từ chối"
@@ -1798,6 +1917,14 @@ msgstr "Tắt xác thực hai yếu tố"
 #: src/dialogs/auth/disable-two-factor.tsx
 msgid "Disabling two-factor authentication..."
 msgstr "Đang tắt xác thực hai yếu tố..."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard"
+msgstr "Loại bỏ"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Discard unsaved changes?"
+msgstr "Hủy các thay đổi chưa được lưu?"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -1856,17 +1983,18 @@ msgstr "Tải xuống bản sao tất cả dữ liệu của bạn, bao gồm h�
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download application details, contacts, notes, and timeline history as CSV."
-msgstr ""
+msgstr "Tải xuống chi tiết ứng dụng, danh bạ, ghi chú và lịch sử dòng thời gian dưới dạng CSV."
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Download CSV"
-msgstr ""
+msgstr "Tải xuống CSV"
 
 #. Primary action in the builder header to open resume download options
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Download options"
 msgstr "Tùy chọn tải xuống"
 
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/features/resume/public/public-resume.tsx
 #: src/routes/agent/-components/resume-pane.tsx
 msgid "Download PDF"
@@ -1903,6 +2031,7 @@ msgstr "Bỏ đại từ nhân xưng và bắt đầu bằng động từ. Đó 
 #. Resume card context menu action to create a copy
 #. Resume card dropdown action to create a copy
 #: src/dialogs/resume/index.tsx
+#: src/features/cover-letters/editor-dialog.tsx
 #: src/routes/builder/$resumeId/-components/header.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -1942,6 +2071,11 @@ msgstr "Các phiên bản trước đó được giữ lại; lịch sử hoàn 
 msgid "Edit"
 msgstr "Biên tập"
 
+#. placeholder {0}: letter.name
+#: src/features/cover-letters/library.tsx
+msgid "Edit {0}"
+msgstr "Chỉnh sửa {0}"
+
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
 msgid "Edit {chip}"
@@ -1960,6 +2094,10 @@ msgstr "Chỉnh sửa màu {0}"
 #: src/components/input/rich-input.tsx
 msgid "Edit content in fullscreen mode"
 msgstr "Chỉnh sửa nội dung ở chế độ toàn màn hình"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Edit cover letter"
+msgstr "Chỉnh sửa thư xin việc"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Edit date"
@@ -2011,6 +2149,10 @@ msgstr "Giáo dục"
 msgid "Email"
 msgstr "Email"
 
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Email (optional)"
+msgstr "Email (tùy chọn)"
+
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
 #. Label for login identifier input that accepts email or username
@@ -2045,10 +2187,6 @@ msgstr "Bật xác thực hai yếu tố"
 msgid "Enabled"
 msgstr "Đã bật"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Enabling password protection..."
-#~ msgstr "Enabling password protection..."
-
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Enabling two-factor authentication…"
 msgstr "Kích hoạt xác thực hai yếu tố…"
@@ -2061,6 +2199,10 @@ msgstr "Tiếng Anh"
 msgid "English (United Kingdom)"
 msgstr "Tiếng Anh (Vương quốc Anh)"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Enter a name for this cover letter."
+msgstr "Nhập tên cho thư xin việc này."
+
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
 msgstr "Hãy nhập tên cho khóa truy cập của bạn."
@@ -2068,6 +2210,10 @@ msgstr "Hãy nhập tên cho khóa truy cập của bạn."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account"
 msgstr "Nhập mật khẩu mới cho tài khoản của bạn"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Enter a valid email address."
+msgstr "Nhập địa chỉ email hợp lệ."
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -2146,11 +2292,11 @@ msgstr "Xuất"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Export applications"
-msgstr ""
+msgstr "Xuất ứng dụng"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Export CSV"
-msgstr ""
+msgstr "Xuất CSV"
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Export Data"
@@ -2159,6 +2305,10 @@ msgstr "Xuất dữ liệu"
 #: src/features/ats-checker/messages.ts
 msgid "Export from the original document instead of scanning or screenshotting it."
 msgstr "Xuất từ tài liệu gốc thay vì quét hoặc chụp màn hình nó."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Export JSON"
+msgstr "Xuất JSON"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2392,7 +2542,7 @@ msgstr "Pháo hoa"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr ""
+msgstr "Phù hợp"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -2441,10 +2591,6 @@ msgstr "Độ đậm Font"
 #: src/routes/builder/$resumeId/-sidebar/right/sections/typography.tsx
 msgid "Font Weights"
 msgstr "Các độ đậm Font"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "For a controlled continuation, open a section's menu and choose Move to → New Page, then turn on Full Width for that authored page."
-msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
 msgid "For example, note which companies you sent this resume to, or links to the job descriptions."
@@ -2574,10 +2720,6 @@ msgstr "Google"
 msgid "Google Gemini"
 msgstr "Google Gemini"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "gpt-4.1"
-msgstr "gpt-4.1"
-
 #: src/dialogs/resume/sections/education.tsx
 msgid "Grade"
 msgstr "Điểm số"
@@ -2654,11 +2796,20 @@ msgstr "Đây là mã API mới của bạn"
 msgid "Hidden"
 msgstr "Ẩn"
 
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Hidden sections"
+msgstr "Phần ẩn"
+
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Hide"
 msgstr "Ẩn đi"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Hide heading"
+msgstr "Ẩn tiêu đề"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Icons"
@@ -2689,6 +2840,10 @@ msgstr "Ẩn mật khẩu"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Hide picture"
 msgstr "Ẩn hình ảnh"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Hide preview"
+msgstr "Ẩn bản xem trước"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2725,10 +2880,6 @@ msgstr "Tôi sử dụng API như thế nào?"
 #: src/routes/_home/-sections/faq.tsx
 msgid "How is my data protected?"
 msgstr "Dữ liệu của tôi được bảo vệ như thế nào?"
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "https://gateway.example.com/v1"
-msgstr "https://gateway.example.com/v1"
 
 #: src/libs/locale.ts
 msgid "Hungarian"
@@ -2767,6 +2918,10 @@ msgstr "Nhập {0}"
 msgid "Import an existing resume"
 msgstr "Nhập sơ yếu lý lịch hiện có"
 
+#: src/features/cover-letters/library.tsx
+msgid "Import cover letter JSON"
+msgstr "Nhập thư xin việc JSON"
+
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
 msgstr "Nhập CSV"
@@ -2780,14 +2935,22 @@ msgstr "Nhập thất bại. Hãy kiểm tra CSV và thử lại."
 msgid "Import from CSV"
 msgstr "Nhập từ CSV"
 
+#: src/dialogs/resume/sections/cover-letter.tsx
+msgid "Import from library"
+msgstr "Nhập từ thư viện"
+
+#: src/features/cover-letters/library.tsx
+msgid "Import JSON"
+msgstr "Nhập JSON"
+
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Imported {0} application(s)."
 msgstr "Đã nhập {0} hồ sơ ứng tuyển."
 
 #: src/dialogs/resume/import.tsx
-msgid "Importing from PDF or Word requires a connected AI provider."
-msgstr "Việc nhập dữ liệu từ PDF hoặc Word yêu cầu phải có nhà cung cấp AI được kết nối."
+msgid "Importing from Word requires a connected AI provider."
+msgstr "Nhập từ Word yêu cầu nhà cung cấp AI được kết nối."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2829,6 +2992,10 @@ msgstr "Tiếng Indonesia"
 #: src/libs/resume/section.tsx
 msgid "Information"
 msgstr "Thông tin"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Inline"
+msgstr "Nội tuyến"
 
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
@@ -2931,17 +3098,6 @@ msgstr "John Doe"
 msgid "john.doe"
 msgstr "John Doe"
 
-#. Example email placeholder for login identifier field
-#. Example email placeholder on forgot-password form
-#. Example email placeholder on profile settings form
-#. Example email placeholder on registration form
-#: src/features/auth/pages/forgot-password.tsx
-#: src/features/auth/pages/login.tsx
-#: src/features/auth/pages/register.tsx
-#: src/features/settings/pages/profile.tsx
-msgid "john.doe@example.com"
-msgstr "john.doe@example.com"
-
 #. Import source option for standard JSON Resume format
 #: src/dialogs/resume/import.tsx
 msgid "JSON Resume"
@@ -2958,6 +3114,14 @@ msgstr "Tiếng Kannada"
 #: src/features/ats-checker/messages.ts
 msgid "Keep a single address, so software does not have to guess which one to use."
 msgstr "Chỉ để một địa chỉ, để phần mềm không phải đoán xem nên dùng địa chỉ nào."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Keep access when you are not using the application."
+msgstr "Giữ quyền truy cập khi bạn không sử dụng ứng dụng."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Keep editing"
+msgstr "Tiếp tục chỉnh sửa"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -2991,6 +3155,10 @@ msgstr "Hãy giữ vững sự đoàn kết"
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Key"
 msgstr "Khóa"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
+msgid "Keyword layout"
+msgstr "Bố cục từ khóa"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3192,6 +3360,10 @@ msgstr "Đang tải các nhà cung cấp AI. Vui lòng thử lại sau một lá
 msgid "Loading applications…"
 msgstr "Đang tải hồ sơ ứng tuyển…"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Loading connection request..."
+msgstr "Đang tải yêu cầu kết nối..."
+
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Loading providers…"
@@ -3391,6 +3563,8 @@ msgstr "Phải bắt đầu bằng https://"
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/ats-checker/parse-preview.tsx
 #: src/features/auth/pages/register.tsx
+#: src/features/cover-letters/editor.tsx
+#: src/features/cover-letters/library.tsx
 #: src/features/settings/pages/profile.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 #: src/routes/dashboard/resumes/index.tsx
@@ -3467,6 +3641,10 @@ msgstr "Chủ đề mới"
 msgid "New Thread"
 msgstr "Chủ đề mới"
 
+#: src/features/cover-letters/library.tsx
+msgid "Next"
+msgstr "Tiếp theo"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "No ads and no trackers, so nothing gets in your way."
 msgstr "Không quảng cáo và không trình theo dõi, nên không có gì cản đường bạn."
@@ -3478,6 +3656,10 @@ msgstr "Không quảng cáo, không theo dõi"
 #: src/routes/builder/$resumeId/-components/ai-assistant.tsx
 msgid "No AI provider connected"
 msgstr "Chưa kết nối nhà cung cấp AI nào"
+
+#: src/dialogs/resume/import.tsx
+msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
+msgstr "Không có nhà cung cấp AI nào được kết nối, vì vậy chúng tôi sẽ đọc văn bản từ tệp PDF ở đây trong trình duyệt của bạn và điền vào những gì chúng tôi có thể nhận ra. Mong đợi để dọn dẹp kết quả."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3499,6 +3681,10 @@ msgstr "Không có lệnh nào khớp với tìm kiếm đó."
 #: src/features/ats-checker/messages.ts
 msgid "No conventional section headings were found."
 msgstr "Không tìm thấy tiêu đề mục thông thường nào."
+
+#: src/features/cover-letters/library.tsx
+msgid "No cover letters found. Create one or import an existing letter."
+msgstr "Không tìm thấy thư xin việc. Tạo một hoặc nhập một chữ cái hiện có."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3664,6 +3850,10 @@ msgstr "Đăng nhập một chạm"
 msgid "Ongoing Maintenance"
 msgstr "Bảo trì liên tục"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Only allow applications you trust. This application will be able to:"
+msgstr "Chỉ cho phép các ứng dụng mà bạn tin tưởng. Ứng dụng này sẽ có thể:"
+
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Only applies when the section fits on a single page."
@@ -3727,10 +3917,6 @@ msgid "Open the exported file and confirm you can select and copy every part of 
 msgstr "Mở tệp đã xuất và xác nhận bạn có thể chọn và sao chép mọi phần của nó."
 
 #: src/features/settings/integrations/components/ai-section.tsx
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: src/features/settings/integrations/components/ai-section.tsx
 msgid "OpenAI-compatible"
 msgstr "Tương thích với OpenAI"
 
@@ -3781,6 +3967,10 @@ msgstr "Danh sách có thứ tự"
 msgid "Organization"
 msgstr "Tổ chức"
 
+#: src/components/input/rich-input.tsx
+msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
+msgstr "Định dạng bảng gốc được giữ nguyên. Nội dung này ở chế độ chỉ đọc vì không thể chỉnh sửa một cách an toàn."
+
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
 msgstr "trên 100"
@@ -3790,16 +3980,14 @@ msgid "Page"
 msgstr "Trang"
 
 #. Layout editor page label with 1-based page number
+#. placeholder {0}: Math.floor(offset / 20) + 1
 #. placeholder {0}: pageIndex + 1
 #. placeholder {0}: targetPageIndex + 1
+#: src/features/cover-letters/library.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
 msgid "Page {0}"
 msgstr "Trang {0}"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
-msgid "Pages listed here are authored pages saved with your resume. A long authored page may continue onto extra PDF pages automatically; those overflow pages are not saved or editable separately."
-msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Paragraph"
@@ -3847,10 +4035,6 @@ msgstr "Passkey & 2FA"
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
-#~ msgid "Password cannot be empty."
-#~ msgstr "Password cannot be empty."
-
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Password must be between 6 and 64 characters."
 msgstr "Mật khẩu phải có độ dài từ 6 đến 64 ký tự."
@@ -3876,8 +4060,8 @@ msgid "Paste a posting to see which of its terms already appear in your resume."
 msgstr "Dán một tin tuyển dụng để xem những từ khóa nào trong đó đã xuất hiện trong sơ yếu lý lịch của bạn."
 
 #: src/features/applications/components/import-applications-sheet.tsx
-msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source and Tags."
-msgstr "Dán các hàng hoặc tải lên .csv. Chúng tôi ánh xạ các cột như Company, Role, Stage, Stage Date, Salary, Source và Tags."
+msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
+msgstr "Dán hàng hoặc tải lên .csv. Chúng tôi ánh xạ các cột như Công ty, Vai trò, Giai đoạn, Ngày giai đoạn, Mức lương, Nguồn, Thẻ, Tên liên hệ, Email liên hệ và Điện thoại liên hệ."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -3915,11 +4099,13 @@ msgstr "Bản vá đã được khôi phục."
 msgid "Patch rolled back."
 msgstr "Bản vá đã được hoàn tác."
 
-#. File format label in import source selector
-#. File format label in import source selector
-#: src/dialogs/resume/import.tsx
-msgid "PDF"
-msgstr "PDF"
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDF snapshot attached to the application."
+msgstr "Ảnh chụp nhanh PDF được đính kèm vào ứng dụng."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "PDFs already attached to applications will remain available."
+msgstr "Các tệp PDF đã được đính kèm vào ứng dụng sẽ vẫn có sẵn."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -3941,6 +4127,10 @@ msgstr "Ba Tư"
 #: src/routes/builder/$resumeId/-sidebar/left/sections/basics.tsx
 msgid "Phone"
 msgstr "Điện thoại"
+
+#: src/features/applications/components/application-detail-sheet.tsx
+msgid "Phone (optional)"
+msgstr "Điện thoại (tùy chọn)"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4055,6 +4245,14 @@ msgstr "Xem trước và xuất sẽ quay lại dùng kiểu dáng cơ bản."
 #: src/features/resume/stylesheet/status.tsx
 msgid "Preview and export keep valid styles and ignore invalid styles."
 msgstr "Xem trước và xuất sẽ giữ lại các kiểu dáng hợp lệ và bỏ qua các kiểu dáng không hợp lệ."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Preview PDF"
+msgstr "Xem trước PDF"
+
+#: src/features/cover-letters/library.tsx
+msgid "Previous"
+msgstr "trước đó"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4211,6 +4409,14 @@ msgstr "Hãy đọc hướng dẫn Áp dụng kiểu tùy chỉnh."
 msgid "Read the resume"
 msgstr "Đã đọc sơ yếu lý lịch"
 
+#: src/features/auth/pages/consent.tsx
+msgid "Read your email address."
+msgstr "Đọc địa chỉ email của bạn."
+
+#: src/features/auth/pages/consent.tsx
+msgid "Read your profile information."
+msgstr "Đọc thông tin hồ sơ của bạn."
+
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
 msgstr "Khả năng đọc"
@@ -4238,6 +4444,7 @@ msgid "Ready to activate with warnings"
 msgstr "Sẵn sàng kích hoạt kèm cảnh báo"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
+#: src/features/cover-letters/editor.tsx
 msgid "Recipient"
 msgstr "Người nhận"
 
@@ -4270,6 +4477,10 @@ msgstr "Người giới thiệu…, những điểm cần nhấn mạnh, v.v."
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Register New Device"
 msgstr "Đăng ký thiết bị mới"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Reload latest version"
+msgstr "Tải lại phiên bản mới nhất"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4337,6 +4548,10 @@ msgstr "Sắp xếp lại trường tùy chỉnh"
 msgid "Repeated far more often than the posting itself uses them: {0}. Recruiters notice."
 msgstr "Được lặp lại nhiều hơn hẳn so với chính tin tuyển dụng: {0}. Nhà tuyển dụng sẽ nhận ra điều này."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace"
+msgstr "Thay thế"
+
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
 msgstr "Thay thế font biểu tượng bằng văn bản thuần túy, sau đó xuất lại."
@@ -4344,6 +4559,10 @@ msgstr "Thay thế font biểu tượng bằng văn bản thuần túy, sau đó
 #: src/features/ats-checker/messages.ts
 msgid "Replace tables with plain paragraphs and lists. Cells extract in storage order, not reading order."
 msgstr "Thay thế bảng biểu bằng đoạn văn và danh sách thuần túy. Các ô được trích xuất theo thứ tự lưu trữ, không theo thứ tự đọc."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Replace the attached cover letter?"
+msgstr "Thay thế thư xin việc đính kèm?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4447,6 +4666,8 @@ msgstr "Mẫu sơ yếu lý lịch cho nhiều ngành nghề và gu thẩm mỹ 
 msgid "Resumes"
 msgstr "Sơ yếu lý lịch"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Retry"
 msgstr "Thử lại"
@@ -4574,13 +4795,27 @@ msgstr "Lưu thay đổi"
 #: src/dialogs/resume/sections/skill.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
+#: src/features/cover-letters/editor.tsx
 #: src/features/settings/pages/profile.tsx
 msgid "Save Changes"
 msgstr "Lưu thay đổi"
 
+#: src/features/cover-letters/editor.tsx
+msgid "Save changes before previewing, exporting, or changing styling."
+msgstr "Lưu các thay đổi trước khi xem trước, xuất hoặc thay đổi kiểu dáng."
+
+#: src/features/cover-letters/library.tsx
+msgid "Save copy to library"
+msgstr "Lưu bản sao vào thư viện"
+
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
 msgstr "Lưu mô hình"
+
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
+msgid "Save resume changes before copying its content or styling."
+msgstr "Lưu các thay đổi của sơ yếu lý lịch trước khi sao chép nội dung hoặc kiểu dáng của nó."
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4589,6 +4824,10 @@ msgstr "Lưu tệp với tất cả các trang ở chiều thẳng đứng."
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saved"
 msgstr "Đã lưu"
+
+#: src/features/resume/builder/draft.ts
+msgid "Saving is taking longer than expected. Your changes are still open."
+msgstr "Quá trình lưu mất nhiều thời gian hơn dự kiến. Những thay đổi của bạn vẫn mở."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4622,6 +4861,14 @@ msgstr "Tìm hồ sơ ứng tuyển…"
 #: src/features/command-palette/index.tsx
 msgid "Search commands"
 msgstr "Lệnh tìm kiếm"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters"
+msgstr "Tìm kiếm thư xin việc"
+
+#: src/features/cover-letters/library.tsx
+msgid "Search cover letters..."
+msgstr "Tìm kiếm thư xin việc..."
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -4730,6 +4977,10 @@ msgstr "Gửi email đặt lại mật khẩu"
 msgid "Send the resume itself rather than a portfolio wrapper."
 msgstr "Gửi trực tiếp sơ yếu lý lịch thay vì bọc nó trong một portfolio."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Sender details"
+msgstr "Chi tiết người gửi"
+
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Sending password reset email..."
 msgstr "Đang gửi email đặt lại mật khẩu..."
@@ -4814,6 +5065,7 @@ msgstr "Liên kết chia sẻ"
 msgid "Sharing"
 msgstr "Chia sẻ"
 
+#: src/features/resume/builder/section-recovery.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -4824,6 +5076,19 @@ msgstr "Hiện"
 #: src/features/applications/components/board.tsx
 msgid "Show {0} more"
 msgstr "Hiển thị thêm {0}"
+
+#: src/features/resume/builder/section-recovery.tsx
+msgid "Show {title} section"
+msgstr "Hiển thị phần {title}"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
+msgid "Show Download Buttons"
+msgstr "Hiển thị các nút tải xuống"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Show heading"
+msgstr "Hiển thị tiêu đề"
 
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/certification.tsx
@@ -4918,6 +5183,10 @@ msgstr "Đăng ký"
 #: src/features/auth/pages/error.tsx
 msgid "Sign-in didn't complete"
 msgstr "Đăng nhập chưa hoàn tất"
+
+#: src/features/auth/pages/consent.tsx
+msgid "Signed in as {email}"
+msgstr "Đã đăng nhập bằng {email}"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5048,14 +5317,14 @@ msgstr "Đã xảy ra lỗi khi đăng nhập cho bạn. Vui lòng thử lại."
 msgid "Something went wrong. Please try again."
 msgstr "Đã xảy ra lỗi. Vui lòng thử lại."
 
-#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
-msgid "Sort by date"
-msgstr ""
-
 #: src/routes/dashboard/applications/index.tsx
 #: src/routes/dashboard/resumes/index.tsx
 msgid "Sort by"
 msgstr "Sắp xếp theo"
+
+#: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
+msgid "Sort by date"
+msgstr "Sắp xếp theo ngày"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5148,7 +5417,7 @@ msgstr "Bắt đầu xây dựng hồ sơ từ đầu"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Start date must be on or before end date."
-msgstr ""
+msgstr "Ngày bắt đầu phải trùng hoặc trước ngày kết thúc."
 
 #: src/features/ats-checker/messages.ts
 msgid "Start each one with a concrete verb: built, led, reduced, migrated."
@@ -5207,6 +5476,14 @@ msgstr "Trình chỉnh sửa bảng định kiểu"
 #: src/features/resume/stylesheet/status.tsx
 msgid "Stylesheet has fatal errors"
 msgstr "Bảng định kiểu có lỗi nghiêm trọng"
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
+msgstr "Chi tiết kiểu dáng và người gửi được sao chép. Các chỉnh sửa sơ yếu lý lịch trong tương lai chỉ áp dụng khi bạn làm mới."
+
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Styling and sender details refreshed from the selected resume."
+msgstr "Chi tiết về kiểu dáng và người gửi được làm mới từ sơ yếu lý lịch đã chọn."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5297,6 +5574,8 @@ msgstr "Tamil"
 msgid "Telugu"
 msgstr "Tiếng Telugu"
 
+#: src/features/cover-letters/editor-dialog.tsx
+#: src/features/cover-letters/library.tsx
 #: src/libs/resume/section.tsx
 msgid "Template"
 msgstr "Mẫu"
@@ -5407,6 +5686,10 @@ msgstr "Không thể phân tích tệp đã nhập để tạo thành một bả
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
 msgstr "Thứ tự lưu trữ văn bản khác biệt nghiêm trọng so với thứ tự đọc."
+
+#: src/features/cover-letters/library.tsx
+msgid "The original letter stays in your resume. Each copy can be edited independently."
+msgstr "Bức thư gốc vẫn còn trong sơ yếu lý lịch của bạn. Mỗi bản sao có thể được chỉnh sửa độc lập."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5537,6 +5820,14 @@ msgstr "Kiểm tra này không áp dụng cho tệp này."
 msgid "This check only runs on resumes written in English."
 msgstr "Kiểm tra này chỉ chạy trên sơ yếu lý lịch được viết bằng tiếng Anh."
 
+#: src/features/auth/pages/consent.tsx
+msgid "This connection request is invalid or has expired."
+msgstr "Yêu cầu kết nối này không hợp lệ hoặc đã hết hạn."
+
+#: src/features/cover-letters/editor.tsx
+msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
+msgstr "Thư xin việc này đã thay đổi ở nơi khác. Chỉnh sửa của bạn vẫn còn ở đây. Tải lại phiên bản mới nhất trước khi lưu lại."
+
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
 msgstr "Thao tác này tạo một khóa API mới, cho phép các chương trình khác đọc và thay đổi dữ liệu sơ yếu lý lịch của bạn thông qua API của Reactive Resume."
@@ -5645,6 +5936,10 @@ msgstr "Liên kết này thiếu giao thức của nó."
 msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 msgstr "Sẽ mất vài phút, tùy thuộc vào tốc độ phản hồi của nhà cung cấp AI. Vui lòng không đóng cửa sổ hoặc làm mới trang."
 
+#: src/dialogs/resume/import.tsx
+msgid "This may take a moment. Please do not close the window or refresh the page."
+msgstr "Việc này có thể mất một chút thời gian. Vui lòng không đóng cửa sổ hoặc làm mới trang."
+
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
 msgstr "Chỉ số này đo mức độ trung thực mà phần mềm trích xuất được văn bản của tệp này. Nó không dự đoán việc một đơn ứng tuyển có bị từ chối hay không, và không công cụ nào làm được. Tệp của bạn được đọc trong trình duyệt này và không bao giờ được tải lên."
@@ -5657,6 +5952,11 @@ msgstr "Trang này được chia theo cột, và văn bản được trích xu�
 msgid "This page is very densely packed."
 msgstr "Trang này được sắp xếp quá dày đặc."
 
+#. Error shown when a PDF has no extractable text layer during import
+#: src/dialogs/resume/import.tsx
+msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
+msgstr "Bản PDF này không có văn bản có thể đọc được. Có thể đó là bản quét nên không có gì để nhập."
+
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
 msgstr "PDF này được bảo vệ bằng mật khẩu. Hãy lưu một bản không bảo vệ rồi thử lại."
@@ -5668,6 +5968,10 @@ msgstr "Khoảng thời gian này kết thúc trước khi nó bắt đầu."
 #: src/libs/resume/ats.ts
 msgid "This period starts in the future."
 msgstr "Thời kỳ này bắt đầu ở tương lai."
+
+#: src/features/cover-letters/library.tsx
+msgid "This resume has no embedded cover letters."
+msgstr "Sơ yếu lý lịch này không có thư xin việc nhúng."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -5787,10 +6091,6 @@ msgstr "Tiêu đề"
 #: src/features/settings/pages/account.tsx
 msgid "To delete your account, type the confirmation text below, then click the button."
 msgstr "Để xóa tài khoản của bạn, hãy nhập đoạn văn bản xác nhận bên dưới, rồi nhấn nút."
-
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "Together.ai"
-msgstr "Together.ai"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-base.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/shared/section-base.tsx
@@ -6469,10 +6769,6 @@ msgstr "Văn phong"
 msgid "X (Twitter)"
 msgstr "X (Twitter)"
 
-#: src/features/settings/integrations/components/ai-section.tsx
-msgid "xAI Grok"
-msgstr "xAI Grok"
-
 #: src/routes/_home/-sections/faq.tsx
 msgid "Yes. One click exports your resume to PDF, with your formatting and styling intact."
 msgstr "Có. Chỉ một cú nhấp là xuất sơ yếu lý lịch của bạn ra PDF, giữ nguyên định dạng và kiểu dáng."
@@ -6661,6 +6957,10 @@ msgstr "Sơ yếu lý lịch của bạn sử dụng \"tôi\" và \"của tôi\"
 msgid "Your resume's public URL is protected by a password. Share the password only with people you trust."
 msgstr "URL công khai của sơ yếu lý lịch của bạn được bảo vệ bằng mật khẩu. Chỉ chia sẻ mật khẩu với những người bạn tin tưởng."
 
+#: src/features/cover-letters/editor-dialog.tsx
+msgid "Your saved cover letter will remain unchanged."
+msgstr "Thư xin việc đã lưu của bạn sẽ không thay đổi."
+
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
 msgstr "Sự ủng hộ của bạn giữ cho dự án miễn phí và mở với tất cả mọi người, bây giờ và về sau."
@@ -6685,15 +6985,3 @@ msgstr "Thu nhỏ"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Keyword layout"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Bulleted list"
-msgstr ""
-
-#: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
-msgid "Inline"
-msgstr ""
