@@ -15,10 +15,11 @@ function waitSave(page: Page) {
 		(response) => new URL(response.url()).pathname === "/api/rpc/resume/update" && response.ok(),
 	);
 }
-function clickDashboardWithoutNavigationWait(page: Page) {
-	return page
-		.getByRole("button", { name: "Go to resumes dashboard", exact: true })
-		.evaluate((element) => element.click());
+async function clickDashboardWithoutNavigationWait(page: Page) {
+	const dashboardButton = page.getByRole("button", { name: "Go to resumes dashboard", exact: true });
+	const box = await dashboardButton.boundingBox();
+	if (!box) throw new Error("Dashboard navigation button is not visible.");
+	await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
 }
 
 async function prepareNavigationTest(page: Page, testInfo: TestInfo) {
