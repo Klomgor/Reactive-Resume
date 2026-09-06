@@ -20,6 +20,7 @@ import type {
 } from "@reactive-resume/schema/resume/data";
 import type { ReactNode } from "react";
 import { t } from "@lingui/core/macro";
+import { Fragment } from "react";
 import { stripHtml } from "@reactive-resume/utils/string";
 import { useResumeData } from "@/features/resume/builder/draft";
 import { getSectionTitle } from "@/libs/resume/section";
@@ -44,23 +45,110 @@ const SECTION_ORDER: SectionType[] = [
 const joinInline = (...parts: (string | undefined | null | false)[]): string =>
 	parts.filter((part): part is string => typeof part === "string" && part.trim().length > 0).join(" · ");
 
+const isSafeHref = (value: string | undefined): string | undefined => {
+	const href = value?.trim();
+	if (!href || /^(?:javascript|data|vbscript):/i.test(href)) return undefined;
+	if (/^(?:https?:|mailto:|tel:|\/|#|\?)/i.test(href)) return href;
+	return undefined;
+};
+
+const RICH_TEXT_OMIT_TAGS = new Set([
+	"base",
+	"button",
+	"embed",
+	"form",
+	"iframe",
+	"input",
+	"link",
+	"meta",
+	"object",
+	"script",
+	"select",
+	"style",
+	"template",
+	"textarea",
+]);
+
+function renderRichTextNode(node: ChildNode, key: string): ReactNode {
+	if (node.nodeType === 3) return node.textContent;
+	if (node.nodeType !== 1) return null;
+
+	const element = node as Element;
+	const tagName = element.tagName.toLowerCase();
+	if (RICH_TEXT_OMIT_TAGS.has(tagName)) return null;
+
+	const children = Array.from(element.childNodes).map((child, index) => renderRichTextNode(child, `${key}-${index}`));
+
+	switch (tagName) {
+		case "a": {
+			const href = isSafeHref(element.getAttribute("href") ?? undefined);
+			return href ? (
+				<a key={key} href={href}>
+					{children}
+				</a>
+			) : (
+				<Fragment key={key}>{children}</Fragment>
+			);
+		}
+		case "br":
+			return <br key={key} />;
+		case "em":
+		case "i":
+			return <em key={key}>{children}</em>;
+		case "strong":
+		case "b":
+			return <strong key={key}>{children}</strong>;
+		case "del":
+		case "s":
+			return <del key={key}>{children}</del>;
+		case "mark":
+			return <mark key={key}>{children}</mark>;
+		case "code":
+			return <code key={key}>{children}</code>;
+		case "blockquote":
+			return <blockquote key={key}>{children}</blockquote>;
+		case "ol":
+			return <ol key={key}>{children}</ol>;
+		case "ul":
+			return <ul key={key}>{children}</ul>;
+		case "li":
+			return <li key={key}>{children}</li>;
+		case "p":
+			return <p key={key}>{children}</p>;
+		default:
+			return <Fragment key={key}>{children}</Fragment>;
+	}
+}
+
+function RichText({ html }: { html: string }) {
+	if (!html.trim()) return null;
+	if (typeof DOMParser === "undefined") return stripHtml(html);
+
+	const body = new DOMParser().parseFromString(html, "text/html").body;
+	return Array.from(body.childNodes).map((node, index) => renderRichTextNode(node, `rich-text-${index}`));
+}
+
 type ItemWebsite = { url?: string; label?: string };
 
 type ItemBodyProps = {
+	heading?: string;
+	headingLevel?: 3 | 4;
 	primary?: string;
 	details?: string;
 	description?: string;
 	website?: ItemWebsite;
 };
 
-function ItemBody({ primary, details, description, website }: ItemBodyProps) {
+function ItemBody({ heading, headingLevel = 3, primary, details, description, website }: ItemBodyProps) {
 	const header = joinInline(primary, details);
-	const websiteUrl = website?.url?.trim();
+	const headingText = heading?.trim();
+	const websiteUrl = isSafeHref(website?.url);
 
 	return (
 		<>
+			{headingText ? headingLevel === 4 ? <h4>{headingText}</h4> : <h3>{headingText}</h3> : null}
 			{header ? <p>{header}</p> : null}
-			{description ? <p>{description}</p> : null}
+			{description ? <RichText html={description} /> : null}
 			{websiteUrl ? <a href={websiteUrl}>{website?.label?.trim() || websiteUrl}</a> : null}
 		</>
 	);
@@ -75,9 +163,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 			return (
 				<>
 					<ItemBody
-						primary={joinInline(it.position, it.company)}
+						heading={roles.length > 0 ? it.company : joinInline(it.position, it.company)}
 						details={joinInline(it.location, it.period)}
-						description={stripHtml(it.description)}
+						description={it.description}
 						website={it.website}
 					/>
 					{roles.length > 0 ? (
@@ -85,8 +173,10 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 							{roles.map((role) => (
 								<li key={role.id}>
 									<ItemBody
-										primary={joinInline(role.position, role.period)}
-										description={stripHtml(role.description)}
+										heading={role.position}
+										headingLevel={4}
+										details={role.period}
+										description={role.description}
 									/>
 								</li>
 							))}
@@ -100,9 +190,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 
 			return (
 				<ItemBody
-					primary={it.school}
+					heading={it.school}
 					details={joinInline(it.degree, it.area, it.grade, it.location, it.period)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -113,7 +203,7 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 			if (keywordLayout === "list") {
 				return (
 					<>
-						<ItemBody primary={it.name} details={it.proficiency} />
+						<ItemBody heading={it.name} details={it.proficiency} />
 						{it.keywords.length > 0 && (
 							<ul>
 								{it.keywords.map((keyword, index) => (
@@ -124,38 +214,36 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 					</>
 				);
 			}
-			return <ItemBody primary={it.name} details={joinInline(it.proficiency, (it.keywords ?? []).join(", "))} />;
+			return <ItemBody heading={it.name} details={joinInline(it.proficiency, (it.keywords ?? []).join(", "))} />;
 		}
 		case "interests": {
 			const it = item as InterestItem;
 
-			return <ItemBody primary={it.name} details={(it.keywords ?? []).join(", ")} />;
+			return <ItemBody heading={it.name} details={(it.keywords ?? []).join(", ")} />;
 		}
 		case "languages": {
 			const it = item as LanguageItem;
 
-			return <ItemBody primary={it.language} details={it.fluency} />;
+			return <ItemBody heading={it.language} details={it.fluency} />;
 		}
 		case "profiles": {
 			const it = item as ProfileItem;
 
-			return <ItemBody primary={joinInline(it.network, it.username)} website={it.website} />;
+			return <ItemBody heading={joinInline(it.network, it.username)} website={it.website} />;
 		}
 		case "projects": {
 			const it = item as ProjectItem;
 
-			return (
-				<ItemBody primary={it.name} details={it.period} description={stripHtml(it.description)} website={it.website} />
-			);
+			return <ItemBody heading={it.name} details={it.period} description={it.description} website={it.website} />;
 		}
 		case "awards": {
 			const it = item as AwardItem;
 
 			return (
 				<ItemBody
-					primary={it.title}
+					heading={it.title}
 					details={joinInline(it.awarder, it.date)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -165,9 +253,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 
 			return (
 				<ItemBody
-					primary={it.title}
+					heading={it.title}
 					details={joinInline(it.issuer, it.date)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -177,9 +265,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 
 			return (
 				<ItemBody
-					primary={it.title}
+					heading={it.title}
 					details={joinInline(it.publisher, it.date)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -189,9 +277,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 
 			return (
 				<ItemBody
-					primary={it.organization}
+					heading={it.organization}
 					details={joinInline(it.location, it.period)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -201,9 +289,9 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 
 			return (
 				<ItemBody
-					primary={it.name}
+					heading={it.name}
 					details={joinInline(it.position, it.phone)}
-					description={stripHtml(it.description)}
+					description={it.description}
 					website={it.website}
 				/>
 			);
@@ -216,7 +304,7 @@ function renderItem(type: CustomSectionType, item: CustomSectionItem, keywordLay
 		case "summary": {
 			const it = item as SummaryItem;
 
-			return <ItemBody description={stripHtml(it.content)} />;
+			return <ItemBody description={it.content} />;
 		}
 		default:
 			return null;
@@ -267,17 +355,19 @@ export function ResumeAccessibleText({ data }: ResumeAccessibleTextProps) {
 	if (!resumeData) return null;
 
 	const { basics, summary, sections, customSections } = resumeData;
-	const summaryText = summary && !summary.hidden ? stripHtml(summary.content) : "";
+	const summaryText = summary && !summary.hidden ? summary.content : "";
 	const website = basics.website;
 
 	const contact: ReactNode[] = [];
-	if (basics.email) contact.push(<a href={`mailto:${basics.email}`}>{basics.email}</a>);
-	if (basics.phone) contact.push(<a href={`tel:${basics.phone}`}>{basics.phone}</a>);
+	if (basics.email) contact.push(<a href={isSafeHref(`mailto:${basics.email}`)}>{basics.email}</a>);
+	if (basics.phone) contact.push(<a href={isSafeHref(`tel:${basics.phone}`)}>{basics.phone}</a>);
 	if (basics.location) contact.push(basics.location);
-	if (website?.url?.trim()) contact.push(<a href={website.url}>{website.label?.trim() || website.url}</a>);
+	const websiteUrl = isSafeHref(website?.url);
+	if (websiteUrl) contact.push(<a href={websiteUrl}>{website.label?.trim() || websiteUrl}</a>);
 	for (const field of basics.customFields ?? []) {
 		if (!field.text?.trim()) continue;
-		contact.push(field.link?.trim() ? <a href={field.link}>{field.text}</a> : field.text);
+		const fieldLink = isSafeHref(field.link);
+		contact.push(fieldLink ? <a href={fieldLink}>{field.text}</a> : field.text);
 	}
 
 	return (
@@ -297,7 +387,7 @@ export function ResumeAccessibleText({ data }: ResumeAccessibleTextProps) {
 			{summaryText ? (
 				<section>
 					<h2>{summary.title?.trim() || getSectionTitle("summary")}</h2>
-					<p>{summaryText}</p>
+					<RichText html={summaryText} />
 				</section>
 			) : null}
 
