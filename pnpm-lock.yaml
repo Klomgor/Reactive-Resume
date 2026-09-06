@@ -1349,9 +1349,15 @@ importers:
       '@reactive-resume/config':
         specifier: workspace:*
         version: link:../packages/config
+      '@reactive-resume/docx':
+        specifier: workspace:*
+        version: link:../packages/docx
       '@reactive-resume/env':
         specifier: workspace:*
         version: link:../packages/env
+      '@reactive-resume/pdf':
+        specifier: workspace:*
+        version: link:../packages/pdf
       '@reactive-resume/resume':
         specifier: workspace:*
         version: link:../packages/resume
@@ -1364,6 +1370,9 @@ importers:
       drizzle-orm:
         specifier: 1.0.0-rc.4
         version: 1.0.0-rc.4(@types/pg@8.23.1)(pg@8.23.0)(zod@4.5.4)
+      pdfjs-dist:
+        specifier: 6.3.289
+        version: 6.3.289
       pg:
         specifier: ^8.23.0
         version: 8.23.0
