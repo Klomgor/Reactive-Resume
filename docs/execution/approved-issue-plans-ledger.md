@@ -5,13 +5,17 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 
 ## Run metadata
 
-- Planning source: PR #3455, head `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d` (open, unmerged at bootstrap)
+- Planning source: PR #3455, bootstrap head `a2557b2ad40e06e1e63eb655f286e6a78fe6bf0d`; final head
+  `86e200a4dae0f421d1c96bbd3a2e1a0a6899a959`, merged as `42527ad83bdc5720bd76eef9c9da102384f21f6f`
 - Implementation source: `origin/main`, head `7a98f6662ffc6fd5a1a7281c30ab3829fe3722ec` at bootstrap
 - Coordinator branch: `codex/issue-execution-ledger`
 - Started: 2026-09-05, Europe/Berlin
 - Merge policy changed: 2026-09-06; maintainer authorized immediate merge of complete, mergeable PRs
-- Current integrated main evidence: `11d619d3d9c7da87bb38463147a7aac4bc35b092` after twenty-eight approved merges,
-  including Plan 30 ATS extraction diagnostic PR #3482 and Plan 18 geometry diagnostic PR #3483
+- Current integrated main evidence: `778fd4b7d9a2de07852f32d87713c4a6187cf4d4` after twenty-eight approved
+  plan-execution merges plus planning PR #3455, ledger PR #3456, and geometry CI regression fix PR #3484
+- Completion snapshot before this finalization update: 35/35 plan units terminal; all 63 inventory issues accounted for;
+  6 inventory issues closed and 57 open; 59 repository issues open including excluded residuals #2828 and #3246;
+  zero executable plan units and zero open PRs
 - Status values: `pending`, `diagnosing`, `implementing`, `reviewing`, `published`, `merged`, `no-change`, `blocked`,
   `declined`, `skipped`
 - Evidence rule: each terminal disposition needs current source/GitHub proof, focused tests or reproduction evidence, and
@@ -177,6 +181,10 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | Plan 18 geometry diagnostic | implementation `task_938999fe6ae1`; review `task_a71aca971d4c`; remediation `task_4ddf17ed5fea`; rereview `task_e6b96ad69cd7` | `codex/issue-2683-preview-export-geometry` | complete; all workers released; PR #3483 merged | commits `ce372b54b`, `5f5dca844`, integration `25e044c86`; full dedicated matrix 2/2 and focused rereview clean; merge `11d619d3d` |
 | Final completion audit | `task_81402f5f945f` / `ctx_1b430f809130` | ledger plus planning checkout | complete; worker released | exact 35-plan/63-issue coverage; found Unit 03/07 disposition wording and PR #3475 head metadata gaps; corrected before ledger publication |
 | Completion correction rereview | `task_66f7c09eea8b` / `ctx_649722e31975` | ledger worktree | complete; worker released; no findings | independently confirmed all three audit corrections, sequential Units 01–35, and exact 63-issue coverage |
+| Plan 10 planning disposition review | `task_070925cc66a5` / `ctx_4d34e328c0d9` | planning PR #3455 checkout | complete; findings; worker released | found approval/execution wording that still included declined Plan 10; inventory remained 35 plans/63 issues |
+| Plan 10 planning disposition rereview | `task_34a5d6723d99` / `ctx_a4e34a8d5b89` | same planning checkout | complete; no findings; worker released | confirmed README/DECISIONS/archived-plan authority corrections; PR #3455 merged as `42527ad83` |
+| Geometry E2E CI regression fix | `task_d77e8890f112` / `ctx_603cdc257add` | `codex/fix-geometry-e2e-opt-in` | complete; worker released; PR #3484 merged | commit `26f2360cf`; ordinary run 2 skipped, opt-in collection 2 tests, exact database guard retained; merge `778fd4b7d` |
+| Geometry E2E fix review | `task_f045a60ebea9` / `ctx_b6df79925977` | same regression-fix worktree | complete; no findings; worker released | unusable database URL still produced 2 skipped before fixtures; Biome and diff checks clean |
 
 ## Existing PR and residual accounting
 
@@ -184,6 +192,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | --- | --- | --- | --- | --- |
 | PR #3453 | merged 2026-09-06 | `ccd111da894cf7d44cc3dee06c937f70d91fef24` → merge `a4bdc54b2` | exact-head hosted checks green and approved before merge | complete |
 | PR #3454 | merged 2026-09-06 | `80b0d3ab02cc4292f8a4514db8c2516adc1f9dc3` → merge `2e711fd14` | exact-head hosted checks green and approved before merge | complete |
+| PR #3455 | merged 2026-09-06 | `86e200a4dae0f421d1c96bbd3a2e1a0a6899a959` → merge `42527ad83` | final Plan 10 not-planned disposition independently rereviewed; planning inventory remains 35 plans/63 issues | complete |
+| PR #3456 | merged 2026-09-06 | `138f3bbd1219f0a82f1a617ddcde2797e70b029c` → merge `981d7581f` | final audit corrections independently rereviewed; exact 35-plan/63-issue coverage | complete |
 | PR #3461 | merged 2026-09-06 | `6e071ebcd60c5e31a5b7bcc48f8a24c7c491e787` → merge `ab67831e4` | all code checks/E2E green and approved; unrelated Mintlify failure documented; normal merge, no bypass | complete |
 | PR #3462 | merged 2026-09-06 | `792d7f8e2677d442536fecd450b4e9dbbddd94ee` → merge `5850230f8` | exact-head hosted checks green and approved before merge | complete |
 | PR #3463 | closed unmerged 2026-09-06 | `3eac878d68df48b85a6d6dd9eed37bd8df6b3e6d` | maintainer explicitly skipped retired-link implementation; not-planned rationale posted to #2836 | no further action; preserve branch |
@@ -206,8 +216,10 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | PR #3480 | merged 2026-09-06 | `77a549988` → merge `cdb7bdd2f` | 14 focused tests, PDF typecheck, Biome, boundaries, Markdown, diff; independent artifact findings remediated | characterization complete; keep #3155/#2841 open pending numeric visual geometry |
 | PR #3481 | merged 2026-09-06 | `acd2a9cfe` → merge `3e62a1d60` | focused 15, full web 949, typecheck, Biome, boundaries; independent heading findings remediated; hosted E2E rerun attempt 2 failed unrelated baseline `picture-rendering` Contain persistence | HTML residual complete; keep #2844 open for public/PDF/DOCX/manual evidence |
 | PR #3482 | merged 2026-09-06 | `d17e188b0` → merge `10eb3bdbc`; autofix `f447f429a` | evaluator 108/108, four affected typechecks, Biome, boundaries 1,117; five initial review gaps and one focused-rereview label gap remediated; hosted E2E, CodeRabbit, and Greptile passed; Codacy alerts are non-secret synthetic token equality and fixed internal XML attribute-name construction; autofix export narrowing landed on main before its head-ref publication failure | diagnostic complete; keep #2845 open pending vendor-side evidence; no ATS preset justified |
-| PR #3483 | merged 2026-09-06 | `25e044c86` → merge `11d619d3d` | dedicated PostgreSQL/production-server geometry E2E 2/2; web 949, PDF 1,073, typechecks, collection, Biome, boundaries 1,452; seven review findings remediated and focused rereview clean | diagnostic complete; keep #2683 open pending original fixture/browser evidence; no runtime fix warranted |
+| PR #3483 | merged 2026-09-06 | `25e044c86` → merge `11d619d3d` | dedicated PostgreSQL/production-server geometry E2E 2/2; web 949, PDF 1,073, typechecks, collection, Biome, boundaries 1,452; seven review findings remediated and focused rereview clean; hosted baseline later exposed missing default-off test gating | diagnostic complete; keep #2683 open pending original fixture/browser evidence; CI regression fixed by #3484 |
+| PR #3484 | merged 2026-09-06 | `26f2360cf` → merge `778fd4b7d` | default-off Playwright 2 skipped; opt-in collection 2 tests; web/PDF typechecks, Biome, boundaries 1,117; independent review clean; exact disposable DB guard unchanged | CI regression complete; no product-scope change |
 | Residual #2828 | pending product direction | — | stale whole-document concurrent-tab overwrite reproduced in Chromium/PostgreSQL; excluded from 63 | account for separately; do not implement conflict UI until product policy selected |
+| Residual #3246 | outside approved package | — | open repository issue excluded by `plans/inventory.json`; no approved implementation unit | retain outside this run |
 
 ## Rulings and blockers log
 
@@ -218,8 +230,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - 2026-09-06 — Publication throughput policy: require one independent pre-publication review, run focused risk-based gates,
   then push and open PR immediately. Hosted CI runs concurrently under coordinator monitoring. Repeat review only for a
   concrete finding and limit it to the changed seam; workers do not poll hosted state or repeat unchanged full suites.
-- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Twenty-six approved PRs were
-  squash-merged without admin bypass. Plan 10 retired-link work was explicitly rejected as disproportionate redirect and
+- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Twenty-eight approved
+  plan-execution PRs were merged without admin bypass. Plan 10 retired-link work was explicitly rejected as disproportionate redirect and
   error-handling overhead; PR #3463 closed unmerged and rationale recorded on issue #2836.
 - 2026-09-06 — Plan 22 orchestration metadata initially named issue #3060. Live issue revalidation corrected ownership to
   #2785 and branch `codex/issue-2785-skill-keyword-layout` before publication; #3060 remains reserved for Plan 21.
@@ -229,10 +241,15 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   detached-parser false positives: DOMParser removes the flagged assignment and Unicode escapes remove new invisible controls.
 - 2026-09-06 — Plan 33A research is merged without renderer code. Plan 33B remains behind explicit visual/product approval
   for canonical SVG direction, neutral naming, supplied fluency labels, chronology gutter/date wrapping, and photo-free defaults.
+- 2026-09-06 — Hosted baseline E2E for merged PR #3483 exposed that destructive geometry diagnostics threw when their
+  opt-in flag was absent. PR #3484 added suite-level default-off skips without changing the matrix or database safety guard.
 
 ## Publication log
 
-- Coordinator ledger: PR #3456 (`codex/issue-execution-ledger` → `main`), open while execution continues.
+- Planning package: PR [#3455](https://github.com/amruthpillai/reactive-resume/pull/3455), merged as
+  `42527ad83bdc5720bd76eef9c9da102384f21f6f` after final Plan 10 not-planned corrections and independent rereview.
+- Coordinator ledger: PR [#3456](https://github.com/amruthpillai/reactive-resume/pull/3456), merged as
+  `981d7581f5ccb7eb02177f7f449a20fe5aee3976` after completion audit and focused rereview.
 - Merged 2026-09-06 after exact-head revalidation: #3453 (`a4bdc54b2`), #3454 (`2e711fd14`),
   #3457 (`ee52636c1`), #3458 (`772bf1452`), #3459 (`8c5804ed0`), #3460 (`549135bb3`),
   #3462 (`5850230f8`), #3461 (`ab67831e4`), #3464 (`999cd618c`), #3466 (`695cdb851`), and
@@ -240,7 +257,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   #3470 (`744eaa902`), #3471 (`a6057abd7`), #3472 (`ea97de5ec`), #3473 (`2a4a1583b`), and
   #3474 (`97f34b7cc`), #3475 (`578cb496a`), #3476 (`66c25efe1`), #3477 (`368858a56`), and
   #3478 (`5e8284e49`), #3479 (`f783908b0`), #3480 (`cdb7bdd2f`), #3481 (`3e62a1d60`), and
-  #3482 (`10eb3bdbc`) and #3483 (`11d619d3d`).
+  #3482 (`10eb3bdbc`), #3483 (`11d619d3d`), and CI regression fix #3484 (`778fd4b7d`).
 - Plan 10: PR [#3463](https://github.com/amruthpillai/reactive-resume/pull/3463), closed unmerged by maintainer direction;
   issue [#2836 comment](https://github.com/amruthpillai/reactive-resume/issues/2836#issuecomment-5556080394) records not-planned rationale.
 - Plan 16: PR [#3464](https://github.com/amruthpillai/reactive-resume/pull/3464), merged as
@@ -284,3 +301,5 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   `10eb3bdbc77a903a792f1e6bfa7cba0db9dea130`; #2845 remains open pending vendor-side evidence, and current measurements do not justify a preset.
 - Plan 18 diagnostic: PR [#3483](https://github.com/amruthpillai/reactive-resume/pull/3483), merged as
   `11d619d3d9c7da87bb38463147a7aac4bc35b092`; #2683 remains open pending original JSON/browser evidence, and no synthetic mismatch justified a runtime change.
+- Geometry E2E CI regression: PR [#3484](https://github.com/amruthpillai/reactive-resume/pull/3484), merged as
+  `778fd4b7d9a2de07852f32d87713c4a6187cf4d4`; ordinary baseline runs skip both destructive diagnostics unless explicitly opted in.
