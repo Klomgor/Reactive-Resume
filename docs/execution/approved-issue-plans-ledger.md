@@ -141,6 +141,9 @@ state changes are outside scope.
 ## Rulings and blockers log
 
 - 2026-09-05 — No rulings yet. Approved Q1–Q12 and blanket directions are binding inputs, not coordinator rulings.
+- 2026-09-06 — Plan 16 preservation hardening uses one declarative element-rule registry with conservative value
+  validators and explicit zero-table failure. Render-time Tiptap normalization was rejected because it adds editor work
+  and fragile canonicalization exceptions; unknown or ambiguous markup remains exact-byte read-only.
 
 ## Publication log
 
