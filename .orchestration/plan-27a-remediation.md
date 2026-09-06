@@ -1,7 +1,7 @@
 # Plan 27A remediation
 
-Date: 2026-09-06  
-Base: `61b58ae9a`  
+Date: 2026-09-06
+Base: `61b58ae9a`
 Scope: concrete findings from `.orchestration/plan-27a-independent-review.md` only.
 
 ## Remediated findings

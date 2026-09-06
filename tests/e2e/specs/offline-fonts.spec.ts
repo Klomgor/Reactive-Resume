@@ -2,6 +2,7 @@ import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { readFile, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
+import { locatePdfMarkerBoxes } from "../fixtures/offline-font-markers";
 import { offlineFontScriptSamples, seedOfflineFontResume } from "../fixtures/offline-fonts";
 import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
 import { expect, test } from "../fixtures/test";
@@ -82,9 +83,11 @@ test.describe("offline font diagnostic", () => {
 			const pages: string[] = [];
 			for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
 				const pdfPage = await document.getPage(pageNumber);
-				pages.push(...(await pdfPage.getTextContent()).items.flatMap((item) => ("str" in item ? [item.str] : [])));
+				pages.push(
+					(await pdfPage.getTextContent()).items.flatMap((item) => ("str" in item ? [item.str] : [])).join(""),
+				);
 			}
-			return pages.join(" ");
+			return pages.join("\n");
 		} finally {
 			await loadingTask.destroy();
 		}
@@ -114,8 +117,8 @@ test.describe("offline font diagnostic", () => {
 			});
 		});
 
-		return page.evaluate(
-			async ({ bytes, markers }) => {
+		const textEvidence = await page.evaluate(
+			async ({ bytes }) => {
 				const moduleUrl = `${location.origin}/__offline_font_pdfjs/pdf.mjs`;
 				const pdfjs: typeof import("pdfjs-dist/legacy/build/pdf.mjs") = await import(moduleUrl);
 				pdfjs.GlobalWorkerOptions.workerSrc = `${location.origin}/__offline_font_pdfjs/worker.mjs`;
@@ -124,20 +127,40 @@ test.describe("offline font diagnostic", () => {
 					const pdfDocument = await loadingTask.promise;
 					const pdfPage = await pdfDocument.getPage(1);
 					const textContent = await pdfPage.getTextContent();
-					const textItems = textContent.items.flatMap((item) =>
-						"str" in item
-							? [
-									{
-										str: item.str,
-										x: item.transform[4] ?? 0,
-										y: item.transform[5] ?? 0,
-										width: item.width,
-										height: Math.max(item.height, Math.abs(item.transform[3] ?? 0), 1),
-									},
-								]
-							: [],
-					);
-					const textLayer = textItems.map(({ str }) => str).join(" ");
+					return {
+						pageHeight: pdfPage.getViewport({ scale: 1 }).height,
+						textItems: textContent.items.flatMap((item) =>
+							"str" in item
+								? [
+										{
+											str: item.str,
+											x: item.transform[4] ?? 0,
+											y: item.transform[5] ?? 0,
+											width: item.width,
+											height: Math.max(item.height, Math.abs(item.transform[3] ?? 0), 1),
+										},
+									]
+								: [],
+						),
+					};
+				} finally {
+					await loadingTask.destroy();
+				}
+			},
+			{ bytes: Array.from(bytes) },
+		);
+		const boxes = locatePdfMarkerBoxes(textEvidence.textItems, offlineFontScriptSamples, textEvidence.pageHeight);
+		const textLayerMarkers = extractedMarkerResult(textEvidence.textItems.map(({ str }) => str).join(""));
+
+		const rasterEvidence = await page.evaluate(
+			async ({ bytes, boxes }) => {
+				const moduleUrl = `${location.origin}/__offline_font_pdfjs/pdf.mjs`;
+				const pdfjs: typeof import("pdfjs-dist/legacy/build/pdf.mjs") = await import(moduleUrl);
+				pdfjs.GlobalWorkerOptions.workerSrc = `${location.origin}/__offline_font_pdfjs/worker.mjs`;
+				const loadingTask = pdfjs.getDocument({ data: Uint8Array.from(bytes), useSystemFonts: false });
+				try {
+					const pdfDocument = await loadingTask.promise;
+					const pdfPage = await pdfDocument.getPage(1);
 					const baseViewport = pdfPage.getViewport({ scale: 1 });
 					const rasterScale = 4;
 					const viewport = pdfPage.getViewport({ scale: rasterScale });
@@ -154,29 +177,16 @@ test.describe("offline font diagnostic", () => {
 						background: "white",
 					}).promise;
 
-					const boxes = markers.map((sample) => {
-						const item = textItems.find(({ str }) => str.includes(sample.marker));
-						if (!item) return { name: sample.name, marker: sample.marker, box: null };
-						const height = Math.max(item.height, 1);
-						const baseline = baseViewport.height - item.y;
-						return {
-							name: sample.name,
-							marker: sample.marker,
-							box: {
-								x: item.x,
-								y: baseline - height,
-								width: Math.max(item.width, height),
-								height,
-							},
-						};
-					});
-
 					function measure(canvas: HTMLCanvasElement, scale: number): RasterGlyphEvidence[] {
 						const context = canvas.getContext("2d");
 						if (!context) throw new Error("Missing PDF preview raster context.");
 						const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
 						return boxes.map(({ name, box }) => {
 							if (!box) return { name, status: "not-located", inkPixels: 0, trimmedWidth: 0, trimmedHeight: 0 };
+							const markerLeft = box.x * scale;
+							const markerTop = box.y * scale;
+							const markerRight = (box.x + box.width) * scale;
+							const markerBottom = (box.y + box.height) * scale;
 							const padding = 2 * scale;
 							const left = Math.max(0, Math.floor(box.x * scale - padding));
 							const top = Math.max(0, Math.floor(box.y * scale - padding));
@@ -189,6 +199,9 @@ test.describe("offline font diagnostic", () => {
 							let maxY = top;
 							for (let y = top; y < bottom; y += 1) {
 								for (let x = left; x < right; x += 1) {
+									// Scan with padding for antialiasing, but count ink only inside marker box.
+									// Neighboring glyphs must never make blank/tofu marker evidence pass.
+									if (x < markerLeft || x >= markerRight || y < markerTop || y >= markerBottom) continue;
 									const index = (y * pixels.width + x) * 4;
 									const red = pixels.data[index] ?? 255;
 									const green = pixels.data[index + 1] ?? 255;
@@ -235,9 +248,6 @@ test.describe("offline font diagnostic", () => {
 					const preview = document.querySelector<HTMLCanvasElement>('[aria-hidden="false"] canvas');
 					return {
 						rasterDataUrl: raster.toDataURL(),
-						textLayerMarkers: Object.fromEntries(
-							markers.map((sample) => [sample.name, textLayer.includes(sample.marker)]),
-						),
 						referenceGlyphs: measure(raster, rasterScale),
 						previewGlyphs: preview ? measure(preview, preview.width / baseViewport.width) : [],
 					};
@@ -245,8 +255,9 @@ test.describe("offline font diagnostic", () => {
 					await loadingTask.destroy();
 				}
 			},
-			{ bytes: Array.from(bytes), markers: offlineFontScriptSamples },
+			{ bytes: Array.from(bytes), boxes },
 		);
+		return { ...rasterEvidence, textLayerMarkers };
 	}
 
 	async function report(testInfo: TestInfo, name: string, reportData: Record<string, unknown>) {
@@ -335,6 +346,7 @@ test.describe("offline font diagnostic", () => {
 		let markerResultValue: PdfMarkers | null = null;
 		let rasterEvidence: PdfRasterEvidence | null = null;
 		let downloadStatus = "not-started";
+		let rasterEvidenceStatus = "not-attempted";
 		try {
 			await page.goto(fixture.builderURL);
 			await openSidebarSection(page, "Export");
@@ -346,26 +358,35 @@ test.describe("offline font diagnostic", () => {
 			const path = testInfo.outputPath("offline-font-browser-download.pdf");
 			await download.saveAs(path);
 			const bytes = new Uint8Array(await readFile(path));
-			markerResultValue = extractedMarkerResult(await readPdfText(bytes));
-			rasterEvidence = await renderPdfRasterEvidence(page, bytes);
-			await testInfo.attach("browser-download-raster.png", {
-				body: Buffer.from(rasterEvidence.rasterDataUrl.split(",")[1] ?? "", "base64"),
-				contentType: "image/png",
-			});
+			try {
+				markerResultValue = extractedMarkerResult(await readPdfText(bytes));
+				rasterEvidence = await renderPdfRasterEvidence(page, bytes);
+				await testInfo.attach("browser-download-raster.png", {
+					body: Buffer.from(rasterEvidence.rasterDataUrl.split(",")[1] ?? "", "base64"),
+					contentType: "image/png",
+				});
+				rasterEvidenceStatus = "received";
+			} catch {
+				rasterEvidenceStatus = "unresolved-raster-evidence-error";
+			}
 		} catch {
-			downloadStatus = "renderer-or-network-error";
+			downloadStatus = "download-error";
 		} finally {
 			await report(testInfo, "browser-download", {
 				cache: "new-browser-context",
 				blockedExternalFontRequests: cold.blockedRequests,
 				networkStatus: networkStatus(cold.blockedRequests),
 				downloadStatus,
+				rasterEvidenceStatus,
 				textLayerMarkers: markerResultValue ?? "not-extracted",
 				glyphStatus: rasterEvidence?.referenceGlyphs ?? "not-rasterized",
 			});
 			await cold.context.close();
 		}
-		if (rasterEvidence) {
+		if (downloadStatus === "received") {
+			expect(rasterEvidenceStatus).toBe("received");
+			expect(rasterEvidence).not.toBeNull();
+			if (!rasterEvidence) return;
 			expect(rasterEvidence.referenceGlyphs).toHaveLength(offlineFontScriptSamples.length);
 			expect(rasterEvidence.referenceGlyphs.every(({ status }) => status === "visible")).toBe(true);
 		}
