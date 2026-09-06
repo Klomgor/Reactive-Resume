@@ -250,6 +250,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   `42527ad83bdc5720bd76eef9c9da102384f21f6f` after final Plan 10 not-planned corrections and independent rereview.
 - Coordinator ledger: PR [#3456](https://github.com/amruthpillai/reactive-resume/pull/3456), merged as
   `981d7581f5ccb7eb02177f7f449a20fe5aee3976` after completion audit and focused rereview.
+- Final ledger refresh: PR [#3485](https://github.com/amruthpillai/reactive-resume/pull/3485) records the terminal
+  execution snapshot; its own eventual merge commit is intentionally left to GitHub state to avoid a self-referential update.
 - Merged 2026-09-06 after exact-head revalidation: #3453 (`a4bdc54b2`), #3454 (`2e711fd14`),
   #3457 (`ee52636c1`), #3458 (`772bf1452`), #3459 (`8c5804ed0`), #3460 (`549135bb3`),
   #3462 (`5850230f8`), #3461 (`ab67831e4`), #3464 (`999cd618c`), #3466 (`695cdb851`), and
