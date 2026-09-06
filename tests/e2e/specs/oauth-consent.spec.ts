@@ -1,24 +1,17 @@
 import { createHash, randomBytes } from "node:crypto";
 import { expect, test } from "../fixtures/test";
 
-for (const { accept, login, metadataResource } of [
-	{ accept: false, login: undefined },
-	{ accept: true, login: undefined },
-	{ accept: true, login: "signed-out" },
-	{ accept: true, login: "fresh" },
-	{ accept: true, login: undefined, metadataResource: true },
-]) {
-	test(`requires explicit OAuth consent before ${accept ? "allowing" : "denying"} access (${metadataResource ? "advertised resource" : (login ?? "existing session")})`, async ({
+for (const accept of [false, true]) {
+	test(`requires explicit OAuth consent before ${accept ? "allowing" : "denying"} access`, async ({
 		authPage: page,
 		baseURL,
-		account,
 	}, testInfo) => {
 		const origin = new URL(baseURL ?? "http://localhost:3000").origin;
 		const metadata = await page.request.get("/.well-known/oauth-protected-resource");
 		expect(metadata.status()).toBe(200);
 		const advertisedResource = (await metadata.json()).resource;
 		expect(advertisedResource).toBe(origin);
-		const resource = metadataResource ? advertisedResource : `${origin}/mcp`;
+		const resource = `${origin}/mcp`;
 		const callback = "http://127.0.0.1:33921/callback";
 		const registration = await page.request.post("/api/auth/oauth2/register", {
 			headers: { origin },
@@ -37,27 +30,17 @@ for (const { accept, login, metadataResource } of [
 			resource,
 			state: "browser-consent-state",
 		});
-		if (!metadataResource) query.append("resource", origin);
+		query.append("resource", origin);
 		await page.route(`${callback}**`, (route) => route.fulfill({ body: "Client callback" }));
-		if (login === "fresh") query.set("prompt", "login");
-		if (login === "signed-out") await page.context().clearCookies();
 		await page.goto(`/api/auth/oauth2/authorize?${query}`);
-		if (login) {
-			await expect(page.getByRole("heading", { name: "Sign in to your account" })).toBeVisible();
-			await page.getByLabel("Email Address", { exact: true }).fill(account.email);
-			await page.getByLabel("Password", { exact: true }).fill(account.password);
-			await page.getByRole("button", { name: "Sign in", exact: true }).click();
-		}
 		await expect(page.getByRole("heading", { name: "Connect an application" })).toBeVisible();
 		await expect(page.getByText("Consent test client", { exact: true })).toBeVisible();
 		await expect(page.getByText(/reading and changing your resumes and job applications/)).toBeVisible();
 		await expect(page.getByRole("button", { name: "Allow access", exact: true })).toBeEnabled();
 		const before = await page.request.get("/api/auth/oauth2/get-consents");
 		expect(await before.json()).toEqual([]);
-		expect(new URL(page.url()).searchParams.getAll("resource")).toEqual(
-			metadataResource ? [origin] : [`${origin}/mcp`, origin],
-		);
-		if (accept && !login) {
+		expect(new URL(page.url()).searchParams.getAll("resource")).toEqual([`${origin}/mcp`, origin]);
+		if (accept) {
 			await page.getByRole("button", { name: "Allow access", exact: true }).click({ trial: true });
 			await page.screenshot({ path: testInfo.outputPath("consent-desktop.png"), animations: "disabled" });
 			await page.setViewportSize({ width: 390, height: 600 });

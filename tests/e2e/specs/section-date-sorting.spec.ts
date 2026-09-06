@@ -1,6 +1,5 @@
 import { Pool } from "pg";
 import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
-import { resumeIdFromPage } from "../fixtures/semantic-css";
 import { expect, test } from "../fixtures/test";
 
 type ExperienceItem = {
@@ -70,7 +69,8 @@ test("sorts Experience once while preserving undo, persistence, later edits, and
 }, testInfo) => {
 	test.setTimeout(90_000);
 	await createSampleResumeFromDashboard(page, testInfo);
-	const resumeId = resumeIdFromPage(page);
+	const resumeId = new URL(page.url()).pathname.match(/^\/builder\/([^/]+)/)?.[1];
+	if (!resumeId) throw new Error(`Expected a builder URL, received ${page.url()}.`);
 	const authoredItems = [
 		experienceItem("unknown-sort", "Mystery Co", "Recently"),
 		experienceItem("older-sort", "Older Co", "2018 - 2020"),
