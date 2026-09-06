@@ -774,10 +774,6 @@ msgstr "Ushbu rezyume haqida biron narsa so'rang"
 msgid "Aspect Ratio"
 msgstr "Tomonlar nisbati"
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Atlas Cloud supports Reactive Resume as a project sponsor. If your company would like to sponsor the project, email <0>{sponsorshipEmail}</0>."
-msgstr "Atlas Cloud loyiha homiysi sifatida Reactive Resume’ni qo‘llab-quvvatlaydi. Agar sizning kompaniyangiz loyihaga homiylik qilmoqchi bo‘lsa, <0>{sponsorshipEmail}elektron pochta manziliga xabar yuboring.</0> ."
-
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
 msgstr "ATS tekshiruvi"
@@ -4383,10 +4379,6 @@ msgstr "Reactive Resume bepul va ochiq kodli. Agar u sizga yordam bergan bo'lsa,
 msgid "Reactive Resume is open source, private, and free. It shows no ads, doesn't track what you do, and doesn't lock features behind a paywall."
 msgstr "Reactive Resume ochiq manbali, maxfiy va bepul. U reklama ko'rsatmaydi, nima qilayotganingizni kuzatmaydi va imkoniyatlarni to'lov devori ortiga yashirmaydi."
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Reactive Resume stays free, open-source, and independent because companies choose to support the work behind it. Their sponsorship helps fund hosting, maintenance, and continued development for the community."
-msgstr "Reactive Resume bepul, ochiq kodli va mustaqil bo'lib qoladi, chunki kompaniyalar uning ortidagi ishni qo'llab-quvvatlashni tanlaydilar. Ularning homiyligi hamjamiyat uchun xosting, texnik xizmat ko'rsatish va uzluksiz rivojlanishni moliyalashtirishga yordam beradi."
-
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
 msgid "Reactive Resume v<0>{__APP_VERSION__}</0>"
@@ -5624,10 +5616,6 @@ msgstr "Matn sarlavha yoki pastki qism hududida joylashgan."
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "Tay tili"
-
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Thank you to our sponsors"
-msgstr "Homiylarimizga rahmat"
 
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."

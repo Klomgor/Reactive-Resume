@@ -774,10 +774,6 @@ msgstr "ଏହି ରିଜ୍ୟୁମ୍ ବିଷୟରେ କିଛି ବ�
 msgid "Aspect Ratio"
 msgstr "ଆସ୍ପେକ୍ଟ ଅନୁପାତ"
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Atlas Cloud supports Reactive Resume as a project sponsor. If your company would like to sponsor the project, email <0>{sponsorshipEmail}</0>."
-msgstr "ଆଟଲାସ୍ କ୍ଲାଉଡ୍ ପ୍ରୋଜେକ୍ଟ ପ୍ରାୟୋଜକ ଭାବରେ ରିଆକ୍ଟିଭ୍ ରିଜ୍ୟୁମ୍ ସମର୍ଥନ କରେ। ଯଦି ଆପଣଙ୍କ କମ୍ପାନୀ ପ୍ରୋଜେକ୍ଟ ପ୍ରାୟୋଜକ କରିବାକୁ ଚାହେଁ, ତେବେ <0>{sponsorshipEmail}କୁ ଇମେଲ୍ କରନ୍ତୁ।</0> ।"
-
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
 msgstr "ATS ଯାଞ୍ଚ"
@@ -4383,10 +4379,6 @@ msgstr "ରିଆକ୍ଟିଭ୍ ରିଜ୍ୟୁମ୍ ମାଗଣା ଏ
 msgid "Reactive Resume is open source, private, and free. It shows no ads, doesn't track what you do, and doesn't lock features behind a paywall."
 msgstr "Reactive Resume ଖୋଲା-ମୂଳ, ଗୋପନୀୟ ଏବଂ ନିଶୁଳ୍କ। ଏହା କୌଣସି ବିଜ୍ଞାପନ ଦେଖାଏ ନାହିଁ, ଆପଣ କଣ କରୁଛନ୍ତି ତାହା ଟ୍ରାକ୍ କରେ ନାହିଁ, ଏବଂ ବୈଶିଷ୍ଟ୍ୟଗୁଡିକୁ ଦେୟ ପ୍ରାଚୀର ପଛରେ ବନ୍ଦ କରି ରଖେ ନାହିଁ।"
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Reactive Resume stays free, open-source, and independent because companies choose to support the work behind it. Their sponsorship helps fund hosting, maintenance, and continued development for the community."
-msgstr "ରିଆକ୍ଟିଭ୍ ରିଜ୍ୟୁମ୍ ମାଗଣା, ମୁକ୍ତ-ଉତ୍ସ ଏବଂ ସ୍ୱାଧୀନ ରହିଥାଏ କାରଣ କମ୍ପାନୀଗୁଡ଼ିକ ଏହା ପଛରେ ଥିବା କାର୍ଯ୍ୟକୁ ସମର୍ଥନ କରିବାକୁ ପସନ୍ଦ କରନ୍ତି। ସେମାନଙ୍କର ପ୍ରାୟୋଜକତା ସମ୍ପ୍ରଦାୟ ପାଇଁ ହୋଷ୍ଟିଂ, ରକ୍ଷଣାବେକ୍ଷଣ ଏବଂ ନିରନ୍ତର ବିକାଶ ପାଇଁ ପାଣ୍ଠି ଯୋଗାଇବାରେ ସାହାଯ୍ୟ କରେ।"
-
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
 msgid "Reactive Resume v<0>{__APP_VERSION__}</0>"
@@ -5624,10 +5616,6 @@ msgstr "ଟେକ୍ସଟ୍ ହେଡର୍ କିମ୍ବା ଫୁଟର୍
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "ଥାଇ"
-
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Thank you to our sponsors"
-msgstr "ଆମର ପ୍ରାୟୋଜକଙ୍କୁ ଧନ୍ୟବାଦ।"
 
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."

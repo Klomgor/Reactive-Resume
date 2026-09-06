@@ -774,10 +774,6 @@ msgstr "Питајте било шта о овом животопису"
 msgid "Aspect Ratio"
 msgstr "Однос стране"
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Atlas Cloud supports Reactive Resume as a project sponsor. If your company would like to sponsor the project, email <0>{sponsorshipEmail}</0>."
-msgstr "Atlas Cloud подржава Reactive Resume као спонзора пројекта. Ако ваша компанија жели да спонзорише пројекат, пошаљите имејл на <0>{sponsorshipEmail}</0> ."
-
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
 msgstr "ATS провера"
@@ -4383,10 +4379,6 @@ msgstr "Реактивни резиме је бесплатан и отворе�
 msgid "Reactive Resume is open source, private, and free. It shows no ads, doesn't track what you do, and doesn't lock features behind a paywall."
 msgstr "Reactive Resume је отвореног кода, приватан и бесплатан. Не приказује рекламе, не прати шта радите и не закључава функције иза плаћеног зида."
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Reactive Resume stays free, open-source, and independent because companies choose to support the work behind it. Their sponsorship helps fund hosting, maintenance, and continued development for the community."
-msgstr "Reactive Resume остаје бесплатан, отвореног кода и независан јер компаније бирају да подрже рад који стоји иза њега. Њихово спонзорство помаже у финансирању хостинга, одржавања и континуираног развоја заједнице."
-
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
 msgid "Reactive Resume v<0>{__APP_VERSION__}</0>"
@@ -5624,10 +5616,6 @@ msgstr "Текст се налази у подручју заглавља или
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "Тајландски"
-
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Thank you to our sponsors"
-msgstr "Хвала нашим спонзорима"
 
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."

@@ -16,7 +16,6 @@ vi.mock("./-sections/features", () => ({ Features: () => null }));
 vi.mock("./-sections/footer", () => ({ Footer: () => null }));
 vi.mock("./-sections/hero", () => ({ Hero: () => null }));
 vi.mock("./-sections/prefooter", () => ({ Prefooter: () => null }));
-vi.mock("./-sections/sponsors", () => ({ Sponsors: () => null }));
 vi.mock("./-sections/statistics", () => ({ Statistics: () => null }));
 vi.mock("./-sections/templates", () => ({ Templates: () => null }));
 vi.mock("./-sections/testimonials", () => ({ Testimonials: () => null }));

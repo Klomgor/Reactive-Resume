@@ -9945,10 +9945,6 @@
 											"type": "boolean",
 											"description": "Whether email-based authentication is disabled on this instance."
 										},
-										"showSponsors": {
-											"type": "boolean",
-											"description": "Whether sponsor placements are shown on this instance."
-										},
 										"smtpEnabled": {
 											"type": "boolean",
 											"description": "Whether outbound email (SMTP) is configured on this instance."
@@ -9957,7 +9953,6 @@
 									"required": [
 										"disableSignups",
 										"disableEmailAuth",
-										"showSponsors",
 										"smtpEnabled"
 									]
 								}

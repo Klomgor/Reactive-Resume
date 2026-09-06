@@ -774,10 +774,6 @@ msgstr "या रिझ्युमेबद्दल काहीही वि
 msgid "Aspect Ratio"
 msgstr "प्रसर गुणोत्तर"
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Atlas Cloud supports Reactive Resume as a project sponsor. If your company would like to sponsor the project, email <0>{sponsorshipEmail}</0>."
-msgstr "अ‍ॅटलास क्लाउड, रिॲक्टिव्ह रिझ्युमेला प्रकल्प प्रायोजक म्हणून समर्थन देते. जर आपल्या कंपनीला या प्रकल्पाचे प्रायोजकत्व करायचे असेल, तर <0>{sponsorshipEmail}येथे ईमेल करा.</0> ..."
-
 #: src/libs/resume/section.tsx
 msgid "ATS Check"
 msgstr "एटीएस तपासा"
@@ -4383,10 +4379,6 @@ msgstr "रिॲक्टिव्ह रिझ्युमे मोफत आ
 msgid "Reactive Resume is open source, private, and free. It shows no ads, doesn't track what you do, and doesn't lock features behind a paywall."
 msgstr "Reactive Resume मुक्त-स्रोत, खाजगी आणि मोफत आहे. त्यात जाहिराती दिसत नाहीत, तुम्ही काय करता याचा माग काढला जात नाही, आणि कोणतेही वैशिष्ट्य पैशाच्या भिंतीमागे अडकवले जात नाही."
 
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Reactive Resume stays free, open-source, and independent because companies choose to support the work behind it. Their sponsorship helps fund hosting, maintenance, and continued development for the community."
-msgstr "रिॲक्टिव्ह रिझ्युमे विनामूल्य, ओपन-सोर्स आणि स्वतंत्र राहते कारण कंपन्या त्यामागील कार्याला पाठिंबा देण्याचे निवडतात. त्यांच्या प्रायोजकत्वामुळे समुदायासाठी होस्टिंग, देखभाल आणि निरंतर विकासाला निधी पुरवण्यास मदत होते."
-
 #. App version label in footer; includes semantic version variable
 #: src/components/ui/copyright.tsx
 msgid "Reactive Resume v<0>{__APP_VERSION__}</0>"
@@ -5624,10 +5616,6 @@ msgstr "मजकूर हेडर किंवा फूटर भागा�
 #: src/libs/locale.ts
 msgid "Thai"
 msgstr "थाई"
-
-#: src/routes/_home/-sections/sponsors.tsx
-msgid "Thank you to our sponsors"
-msgstr "आमच्या प्रायोजकांचे आभार"
 
 #: src/features/ats-checker/tool.tsx
 msgid "That file could not be read as a PDF."

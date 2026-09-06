@@ -31,20 +31,6 @@ Pick a template, fill in your details, and export to PDF. Basic use needs no acc
 
 You own your data. The codebase is open source under the MIT license, with no tracking, no ads, and no hidden costs.
 
-## Sponsors
-
-Sponsors pay for hosting, maintenance, and ongoing development, which is what keeps Reactive Resume free and independent. Thank you to everyone who chips in.
-
-<p>
-  <a href="https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=reactive-resume">
-    <img src="apps/web/public/sponsors/atlas-cloud-logo-white.svg" alt="Atlas Cloud" width="320" />
-  </a>
-</p>
-
-[Atlas Cloud](https://www.atlascloud.ai/?utm_source=github&utm_medium=link&utm_campaign=reactive-resume) supports Reactive Resume as a project sponsor. Atlas Cloud provides a unified AI platform for developers, with access to hundreds of models for chat, image generation, video generation, media processing, and GPU cloud workloads through one API key, one endpoint, and one billing account.
-
-If your company would like to sponsor Reactive Resume, email [hello@amruthpillai.com](mailto:hello@amruthpillai.com).
-
 ## Features
 
 **Resume Building**
