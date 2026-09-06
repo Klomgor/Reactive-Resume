@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -150,7 +150,7 @@ msgstr "<0>Дякую, що користуєтеся Reactive Resume. Я роз�
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "1 Column / Inline"
-msgstr "1 Column / Inline"
+msgstr "1 стовпець / у рядку"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -543,7 +543,7 @@ msgstr "Усі заявки (включно з архівними)"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Allow access"
-msgstr "Allow access"
+msgstr "Надати доступ"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -650,11 +650,11 @@ msgstr "Копілот заявки"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date from"
-msgstr "Application date from"
+msgstr "Дата подання заявки — з"
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Application date to"
-msgstr "Application date to"
+msgstr "Термін подання заяв до"
 
 #: src/features/applications/components/application-actions-menu.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -799,7 +799,7 @@ msgstr "Додати файли"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Attach PDF"
-msgstr "Attach PDF"
+msgstr "Додати PDF-файл"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Attachment"
@@ -2538,7 +2538,7 @@ msgstr "Феєрверки"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Fit"
-msgstr "Fit"
+msgstr "Підходить"
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Fit to view"
@@ -6973,3 +6973,4 @@ msgstr "Зменшити"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Зулу"
+

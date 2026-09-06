@@ -8,7 +8,7 @@ msgstr ""
 "Language: af\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Afrikaans\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -150,7 +150,7 @@ msgstr "<0>Dankie dat jy Reactive Resume gebruik. Ek bou hierdie app meestal in 
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "1 Column / Inline"
-msgstr "1 kolom / deurlopend"
+msgstr "1 kolom / inlyn"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -250,7 +250,7 @@ msgstr "A4"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Access your account through the API, including reading and changing your resumes and job applications."
-msgstr "Kry toegang tot jou rekening via die API, insluitend die lees en verander van jou CV's en werkaansoeke."
+msgstr "Toegang tot jou rekening via die API, insluitend die lees en wysig van jou lewenslope en werk­aansoeke."
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Access your resumes and data programmatically using the API."
@@ -543,7 +543,7 @@ msgstr "Alle aansoeke (insluitend geargiveerde)"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Allow access"
-msgstr "Laat toegang toe"
+msgstr "Toegang toelaat"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Allow Public Access"
@@ -6973,3 +6973,4 @@ msgstr "Zoem uit"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Zoeloe"
+

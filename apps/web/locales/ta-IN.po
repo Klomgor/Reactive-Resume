@@ -8,7 +8,7 @@ msgstr ""
 "Language: ta\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Tamil\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2147,7 +2147,7 @@ msgstr "மின்னஞ்சல்"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Email (optional)"
-msgstr "மின்னஞ்சல் (விரும்பினால்)"
+msgstr "மின்னஞ்சல் (விருப்பத்திற்குரியது)"
 
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
@@ -2197,7 +2197,7 @@ msgstr "ஆங்கிலம் (ஐக்கிய இராச்சியம
 
 #: src/features/cover-letters/editor.tsx
 msgid "Enter a name for this cover letter."
-msgstr "இந்த அட்டை கடிதத்திற்கு ஒரு பெயரை உள்ளிடவும்."
+msgstr "இந்த உறையெழுத்துக்கு ஒரு பெயரை உள்ளிடவும்."
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
@@ -2304,7 +2304,7 @@ msgstr "அதை ஸ்கேன் செய்வதற்கோ ஸ்கி
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Export JSON"
-msgstr "JSON ஐ ஏற்றுமதி செய்யவும்"
+msgstr "JSON-ஐ ஏற்றுமதி செய்"
 
 #: src/features/settings/pages/account.tsx
 msgid "Export my data"
@@ -2794,7 +2794,7 @@ msgstr "மறைக்கப்பட்டது"
 
 #: src/features/resume/builder/section-recovery.tsx
 msgid "Hidden sections"
-msgstr "மறைக்கப்பட்ட பிரிவுகள்"
+msgstr "மறைக்கப்பட்ட பகுதிகள்"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-item.tsx
@@ -2839,7 +2839,7 @@ msgstr "படத்தை மறைக்கவும்"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Hide preview"
-msgstr "முன்னோட்டத்தை மறை"
+msgstr "முன்வருகையை மறை"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2916,7 +2916,7 @@ msgstr "ஏற்கனவே உள்ள ஒரு ரெஸ்யூமிய
 
 #: src/features/cover-letters/library.tsx
 msgid "Import cover letter JSON"
-msgstr "JSON அட்டை கடிதத்தை இறக்குமதி செய்யவும்"
+msgstr "JSON உறைக்கடிதத்தை இறக்குமதி செய்"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
@@ -2937,7 +2937,7 @@ msgstr "நூலகத்திலிருந்து இறக்கும�
 
 #: src/features/cover-letters/library.tsx
 msgid "Import JSON"
-msgstr "JSON ஐ இறக்குமதி செய்யவும்"
+msgstr "JSON-ஐ இறக்குமதி செய்"
 
 #. placeholder {0}: result.imported
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -2946,7 +2946,7 @@ msgstr "{0} பயன்பாடு(கள்) இறக்குமதி ச�
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing from Word requires a connected AI provider."
-msgstr "Word இலிருந்து இறக்குமதி செய்ய இணைக்கப்பட்ட AI வழங்குநர் தேவை."
+msgstr "வேர்டிலிருந்து இறக்குமதி செய்ய, இணைக்கப்பட்ட AI வழங்குநர் தேவை."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -2991,7 +2991,7 @@ msgstr "தகவல்"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
-msgstr "இன்லைன்"
+msgstr "வரிசைப்பூர்வமான"
 
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
@@ -3113,7 +3113,7 @@ msgstr "ஒரே ஒரு முகவரியை மட்டும் வ�
 
 #: src/features/auth/pages/consent.tsx
 msgid "Keep access when you are not using the application."
-msgstr "நீங்கள் பயன்பாட்டைப் பயன்படுத்தாதபோது அணுகலை வைத்திருக்கவும்."
+msgstr "நீங்கள் பயன்பாட்டைப் பயன்படுத்தாத போதும் அணுகலைத் தக்கவைத்துக் கொள்ளுங்கள்."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
@@ -3154,7 +3154,7 @@ msgstr "விசை"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
-msgstr "முக்கிய வார்த்தை அமைப்பு"
+msgstr "முக்கியச்சொல் அடுக்கு அமைப்பு"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3655,7 +3655,7 @@ msgstr "AI வழங்குநர் எதுவும் இணைக்க�
 
 #: src/dialogs/resume/import.tsx
 msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
-msgstr "எந்த AI வழங்குநரும் இணைக்கப்படவில்லை, எனவே உங்கள் உலாவியில் உள்ள PDF இன் உரையைப் படித்து, நாங்கள் அடையாளம் காணக்கூடியவற்றை நிரப்புவோம். முடிவை ஒழுங்கமைக்க எதிர்பார்க்கலாம்."
+msgstr "எந்தவொரு AI வழங்குநரும் இணைக்கப்படாததால், உங்கள் உலாவியில் உள்ள PDF-இலிருந்து உரையைப் படித்து, எங்களால் அடையாளம் காண முடிந்ததை நிரப்புவோம். முடிவைச் சீரமைக்க வேண்டியிருக்கும்."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3680,7 +3680,7 @@ msgstr "வழக்கமான பிரிவு தலைப்புகள�
 
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
-msgstr "கவர் கடிதங்கள் எதுவும் கிடைக்கவில்லை. ஒன்றை உருவாக்கவும் அல்லது ஏற்கனவே உள்ள கடிதத்தை இறக்குமதி செய்யவும்."
+msgstr "முகப்புக் கடிதங்கள் எதுவும் காணப்படவில்லை. ஒன்றை உருவாக்கவும் அல்லது ஏற்கனவே உள்ள கடிதத்தை இறக்குமதி செய்யவும்."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3848,7 +3848,7 @@ msgstr "தொடர்ந்து பராமரிப்பு"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Only allow applications you trust. This application will be able to:"
-msgstr "நீங்கள் நம்பும் பயன்பாடுகளை மட்டும் அனுமதிக்கவும். இந்த பயன்பாட்டினால் முடியும்:"
+msgstr "உங்களுக்கு நம்பிக்கையான பயன்பாடுகளை மட்டுமே அனுமதிக்கவும். இந்தப் பயன்பாட்டினால் முடியும்:"
 
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -3965,7 +3965,7 @@ msgstr "நிறுவனம் / அமைப்பு"
 
 #: src/components/input/rich-input.tsx
 msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
-msgstr "அசல் அட்டவணை வடிவமைப்பு பாதுகாக்கப்படுகிறது. இந்த உள்ளடக்கத்தைப் பாதுகாப்பாகத் திருத்த முடியாது என்பதால் படிக்க மட்டுமே."
+msgstr "அசல் அட்டவணை வடிவமைப்பு பாதுகாக்கப்படுகிறது. இந்த உள்ளடக்கம் பாதுகாப்பாகத் திருத்த முடியாததால், இது படிக்க-மட்டும் என அமைக்கப்பட்டுள்ளது."
 
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
@@ -4057,7 +4057,7 @@ msgstr "ஒரு அறிவிப்பை ஒட்டி, அதன் ச�
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
-msgstr "வரிசைகளை ஒட்டவும் அல்லது .csv ஐ பதிவேற்றவும். நிறுவனம், பங்கு, நிலை, நிலை தேதி, சம்பளம், ஆதாரம், குறிச்சொற்கள், தொடர்பு பெயர், தொடர்பு மின்னஞ்சல் மற்றும் தொடர்பு தொலைபேசி போன்ற நெடுவரிசைகளை நாங்கள் வரைபடமாக்குகிறோம்."
+msgstr "வரிசைகளை ஒட்டவும் அல்லது .csv கோப்பைப் பதிவேற்றவும். நாங்கள் நிறுவனம், பங்கு, நிலை, நிலைத் தேதி, சம்பளம், ஆதாரம், குறிச்சொற்கள், தொடர்புப் பெயர், தொடர்பு மின்னஞ்சல் மற்றும் தொடர்புத் தொலைபேசி போன்ற நெடுவரிசைகளைப் பொருத்துகிறோம்."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -4097,11 +4097,11 @@ msgstr "பேட்ச் திரும்பப் பெறப்பட்�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDF snapshot attached to the application."
-msgstr "பயன்பாட்டுடன் இணைக்கப்பட்ட PDF ஸ்னாப்ஷாட்."
+msgstr "விண்ணப்பத்துடன் PDF காட்சிப்படம் இணைக்கப்பட்டுள்ளது."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDFs already attached to applications will remain available."
-msgstr "பயன்பாடுகளுடன் ஏற்கனவே இணைக்கப்பட்ட PDFகள் தொடர்ந்து இருக்கும்."
+msgstr "விண்ணப்பங்களுடன் ஏற்கனவே இணைக்கப்பட்ட PDF-கள் தொடர்ந்து கிடைக்கப்பெறும்."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -4126,7 +4126,7 @@ msgstr "தொலைபேசி"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Phone (optional)"
-msgstr "தொலைபேசி (விரும்பினால்)"
+msgstr "தொலைபேசி (விருப்பத்திற்குரியது)"
 
 #: src/routes/agent/index.tsx
 msgid "Pick a conversation from the sidebar, or start a new thread to work on a draft."
@@ -4244,7 +4244,7 @@ msgstr "முன்னோட்டமும் ஏற்றுமதியு�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Preview PDF"
-msgstr "PDF மாதிரிக்காட்சி"
+msgstr "முன்வாசிப்பு PDF"
 
 #: src/features/cover-letters/library.tsx
 msgid "Previous"
@@ -4403,11 +4403,11 @@ msgstr "ரெஸ்யூமைப் படித்தது"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Read your email address."
-msgstr "உங்கள் மின்னஞ்சல் முகவரியைப் படிக்கவும்."
+msgstr "உங்கள் மின்னஞ்சல் முகவரியைப் படியுங்கள்."
 
 #: src/features/auth/pages/consent.tsx
 msgid "Read your profile information."
-msgstr "உங்கள் சுயவிவரத் தகவலைப் படிக்கவும்."
+msgstr "உங்கள் சுயவிவரத் தகவலைப் படியுங்கள்."
 
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
@@ -4472,7 +4472,7 @@ msgstr "புதிய சாதனத்தைப் பதிவு செய
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
-msgstr "சமீபத்திய பதிப்பை மீண்டும் ஏற்றவும்"
+msgstr "சமீபத்திய பதிப்பை மீண்டும் ஏற்றுக"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4542,7 +4542,7 @@ msgstr "அறிவிப்பே பயன்படுத்துவதை�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace"
-msgstr "மாற்றவும்"
+msgstr "மாற்று"
 
 #: src/features/ats-checker/messages.ts
 msgid "Replace icon fonts with plain text, then re-export."
@@ -4554,7 +4554,7 @@ msgstr "அட்டவணைகளை எளிய பத்திகள் ம
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
-msgstr "இணைக்கப்பட்ட கவர் கடிதத்தை மாற்றவா?"
+msgstr "இணைக்கப்பட்டுள்ள முகப்புக் கடிதத்தை மாற்றுகிறீர்களா?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4790,11 +4790,11 @@ msgstr "மாற்றங்களைச் சேமிக்கவும்"
 
 #: src/features/cover-letters/editor.tsx
 msgid "Save changes before previewing, exporting, or changing styling."
-msgstr "மாதிரிக்காட்சி, ஏற்றுமதி அல்லது ஸ்டைலிங் மாற்றும் முன் மாற்றங்களைச் சேமிக்கவும்."
+msgstr "முன்வருகை, ஏற்றுமதி அல்லது பாணியை மாற்றுவதற்கு முன் மாற்றங்களைச் சேமிக்கவும்."
 
 #: src/features/cover-letters/library.tsx
 msgid "Save copy to library"
-msgstr "நகலை நூலகத்தில் சேமிக்கவும்"
+msgstr "பிரதியை நூலகத்தில் சேமி"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
@@ -4803,7 +4803,7 @@ msgstr "மாதிரியைச் சேமிக்கவும்"
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Save resume changes before copying its content or styling."
-msgstr "அதன் உள்ளடக்கம் அல்லது ஸ்டைலிங்கை நகலெடுக்கும் முன் ரெஸ்யூம் மாற்றங்களைச் சேமிக்கவும்."
+msgstr "உள்ளடக்கம் அல்லது பாணியை நகலெடுப்பதற்கு முன், ரெஸ்யூமில் உள்ள மாற்றங்களைச் சேமிக்கவும்."
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4815,7 +4815,7 @@ msgstr "சேமிக்கப்பட்டது"
 
 #: src/features/resume/builder/draft.ts
 msgid "Saving is taking longer than expected. Your changes are still open."
-msgstr "சேமிக்க எதிர்பார்த்ததை விட அதிக நேரம் ஆகிறது. உங்கள் மாற்றங்கள் இன்னும் திறந்தே உள்ளன."
+msgstr "சேமிப்பு எதிர்பார்த்ததை விட அதிக நேரம் எடுகிறது. உங்கள் மாற்றங்கள் இன்னும் திறந்தே உள்ளன."
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4852,11 +4852,11 @@ msgstr "தேடல் கட்டளைகள்"
 
 #: src/features/cover-letters/library.tsx
 msgid "Search cover letters"
-msgstr "கவர் கடிதங்களைத் தேடுங்கள்"
+msgstr "பணி விண்ணப்பக் கடிதங்களைத் தேடுக"
 
 #: src/features/cover-letters/library.tsx
 msgid "Search cover letters..."
-msgstr "கவர் கடிதங்களைத் தேடு..."
+msgstr "முகப்புக் கடிதங்களைத் தேடுக..."
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -5067,11 +5067,11 @@ msgstr "மேலும் {0} காட்டு"
 
 #: src/features/resume/builder/section-recovery.tsx
 msgid "Show {title} section"
-msgstr "{title} பிரிவைக் காட்டு"
+msgstr "{title} பகுதியைக் காட்டு"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Show Download Buttons"
-msgstr "பதிவிறக்க பொத்தான்களைக் காட்டு"
+msgstr "பதிவிறக்கப் பொத்தான்களைக் காட்டு"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -5174,7 +5174,7 @@ msgstr "உள்நுழைவு முடிவடையவில்லை"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Signed in as {email}"
-msgstr "{email} ஆக உள்நுழைந்துள்ளீர்கள்"
+msgstr "ஆக உள்நுழைந்தேன் {email}"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5225,7 +5225,7 @@ msgstr "திறன்கள்"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
-msgstr "தவிர்த்து பதிவேற்றவும்"
+msgstr "தவறு மற்றும் பதிவேற்று"
 
 #: src/routes/_home/route.tsx
 #: src/routes/builder/$resumeId/-components/desktop-builder-shell.tsx
@@ -5316,7 +5316,7 @@ msgstr "இதன்படி வரிசைப்படுத்து"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Sort by date"
-msgstr "தேதி வாரியாக வரிசைப்படுத்தவும்"
+msgstr "தேதியின்படி வரிசைப்படுத்து"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5471,11 +5471,11 @@ msgstr "ஸ்டைல்ஷீட்டில் கடுமையான ப�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
-msgstr "ஸ்டைலிங் மற்றும் அனுப்புநர் விவரங்கள் நகலெடுக்கப்படுகின்றன. நீங்கள் புதுப்பிக்கும் போது மட்டுமே எதிர்கால ரெஸ்யூம் திருத்தங்கள் பொருந்தும்."
+msgstr "பாணி மற்றும் அனுப்பியவர் விவரங்கள் நகலெடுக்கப்பட்டுள்ளன. எதிர்கால ரெஸ்யூமேத் திருத்தங்கள் நீங்கள் புதுப்பிக்கும்போது மட்டுமே பொருந்தும்."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details refreshed from the selected resume."
-msgstr "தேர்ந்தெடுக்கப்பட்ட ரெஸ்யூமிலிருந்து ஸ்டைலிங் மற்றும் அனுப்புநர் விவரங்கள் புதுப்பிக்கப்பட்டன."
+msgstr "தேர்ந்தெடுக்கப்பட்ட ரெஸ்யூமிலிருந்து ஸ்டைலிங் மற்றும் அனுப்பியவர் விவரங்கள் புதுப்பிக்கப்பட்டன."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5677,7 +5677,7 @@ msgstr "உரை சேமிக்கப்பட்டுள்ள வரி�
 
 #: src/features/cover-letters/library.tsx
 msgid "The original letter stays in your resume. Each copy can be edited independently."
-msgstr "அசல் கடிதம் உங்கள் விண்ணப்பத்தில் இருக்கும். ஒவ்வொரு பிரதியும் சுயாதீனமாக திருத்தப்படலாம்."
+msgstr "அசல் கடிதம் உங்கள் ரெஸ்யூமிலேயே இருக்கும். ஒவ்வொரு நகலையும் தனித்தனியாகத் திருத்தலாம்."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5810,11 +5810,11 @@ msgstr "ஆங்கிலத்தில் எழுதப்பட்ட ர�
 
 #: src/features/auth/pages/consent.tsx
 msgid "This connection request is invalid or has expired."
-msgstr "இந்த இணைப்பு கோரிக்கை தவறானது அல்லது காலாவதியானது."
+msgstr "இந்த இணைப்பு கோரிக்கை செல்லாதது அல்லது காலாவதியானது."
 
 #: src/features/cover-letters/editor.tsx
 msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
-msgstr "இந்த கவர் கடிதம் வேறு இடத்தில் மாறிவிட்டது. உங்கள் திருத்தங்கள் இன்னும் இங்கே உள்ளன. மீண்டும் சேமிப்பதற்கு முன் சமீபத்திய பதிப்பை மீண்டும் ஏற்றவும்."
+msgstr "இந்த முகப்புக் கடிதம் வேறு இடத்தில் மாற்றப்பட்டது. உங்கள் திருத்தங்கள் இன்னும் இங்கே உள்ளன. மீண்டும் சேமிப்பதற்கு முன் சமீபத்திய பதிப்பை மீண்டும் ஏற்றுங்கள்."
 
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
@@ -5926,7 +5926,7 @@ msgstr "இது சில நிமிடங்கள் ஆகலாம்; �
 
 #: src/dialogs/resume/import.tsx
 msgid "This may take a moment. Please do not close the window or refresh the page."
-msgstr "இதற்கு சிறிது நேரம் ஆகலாம். சாளரத்தை மூட வேண்டாம் அல்லது பக்கத்தைப் புதுப்பிக்க வேண்டாம்."
+msgstr "இதற்குச் சிறிது நேரம் ஆகலாம். தயவுசெய்து சாளரத்தை மூடவோ அல்லது பக்கத்தைப் புதுப்பிக்கவோ வேண்டாம்."
 
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
@@ -5943,7 +5943,7 @@ msgstr "இந்தப் பக்கம் மிக அடர்த்தி
 #. Error shown when a PDF has no extractable text layer during import
 #: src/dialogs/resume/import.tsx
 msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
-msgstr "இந்த PDF படிக்கக்கூடிய உரை இல்லை. இது ஸ்கேன் ஆகும், எனவே இறக்குமதி செய்ய எதுவும் இல்லை."
+msgstr "இந்த PDF-ல் படிக்கக்கூடிய உரை இல்லை. இது ஒரு ஸ்கேன் செய்யப்பட்டதாகத் தெரிகிறது, எனவே இறக்குமதி செய்ய எதுவும் இல்லை."
 
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
@@ -5959,7 +5959,7 @@ msgstr "இந்த காலம் எதிர்காலத்தில் 
 
 #: src/features/cover-letters/library.tsx
 msgid "This resume has no embedded cover letters."
-msgstr "இந்த விண்ணப்பத்தில் உட்பொதிக்கப்பட்ட கவர் கடிதங்கள் இல்லை."
+msgstr "இந்த ரெஸ்யூமில் இணைக்கப்பட்ட முகப்புக் கடிதங்கள் இல்லை."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -6947,7 +6947,7 @@ msgstr "உங்கள் ரெஸ்யூமின் பொது URL ஒ�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Your saved cover letter will remain unchanged."
-msgstr "நீங்கள் சேமித்த அட்டை கடிதம் மாறாமல் இருக்கும்."
+msgstr "நீங்கள் சேமித்த முகப்புக் கடிதம் மாற்றமின்றி இருக்கும்."
 
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
@@ -6973,3 +6973,4 @@ msgstr "சிறிதாக்கு"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "ஜூலு"
+

@@ -8,7 +8,7 @@ msgstr ""
 "Language: pt\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2839,7 +2839,7 @@ msgstr "Ocultar imagem"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Hide preview"
-msgstr "Ocultar pré-visualização"
+msgstr "Ocultar visualização"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/page.tsx
 msgid "Hide Section Icons"
@@ -2916,7 +2916,7 @@ msgstr "Importar um currículo existente"
 
 #: src/features/cover-letters/library.tsx
 msgid "Import cover letter JSON"
-msgstr "Importar JSON da carta de apresentação"
+msgstr "Importar carta de apresentação em JSON"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Import CSV"
@@ -2946,7 +2946,7 @@ msgstr "{0} candidatura(s) importada(s)."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing from Word requires a connected AI provider."
-msgstr "Importar do Word exige um provedor de IA conectado."
+msgstr "A importação do Word requer um provedor de IA conectado."
 
 #: src/dialogs/resume/import.tsx
 msgid "Importing your resume..."
@@ -3113,11 +3113,11 @@ msgstr "Mantenha um único endereço, para que o software não precise adivinhar
 
 #: src/features/auth/pages/consent.tsx
 msgid "Keep access when you are not using the application."
-msgstr "Manter o acesso quando você não estiver usando o aplicativo."
+msgstr "Mantenha o acesso mesmo quando não estiver usando o aplicativo."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
-msgstr "Continuar editando"
+msgstr "Continue editando"
 
 #: src/features/ats-checker/messages.ts
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
@@ -3154,7 +3154,7 @@ msgstr "Chave"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Keyword layout"
-msgstr "Layout das palavras-chave"
+msgstr "Disposição das palavras-chave"
 
 #: src/dialogs/resume/sections/interest.tsx
 #: src/dialogs/resume/sections/skill.tsx
@@ -3358,7 +3358,7 @@ msgstr "Carregando candidaturas…"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Loading connection request..."
-msgstr "Carregando a solicitação de conexão..."
+msgstr "Carregando solicitação de conexão..."
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -3655,7 +3655,7 @@ msgstr "Nenhum provedor de IA conectado"
 
 #: src/dialogs/resume/import.tsx
 msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
-msgstr "Nenhum provedor de IA está conectado, então vamos ler o texto do PDF aqui, no seu navegador, e preencher o que conseguirmos reconhecer. Conte com ter de ajustar o resultado."
+msgstr "Nenhum provedor de IA está conectado; portanto, leremos o texto do PDF aqui no seu navegador e preencheremos o que for possível reconhecer. É provável que você precise ajustar o resultado."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3680,7 +3680,7 @@ msgstr "Nenhum título de seção convencional foi encontrado."
 
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
-msgstr "Nenhuma carta de apresentação encontrada. Crie uma ou importe uma carta existente."
+msgstr "Não foram encontradas cartas de apresentação. Crie uma ou importe uma carta já existente."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3848,7 +3848,7 @@ msgstr "Manutenção contínua"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Only allow applications you trust. This application will be able to:"
-msgstr "Autorize apenas aplicativos em que você confia. Este aplicativo poderá:"
+msgstr "Permita apenas aplicativos em que confie. Este aplicativo poderá:"
 
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -3965,7 +3965,7 @@ msgstr "Organização"
 
 #: src/components/input/rich-input.tsx
 msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
-msgstr "A formatação original da tabela é preservada. Este conteúdo é somente leitura porque não pode ser editado com segurança."
+msgstr "A formatação original da tabela é preservada. Este conteúdo é somente para leitura, pois não pode ser editado com segurança."
 
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
@@ -4057,7 +4057,7 @@ msgstr "Cole um anúncio para ver quais termos dele já aparecem no seu currícu
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
-msgstr "Cole linhas ou envie um .csv. Mapeamos colunas como Empresa, Cargo, Etapa, Data da etapa, Salário, Fonte, Tags, Nome do contato, Email do contato e Telefone do contato."
+msgstr "Cole as linhas ou faça o upload de um arquivo .csv. Mapeamos colunas como Empresa, Função, Fase, Data da fase, Salário, Fonte, Tags, Nome do contato, E-mail do contato e Telefone do contato."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -4097,11 +4097,11 @@ msgstr "A atualização foi revertida."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDF snapshot attached to the application."
-msgstr "Uma cópia em PDF foi anexada à candidatura."
+msgstr "Captura de tela em PDF anexada à solicitação."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDFs already attached to applications will remain available."
-msgstr "Os PDFs já anexados às candidaturas continuarão disponíveis."
+msgstr "Os arquivos PDF já anexados às inscrições permanecerão disponíveis."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -4244,7 +4244,7 @@ msgstr "A pré-visualização e a exportação mantêm os estilos válidos e ign
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Preview PDF"
-msgstr "Pré-visualizar PDF"
+msgstr "Visualizar PDF"
 
 #: src/features/cover-letters/library.tsx
 msgid "Previous"
@@ -6973,3 +6973,4 @@ msgstr "Diminuir zoom"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
+

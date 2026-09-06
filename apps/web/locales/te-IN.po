@@ -8,7 +8,7 @@ msgstr ""
 "Language: te\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Telugu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -5174,7 +5174,7 @@ msgstr "సైన్ ఇన్ పూర్తి కాలేదు"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Signed in as {email}"
-msgstr "{email}గా సైన్ ఇన్ చేసారు"
+msgstr "గా సైన్ ఇన్ అయింది {email}"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5225,7 +5225,7 @@ msgstr "స్కిల్స్"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
-msgstr "దాటవేసి అప్‌లోడ్ చేయండి"
+msgstr "తెరవండి మరియు అప్‌లోడ్ చేయండి"
 
 #: src/routes/_home/route.tsx
 #: src/routes/builder/$resumeId/-components/desktop-builder-shell.tsx
@@ -5316,7 +5316,7 @@ msgstr "సორტ్ చేయండి"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Sort by date"
-msgstr "తేదీ వారీగా క్రమబద్ధీకరించండి"
+msgstr "తేదీ ప్రకారం అమర్చండి"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5471,11 +5471,11 @@ msgstr "స్టైల్‌షీట్‌లో తీవ్రమైన ల�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
-msgstr "స్టైలింగ్ మరియు పంపినవారి వివరాలు కాపీ చేయబడ్డాయి. మీరు రిఫ్రెష్ చేసినప్పుడు మాత్రమే భవిష్యత్ రెజ్యూమ్ సవరణలు వర్తిస్తాయి."
+msgstr "స్టైలింగ్ మరియు పంపినవారి వివరాలు కాపీ చేయబడ్డాయి. భవిష్యత్తులో చేసే రెజ్యూమ్ సవరణలు మీరు పేజీని పునఃప్రారంభించినప్పుడు మాత్రమే వర్తిస్తాయి."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details refreshed from the selected resume."
-msgstr "ఎంచుకున్న రెజ్యూమ్ నుండి స్టైలింగ్ మరియు పంపినవారి వివరాలు రిఫ్రెష్ చేయబడ్డాయి."
+msgstr "ఎంచుకున్న రెస్యూమ్ నుండి స్టైలింగ్ మరియు పంపినవారి వివరాలు నవీకరించబడ్డాయి."
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5677,7 +5677,7 @@ msgstr "టెక్స్ట్ నిల్వ చేయబడిన క్ర
 
 #: src/features/cover-letters/library.tsx
 msgid "The original letter stays in your resume. Each copy can be edited independently."
-msgstr "అసలు లేఖ మీ రెజ్యూమ్‌లో ఉంటుంది. ప్రతి కాపీని స్వతంత్రంగా సవరించవచ్చు."
+msgstr "అసలు లేఖ మీ రెజ్యూమెలో ఉంటుంది. ప్రతి కాపీని స్వతంత్రంగా సవరించవచ్చు."
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5810,11 +5810,11 @@ msgstr "ఈ చెక్ ఇంగ్లీష్‌లో రాసిన ర�
 
 #: src/features/auth/pages/consent.tsx
 msgid "This connection request is invalid or has expired."
-msgstr "ఈ కనెక్షన్ అభ్యర్థన చెల్లదు లేదా గడువు ముగిసింది."
+msgstr "ఈ కనెక్షన్ అభ్యర్థన చెల్లనిది లేదా గడువు ముగిసింది."
 
 #: src/features/cover-letters/editor.tsx
 msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
-msgstr "ఈ కవర్ లెటర్ వేరే చోట మార్చబడింది. మీ సవరణలు ఇప్పటికీ ఇక్కడ ఉన్నాయి. మళ్లీ సేవ్ చేయడానికి ముందు తాజా సంస్కరణను మళ్లీ లోడ్ చేయండి."
+msgstr "ఈ కవర్ లెటర్ ఇక్కడ కాకుండా వేరే చోట మార్చబడింది. మీ సవరణలు ఇంకా ఇక్కడే ఉన్నాయి. మళ్ళీ సేవ్ చేసే ముందు తాజా వెర్షన్‌ను రీలోడ్ చేయండి."
 
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
@@ -5943,7 +5943,7 @@ msgstr "ఈ పేజీ చాలా దట్టంగా నింపబడ�
 #. Error shown when a PDF has no extractable text layer during import
 #: src/dialogs/resume/import.tsx
 msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
-msgstr "ఈ PDFలో చదవగలిగే వచనం లేదు. ఇది స్కాన్ అయ్యే అవకాశం ఉంది, కాబట్టి దిగుమతి చేసుకోవడానికి ఏమీ లేదు."
+msgstr "ఈ PDFలో చదవగలిగే పాఠ్యం లేదు. ఇది బహుశా ఒక స్కాన్ కాబట్టి, దిగుమతి చేసుకోవడానికి ఏమీ లేదు."
 
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
@@ -5959,7 +5959,7 @@ msgstr "ఈ కాలం భవిష్యత్తులో ప్రారం
 
 #: src/features/cover-letters/library.tsx
 msgid "This resume has no embedded cover letters."
-msgstr "ఈ రెజ్యూమ్‌లో పొందుపరిచిన కవర్ లెటర్‌లు లేవు."
+msgstr "ఈ రెజ్యూమెలో పొందుపరిచిన కవర్ లెటర్లు లేవు."
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -6973,3 +6973,4 @@ msgstr "జూమ్ అవుట్ చేయండి"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "జులు"
+

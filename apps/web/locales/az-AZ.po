@@ -8,7 +8,7 @@ msgstr ""
 "Language: az\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Azerbaijani\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2991,7 +2991,7 @@ msgstr "Məlumat"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
-msgstr "Inline"
+msgstr "Sətirdə"
 
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
@@ -6947,7 +6947,7 @@ msgstr "CV-nizin ictimai URL-i parolla qorunur. Parolu yalnız etibar etdiyiniz 
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Your saved cover letter will remain unchanged."
-msgstr "Saxlanmış örtük məktubunuz dəyişməz qalacaq."
+msgstr "Saxlanılmış təqdimat məktubunuz dəyişməz qalacaq."
 
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support keeps the project free and open to everyone, now and later."
@@ -6973,3 +6973,4 @@ msgstr "Uzaqlaşdır"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
+

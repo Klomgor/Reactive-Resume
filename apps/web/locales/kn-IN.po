@@ -8,7 +8,7 @@ msgstr ""
 "Language: kn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Kannada\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -5120,7 +5120,7 @@ msgstr "ಕವರ್ ಲೆಟರ್‌ನಲ್ಲಿ ಅದೇ ಮೊದಲ �
 #. placeholder {1}: applications.length
 #: src/features/applications/components/table-view.tsx
 msgid "Showing {0} of {1}"
-msgstr "{0} ರಲ್ಲಿ {1} ತೋರಿಸಲಾಗುತ್ತಿದೆ"
+msgstr "{1} ರಲ್ಲಿ {0} ತೋರಿಸಲಾಗುತ್ತಿದೆ"
 
 #. Layout editor column label for the secondary sidebar area
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -6973,3 +6973,4 @@ msgstr "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "ಜೂಲೂ"
+

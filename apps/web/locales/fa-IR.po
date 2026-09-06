@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -2991,7 +2991,7 @@ msgstr "اطلاعات"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/skill-keyword-layout-menu.tsx
 msgid "Inline"
-msgstr "درون خطی"
+msgstr "درخط"
 
 #: src/components/input/rich-input.tsx
 msgid "Inline Code"
@@ -3113,7 +3113,7 @@ msgstr "فقط یک نشانی نگه دارید تا نرم‌افزار مجب
 
 #: src/features/auth/pages/consent.tsx
 msgid "Keep access when you are not using the application."
-msgstr "هنگامی که از برنامه استفاده نمی کنید، دسترسی داشته باشید."
+msgstr "هنگامی که از برنامه استفاده نمی‌کنید، دسترسی را حفظ کنید."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Keep editing"
@@ -3358,7 +3358,7 @@ msgstr "بارگیری درخواست‌ها…"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Loading connection request..."
-msgstr "در حال بارگیری درخواست اتصال..."
+msgstr "در حال بارگذاری درخواست اتصال..."
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 #: src/features/settings/integrations/components/ai-section.tsx
@@ -3655,7 +3655,7 @@ msgstr "هیچ ارائه‌دهنده هوش مصنوعی متصل نیست"
 
 #: src/dialogs/resume/import.tsx
 msgid "No AI provider is connected, so we will read the text out of the PDF here in your browser and fill in what we can recognize. Expect to tidy up the result."
-msgstr "هیچ ارائه دهنده هوش مصنوعی متصل نیست، بنابراین ما متن را از PDF اینجا در مرورگر شما می خوانیم و آنچه را که می توانیم تشخیص دهیم پر می کنیم. انتظار داشته باشید که نتیجه را مرتب کنید."
+msgstr "هیچ ارائه‌دهنده هوش مصنوعی متصل نیست، بنابراین متن PDF را در مرورگر شما می‌خوانیم و آنچه را که می‌توانیم تشخیص دهیم، پر می‌کنیم. انتظار داشته باشید که نتیجه را مرتب کنید."
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "No applications match your filters."
@@ -3680,7 +3680,7 @@ msgstr "هیچ عنوان بخش متعارفی پیدا نشد."
 
 #: src/features/cover-letters/library.tsx
 msgid "No cover letters found. Create one or import an existing letter."
-msgstr "هیچ نامه پوششی یافت نشد. یک نامه ایجاد کنید یا یک نامه موجود را وارد کنید."
+msgstr "هیچ نامهٔ همراه یافت نشد. یک نامه جدید بسازید یا یک نامهٔ موجود را وارد کنید."
 
 #. Error shown when AI import endpoint returns no parsed resume data
 #: src/dialogs/resume/import.tsx
@@ -3848,7 +3848,7 @@ msgstr "نگه‌داری مداوم"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Only allow applications you trust. This application will be able to:"
-msgstr "فقط به برنامه هایی که اعتماد دارید اجازه دهید. این اپلیکیشن قادر خواهد بود:"
+msgstr "فقط برنامه‌هایی را که به آن‌ها اعتماد دارید مجاز کنید. این برنامه قادر خواهد بود:"
 
 #. Helper note explaining the keep-together limitation
 #: src/routes/builder/$resumeId/-sidebar/right/sections/layout/pages.tsx
@@ -3965,7 +3965,7 @@ msgstr "سازمان"
 
 #: src/components/input/rich-input.tsx
 msgid "Original table formatting is preserved. This content is read-only because it cannot be edited safely."
-msgstr "قالب بندی اصلی جدول حفظ شده است. این محتوا فقط خواندنی است زیرا نمی توان آن را به طور ایمن ویرایش کرد."
+msgstr "قالب‌بندی اصلی جدول حفظ شده است. این محتوا فقط برای خواندن است زیرا نمی‌توان آن را به‌طور ایمن ویرایش کرد."
 
 #: src/features/ats-checker/report/score-header.tsx
 msgid "out of 100"
@@ -4057,7 +4057,7 @@ msgstr "یک آگهی شغلی را جای‌گذاری کنید تا ببینی
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
-msgstr "ردیف‌ها را جای‌گذاری کنید یا یک csv. آپلود کنید. ما ستون هایی مانند شرکت، نقش، مرحله، تاریخ مرحله، حقوق، منبع، برچسب ها، نام تماس، ایمیل تماس و تلفن تماس را ترسیم می کنیم."
+msgstr "رده‌ها را پیست کنید یا یک فایل .csv را بارگذاری کنید. ما ستون‌هایی مانند شرکت، نقش، مرحله، تاریخ مرحله، حقوق، منبع، برچسب‌ها، نام تماس‌گیرنده، ایمیل تماس‌گیرنده و شماره تلفن تماس‌گیرنده را نگاشت می‌کنیم."
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -4097,11 +4097,11 @@ msgstr "پچ به عقب برگشت."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDF snapshot attached to the application."
-msgstr "عکس فوری PDF به برنامه پیوست شده است."
+msgstr "تصویر PDF به برنامه پیوست شده است."
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDFs already attached to applications will remain available."
-msgstr "فایل‌های PDF که قبلاً به برنامه‌ها پیوست شده‌اند در دسترس خواهند ماند."
+msgstr "پی‌دی‌اف‌های قبلاً ضمیمه‌شده به درخواست‌ها همچنان در دسترس خواهند بود."
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -4244,7 +4244,7 @@ msgstr "پیش‌نمایش و خروجی سبک‌های معتبر را حفظ
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Preview PDF"
-msgstr "پیش نمایش PDF"
+msgstr "پیش‌نمایش PDF"
 
 #: src/features/cover-letters/library.tsx
 msgid "Previous"
@@ -6973,3 +6973,4 @@ msgstr "کوچک‌نمایی"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "زولو"
+

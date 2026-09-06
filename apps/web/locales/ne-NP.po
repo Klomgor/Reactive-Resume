@@ -8,7 +8,7 @@ msgstr ""
 "Language: ne\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Nepali\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -1031,7 +1031,7 @@ msgstr "परिवर्तन विवरण"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Changes are shared between your library and the resume builder."
-msgstr "परिवर्तनहरू तपाईंको पुस्तकालय र पुनःसुरु निर्माणकर्ता बीच साझेदारी गरिन्छ।"
+msgstr "तपाईंको पुस्तकालय र रिजुमे बिल्डरबीच परिवर्तनहरू साझा गरिन्छ।"
 
 #: src/routes/agent/-components/agent-chat.tsx
 #: src/routes/agent/$threadId.tsx
@@ -1084,7 +1084,7 @@ msgstr "चिनियाँ (परम्परागत)"
 
 #: src/features/cover-letters/library.tsx
 msgid "Choose a cover letter"
-msgstr "एक आवरण पत्र छान्नुहोस्"
+msgstr "कभर लेटर छान्नुहोस्"
 
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Choose a model and resume draft."
@@ -1108,11 +1108,11 @@ msgstr "बायोडाटा छनौट गर्नुहोस्"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
 msgid "Choose a saved cover letter"
-msgstr "सुरक्षित गरिएको आवरण पत्र छान्नुहोस्"
+msgstr "सुरक्षित गरिएको कभर लेटर छान्नुहोस्"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Choose an application"
-msgstr "एउटा आवेदन छान्नुहोस्"
+msgstr "एउटा अनुप्रयोग छान्नुहोस्"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Choose PDF, DOCX, Markdown, or JSON. Export your resume and cover letter separately when available."
@@ -1231,7 +1231,7 @@ msgstr "जोड्नुहोस्"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Connect an application"
-msgstr "एउटा अनुप्रयोग जडान गर्नुहोस्"
+msgstr "एप्लिकेसन जडान गर्नुहोस्"
 
 #: src/features/ats-checker/ai-review/ai-review-card.tsx
 msgid "Connect your own AI provider to get a review of the writing. The checks above need no provider and no account."
@@ -1263,7 +1263,7 @@ msgstr "सम्पर्कहरू"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Contain"
-msgstr "समावेश गर्नुहोस्"
+msgstr "नियन्त्रण गर्नुहोस्"
 
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
@@ -1317,7 +1317,7 @@ msgstr "प्रतिलिपि गर्नुहोस्"
 
 #: src/features/cover-letters/library.tsx
 msgid "Copy an existing letter from a resume"
-msgstr "रिजुमेबाट अवस्थित पत्र प्रतिलिपि गर्नुहोस्"
+msgstr "बायोडाटाबाट अवस्थित पत्रको प्रतिलिपि गर्नुहोस्"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Copy and store these backup codes in case you lose your device."
@@ -1329,7 +1329,7 @@ msgstr "ब्याकअप कोडहरू प्रतिलिपि ग
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Copy from resume"
-msgstr "रिजुमेबाट प्रतिलिपि गर्नुहोस्"
+msgstr "बायोडाटाबाट प्रतिलिपि"
 
 #: src/routes/agent/-components/agent-chat.tsx
 msgid "Copy JSON"
@@ -1337,7 +1337,7 @@ msgstr "JSON प्रतिलिपि गर्नुहोस्"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Copy saved to your cover-letter library."
-msgstr "प्रतिलिपि तपाईंको कभर-लेटर लाइब्रेरीमा सुरक्षित गरियो।"
+msgstr "प्रतिलिपि तपाईंको कभर-लेटर पुस्तकालयमा सुरक्षित गरियो।"
 
 #. Accessible label for the button that copies the two-factor secret key
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1376,11 +1376,11 @@ msgstr "वर्ष सच्याउनुहोस्, वा जारी �
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Could not complete this action. Please try again."
-msgstr "यो कार्य पूरा गर्न सकिएन। कृपया पुन: प्रयास गर्नुहोस्।"
+msgstr "यो कार्य पूरा गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Could not complete this connection. Restart the connection from your client and try again."
-msgstr "यो जडान पूरा गर्न सकिएन। आफ्नो ग्राहकबाट जडान पुन: सुरु गर्नुहोस् र पुन: प्रयास गर्नुहोस्।"
+msgstr "यो जडान पूरा गर्न सकिएन। आफ्नो क्लाइन्टबाट जडान पुनः सुरु गरी फेरि प्रयास गर्नुहोस्।"
 
 #: src/features/applications/components/application-ai-copilot.tsx
 msgid "Could not copy to clipboard. Please copy the text manually."
@@ -1397,7 +1397,7 @@ msgstr "PDF बनाउन सकिएन। कृपया फेरि प�
 
 #: src/features/cover-letters/library.tsx
 msgid "Could not load cover letters."
-msgstr "आवरण पत्रहरू लोड गर्न सकिएन।"
+msgstr "कभर लेटरहरू लोड गर्न सकिएन।"
 
 #: src/features/cover-letters/library.tsx
 msgid "Could not load the selected resume."
@@ -1405,7 +1405,7 @@ msgstr "चयन गरिएको रिजुमे लोड गर्न �
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Could not load this cover letter."
-msgstr "यो आवरण पत्र लोड गर्न सकिएन।"
+msgstr "यो कभर लेटर लोड गर्न सकिएन।"
 
 #: src/features/resume/export/use-resume-export.ts
 msgid "Could not prepare your resume for printing. Please try again."
@@ -1422,7 +1422,7 @@ msgstr "यो प्याच पुनर्स्थापित गर्न
 
 #: src/features/cover-letters/editor.tsx
 msgid "Could not save the cover letter. Please try again."
-msgstr "आवरण पत्र बचत गर्न सकेन। कृपया पुन: प्रयास गर्नुहोस्।"
+msgstr "कभर लेटर सुरक्षित गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Could not set up two-factor authentication."
@@ -1431,7 +1431,7 @@ msgstr "दुई-कारक प्रमाणीकरण सेटअप �
 #. placeholder {0}: unresolvedLabels.join(", ")
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Could not sort these items; they stayed at the end: {0}."
-msgstr "यी वस्तुहरू क्रमबद्ध गर्न सकिएन; तिनीहरू अन्तमा बसे: {0}।"
+msgstr "यी वस्तुहरू क्रमबद्ध गर्न सकिएन; तिनीहरू अन्त्यमा रहे: {0}"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Could not verify provider connection."
@@ -1488,7 +1488,7 @@ msgstr "यसको गणना पार्स अंकभन्दा छ�
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Cover"
-msgstr "कभर"
+msgstr "आवरण"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/applications/components/application-form-sheet.tsx
@@ -1513,7 +1513,7 @@ msgstr "आवरण पत्र मस्यौदा"
 #: src/routes/dashboard/-components/sidebar.tsx
 #: src/routes/dashboard/cover-letters.tsx
 msgid "Cover Letters"
-msgstr "आवरण पत्रहरू"
+msgstr "आवेदन पत्रहरू"
 
 #. Create API key dialog submit action
 #: src/dialogs/api-key/create.tsx
@@ -1628,7 +1628,7 @@ msgstr "जति चाहनुहुन्छ त्यति बायोड
 
 #: src/features/cover-letters/library.tsx
 msgid "Create cover letter"
-msgstr "आवरण पत्र सिर्जना गर्नुहोस्"
+msgstr "कभर लेटर बनाउनुहोस्"
 
 #: src/routes/agent/-components/new-thread-setup.tsx
 msgid "Create from scratch"
@@ -1667,7 +1667,7 @@ msgstr "तपाईंको बायोडाटा बनाउँदै..."
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop and Upload"
-msgstr "तस्बिर क्रप गरेर अपलोड गर्नुहोस्"
+msgstr "छाँट्नुहोस् र अपलोड गर्नुहोस्"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Crop picture"
@@ -1769,7 +1769,7 @@ msgstr "डीपसिक"
 
 #: src/features/cover-letters/library.tsx
 msgid "Default template"
-msgstr "पूर्वनिर्धारित टेम्प्लेट"
+msgstr "पूर्वनिर्धारित ढाँचा"
 
 #: src/dialogs/resume/sections/education.tsx
 msgid "Degree"
@@ -1830,7 +1830,7 @@ msgstr "यो आवेदन मेटाउने?"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Delete this cover letter?"
-msgstr "यो आवरण पत्र मेटाउने हो?"
+msgstr "यो आवरण पत्र मेटाउनुहोस्?"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Delete this timeline entry?"
@@ -1916,11 +1916,11 @@ msgstr "दुई-कारक प्रमाणीकरण अक्षम �
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard"
-msgstr "खारेज गर्नुहोस्"
+msgstr "फाल्नुहोस्"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Discard unsaved changes?"
-msgstr "सुरक्षित नगरिएका परिवर्तनहरू खारेज गर्ने हो?"
+msgstr "असुरक्षित परिवर्तनहरू फाल्ने?"
 
 #. Authentication settings action to unlink a connected social login provider
 #: src/features/settings/authentication/components/social-provider.tsx
@@ -2070,7 +2070,7 @@ msgstr "सम्पादन गर्नुहोस्"
 #. placeholder {0}: letter.name
 #: src/features/cover-letters/library.tsx
 msgid "Edit {0}"
-msgstr "सम्पादन गर्नुहोस् {0}"
+msgstr "सम्पादन {0}"
 
 #. Screen reader label for button that edits a keyword chip. Variable is the current keyword text.
 #: src/components/input/chip-input.tsx
@@ -2147,7 +2147,7 @@ msgstr "इमेल"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Email (optional)"
-msgstr "इमेल (वैकल्पिक)"
+msgstr "इमेल (ऐच्छिक)"
 
 #. Label for email input on forgot-password form
 #. Label for email input on registration form
@@ -2197,7 +2197,7 @@ msgstr "अंग्रेजी (संयुक्त अधिराज्य
 
 #: src/features/cover-letters/editor.tsx
 msgid "Enter a name for this cover letter."
-msgstr "यो आवरण पत्रको लागि नाम प्रविष्ट गर्नुहोस्।"
+msgstr "यस आवरण पत्रको लागि नाम प्रविष्ट गर्नुहोस्।"
 
 #: src/features/settings/authentication/components/passkeys.tsx
 msgid "Enter a name for your passkey."
@@ -2209,7 +2209,7 @@ msgstr "आफ्नो खाताका लागि नयाँ पास�
 
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Enter a valid email address."
-msgstr "वैध इमेल ठेगाना प्रविष्ट गर्नुहोस्।"
+msgstr "मान्य इमेल ठेगाना प्रविष्ट गर्नुहोस्।"
 
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account"
@@ -6973,3 +6973,4 @@ msgstr "जूम आउट"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "जुलु"
+

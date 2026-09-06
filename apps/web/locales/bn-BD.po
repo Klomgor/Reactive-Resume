@@ -8,7 +8,7 @@ msgstr ""
 "Language: bn\n"
 "Project-Id-Version: reactive-resume\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-09-05 15:47\n"
+"PO-Revision-Date: 2026-09-06 19:36\n"
 "Last-Translator: \n"
 "Language-Team: Bengali\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -4057,7 +4057,7 @@ msgstr "একটি বিজ্ঞপ্তি পেস্ট করে দ�
 
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "Paste rows or upload a .csv. We map columns like Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email and Contact Phone."
-msgstr "সারি পেস্ট করুন বা একটি .csv আপলোড করুন। আমরা কোম্পানি, ভূমিকা, পর্যায়, পর্যায়ের তারিখ, বেতন, উত্স, ট্যাগ, যোগাযোগের নাম, যোগাযোগের ইমেল এবং যোগাযোগের ফোনের মতো কলামগুলি ম্যাপ করি।"
+msgstr "সারিগুলো পেস্ট করুন অথবা একটি .csv ফাইল আপলোড করুন। আমরা Company, Role, Stage, Stage Date, Salary, Source, Tags, Contact Name, Contact Email এবং Contact Phone-এর মতো কলামগুলো ম্যাপ করি।"
 
 #: src/features/applications/components/application-form-sheet.tsx
 msgid "Paste the full job description here…"
@@ -4097,11 +4097,11 @@ msgstr "প্যাচটি ফিরিয়ে নেওয়া হয়
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDF snapshot attached to the application."
-msgstr "পিডিএফ স্ন্যাপশট অ্যাপ্লিকেশনের সাথে সংযুক্ত।"
+msgstr "আবেদনপত্রের সাথে PDF স্ক্রিনশট সংযুক্ত।"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "PDFs already attached to applications will remain available."
-msgstr "ইতিমধ্যেই অ্যাপ্লিকেশনগুলির সাথে সংযুক্ত PDFগুলি উপলব্ধ থাকবে৷"
+msgstr "আবেদনপত্রের সাথে ইতিমধ্যেই সংযুক্ত পিডিএফগুলো উপলব্ধ থাকবে।"
 
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
@@ -4244,11 +4244,11 @@ msgstr "প্রিভিউ ও এক্সপোর্ট বৈধ স্�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Preview PDF"
-msgstr "পিডিএফ প্রিভিউ"
+msgstr "প্রিভিউ পিডিএফ"
 
 #: src/features/cover-letters/library.tsx
 msgid "Previous"
-msgstr "আগের"
+msgstr "পূর্ববর্তী"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Primary Color"
@@ -4403,11 +4403,11 @@ msgstr "জীবনবৃত্তান্ত পড়া হয়েছে"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Read your email address."
-msgstr "আপনার ইমেল ঠিকানা পড়ুন."
+msgstr "আপনার ইমেইল ঠিকানা পড়ুন।"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Read your profile information."
-msgstr "আপনার প্রোফাইল তথ্য পড়ুন."
+msgstr "আপনার প্রোফাইলের তথ্য পড়ুন।"
 
 #: src/features/ats-checker/messages.ts
 msgid "Readability"
@@ -4472,7 +4472,7 @@ msgstr "নতুন ডিভাইস নিবন্ধন করুন"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Reload latest version"
-msgstr "সর্বশেষ সংস্করণ পুনরায় লোড করুন"
+msgstr "সর্বশেষ সংস্করণ রিলোড করুন"
 
 #: src/features/auth/pages/forgot-password.tsx
 msgid "Remember your password? <0/>"
@@ -4554,7 +4554,7 @@ msgstr "টেবিলের বদলে সাধারণ অনুচ্ছ
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Replace the attached cover letter?"
-msgstr "সংযুক্ত কভার লেটার প্রতিস্থাপন করবেন?"
+msgstr "সংযুক্ত কভার লেটারটি কি প্রতিস্থাপন করবেন?"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
 msgid "Report a Bug"
@@ -4790,11 +4790,11 @@ msgstr "পরিবর্তনগুলো সংরক্ষণ করুন"
 
 #: src/features/cover-letters/editor.tsx
 msgid "Save changes before previewing, exporting, or changing styling."
-msgstr "পূর্বরূপ দেখার, রপ্তানি করা বা স্টাইলিং পরিবর্তন করার আগে পরিবর্তনগুলি সংরক্ষণ করুন৷"
+msgstr "প্রিভিউ, এক্সপোর্ট বা স্টাইলিং পরিবর্তন করার আগে পরিবর্তনগুলো সংরক্ষণ করুন।"
 
 #: src/features/cover-letters/library.tsx
 msgid "Save copy to library"
-msgstr "লাইব্রেরিতে কপি সংরক্ষণ করুন"
+msgstr "কপিটি লাইব্রেরিতে সংরক্ষণ করুন"
 
 #: src/features/settings/integrations/components/ai-section.tsx
 msgid "Save model"
@@ -4803,7 +4803,7 @@ msgstr "মডেল সংরক্ষণ করুন"
 #: src/features/cover-letters/editor-dialog.tsx
 #: src/features/cover-letters/library.tsx
 msgid "Save resume changes before copying its content or styling."
-msgstr "এর বিষয়বস্তু বা স্টাইলিং অনুলিপি করার আগে জীবনবৃত্তান্ত পরিবর্তনগুলি সংরক্ষণ করুন।"
+msgstr "কন্টেন্ট বা স্টাইলিং অনুলিপি করার আগে রিজ্যুমের পরিবর্তনগুলি সংরক্ষণ করুন।"
 
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
@@ -4815,7 +4815,7 @@ msgstr "সংরক্ষিত"
 
 #: src/features/resume/builder/draft.ts
 msgid "Saving is taking longer than expected. Your changes are still open."
-msgstr "সংরক্ষণ প্রত্যাশার চেয়ে বেশি সময় নিচ্ছে৷ আপনার পরিবর্তন এখনও খোলা আছে."
+msgstr "সংরক্ষণ প্রত্যাশার চেয়ে বেশি সময় নিচ্ছে। আপনার পরিবর্তনগুলি এখনও খোলা আছে।"
 
 #: src/routes/builder/$resumeId/-components/header.tsx
 msgid "Saving…"
@@ -4856,7 +4856,7 @@ msgstr "কভার লেটার অনুসন্ধান করুন"
 
 #: src/features/cover-letters/library.tsx
 msgid "Search cover letters..."
-msgstr "কভার লেটার খুঁজুন..."
+msgstr "কভার লেটার অনুসন্ধান করুন..."
 
 #. Accessible label for icon picker search input
 #. Placeholder text in icon picker search input
@@ -5067,11 +5067,11 @@ msgstr "আরও দেখুন {0}"
 
 #: src/features/resume/builder/section-recovery.tsx
 msgid "Show {title} section"
-msgstr "{title} বিভাগ দেখান৷"
+msgstr "{title} বিভাগ দেখান"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Show Download Buttons"
-msgstr "ডাউনলোড বোতাম দেখান"
+msgstr "ডাউনলোড বোতামগুলো দেখান"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
@@ -5174,7 +5174,7 @@ msgstr "সাইন ইন সম্পূর্ণ হয়নি"
 
 #: src/features/auth/pages/consent.tsx
 msgid "Signed in as {email}"
-msgstr "{email} হিসাবে সাইন ইন করেছেন"
+msgstr "হিসাবে সাইন ইন করেছেন {email}"
 
 #: src/features/auth/components/social-auth.tsx
 #: src/features/auth/pages/login.tsx
@@ -5225,7 +5225,7 @@ msgstr "স্কিলসমূহ"
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Skip and Upload"
-msgstr "এড়িয়ে আপলোড করুন"
+msgstr "স্কিপ এবং আপলোড"
 
 #: src/routes/_home/route.tsx
 #: src/routes/builder/$resumeId/-components/desktop-builder-shell.tsx
@@ -5316,7 +5316,7 @@ msgstr "সর্ট করুন"
 
 #: src/routes/builder/$resumeId/-sidebar/left/shared/section-menu.tsx
 msgid "Sort by date"
-msgstr "তারিখ অনুসারে সাজান"
+msgstr "তারিখ অনুযায়ী সাজান"
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Sort by…"
@@ -5471,11 +5471,11 @@ msgstr "স্টাইলশিটে মারাত্মক ত্রুট�
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details are copied. Future resume edits apply only when you refresh."
-msgstr "স্টাইলিং এবং প্রেরকের বিবরণ কপি করা হয়. আপনি রিফ্রেশ করলেই ভবিষ্যতের জীবনবৃত্তান্ত সম্পাদনাগুলি প্রযোজ্য হবে।"
+msgstr "স্টাইলিং এবং প্রেরকের বিবরণ অনুলিপি করা হয়েছে। ভবিষ্যতে রিজুমের সম্পাদনাগুলি শুধুমাত্র রিফ্রেশ করলেই প্রয়োগ হবে।"
 
 #: src/features/cover-letters/editor-dialog.tsx
 msgid "Styling and sender details refreshed from the selected resume."
-msgstr "নির্বাচিত জীবনবৃত্তান্ত থেকে স্টাইলিং এবং প্রেরকের বিবরণ রিফ্রেশ করা হয়েছে।"
+msgstr "নির্বাচিত রিজ্যুম থেকে স্টাইলিং এবং প্রেরকের বিবরণ আপডেট করা হয়েছে।"
 
 #: src/routes/_home/-sections/footer.tsx
 msgid "Subreddit"
@@ -5677,7 +5677,7 @@ msgstr "টেক্সট যে ক্রমে সংরক্ষিত আ�
 
 #: src/features/cover-letters/library.tsx
 msgid "The original letter stays in your resume. Each copy can be edited independently."
-msgstr "মূল চিঠি আপনার জীবনবৃত্তান্ত থেকে যায়. প্রতিটি অনুলিপি স্বাধীনভাবে সম্পাদনা করা যেতে পারে."
+msgstr "মূল চিঠিটি আপনার জীবনবৃত্তান্তে থাকে। প্রতিটি অনুলিপি স্বাধীনভাবে সম্পাদনা করা যেতে পারে।"
 
 #: src/components/layout/not-found-screen.tsx
 msgid "The page you're looking for may have been moved or no longer exists."
@@ -5810,11 +5810,11 @@ msgstr "এই চেকটি শুধুমাত্র ইংরেজিত
 
 #: src/features/auth/pages/consent.tsx
 msgid "This connection request is invalid or has expired."
-msgstr "এই সংযোগ অনুরোধটি অবৈধ বা মেয়াদ উত্তীর্ণ হয়েছে."
+msgstr "এই সংযোগ অনুরোধটি অবৈধ বা মেয়াদোত্তীর্ণ।"
 
 #: src/features/cover-letters/editor.tsx
 msgid "This cover letter changed elsewhere. Your edits are still here. Reload the latest version before saving again."
-msgstr "এই কভার লেটার অন্যত্র পরিবর্তিত হয়েছে। আপনার সম্পাদনা এখনও এখানে আছে. আবার সংরক্ষণ করার আগে সর্বশেষ সংস্করণ পুনরায় লোড করুন৷"
+msgstr "এই কভার লেটারটি অন্যত্র পরিবর্তিত হয়েছে। আপনার সম্পাদনাগুলো এখনও এখানে আছে। আবার সংরক্ষণ করার আগে সর্বশেষ সংস্করণটি পুনরায় লোড করুন।"
 
 #: src/dialogs/api-key/create.tsx
 msgid "This creates a new API key, which lets other programs read and change your resume data through the Reactive Resume API."
@@ -5926,7 +5926,7 @@ msgstr "AI প্রদানকারীর রেসপন্সের ওপ�
 
 #: src/dialogs/resume/import.tsx
 msgid "This may take a moment. Please do not close the window or refresh the page."
-msgstr "এটি একটি মুহূর্ত নিতে পারে. অনুগ্রহ করে উইন্ডোটি বন্ধ করবেন না বা পৃষ্ঠাটি রিফ্রেশ করবেন না।"
+msgstr "এটি কিছুক্ষণ সময় নিতে পারে। অনুগ্রহ করে উইন্ডোটি বন্ধ করবেন না বা পৃষ্ঠা রিফ্রেশ করবেন না।"
 
 #: src/features/ats-checker/report/report-view.tsx
 msgid "This measures how faithfully software can extract this file's text. It does not predict whether an application will be rejected, and no tool can. Your file was read in this browser and never uploaded."
@@ -5943,7 +5943,7 @@ msgstr "এই পৃষ্ঠাটি খুবই ঘনভাবে ভর�
 #. Error shown when a PDF has no extractable text layer during import
 #: src/dialogs/resume/import.tsx
 msgid "This PDF has no readable text. It is likely a scan, so there is nothing to import."
-msgstr "এই পিডিএফে কোনো পাঠযোগ্য পাঠ্য নেই। এটি সম্ভবত একটি স্ক্যান, তাই আমদানি করার কিছু নেই৷"
+msgstr "এই পিডিএফ-এ কোনো পাঠযোগ্য টেক্সট নেই। এটি সম্ভবত একটি স্ক্যান, তাই আমদানির মতো কিছুই নেই।"
 
 #: src/features/ats-checker/tool.tsx
 msgid "This PDF is password protected. Save an unprotected copy and try again."
@@ -5959,7 +5959,7 @@ msgstr "এই সময়কাল ভবিষ্যতে শুরু হ�
 
 #: src/features/cover-letters/library.tsx
 msgid "This resume has no embedded cover letters."
-msgstr "এই জীবনবৃত্তান্ত কোন এমবেডেড কভার লেটার আছে."
+msgstr "এই রিজ্যুমের সাথে কোনো এমবেডেড কভার লেটার নেই।"
 
 #: src/routes/builder/$resumeId/-sidebar/left/index.tsx
 msgid "This resume is locked"
@@ -6973,3 +6973,4 @@ msgstr "জুম আউট"
 #: src/libs/locale.ts
 msgid "Zulu"
 msgstr "জুলু"
+
