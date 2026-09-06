@@ -34,7 +34,7 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"mirakova.dev",
 		"orbit-field-omega",
 	].map((value) => token(value, "header")),
-	...["Profiles", "OrbitNet", "orbit-profile-omega"].map((value) => token(value, "profiles")),
+	...["Profiles", "OrbitNet", "orbit-profile-omega", "orbit.example/profile"].map((value) => token(value, "profiles")),
 	...["Summary"].map((value) => token(value, "summary")),
 	...[text(SUMMARY_HTML)].map((value) => token(value, "summary")),
 	...["Experience"].map((value) => token(value, "experience")),
@@ -48,6 +48,7 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"Principal Reliability Engineer",
 		"2021 / Present",
 		text(EXPERIENCE_ROLE_TWO_HTML),
+		"northstar.example/jobs",
 	].map((value) => token(value, "experience")),
 	...["Education"].map((value) => token(value, "education")),
 	...[
@@ -58,6 +59,7 @@ const expectedTokens: readonly ExpectedToken[] = [
 		"2014 — 2018 (long academic period)",
 		"東京",
 		text(EDUCATION_HTML),
+		"u-tokyo.example/program",
 	].map((value) => token(value, "education")),
 	...["Skills", "TypeScript", "Advanced", "skill-keyword-alpha", "Kubernetes", "Expert", "skill-keyword-beta"].map(
 		(value) => token(value, "skills"),

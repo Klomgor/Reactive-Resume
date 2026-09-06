@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { evaluateExport } from "./metrics";
+import { createSyntheticCorpus } from "./fixture";
+import { evaluateExport, tokenize } from "./metrics";
 
 const corpus = {
 	name: "synthetic",
@@ -59,6 +60,24 @@ describe("evaluateExport", () => {
 			unexpected: ["https://changed.example/jobs"],
 		});
 	});
+
+	it.each(["orbit.example/profile", "northstar.example/jobs", "u-tokyo.example/program"] as const)(
+		"fails when visible website label %s drops while link targets remain correct",
+		(label) => {
+			const corpus = createSyntheticCorpus("full-width");
+			const paragraphs = corpus.tokens.map((entry) => entry.value);
+			const baseline = evaluateExport(corpus, { paragraphs, links: corpus.links });
+			const dropped = evaluateExport(corpus, {
+				paragraphs: paragraphs.map((paragraph) => (paragraph === label ? "" : paragraph)),
+				links: corpus.links,
+			});
+
+			expect(baseline.links.missing).toEqual([]);
+			expect(baseline.links.unexpected).toEqual([]);
+			expect(dropped.links).toEqual(baseline.links);
+			expect(dropped.duplicates.observed).toBe(baseline.duplicates.observed - tokenize(label).length);
+		},
+	);
 
 	it("detects a dropped token and an inverted pair", () => {
 		const result = evaluateExport(corpus, {
