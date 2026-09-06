@@ -11,6 +11,7 @@ export const offlineFontScriptSamples = [
 ] as const;
 
 const offlineFontFixtureText = offlineFontScriptSamples.map(({ marker }) => marker).join(" | ");
+const offlineFontFixtureSummary = offlineFontScriptSamples.map(({ marker }) => `<p>${marker}</p>`).join("");
 
 export type OfflineFontResumeFixture = {
 	builderURL: string;
@@ -31,7 +32,8 @@ export async function seedOfflineFontResume(page: Page): Promise<OfflineFontResu
 			{ path: ["picture", "hidden"], value: true },
 			{ path: ["basics", "name"], value: "Offline Font Diagnostic Fixture" },
 			{ path: ["basics", "headline"], value: offlineFontFixtureText },
-			{ path: ["summary", "content"], value: `<p>${offlineFontFixtureText}</p>` },
+			// Keep markers in separate blocks so raster evidence can map each script to a local PDF crop.
+			{ path: ["summary", "content"], value: offlineFontFixtureSummary },
 			{ path: ["metadata", "typography", "body", "fontFamily"], value: "IBM Plex Serif" },
 			{ path: ["metadata", "typography", "body", "fontWeights"], value: ["400", "700"] },
 			{ path: ["metadata", "typography", "heading", "fontFamily"], value: "IBM Plex Serif" },

@@ -34,11 +34,11 @@ The exact markers are versioned as `offline-font-scripts-v1`:
 The four surfaces are separate tests:
 
 1. Font picker preview opens Typography → Font Family and waits for lazy `FontFace` preview loads.
-2. Builder PDF preview navigates to the builder and records whether a PDF canvas appears.
-3. Browser PDF download uses the Export dialog and extracts marker presence from the downloaded PDF when generation succeeds.
-4. Server PDF calls the public PDF endpoint and extracts marker presence from its response when generation succeeds.
+2. Builder PDF preview navigates to the builder, captures the active PDF canvas, and measures marker-local raster crops.
+3. Browser PDF download uses the Export dialog, rasterizes the downloaded PDF, and measures marker-local crops when generation succeeds.
+4. Server PDF calls the public PDF endpoint and records text-layer marker presence when generation succeeds.
 
-PDF marker results classify missing text as a glyph result (`true`/`false` per marker), while blocked browser font requests classify the browser surface as `network-error`. The server report deliberately says `server-outbound-requests-unobservable-from-playwright`; it does not claim zero server requests.
+Builder/browser-PDF reports keep PDF text extraction as a separate `textLayerMarkers` signal; it does not prove visible glyph outlines. Raster evidence attaches a rendered PNG and per-marker crop metrics, failing for blank or tofu-like visible crops. Blocked browser font requests classify browser surfaces as `network-error`. The server report deliberately says `server-outbound-requests-unobservable-from-playwright`; its cold-network gate remains unresolved because server outbound capture and verifiable restart identity require external host-level controls.
 
 ## Run protocol and cold-cache boundary
 
@@ -49,7 +49,7 @@ OFFLINE_FONT_DIAGNOSTIC=1 OFFLINE_FONT_DIAGNOSTIC_SERVER_RESTARTED=1 \
   pnpm exec playwright test tests/e2e/specs/offline-fonts.spec.ts --grep "picker preview"
 ```
 
-Stop and restart the production server before repeating the command with `builder PDF`, `browser PDF`, and `server PDF` grep patterns. The environment used for this change had no built `apps/server/dist` or `apps/web/dist`, no running PostgreSQL instance, and no production server to restart, so the cold E2E matrix was not run. This is an explicit infrastructure blocker, not a pass claim. The test still preserves the restart confirmation in its report (`serverRestartConfirmed`) for a later run.
+Stop and restart the production server before repeating the command with `builder PDF`, `browser PDF`, and `server PDF` grep patterns. The environment used for this change had no built `apps/server/dist` or `apps/web/dist`, no running PostgreSQL instance, and no production server to restart, so the cold E2E matrix was not run. This is an explicit infrastructure blocker, not a pass claim. The test records `serverRestartFlag` only as caller input and labels it non-proof; it does not claim a completed cold-network gate.
 
 The current Playwright route guard cannot impose host-level egress denial on Node.js running the server. A genuinely cold server test therefore needs a separately restarted server plus host-level egress capture/deny (for example, a controlled network namespace or an approved outbound proxy). Do not infer server network behavior from an empty browser request list.
 
@@ -124,7 +124,7 @@ Sizes are `Content-Length` bytes from a HEAD request to the exact current catalo
 | Noto Sans Thai | normal 400/700; italic reuses normal | `fonts.gstatic.com/s/notosansthai/v29` | OFL 1.1 | Thai fallback for both serif/sans slots | 55,173 | `packages/fonts`; `packages/pdf` script fallback |
 | Noto Emoji | normal 400/700; italic reuses normal | `fonts.gstatic.com/s/notoemoji/v62` | OFL 1.1 for font files; assets/tools have separate licenses | Emoji outline fallback; verify renderer support | 1,153,847 | `packages/fonts`; `packages/pdf` script fallback |
 
-Estimated transfer size for all rows and listed styles: **87,490,700 bytes (~83.45 MiB)**. This confirms why a full-catalog bundle is out of scope. A later implementation should subset by declared glyph requirements or make the administrator choose fallback families; it must not silently fetch another CDN.
+Estimated transfer size for all rows and listed styles: **87,490,700 bytes (~83.44 MiB)**. This confirms why a full-catalog bundle is out of scope. A later implementation should subset by declared glyph requirements or make the administrator choose fallback families; it must not silently fetch another CDN.
 
 ### Source and license obligations
 
@@ -152,6 +152,6 @@ Completed read-only checks before handoff:
 - Web typography/regression suite: passed (940 tests across 135 files); web and server package typechecks passed.
 - `pnpm exec playwright test tests/e2e/specs/offline-fonts.spec.ts --list`: passed (4 diagnostic tests collected).
 - E2E diagnostic execution: blocked by missing build outputs and unavailable PostgreSQL/server; no success claim made.
-- `pnpm exec turbo boundaries`: unresolved repository checker failure (418 parser-panicked `.js` files, including existing PDF/web source mirrors); no boundary violation was reported for the new TypeScript imports.
+- `pnpm exec turbo boundaries`: passed on fresh rerun (Turbo 2.10.12, 1108 files, no issues).
 
 The implementation intentionally stops at diagnostic fixtures and manifest evidence. Shared source resolution, asset hosting, local-mode configuration, and production behavior remain Phase A step 3+ work.

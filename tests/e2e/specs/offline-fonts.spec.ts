@@ -1,12 +1,13 @@
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
 import { readFile, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { offlineFontScriptSamples, seedOfflineFontResume } from "../fixtures/offline-fonts";
 import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
 import { expect, test } from "../fixtures/test";
 
 const diagnosticEnabled = process.env.OFFLINE_FONT_DIAGNOSTIC === "1";
-const serverRestartConfirmed = process.env.OFFLINE_FONT_DIAGNOSTIC_SERVER_RESTARTED === "1";
+const serverRestartFlag = process.env.OFFLINE_FONT_DIAGNOSTIC_SERVER_RESTARTED === "1";
 
 type BlockedRequest = {
 	hostname: string;
@@ -19,6 +20,21 @@ type ColdContext = {
 };
 
 type PdfMarkers = Record<(typeof offlineFontScriptSamples)[number]["name"], boolean>;
+
+type RasterGlyphEvidence = {
+	name: (typeof offlineFontScriptSamples)[number]["name"];
+	status: "visible" | "blank" | "tofu-like" | "not-located";
+	inkPixels: number;
+	trimmedWidth: number;
+	trimmedHeight: number;
+};
+
+type PdfRasterEvidence = {
+	rasterDataUrl: string;
+	textLayerMarkers: PdfMarkers;
+	referenceGlyphs: RasterGlyphEvidence[];
+	previewGlyphs: RasterGlyphEvidence[];
+};
 
 test.describe("offline font diagnostic", () => {
 	test.describe.configure({ mode: "serial" });
@@ -49,7 +65,7 @@ test.describe("offline font diagnostic", () => {
 		return { context, blockedRequests };
 	}
 
-	function markerResult(text: string): PdfMarkers {
+	function extractedMarkerResult(text: string): PdfMarkers {
 		return Object.fromEntries(
 			offlineFontScriptSamples.map((sample) => [sample.name, text.includes(sample.marker)]),
 		) as PdfMarkers;
@@ -72,6 +88,165 @@ test.describe("offline font diagnostic", () => {
 		} finally {
 			await loadingTask.destroy();
 		}
+	}
+
+	async function capturePdfBytes(page: Page) {
+		await page.addInitScript(() => {
+			const read = Blob.prototype.arrayBuffer;
+			Blob.prototype.arrayBuffer = async function () {
+				const buffer = await read.call(this);
+				const bytes = new Uint8Array(buffer);
+				if (String.fromCharCode(...bytes.subarray(0, 5)) === "%PDF-") {
+					(window as Window & { offlineFontPdfBytes?: number[] }).offlineFontPdfBytes = Array.from(bytes);
+				}
+				return buffer;
+			};
+		});
+	}
+
+	async function renderPdfRasterEvidence(page: Page, bytes: Uint8Array): Promise<PdfRasterEvidence> {
+		const require = createRequire(`${process.cwd()}/package.json`);
+		await page.route("**/__offline_font_pdfjs/*", async (route) => {
+			const worker = new URL(route.request().url()).pathname.endsWith("worker.mjs");
+			await route.fulfill({
+				contentType: "text/javascript",
+				path: require.resolve(`pdfjs-dist/legacy/build/${worker ? "pdf.worker.mjs" : "pdf.mjs"}`),
+			});
+		});
+
+		return page.evaluate(
+			async ({ bytes, markers }) => {
+				const moduleUrl = `${location.origin}/__offline_font_pdfjs/pdf.mjs`;
+				const pdfjs: typeof import("pdfjs-dist/legacy/build/pdf.mjs") = await import(moduleUrl);
+				pdfjs.GlobalWorkerOptions.workerSrc = `${location.origin}/__offline_font_pdfjs/worker.mjs`;
+				const loadingTask = pdfjs.getDocument({ data: Uint8Array.from(bytes), useSystemFonts: false });
+				try {
+					const pdfDocument = await loadingTask.promise;
+					const pdfPage = await pdfDocument.getPage(1);
+					const textContent = await pdfPage.getTextContent();
+					const textItems = textContent.items.flatMap((item) =>
+						"str" in item
+							? [
+									{
+										str: item.str,
+										x: item.transform[4] ?? 0,
+										y: item.transform[5] ?? 0,
+										width: item.width,
+										height: Math.max(item.height, Math.abs(item.transform[3] ?? 0), 1),
+									},
+								]
+							: [],
+					);
+					const textLayer = textItems.map(({ str }) => str).join(" ");
+					const baseViewport = pdfPage.getViewport({ scale: 1 });
+					const rasterScale = 4;
+					const viewport = pdfPage.getViewport({ scale: rasterScale });
+					const raster = globalThis.document.createElement("canvas");
+					raster.width = Math.ceil(viewport.width);
+					raster.height = Math.ceil(viewport.height);
+					const rasterContext = raster.getContext("2d");
+					if (!rasterContext) throw new Error("Missing PDF raster context.");
+					await pdfPage.render({
+						canvas: raster,
+						canvasContext: rasterContext,
+						viewport,
+						annotationMode: pdfjs.AnnotationMode.DISABLE,
+						background: "white",
+					}).promise;
+
+					const boxes = markers.map((sample) => {
+						const item = textItems.find(({ str }) => str.includes(sample.marker));
+						if (!item) return { name: sample.name, marker: sample.marker, box: null };
+						const height = Math.max(item.height, 1);
+						const baseline = baseViewport.height - item.y;
+						return {
+							name: sample.name,
+							marker: sample.marker,
+							box: {
+								x: item.x,
+								y: baseline - height,
+								width: Math.max(item.width, height),
+								height,
+							},
+						};
+					});
+
+					function measure(canvas: HTMLCanvasElement, scale: number): RasterGlyphEvidence[] {
+						const context = canvas.getContext("2d");
+						if (!context) throw new Error("Missing PDF preview raster context.");
+						const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
+						return boxes.map(({ name, box }) => {
+							if (!box) return { name, status: "not-located", inkPixels: 0, trimmedWidth: 0, trimmedHeight: 0 };
+							const padding = 2 * scale;
+							const left = Math.max(0, Math.floor(box.x * scale - padding));
+							const top = Math.max(0, Math.floor(box.y * scale - padding));
+							const right = Math.min(canvas.width, Math.ceil((box.x + box.width) * scale + padding));
+							const bottom = Math.min(canvas.height, Math.ceil((box.y + box.height) * scale + padding));
+							let inkPixels = 0;
+							let minX = right;
+							let minY = bottom;
+							let maxX = left;
+							let maxY = top;
+							for (let y = top; y < bottom; y += 1) {
+								for (let x = left; x < right; x += 1) {
+									const index = (y * pixels.width + x) * 4;
+									const red = pixels.data[index] ?? 255;
+									const green = pixels.data[index + 1] ?? 255;
+									const blue = pixels.data[index + 2] ?? 255;
+									if (red >= 245 && green >= 245 && blue >= 245) continue;
+									inkPixels += 1;
+									minX = Math.min(minX, x);
+									minY = Math.min(minY, y);
+									maxX = Math.max(maxX, x);
+									maxY = Math.max(maxY, y);
+								}
+							}
+							if (inkPixels === 0) {
+								return { name, status: "blank", inkPixels, trimmedWidth: 0, trimmedHeight: 0 };
+							}
+							let interiorInk = 0;
+							for (
+								let y = minY + Math.floor((maxY - minY + 1) * 0.2);
+								y < maxY - Math.floor((maxY - minY + 1) * 0.2);
+								y += 1
+							) {
+								for (
+									let x = minX + Math.floor((maxX - minX + 1) * 0.2);
+									x < maxX - Math.floor((maxX - minX + 1) * 0.2);
+									x += 1
+								) {
+									const index = (y * pixels.width + x) * 4;
+									if (
+										(pixels.data[index] ?? 255) < 245 ||
+										(pixels.data[index + 1] ?? 255) < 245 ||
+										(pixels.data[index + 2] ?? 255) < 245
+									)
+										interiorInk += 1;
+								}
+							}
+							const trimmedWidth = maxX - minX + 1;
+							const trimmedHeight = maxY - minY + 1;
+							const interiorRatio = interiorInk / Math.max(inkPixels, 1);
+							const status = interiorRatio < 0.08 && trimmedWidth >= 8 && trimmedHeight >= 8 ? "tofu-like" : "visible";
+							return { name, status, inkPixels, trimmedWidth, trimmedHeight };
+						});
+					}
+
+					const preview = document.querySelector<HTMLCanvasElement>('[aria-hidden="false"] canvas');
+					return {
+						rasterDataUrl: raster.toDataURL(),
+						textLayerMarkers: Object.fromEntries(
+							markers.map((sample) => [sample.name, textLayer.includes(sample.marker)]),
+						),
+						referenceGlyphs: measure(raster, rasterScale),
+						previewGlyphs: preview ? measure(preview, preview.width / baseViewport.width) : [],
+					};
+				} finally {
+					await loadingTask.destroy();
+				}
+			},
+			{ bytes: Array.from(bytes), markers: offlineFontScriptSamples },
+		);
 	}
 
 	async function report(testInfo: TestInfo, name: string, reportData: Record<string, unknown>) {
@@ -116,20 +291,33 @@ test.describe("offline font diagnostic", () => {
 		const fixture = await seedOfflineFontResume(seedPage);
 		const cold = await createColdContext(browser, seedPage, testInfo);
 		const page = await cold.context.newPage();
+		await capturePdfBytes(page);
 		try {
 			await page.goto(fixture.builderURL);
 			await page.waitForTimeout(5_000);
-			const canvasVisible = await page
-				.locator('[aria-hidden="false"] canvas')
-				.first()
-				.isVisible()
-				.catch(() => false);
+			const previewCanvas = page.locator('[aria-hidden="false"] canvas').first();
+			const canvasVisible = await previewCanvas.isVisible().catch(() => false);
+			const pdfBytes = await page.evaluate(
+				() => (window as Window & { offlineFontPdfBytes?: number[] }).offlineFontPdfBytes,
+			);
+			expect(pdfBytes).toBeDefined();
+			const rasterEvidence = pdfBytes ? await renderPdfRasterEvidence(page, Uint8Array.from(pdfBytes)) : null;
+			if (rasterEvidence) {
+				await testInfo.attach("builder-preview-raster.png", {
+					body: Buffer.from(rasterEvidence.rasterDataUrl.split(",")[1] ?? "", "base64"),
+					contentType: "image/png",
+				});
+				expect(rasterEvidence.previewGlyphs).toHaveLength(offlineFontScriptSamples.length);
+				expect(rasterEvidence.previewGlyphs.every(({ status }) => status === "visible")).toBe(true);
+			}
+			expect(canvasVisible).toBe(true);
 			await report(testInfo, "builder-preview", {
 				cache: "new-browser-context",
 				blockedExternalFontRequests: cold.blockedRequests,
 				networkStatus: networkStatus(cold.blockedRequests),
 				canvasVisible,
-				glyphStatus: "not-measured-preview-canvas",
+				textLayerMarkers: rasterEvidence?.textLayerMarkers ?? "not-extracted",
+				glyphStatus: rasterEvidence?.previewGlyphs ?? "not-rasterized",
 			});
 		} finally {
 			await cold.context.close();
@@ -145,6 +333,7 @@ test.describe("offline font diagnostic", () => {
 		const cold = await createColdContext(browser, seedPage, testInfo);
 		const page = await cold.context.newPage();
 		let markerResultValue: PdfMarkers | null = null;
+		let rasterEvidence: PdfRasterEvidence | null = null;
 		let downloadStatus = "not-started";
 		try {
 			await page.goto(fixture.builderURL);
@@ -156,7 +345,13 @@ test.describe("offline font diagnostic", () => {
 			downloadStatus = "received";
 			const path = testInfo.outputPath("offline-font-browser-download.pdf");
 			await download.saveAs(path);
-			markerResultValue = markerResult(await readPdfText(new Uint8Array(await readFile(path))));
+			const bytes = new Uint8Array(await readFile(path));
+			markerResultValue = extractedMarkerResult(await readPdfText(bytes));
+			rasterEvidence = await renderPdfRasterEvidence(page, bytes);
+			await testInfo.attach("browser-download-raster.png", {
+				body: Buffer.from(rasterEvidence.rasterDataUrl.split(",")[1] ?? "", "base64"),
+				contentType: "image/png",
+			});
 		} catch {
 			downloadStatus = "renderer-or-network-error";
 		} finally {
@@ -165,9 +360,14 @@ test.describe("offline font diagnostic", () => {
 				blockedExternalFontRequests: cold.blockedRequests,
 				networkStatus: networkStatus(cold.blockedRequests),
 				downloadStatus,
-				glyphStatus: markerResultValue ?? "not-extracted",
+				textLayerMarkers: markerResultValue ?? "not-extracted",
+				glyphStatus: rasterEvidence?.referenceGlyphs ?? "not-rasterized",
 			});
 			await cold.context.close();
+		}
+		if (rasterEvidence) {
+			expect(rasterEvidence.referenceGlyphs).toHaveLength(offlineFontScriptSamples.length);
+			expect(rasterEvidence.referenceGlyphs.every(({ status }) => status === "visible")).toBe(true);
 		}
 	});
 
@@ -183,7 +383,7 @@ test.describe("offline font diagnostic", () => {
 		let markerResultValue: PdfMarkers | null = null;
 		try {
 			await page.goto(fixture.builderURL);
-			if (!serverRestartConfirmed) {
+			if (!serverRestartFlag) {
 				responseStatus = "blocked-before-request";
 			} else {
 				const response = await page.request.get(
@@ -193,19 +393,21 @@ test.describe("offline font diagnostic", () => {
 				if (response.ok()) {
 					const bytes = await response.body();
 					await writeFile(testInfo.outputPath("offline-font-server.pdf"), bytes);
-					markerResultValue = markerResult(await readPdfText(new Uint8Array(bytes)));
+					markerResultValue = extractedMarkerResult(await readPdfText(new Uint8Array(bytes)));
 				}
 			}
 		} finally {
 			await report(testInfo, "server-pdf", {
 				cache: "new-browser-context; server-process-state-is-external",
-				serverRestartConfirmed,
+				serverRestartFlag,
+				serverGateStatus: "unresolved-external-host-level-blocker",
 				blockedExternalFontRequests: cold.blockedRequests,
 				networkStatus: "server-outbound-requests-unobservable-from-playwright",
 				responseStatus,
-				glyphStatus: markerResultValue ?? "not-extracted",
+				textLayerMarkers: markerResultValue ?? "not-extracted",
+				glyphStatus: "not-rasterized-server-surface",
 				limitation:
-					"Playwright route interception sees browser requests only; server fetches need a restarted process plus host-level egress capture.",
+					"Server outbound request capture and verifiable restart identity remain unresolved external host-level blockers; the caller flag is not restart proof. Playwright route interception sees browser requests only; do not treat this run as a cold-network gate.",
 			});
 			await cold.context.close();
 		}
