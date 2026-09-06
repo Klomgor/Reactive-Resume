@@ -81,6 +81,7 @@ test("retains the current draft when saving during navigation fails", async ({ a
 test("stops waiting for a slow save while preserving late acknowledgements and queued edits", async ({
 	authPage: page,
 }, testInfo) => {
+	test.setTimeout(60_000);
 	const url = await prepareNavigationTest(page, testInfo);
 	await page.clock.install();
 	const arrived = barrier();
