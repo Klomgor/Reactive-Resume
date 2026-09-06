@@ -70,7 +70,7 @@ const expectedTokens: readonly ExpectedToken[] = [
 	...["Custom Evidence", text(CUSTOM_HTML)].map((value) => token(value, "custom")),
 ];
 
-export const HIDDEN_TOKENS = ["Hidden Confidential", "hidden-signal-theta", "https://hidden.example"] as const;
+const HIDDEN_TOKENS = ["Hidden Confidential", "hidden-signal-theta", "https://hidden.example"] as const;
 
 const resolveWebsite = (url: string, label: string) => ({ url, label, inlineLink: false });
 

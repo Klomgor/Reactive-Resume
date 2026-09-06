@@ -10,7 +10,7 @@ export type PdfExtraction = {
 	links: readonly string[];
 };
 
-export type DocxParagraph = {
+type DocxParagraph = {
 	text: string;
 	numbering: { numId: string; level: string; format: string; marker: string } | null;
 };
