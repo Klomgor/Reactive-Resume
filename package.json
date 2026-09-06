@@ -13,7 +13,7 @@
 		"type": "git",
 		"url": "https://github.com/amruthpillai/reactive-resume.git"
 	},
-	"packageManager": "pnpm@11.25.0",
+	"packageManager": "pnpm@12.3.4+sha512.961aa41fb077da3a04a441d9f8e15ebc0c96da8ef710b2eb67bf9ee7cb0610eabd48f1fd85f51cffe73846785fa0f87c56a3a872a1d893f8446741b5cce45457",
 	"workspaces": [
 		"apps/*",
 		"packages/*",
@@ -46,7 +46,7 @@
 		"@biomejs/biome": "^2.5.12",
 		"@commitlint/cli": "^21.2.2",
 		"@commitlint/config-conventional": "^21.2.2",
-		"@playwright/test": "^1.62.1",
+		"@playwright/test": "^1.63.0",
 		"@reactive-resume/config": "workspace:*",
 		"@testing-library/dom": "^10.4.1",
 		"@testing-library/jest-dom": "^7.0.1",
