@@ -1,8 +1,13 @@
 import type { Browser, BrowserContext, Page, TestInfo } from "@playwright/test";
+import type {
+	RasterGlyphEvidence as MarkerRasterGlyphEvidence,
+	RasterGlyphMeasurement as MarkerRasterGlyphMeasurement,
+} from "../fixtures/offline-font-markers";
 import { readFile, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
-import { locatePdfMarkerBoxes } from "../fixtures/offline-font-markers";
+import { assertPdfDownloadReceived } from "../fixtures/offline-font-diagnostic";
+import { classifyRasterMeasurements, locatePdfMarkerBoxes } from "../fixtures/offline-font-markers";
 import { offlineFontScriptSamples, seedOfflineFontResume } from "../fixtures/offline-fonts";
 import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
 import { expect, test } from "../fixtures/test";
@@ -22,13 +27,8 @@ type ColdContext = {
 
 type PdfMarkers = Record<(typeof offlineFontScriptSamples)[number]["name"], boolean>;
 
-type RasterGlyphEvidence = {
-	name: (typeof offlineFontScriptSamples)[number]["name"];
-	status: "visible" | "blank" | "tofu-like" | "not-located";
-	inkPixels: number;
-	trimmedWidth: number;
-	trimmedHeight: number;
-};
+type RasterGlyphEvidence = MarkerRasterGlyphEvidence<(typeof offlineFontScriptSamples)[number]["name"]>;
+type RasterGlyphMeasurement = MarkerRasterGlyphMeasurement<(typeof offlineFontScriptSamples)[number]["name"]>;
 
 type PdfRasterEvidence = {
 	rasterDataUrl: string;
@@ -177,12 +177,20 @@ test.describe("offline font diagnostic", () => {
 						background: "white",
 					}).promise;
 
-					function measure(canvas: HTMLCanvasElement, scale: number): RasterGlyphEvidence[] {
+					function measure(canvas: HTMLCanvasElement, scale: number): RasterGlyphMeasurement[] {
 						const context = canvas.getContext("2d");
 						if (!context) throw new Error("Missing PDF preview raster context.");
 						const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
 						return boxes.map(({ name, box }) => {
-							if (!box) return { name, status: "not-located", inkPixels: 0, trimmedWidth: 0, trimmedHeight: 0 };
+							if (!box)
+								return {
+									name,
+									located: false,
+									inkPixels: 0,
+									interiorInk: 0,
+									trimmedWidth: 0,
+									trimmedHeight: 0,
+								};
 							const markerLeft = box.x * scale;
 							const markerTop = box.y * scale;
 							const markerRight = (box.x + box.width) * scale;
@@ -215,7 +223,7 @@ test.describe("offline font diagnostic", () => {
 								}
 							}
 							if (inkPixels === 0) {
-								return { name, status: "blank", inkPixels, trimmedWidth: 0, trimmedHeight: 0 };
+								return { name, located: true, inkPixels, interiorInk: 0, trimmedWidth: 0, trimmedHeight: 0 };
 							}
 							let interiorInk = 0;
 							for (
@@ -239,9 +247,7 @@ test.describe("offline font diagnostic", () => {
 							}
 							const trimmedWidth = maxX - minX + 1;
 							const trimmedHeight = maxY - minY + 1;
-							const interiorRatio = interiorInk / Math.max(inkPixels, 1);
-							const status = interiorRatio < 0.08 && trimmedWidth >= 8 && trimmedHeight >= 8 ? "tofu-like" : "visible";
-							return { name, status, inkPixels, trimmedWidth, trimmedHeight };
+							return { name, located: true, inkPixels, interiorInk, trimmedWidth, trimmedHeight };
 						});
 					}
 
@@ -257,7 +263,12 @@ test.describe("offline font diagnostic", () => {
 			},
 			{ bytes: Array.from(bytes), boxes },
 		);
-		return { ...rasterEvidence, textLayerMarkers };
+		return {
+			...rasterEvidence,
+			referenceGlyphs: classifyRasterMeasurements(rasterEvidence.referenceGlyphs),
+			previewGlyphs: classifyRasterMeasurements(rasterEvidence.previewGlyphs),
+			textLayerMarkers,
+		};
 	}
 
 	async function report(testInfo: TestInfo, name: string, reportData: Record<string, unknown>) {
@@ -383,13 +394,12 @@ test.describe("offline font diagnostic", () => {
 			});
 			await cold.context.close();
 		}
-		if (downloadStatus === "received") {
-			expect(rasterEvidenceStatus).toBe("received");
-			expect(rasterEvidence).not.toBeNull();
-			if (!rasterEvidence) return;
-			expect(rasterEvidence.referenceGlyphs).toHaveLength(offlineFontScriptSamples.length);
-			expect(rasterEvidence.referenceGlyphs.every(({ status }) => status === "visible")).toBe(true);
-		}
+		assertPdfDownloadReceived(downloadStatus);
+		expect(rasterEvidenceStatus).toBe("received");
+		expect(rasterEvidence).not.toBeNull();
+		if (!rasterEvidence) return;
+		expect(rasterEvidence.referenceGlyphs).toHaveLength(offlineFontScriptSamples.length);
+		expect(rasterEvidence.referenceGlyphs.every(({ status }) => status === "visible")).toBe(true);
 	});
 
 	test("exercises restarted-server PDF and records server observability boundary", async ({

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { classifyRasterInk, locatePdfMarkerBoxes } from "./offline-font-markers";
+import { assertPdfDownloadReceived } from "./offline-font-diagnostic";
+import { classifyRasterInk, classifyRasterMeasurements, locatePdfMarkerBoxes } from "./offline-font-markers";
 
 const marker = { name: "cjk", marker: "简体中文" } as const;
 
@@ -40,5 +41,33 @@ describe("classifyRasterInk", () => {
 		expect(classifyRasterInk({ inkPixels: 100, interiorInk: 0, trimmedWidth: 20, trimmedHeight: 20 })).toBe(
 			"tofu-like",
 		);
+	});
+
+	it("classifies raw browser measurements through shared raster classifier", () => {
+		expect(
+			classifyRasterMeasurements([
+				{ name: "blank", located: true, inkPixels: 0, interiorInk: 0, trimmedWidth: 0, trimmedHeight: 0 },
+				{ name: "tofu", located: true, inkPixels: 100, interiorInk: 0, trimmedWidth: 20, trimmedHeight: 20 },
+				{ name: "visible", located: true, inkPixels: 100, interiorInk: 20, trimmedWidth: 20, trimmedHeight: 20 },
+				{ name: "missing", located: false, inkPixels: 0, interiorInk: 0, trimmedWidth: 0, trimmedHeight: 0 },
+			]),
+		).toEqual([
+			{ name: "blank", status: "blank", inkPixels: 0, trimmedWidth: 0, trimmedHeight: 0 },
+			{ name: "tofu", status: "tofu-like", inkPixels: 100, trimmedWidth: 20, trimmedHeight: 20 },
+			{ name: "visible", status: "visible", inkPixels: 100, trimmedWidth: 20, trimmedHeight: 20 },
+			{ name: "missing", status: "not-located", inkPixels: 0, trimmedWidth: 0, trimmedHeight: 0 },
+		]);
+	});
+});
+
+describe("assertPdfDownloadReceived", () => {
+	it("fails diagnostic when browser PDF download errors", () => {
+		expect(() => assertPdfDownloadReceived("download-error")).toThrow(
+			"PDF download diagnostic did not receive a download",
+		);
+	});
+
+	it("accepts received browser PDF download", () => {
+		expect(() => assertPdfDownloadReceived("received")).not.toThrow();
 	});
 });

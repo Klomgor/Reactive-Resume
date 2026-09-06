@@ -31,6 +31,16 @@ export type RasterInkMeasurements = {
 
 export type RasterGlyphStatus = "visible" | "blank" | "tofu-like";
 
+export type RasterGlyphMeasurement<TName extends string = string> = RasterInkMeasurements & {
+	name: TName;
+	located: boolean;
+};
+
+export type RasterGlyphEvidence<TName extends string = string> = Omit<RasterInkMeasurements, "interiorInk"> & {
+	name: TName;
+	status: RasterGlyphStatus | "not-located";
+};
+
 type TextItemRange = PdfTextItem & {
 	start: number;
 	end: number;
@@ -112,3 +122,12 @@ export const classifyRasterInk = ({
 	const interiorRatio = interiorInk / Math.max(inkPixels, 1);
 	return interiorRatio < 0.08 && trimmedWidth >= 8 && trimmedHeight >= 8 ? "tofu-like" : "visible";
 };
+
+export const classifyRasterMeasurements = <TName extends string>(
+	measurements: readonly RasterGlyphMeasurement<TName>[],
+): RasterGlyphEvidence<TName>[] =>
+	measurements.map(({ name, located, interiorInk, ...measurements }) => ({
+		...measurements,
+		name,
+		status: located ? classifyRasterInk({ ...measurements, interiorInk }) : "not-located",
+	}));
