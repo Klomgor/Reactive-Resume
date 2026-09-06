@@ -1,12 +1,10 @@
 import { randomUUID } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { Pool } from "pg";
-import { createSampleResumeFromDashboard } from "../fixtures/resume";
+import { createSampleResumeFromDashboard, openSidebarSection } from "../fixtures/resume";
 import { expect, test } from "../fixtures/test";
 
-test("edits the same library letter from the dashboard and builder, with independent JSON copies", async ({
-	authPage: page,
-}, testInfo) => {
+test("imports a library letter into the builder as an independent copy", async ({ authPage: page }, testInfo) => {
 	test.setTimeout(90_000);
 	await createSampleResumeFromDashboard(page, testInfo);
 	const builderUrl = page.url();
@@ -47,21 +45,26 @@ test("edits the same library letter from the dashboard and builder, with indepen
 	await editor.getByRole("button", { name: "Close", exact: true }).click();
 
 	await page.goto(builderUrl);
-	await page.getByRole("button", { name: "Cover-letter library", exact: true }).click();
-	await page.getByRole("button", { name: "Edit Platform engineer letter", exact: true }).click();
-	await expect(editor.getByLabel("Content", { exact: true })).toContainText("reliable platforms");
-	await editor.getByLabel("Content", { exact: true }).fill("Updated from the resume builder.");
-	await editor.getByRole("button", { name: "Save Changes", exact: true }).click();
-	await expect(editor.getByRole("button", { name: "Save Changes", exact: true })).toBeDisabled();
-	await editor.getByRole("button", { name: "Close", exact: true }).click();
-	await page
-		.getByRole("dialog", { name: "Cover Letters", exact: true })
-		.getByRole("button", { name: "Close", exact: true })
-		.click();
+	await openSidebarSection(page, "Custom Sections");
+	await page.getByRole("button", { name: "Add a new item", exact: true }).last().click();
+	const createItem = page.getByRole("dialog", { name: "Create a new cover letter", exact: true });
+	await createItem.getByLabel("Import from library", { exact: true }).click();
+	await page.getByRole("option", { name: "Platform engineer letter", exact: true }).click();
+	const createEditors = createItem.locator('[data-editor="true"]');
+	await expect(createEditors.nth(0)).toContainText("Dear hiring team");
+	await expect(createEditors.nth(1)).toContainText("reliable platforms");
+	await createEditors.nth(1).fill("Updated independent resume copy.");
+	const resumeSaved = page.waitForResponse(
+		(response) => new URL(response.url()).pathname === "/api/rpc/resume/update" && response.ok(),
+	);
+	await createItem.getByRole("button", { name: "Create", exact: true }).click();
+	await resumeSaved;
+	await expect(page.getByRole("button", { name: /^Dear hiring team, Updated independent resume copy/ })).toBeVisible();
 
 	await page.goto("/dashboard/cover-letters");
 	await page.getByRole("button", { name: "Edit Platform engineer letter", exact: true }).click();
-	await expect(editor.getByLabel("Content", { exact: true })).toContainText("Updated from the resume builder.");
+	await expect(editor.getByLabel("Content", { exact: true })).toContainText("reliable platforms");
+	await expect(editor.getByLabel("Content", { exact: true })).not.toContainText("Updated independent resume copy");
 	await editor.getByRole("button", { name: "Close", exact: true }).click();
 	await page.getByLabel("Import cover letter JSON", { exact: true }).setInputFiles(jsonPath);
 	await expect(editor.getByLabel("Content", { exact: true })).toContainText("reliable platforms");
@@ -120,29 +123,4 @@ test("keeps the application PDF snapshot after the library letter is deleted", a
 	} finally {
 		await pool.end();
 	}
-});
-
-test("blocks styling refresh when the current builder resume could not be saved", async ({
-	authPage: page,
-}, testInfo) => {
-	await createSampleResumeFromDashboard(page, testInfo);
-	await page.getByRole("button", { name: "Cover-letter library", exact: true }).click();
-	const library = page.getByRole("dialog", { name: "Cover Letters", exact: true });
-	await library.getByRole("button", { name: "Create", exact: true }).click();
-	await library.getByLabel("Name", { exact: true }).fill("Styling guard letter");
-	await library.getByRole("button", { name: "Create cover letter", exact: true }).click();
-	const editor = page.getByRole("dialog", { name: "Edit cover letter", exact: true });
-	await editor.getByRole("button", { name: "Close", exact: true }).click();
-	await library.getByRole("button", { name: "Close", exact: true }).click();
-	await page.route("**/api/rpc/**", (route) => {
-		if (route.request().method() === "POST" && route.request().postData()?.includes("Unsaved sender"))
-			return route.abort();
-		return route.continue();
-	});
-	await page.getByLabel("Name", { exact: true }).fill("Unsaved sender");
-	await expect(page.getByText("Your latest changes could not be saved.", { exact: true })).toBeVisible();
-	await page.getByRole("button", { name: "Cover-letter library", exact: true }).click();
-	await library.getByRole("button", { name: "Edit Styling guard letter", exact: true }).click();
-	await expect(editor.getByRole("button", { name: "Refresh from resume", exact: true })).toBeDisabled();
-	await expect(editor.getByRole("status")).toContainText("Save resume changes before copying its content or styling.");
 });
