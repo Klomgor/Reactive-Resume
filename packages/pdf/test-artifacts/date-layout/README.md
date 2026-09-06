@@ -1,8 +1,14 @@
 # Plan 24 Step 1 — date layout characterization
 
-Revision under test: `66c25efe1` (`origin/main`), branch `codex/issue-3155-date-layout-characterization`.
+Generation revision: `58ee4eead7843105da20f8a177e7d250b24c3a87` (pre-remediation characterization merge).
+Comparison ref: `368858a56fc9c3152b540c39829908e2c3ea04c5` (`origin/main` at review).
+Branch: `codex/issue-3155-date-layout-characterization`.
+
+JSON and PNG files are executable baselines. Raw PDFs are intentionally omitted because renderer metadata is nondeterministic.
 
 The durable fixture is [`date-layout.test.tsx`](../../src/templates/shared/date-layout.test.tsx). It renders the same unchanged resume data through Chikorita and Ditto in LTR and RTL modes, extracts PDF text coordinates, rasterizes each PDF page, and records default evidence for all 15 templates.
+
+Remediation details: [`REMEDIATION.md`](REMEDIATION.md).
 
 ## Matrix coverage
 

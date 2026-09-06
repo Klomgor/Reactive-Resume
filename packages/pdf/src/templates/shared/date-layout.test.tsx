@@ -4,8 +4,9 @@ import type { Template } from "@reactive-resume/schema/templates";
 import type { TextItem } from "pdfjs-dist/types/src/display/api";
 import type { RasterizedPdfPage } from "../../semantic/test/rasterize-pdf";
 import { createHash } from "node:crypto";
-import { mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { pdf, renderToBuffer } from "@react-pdf/renderer";
 import { encode } from "fast-png";
@@ -56,6 +57,26 @@ const dateMarkers = [
 ] as const;
 
 type DateMarker = (typeof dateMarkers)[number];
+
+const expectedMissingMarkers = {
+	azurill: [],
+	bronzor: [],
+	chikorita: [],
+	ditgar: [],
+	ditto: [],
+	gengar: [],
+	glalie: [],
+	kakuna: [],
+	lapras: [],
+	leafish: [],
+	meowth: ["EXP_NO_PERIOD"],
+	onyx: [],
+	pikachu: [],
+	rhyhorn: [],
+	scizor: [],
+} as const satisfies Record<Template, readonly DateMarker[]>;
+
+const baselineDirectory = join(dirname(fileURLToPath(import.meta.url)), "../../../test-artifacts/date-layout");
 
 type PdfPageText = {
 	pageNumber: number;
@@ -418,6 +439,17 @@ const coordinatesFor = (result: RenderedFixture, markers: readonly DateMarker[])
 		]),
 	);
 
+const sha256 = (bytes: Uint8Array) => createHash("sha256").update(bytes).digest("hex");
+
+const fixtureEvidence = (result: RenderedFixture, coordinates: Record<string, unknown>) => {
+	const rasterPngs = result.raster.map((page) => encode(page));
+	return {
+		pages: result.pages.map((page) => ({ pageNumber: page.pageNumber, itemCount: page.items.length })),
+		rasterSha256: rasterPngs.map(sha256),
+		coordinates,
+	};
+};
+
 const requiredMarkers = (result: RenderedFixture) => {
 	const text = textFor(result);
 	for (const marker of dateMarkers) expect(text).toContain(marker);
@@ -428,20 +460,19 @@ const writeArtifacts = (name: string, result: RenderedFixture, coordinates: Reco
 	const output = process.env.DATE_LAYOUT_ARTIFACT_DIR;
 	if (!output) return;
 	mkdirSync(output, { recursive: true });
-	writeFileSync(join(output, `${name}.pdf`), result.bytes);
-	writeFileSync(
-		join(output, `${name}.json`),
-		JSON.stringify(
-			{
-				pages: result.pages.map((page) => ({ pageNumber: page.pageNumber, itemCount: page.items.length })),
-				coordinates,
-			},
-			null,
-			2,
-		),
-	);
+	writeFileSync(join(output, `${name}.json`), `${JSON.stringify(fixtureEvidence(result, coordinates), null, "\t")}\n`);
 	for (const [index, page] of result.raster.entries()) {
 		writeFileSync(join(output, `${name}-page-${index + 1}.png`), encode(page));
+	}
+};
+
+const assertFixtureBaseline = (name: string, result: RenderedFixture, coordinates: Record<string, unknown>): void => {
+	if (process.env.DATE_LAYOUT_ARTIFACT_DIR) return;
+	const evidence = fixtureEvidence(result, coordinates);
+	expect(JSON.parse(readFileSync(join(baselineDirectory, `${name}.json`), "utf8"))).toEqual(evidence);
+	for (const index of result.raster.keys()) {
+		const expectedPng = readFileSync(join(baselineDirectory, `${name}-page-${index + 1}.png`));
+		expect(sha256(expectedPng)).toBe(evidence.rasterSha256[index]);
 	}
 };
 
@@ -508,6 +539,7 @@ describe("date layout characterization (#3155, #2841)", () => {
 		}
 		for (const marker of dateMarkers) expect(markerItems(result, marker), marker).toHaveLength(1);
 		writeArtifacts(`${template}-${direction}`, result, coordinates);
+		assertFixtureBaseline(`${template}-${direction}`, result, coordinates);
 	});
 
 	it("records default date evidence for every template without claiming parity geometry", async () => {
@@ -515,10 +547,12 @@ describe("date layout characterization (#3155, #2841)", () => {
 		for (const template of templates) {
 			const result = await renderFixture(dateFixture(), template);
 			const coordinates = coordinatesFor(result, dateMarkers);
+			const missingMarkers = dateMarkers.filter((marker) => markerItems(result, marker).length === 0);
+			expect(missingMarkers, template).toEqual(expectedMissingMarkers[template]);
 			evidence[template] = {
 				pageCount: result.pages.length,
 				textItemCount: allItems(result).length,
-				missingMarkers: dateMarkers.filter((marker) => markerItems(result, marker).length === 0),
+				missingMarkers,
 				rasterSha256: result.raster.map((page) => createHash("sha256").update(page.data).digest("hex")),
 				coordinates,
 			};
@@ -526,7 +560,9 @@ describe("date layout characterization (#3155, #2841)", () => {
 		const output = process.env.DATE_LAYOUT_ARTIFACT_DIR;
 		if (output) {
 			mkdirSync(output, { recursive: true });
-			writeFileSync(join(output, "all-templates.json"), JSON.stringify(evidence, null, 2));
+			writeFileSync(join(output, "all-templates.json"), `${JSON.stringify(evidence, null, "\t")}\n`);
+		} else {
+			expect(JSON.parse(readFileSync(join(baselineDirectory, "all-templates.json"), "utf8"))).toEqual(evidence);
 		}
 	});
 

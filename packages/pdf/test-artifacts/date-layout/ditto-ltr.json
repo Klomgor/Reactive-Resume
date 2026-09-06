@@ -9,6 +9,10 @@
 			"itemCount": 40
 		}
 	],
+	"rasterSha256": [
+		"055026dce70c3ae91d94283c2cfa120ac5c2cddf56c220913d93d0b58223deb2",
+		"24e180ef8b68eb27e25ded90d608696a47212ac9d954a5c05e3d77b88d71dbc5"
+	],
 	"coordinates": {
 		"EXP_LONG": [
 			{
