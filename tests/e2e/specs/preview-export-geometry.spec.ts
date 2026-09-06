@@ -78,6 +78,7 @@ const RASTER_MISMATCH_RATIO_LIMIT = 0.02;
 const RASTER_MISMATCH_PIXEL_LIMIT = 200_000;
 const GEOMETRY_E2E_OPT_IN = "PREVIEW_EXPORT_GEOMETRY_E2E";
 const DISPOSABLE_DATABASE_NAME = "reactive_resume_preview_export_geometry_e2e";
+const geometryE2eOptedIn = process.env[GEOMETRY_E2E_OPT_IN] === "1";
 
 const requirePdf = createRequire(`${process.cwd()}/packages/pdf/package.json`);
 const requireWeb = createRequire(`${process.cwd()}/apps/web/package.json`);
@@ -698,6 +699,7 @@ async function runGeometryMatrix(page: Page, testInfo: TestInfo, scenarios: Geom
 }
 
 test.describe("preview/export geometry at DPR1", () => {
+	test.skip(!geometryE2eOptedIn, `Set ${GEOMETRY_E2E_OPT_IN}=1 to run disposable preview/export geometry E2E.`);
 	test.use({ deviceScaleFactor: 1 });
 
 	test("matches active preview and downloaded PDF across synthetic Rhyhorn matrix", async ({ authPage }, testInfo) => {
@@ -707,6 +709,7 @@ test.describe("preview/export geometry at DPR1", () => {
 });
 
 test.describe("preview/export geometry at DPR2", () => {
+	test.skip(!geometryE2eOptedIn, `Set ${GEOMETRY_E2E_OPT_IN}=1 to run disposable preview/export geometry E2E.`);
 	test.use({ deviceScaleFactor: 2 });
 
 	test("matches active preview and downloaded PDF at higher device pixel ratio", async ({ authPage }, testInfo) => {
