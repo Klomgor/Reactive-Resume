@@ -162,10 +162,11 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | Plan 33A research | `task_0ed3877760c1` / `ctx_7e91c8f1d077` | `codex/issue-2689-europass-research` | complete; worker released | commit `2de5b6240`; official-source mapping plus one-page/overflow/comparison artifacts; no renderer code |
 | Plan 33A independent review | `task_55fd536909d2` / `ctx_ac573ee1d4ad` | same Plan 33A worktree | complete; two P1 visual findings; worker released | overflow page 1 date/title collision and page 2 right-edge clipping; research/mapping/source-safety checks otherwise clean |
 | Plan 33A visual remediation | `task_e5a239df7684` / `ctx_fd5ff59ddc46` | same Plan 33A worktree | complete; worker released | commit `57f2c30`; date/title collision and right-edge text/URL clipping corrected; XML/mapping/bounds gates green |
-| Plan 33A visual rereview | `task_dbf4b61a1ada` / `ctx_4ba872ef6b5c` | same Plan 33A worktree | reviewing | full-resolution raster inspection limited to two corrected geometry findings |
+| Plan 33A visual rereview | `task_dbf4b61a1ada` / `ctx_4ba872ef6b5c` | same Plan 33A worktree | complete; no findings; worker released | full-resolution 2480×3508 raster inspection confirmed both corrected geometry seams; XML bounds and source mapping clean; PR #3475 merged as `578cb496a` |
 | Plan 34 implementation/review | `task_422be45068f7`, `task_e7e35921c6be` | `codex/issue-2611-gengar-skill-layout` | complete; PR #3473 merged | implementation `b337d8147`, current-main head `f2186d4f7`, independent review clean, merge `2a4a1583b` |
 | Plan 21 implementation | `task_b7cc0bb3ec69` / `ctx_23c399d315ec` | `issue-3060-section-heading-visibility` | implementing | fresh worktree from Plan34-integrated main; complete schema/web/PDF/DOCX/accessibility contract |
 | Plan 27A font diagnostic | `task_127bb41b0f99` / `ctx_3d9bd07290cc` | `issue-3377-offline-font-diagnostic` | implementing | cold-network surface matrix plus bounded local manifest/license/size evidence; no production resolver change |
+| Imported-table E2E baseline repair | `task_1060889e4ae9` / `ctx_6da7c54c9929` | `imported-table-raster-ci-fix` | diagnosing | repeated hosted Chromium result is 18 horizontal PDF path fragments versus fixture contract 17; worker is proving physical-line topology before changing assertion logic |
 
 ## Existing PR and residual accounting
 
@@ -187,6 +188,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | PR #3472 | merged 2026-09-06 | `2f6942fb7299770a231c863b6b3a4e99c4538fad` → merge `ea97de5ec` | current main integrated twice; final 102 web tests, web typecheck, Biome, and diff green after independent-review remediation; normal merge | complete; #3397 closed |
 | PR #3473 | merged 2026-09-06 | `f2186d4f7495804670c6973b9454578280e461a7` → merge `2a4a1583b` | current main integrated; independent review clean; 51 focused PDF tests, PDF typecheck, Biome, boundaries, and diff green; normal merge | complete; #2611 closed |
 | PR #3474 | merged 2026-09-06 | `ec0a18fd8b5cd0b9b1cc7ee31a12d2d783eb4ffd` → merge `97f34b7cc` | Codacy findings from #3472 removed: clipboard HTML now parsed with DOMParser and new LRM/RLM literals use escapes; 102 web + 44 PDF tests, two typechecks, Biome, diff green | static-analysis follow-up complete |
+| PR #3475 | merged 2026-09-06 | `57f2c30` → merge `578cb496a` | independent full-resolution visual rereview passed after collision and clipping remediation; research/XML/bounds/source-mapping gates clean | research complete; issue #2689 remains open pending explicit visual/product approval before renderer implementation |
 | Residual #2828 | pending product direction | — | stale whole-document concurrent-tab overwrite reproduced in Chromium/PostgreSQL; excluded from 63 | account for separately; do not implement conflict UI until product policy selected |
 
 ## Rulings and blockers log
@@ -198,7 +200,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 - 2026-09-06 — Publication throughput policy: require one independent pre-publication review, run focused risk-based gates,
   then push and open PR immediately. Hosted CI runs concurrently under coordinator monitoring. Repeat review only for a
   concrete finding and limit it to the changed seam; workers do not poll hosted state or repeat unchanged full suites.
-- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Nineteen approved PRs were
+- 2026-09-06 — Maintainer changed integration policy: merge complete, mergeable PRs immediately. Twenty approved PRs were
   squash-merged without admin bypass. Plan 10 retired-link work was explicitly rejected as disproportionate redirect and
   error-handling overhead; PR #3463 closed unmerged and rationale recorded on issue #2836.
 - 2026-09-06 — Plan 22 orchestration metadata initially named issue #3060. Live issue revalidation corrected ownership to
@@ -207,6 +209,8 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   Issue #2768 remains open/needs-info because reporter fixture, exact error, version, browser, and steps remain absent.
 - 2026-09-06 — Codacy security findings on Plan 19 were addressed in an immediate follow-up rather than accepted as
   detached-parser false positives: DOMParser removes the flagged assignment and Unicode escapes remove new invisible controls.
+- 2026-09-06 — Plan 33A research is merged without renderer code. Plan 33B remains behind explicit visual/product approval
+  for canonical SVG direction, neutral naming, supplied fluency labels, chronology gutter/date wrapping, and photo-free defaults.
 
 ## Publication log
 
@@ -216,7 +220,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   #3462 (`5850230f8`), #3461 (`ab67831e4`), #3464 (`999cd618c`), #3466 (`695cdb851`), and
   #3465 (`b85d285b6`), #3467 (`0fbeeeb4c`), #3468 (`38832014b`), #3469 (`870388192`), and
   #3470 (`744eaa902`), #3471 (`a6057abd7`), #3472 (`ea97de5ec`), #3473 (`2a4a1583b`), and
-  #3474 (`97f34b7cc`).
+  #3474 (`97f34b7cc`), #3475 (`578cb496a`).
 - Plan 10: PR [#3463](https://github.com/amruthpillai/reactive-resume/pull/3463), closed unmerged by maintainer direction;
   issue [#2836 comment](https://github.com/amruthpillai/reactive-resume/issues/2836#issuecomment-5556080394) records not-planned rationale.
 - Plan 16: PR [#3464](https://github.com/amruthpillai/reactive-resume/pull/3464), merged as
@@ -241,3 +245,5 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
   `2a4a1583be097290906a1252045c57e73b78b1a9`; issue #2611 closed.
 - Plan 19 static-analysis follow-up: PR [#3474](https://github.com/amruthpillai/reactive-resume/pull/3474), merged as
   `97f34b7ccda73eb8d767205741d68465cbc1c0c1`.
+- Plan 33A: PR [#3475](https://github.com/amruthpillai/reactive-resume/pull/3475), merged as
+  `578cb496aa326751dd2ab1bea53db868daa35908`; issue #2689 remains open at its explicit visual/product gate.
