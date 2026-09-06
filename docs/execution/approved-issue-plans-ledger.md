@@ -176,6 +176,7 @@ pass. Issue comments and state changes are recorded when explicitly directed by 
 | Plan 30 export evaluation | implementation `task_8ccb73b62e79`; review `task_62e7e0f678f3`; remediation `task_328f1a7caa2c`; rereview `task_27bfa7e77312`; final fix `task_57d3967893fb` | `codex/issue-2845-ats-export-evaluation` | complete; all workers released; PR #3482 merged | commits `f89873f08`, `0e5994f24`, `d17e188b0`; 108 tests and focused rereview evidence; merge `10eb3bdbc` |
 | Plan 18 geometry diagnostic | implementation `task_938999fe6ae1`; review `task_a71aca971d4c`; remediation `task_4ddf17ed5fea`; rereview `task_e6b96ad69cd7` | `codex/issue-2683-preview-export-geometry` | complete; all workers released; PR #3483 merged | commits `ce372b54b`, `5f5dca844`, integration `25e044c86`; full dedicated matrix 2/2 and focused rereview clean; merge `11d619d3d` |
 | Final completion audit | `task_81402f5f945f` / `ctx_1b430f809130` | ledger plus planning checkout | complete; worker released | exact 35-plan/63-issue coverage; found Unit 03/07 disposition wording and PR #3475 head metadata gaps; corrected before ledger publication |
+| Completion correction rereview | `task_66f7c09eea8b` / `ctx_649722e31975` | ledger worktree | complete; worker released; no findings | independently confirmed all three audit corrections, sequential Units 01–35, and exact 63-issue coverage |
 
 ## Existing PR and residual accounting
 
